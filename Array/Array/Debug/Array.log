@@ -1,0 +1,24 @@
+﻿Build started 2017-06-03 16:30:15.
+     1>Project "D:\Project\GitWorkspace\LeetCode\Array\Array\Array.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt 581_ShortestUnsortedContinousSubarray.cpp
+         581_ShortestUnsortedContinousSubarray.cpp
+     1>d:\project\gitworkspace\leetcode\array\array\581_shortestunsortedcontinoussubarray.cpp(93): error C2664: 'void quickSort(int *,int)' : cannot convert argument 1 from 'std::vector<int,std::allocator<_Ty>>' to 'int *'
+                 with
+                 [
+                     _Ty=int
+                 ]
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>d:\project\gitworkspace\leetcode\array\array\581_shortestunsortedcontinoussubarray.cpp(94): error C2664: 'int calculateShortestSubarray(int *,int *,int)' : cannot convert argument 1 from 'std::vector<int,std::allocator<_Ty>>' to 'int *'
+                 with
+                 [
+                     _Ty=int
+                 ]
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>d:\project\gitworkspace\leetcode\array\array\581_shortestunsortedcontinoussubarray.cpp(117): error C2065: 'b' : undeclared identifier
+     1>d:\project\gitworkspace\leetcode\array\array\581_shortestunsortedcontinoussubarray.cpp(117): error C2541: 'delete' : cannot delete objects that are not pointers
+     1>Done Building Project "D:\Project\GitWorkspace\LeetCode\Array\Array\Array.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.43
