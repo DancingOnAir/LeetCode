@@ -18,7 +18,7 @@ vector<int> twoSum(vector<int>& nums, int target) {
 		number = target - nums.at(i);
 		for (int j = 0; j < nums.size(); ++j)
 		{
-			if (nums.at(j) == number && nums.at(j) != nums.at(i))
+			if (nums.at(j) == number && j != i)
 			{
 				tempVec.push_back(i);
 				tempVec.push_back(j);
