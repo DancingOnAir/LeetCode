@@ -18,5 +18,8 @@
     <ClCompile Include="001_TwoSum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="004_MedianofTwoSortedArrays.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
