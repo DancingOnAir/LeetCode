@@ -21,5 +21,8 @@
     <ClCompile Include="004_MedianofTwoSortedArrays.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="011_ContainerWithMostWater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="001_TwoSum.cpp" />
     <ClCompile Include="004_MedianofTwoSortedArrays.cpp" />
+    <ClCompile Include="011_ContainerWithMostWater.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
