@@ -24,5 +24,8 @@
     <ClCompile Include="011_ContainerWithMostWater.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="015_3Sum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
