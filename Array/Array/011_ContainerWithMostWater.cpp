@@ -18,13 +18,16 @@ int maxArea(vector<int>& height) {
 	//	}
 	//}
 
-	sort(height.begin(), height.end());
-	int size = height.size();
+	int i = 0;
+	int j = height.size() - 1;
 
-	for (int i = 0; i < size; ++i)
+	while (i < j)
 	{
-		if (maxArea < height.at(i) * (size - i - 1))
-			maxArea = height.at(i) * (size - i - 1);
+		int h = min(height.at(i), height.at(j));
+		maxArea = max(maxArea, h * (j - i));
+
+		while (height.at(i) <= h && i < j) ++i;
+		while (height.at(j) <= h && i < j) --j;
 	}
 
 	return maxArea;
