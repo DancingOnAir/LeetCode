@@ -146,6 +146,7 @@
     <ClCompile Include="016_3SumClosest.cpp" />
     <ClCompile Include="018_4Sum.cpp" />
     <ClCompile Include="026_RemoveDuplicatesFromSortedArray.cpp" />
+    <ClCompile Include="027_RemoveElement.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

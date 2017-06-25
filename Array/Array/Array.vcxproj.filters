@@ -36,5 +36,8 @@
     <ClCompile Include="026_RemoveDuplicatesFromSortedArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="027_RemoveElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
