@@ -33,5 +33,8 @@
     <ClCompile Include="018_4Sum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="026_RemoveDuplicatesFromSortedArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
