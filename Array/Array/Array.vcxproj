@@ -148,6 +148,7 @@
     <ClCompile Include="026_RemoveDuplicatesFromSortedArray.cpp" />
     <ClCompile Include="027_RemoveElement.cpp" />
     <ClCompile Include="031_NextPermutation.cpp" />
+    <ClCompile Include="033_SearchInRotatedSortedArray.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

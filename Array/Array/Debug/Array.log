@@ -1,3 +1,6 @@
-﻿  031_NextPermutation.cpp
+﻿  033_SearchInRotatedSortedArray.cpp
+d:\project\gitworkspace\leetcode\array\array\033_searchinrotatedsortedarray.cpp(9): warning C4018: '<': signed/unsigned mismatch
+  031_NextPermutation.cpp
+  Generating Code...
   Array.vcxproj -> D:\Project\GitWorkspace\LeetCode\Array\Debug\Array.exe
   Array.vcxproj -> D:\Project\GitWorkspace\LeetCode\Array\Debug\Array.pdb (Partial PDB)

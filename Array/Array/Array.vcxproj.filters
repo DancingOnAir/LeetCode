@@ -42,5 +42,8 @@
     <ClCompile Include="031_NextPermutation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="033_SearchInRotatedSortedArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
