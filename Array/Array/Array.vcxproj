@@ -150,6 +150,7 @@
     <ClCompile Include="031_NextPermutation.cpp" />
     <ClCompile Include="033_SearchInRotatedSortedArray.cpp" />
     <ClCompile Include="034_SearchForARange.cpp" />
+    <ClCompile Include="035_SearchInsertPosition.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
