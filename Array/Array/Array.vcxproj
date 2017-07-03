@@ -152,6 +152,7 @@
     <ClCompile Include="034_SearchForARange.cpp" />
     <ClCompile Include="035_SearchInsertPosition.cpp" />
     <ClCompile Include="039_CombinationSum.cpp" />
+    <ClCompile Include="040_CombinationSum.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
