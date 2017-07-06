@@ -18,5 +18,8 @@
     <ClCompile Include="003_LongestSubstringWithoutRepeatingCharacters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="005_LongestPalindromicSubstring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
