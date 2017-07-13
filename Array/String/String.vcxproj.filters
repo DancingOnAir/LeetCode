@@ -21,5 +21,8 @@
     <ClCompile Include="005_LongestPalindromicSubstring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="008_StringToInteger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
