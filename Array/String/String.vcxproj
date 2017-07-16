@@ -142,6 +142,7 @@
     <ClCompile Include="003_LongestSubstringWithoutRepeatingCharacters.cpp" />
     <ClCompile Include="005_LongestPalindromicSubstring.cpp" />
     <ClCompile Include="008_StringToInteger.cpp" />
+    <ClCompile Include="10_RegularExpressionMatching.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
