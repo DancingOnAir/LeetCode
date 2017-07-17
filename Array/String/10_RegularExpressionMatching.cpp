@@ -6,25 +6,76 @@ using namespace std;
 
 bool isMatch(string s, string p) 
 {
-	for (auto b = s.begin(), e = s.end(); b != e; ++b)
-	{
-		for (auto c : p)
-		{
-			if (c == *b || c == '*')
-			{
+	if (s.size() > p.size())
+		return false;
 
-			}
-		}
+	auto sb = s.begin(), se = s.end();
+	auto pb = p.begin(), pe = p.end();
+	int count = 0;
+
+	for (decltype(p.size()) i = 0; i < p.size(); ++i)
+	{
+		if (i != 0 && p[i-1] == '.' && p[i] == '*')
+			p[i] = '.';
 	}
-	return true;
+
+	while (sb != se)
+	{
+		while (pb != pe)
+		{
+			if (*pb == *sb || *pb == '.')
+			{
+				if (pe - pb < s.size())
+					return false;
+				else
+				{
+					for (decltype(s.size()) i = 0; i < s.size(); ++i)
+					{
+						if (*(pb + i) == *(sb + i) || 
+							*(pb + i) == '.' || 
+							(*(pb + i) == '*' && *(sb + i) == *(sb + i - 1)))
+						{
+							++count;
+						}
+						else
+						{
+							count = 0;
+							break;
+						}
+					}
+
+					if (count == s.size())
+						return true;
+				}
+			}
+			++pb;
+		}
+
+		++sb;
+	}
+
+	if(count == s.size())
+		return true;
+
+	return false;
 }
 
 int main()
 {
-	string s = "aa";
-	string p = "a*";
+	string s = "aab";
+	string p = "c*a*b";
 
-	cout << isMatch(s, p) << endl;
+	//cout << isMatch(s, p) << endl;
+	string str = "We think in generalities, but we live in details.";
+	string s1 = str.substr(3, 5);
+	string s2 = str.substr(2, 5);
+	string s3 = str.substr(1, 5);
+	string s4 = str.substr(0, 5);
+
+	cout << s1 << endl;
+	cout << s2 << endl;
+	cout << s3 << endl;
+	cout << s4 << endl;
 
 	system("pause");
 	return 0;
