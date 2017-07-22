@@ -27,5 +27,8 @@
     <ClCompile Include="10_RegularExpressionMatching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="017_LetterCombinationsOfAPhoneNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
