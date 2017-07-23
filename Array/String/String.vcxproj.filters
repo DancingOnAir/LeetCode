@@ -30,5 +30,8 @@
     <ClCompile Include="017_LetterCombinationsOfAPhoneNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="022_GenerateParentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
