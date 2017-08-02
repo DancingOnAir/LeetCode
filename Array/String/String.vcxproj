@@ -147,6 +147,7 @@
     <ClCompile Include="022_GenerateParentheses.cpp" />
     <ClCompile Include="028_ImplementStrStr.cpp" />
     <ClCompile Include="030_SubstringWithConcatenationOfAllWords.cpp" />
+    <ClCompile Include="038_CountAndSay.cpp" />
     <ClCompile Include="10_RegularExpressionMatching.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
