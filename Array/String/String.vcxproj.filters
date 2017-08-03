@@ -45,5 +45,8 @@
     <ClCompile Include="038_CountAndSay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="032_LongestValidParentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
