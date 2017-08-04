@@ -1,3 +1,4 @@
 ﻿  032_LongestValidParentheses.cpp
+d:\project\gitworkspace\leetcode\array\string\032_longestvalidparentheses.cpp(46): warning C4018: '<': signed/unsigned mismatch
   String.vcxproj -> D:\Project\GitWorkspace\LeetCode\Array\Debug\String.exe
   String.vcxproj -> D:\Project\GitWorkspace\LeetCode\Array\Debug\String.pdb (Partial PDB)
