@@ -32,28 +32,48 @@ struct TreeNode
 
 vector<int> inorderTraversal(TreeNode *root)
 {
+	//vector<int> results;
+	//if (!root)
+	//	return results;
+
+	//stack<TreeNode *> reserve;
+	//reserve.push(root);
+
+	//while (!reserve.empty())
+	//{
+	//	TreeNode *p = reserve.top();
+	//	if (root->left)
+	//	{
+	//		reserve.push(p->left);
+	//		p->left = NULL;
+	//	}
+	//	else
+	//	{
+	//		results.push_back(p->val);
+	//		reserve.pop();
+
+	//		if (p->right)
+	//			reserve.push(p->right);
+	//	}
+	//}
+
 	vector<int> results;
-	if (!root)
-		return results;
+	stack<TreeNode *> s;
+	TreeNode *pCurrent = root;
 
-	stack<TreeNode *> reserve;
-	reserve.push(root);
-
-	while (!reserve.empty())
+	while (!s.empty() || pCurrent)
 	{
-		TreeNode *p = reserve.top();
-		if (root->left)
+		if (pCurrent)
 		{
-			reserve.push(p->left);
-			p->left = NULL;
+			s.push(pCurrent);
+			pCurrent = pCurrent->left;
 		}
 		else
 		{
-			results.push_back(p->val);
-			reserve.pop();
-
-			if (p->right)
-				reserve.push(p->right);
+			TreeNode *pNode = s.top();
+			results.push_back(pNode->val);
+			s.pop();
+			pCurrent = pNode->right;
 		}
 	}
 
