@@ -18,5 +18,8 @@
     <ClCompile Include="094_BinaryTreeInorderTraversal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="095_UniqueBinarySearchTreesII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

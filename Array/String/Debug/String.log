@@ -1,4 +1,16 @@
-﻿  032_LongestValidParentheses.cpp
+﻿  10_RegularExpressionMatching.cpp
+  038_CountAndSay.cpp
+  032_LongestValidParentheses.cpp
 d:\project\gitworkspace\leetcode\array\string\032_longestvalidparentheses.cpp(46): warning C4018: '<': signed/unsigned mismatch
+  030_SubstringWithConcatenationOfAllWords.cpp
+  028_ImplementStrStr.cpp
+  022_GenerateParentheses.cpp
+  020_ValidParentheses.cpp
+  017_LetterCombinationsOfAPhoneNumber.cpp
+  008_StringToInteger.cpp
+  005_LongestPalindromicSubstring.cpp
+  003_LongestSubstringWithoutRepeatingCharacters.cpp
+  Compiling...
+  Generating Code...
   String.vcxproj -> D:\Project\GitWorkspace\LeetCode\Array\Debug\String.exe
   String.vcxproj -> D:\Project\GitWorkspace\LeetCode\Array\Debug\String.pdb (Partial PDB)

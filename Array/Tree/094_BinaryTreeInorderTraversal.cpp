@@ -1,89 +1,89 @@
-#include <iostream>
-#include <stdlib.h>
-#include <vector>
-#include <stack>
-using namespace std;
-
-struct TreeNode
-{
-	int val;
-	TreeNode *left;
-	TreeNode *right;
-	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
-
-//void inorder(TreeNode *root, vector<int> &nodes)
-//{
-//	if (!root)
-//		return;
+//#include <iostream>
+//#include <stdlib.h>
+//#include <vector>
+//#include <stack>
+//using namespace std;
 //
-//	inorder(root->left, nodes);
-//	nodes.push_back(root->val);
-//	inorder(root->right, nodes);
-//}
-//
-//vector<int> inorderTraversal(TreeNode* root) 
+//struct TreeNode
 //{
+//	int val;
+//	TreeNode *left;
+//	TreeNode *right;
+//	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+//};
+//
+////void inorder(TreeNode *root, vector<int> &nodes)
+////{
+////	if (!root)
+////		return;
+////
+////	inorder(root->left, nodes);
+////	nodes.push_back(root->val);
+////	inorder(root->right, nodes);
+////}
+////
+////vector<int> inorderTraversal(TreeNode* root) 
+////{
+////	vector<int> results;
+////	inorder(root, results);
+////
+////	return results;
+////}
+//
+//vector<int> inorderTraversal(TreeNode *root)
+//{
+//	//vector<int> results;
+//	//if (!root)
+//	//	return results;
+//
+//	//stack<TreeNode *> reserve;
+//	//reserve.push(root);
+//
+//	//while (!reserve.empty())
+//	//{
+//	//	TreeNode *p = reserve.top();
+//	//	if (root->left)
+//	//	{
+//	//		reserve.push(p->left);
+//	//		p->left = NULL;
+//	//	}
+//	//	else
+//	//	{
+//	//		results.push_back(p->val);
+//	//		reserve.pop();
+//
+//	//		if (p->right)
+//	//			reserve.push(p->right);
+//	//	}
+//	//}
+//
 //	vector<int> results;
-//	inorder(root, results);
+//	stack<TreeNode *> s;
+//	TreeNode *pCurrent = root;
+//
+//	while (!s.empty() || pCurrent)
+//	{
+//		if (pCurrent)
+//		{
+//			s.push(pCurrent);
+//			pCurrent = pCurrent->left;
+//		}
+//		else
+//		{
+//			TreeNode *pNode = s.top();
+//			results.push_back(pNode->val);
+//			s.pop();
+//			pCurrent = pNode->right;
+//		}
+//	}
 //
 //	return results;
 //}
-
-vector<int> inorderTraversal(TreeNode *root)
-{
-	//vector<int> results;
-	//if (!root)
-	//	return results;
-
-	//stack<TreeNode *> reserve;
-	//reserve.push(root);
-
-	//while (!reserve.empty())
-	//{
-	//	TreeNode *p = reserve.top();
-	//	if (root->left)
-	//	{
-	//		reserve.push(p->left);
-	//		p->left = NULL;
-	//	}
-	//	else
-	//	{
-	//		results.push_back(p->val);
-	//		reserve.pop();
-
-	//		if (p->right)
-	//			reserve.push(p->right);
-	//	}
-	//}
-
-	vector<int> results;
-	stack<TreeNode *> s;
-	TreeNode *pCurrent = root;
-
-	while (!s.empty() || pCurrent)
-	{
-		if (pCurrent)
-		{
-			s.push(pCurrent);
-			pCurrent = pCurrent->left;
-		}
-		else
-		{
-			TreeNode *pNode = s.top();
-			results.push_back(pNode->val);
-			s.pop();
-			pCurrent = pNode->right;
-		}
-	}
-
-	return results;
-}
-
-int main(void)
-{
-
-
-	system("pause");
-	return 0;
-}
+//
+//int main(void)
+//{
+//
+//
+//	system("pause");
+//	return 0;
+//}
