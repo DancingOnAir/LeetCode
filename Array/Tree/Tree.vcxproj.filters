@@ -24,5 +24,8 @@
     <ClCompile Include="096_UniqueBinarySearchTrees.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="098_ValidateBinarySearchTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -142,6 +142,7 @@
     <ClCompile Include="094_BinaryTreeInorderTraversal.cpp" />
     <ClCompile Include="095_UniqueBinarySearchTreesII.cpp" />
     <ClCompile Include="096_UniqueBinarySearchTrees.cpp" />
+    <ClCompile Include="098_ValidateBinarySearchTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
