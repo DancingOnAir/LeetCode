@@ -60,5 +60,11 @@
     <ClCompile Include="806_NumberofLinesToWriteString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="041_FirstMissingPositive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="045_JumpGameII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

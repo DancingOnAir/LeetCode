@@ -153,6 +153,8 @@
     <ClCompile Include="035_SearchInsertPosition.cpp" />
     <ClCompile Include="039_CombinationSum.cpp" />
     <ClCompile Include="040_CombinationSum.cpp" />
+    <ClCompile Include="041_FirstMissingPositive.cpp" />
+    <ClCompile Include="045_JumpGameII.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
