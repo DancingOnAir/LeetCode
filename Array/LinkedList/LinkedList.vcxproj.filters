@@ -21,5 +21,8 @@
     <ClCompile Include="019_RemoveNthNodeFromEnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="083_RemoveDuplicatesFromSortedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
