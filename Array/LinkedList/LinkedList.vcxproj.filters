@@ -24,5 +24,8 @@
     <ClCompile Include="083_RemoveDuplicatesFromSortedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="082_RemoveDuplicatesFromSortedListII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
