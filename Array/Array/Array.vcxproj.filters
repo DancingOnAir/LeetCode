@@ -66,5 +66,8 @@
     <ClCompile Include="045_JumpGameII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="057_InsertInterval.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
