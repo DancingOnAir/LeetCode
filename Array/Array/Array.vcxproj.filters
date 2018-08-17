@@ -69,5 +69,8 @@
     <ClCompile Include="057_InsertInterval.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="080_RemoveDuplicatesFromSortedArrayII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

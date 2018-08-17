@@ -156,6 +156,7 @@
     <ClCompile Include="041_FirstMissingPositive.cpp" />
     <ClCompile Include="045_JumpGameII.cpp" />
     <ClCompile Include="057_InsertInterval.cpp" />
+    <ClCompile Include="080_RemoveDuplicatesFromSortedArrayII.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
