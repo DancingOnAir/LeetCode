@@ -72,5 +72,8 @@
     <ClCompile Include="080_RemoveDuplicatesFromSortedArrayII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="189_RotateArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
