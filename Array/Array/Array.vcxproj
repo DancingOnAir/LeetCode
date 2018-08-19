@@ -158,6 +158,7 @@
     <ClCompile Include="057_InsertInterval.cpp" />
     <ClCompile Include="080_RemoveDuplicatesFromSortedArrayII.cpp" />
     <ClCompile Include="189_RotateArray.cpp" />
+    <ClCompile Include="299_BullsAndCows.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

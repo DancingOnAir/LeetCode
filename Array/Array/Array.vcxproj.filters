@@ -75,5 +75,8 @@
     <ClCompile Include="189_RotateArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="299_BullsAndCows.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
