@@ -27,5 +27,8 @@
     <ClCompile Include="098_ValidateBinarySearchTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="116_PopulatingNextRightPointersInEachNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
