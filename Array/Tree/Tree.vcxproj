@@ -143,6 +143,7 @@
     <ClCompile Include="095_UniqueBinarySearchTreesII.cpp" />
     <ClCompile Include="096_UniqueBinarySearchTrees.cpp" />
     <ClCompile Include="098_ValidateBinarySearchTree.cpp" />
+    <ClCompile Include="105_ConstructBinaryTreefromPreorderandInorderTraversal.cpp" />
     <ClCompile Include="116_PopulatingNextRightPointersInEachNode.cpp" />
     <ClCompile Include="117_PopulatingNextRightPointersInEachNodeII.cpp" />
   </ItemGroup>
