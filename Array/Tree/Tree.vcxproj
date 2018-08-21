@@ -144,6 +144,7 @@
     <ClCompile Include="096_UniqueBinarySearchTrees.cpp" />
     <ClCompile Include="098_ValidateBinarySearchTree.cpp" />
     <ClCompile Include="116_PopulatingNextRightPointersInEachNode.cpp" />
+    <ClCompile Include="117_PopulatingNextRightPointersInEachNodeII.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

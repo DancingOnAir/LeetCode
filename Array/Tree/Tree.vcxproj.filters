@@ -30,5 +30,8 @@
     <ClCompile Include="116_PopulatingNextRightPointersInEachNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="117_PopulatingNextRightPointersInEachNodeII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
