@@ -6,64 +6,65 @@
 //
 //using namespace std;
 ////method 1
-////int lengthOfLongestSubstring(string s) 
-////{
-////	int maxLength = 0;
-////	int tempLength = 0;
-////	int position = 0;
-////	for (int i = 0; i < s.size(); ++i)
-////	{
-////		for (int j = position; j < i; ++j)
-////		{
-////			if (s[i] == s[j])
-////			{
-////				if(tempLength > maxLength)
-////					maxLength = tempLength;
-////				
-////				tempLength = tempLength -  (j + 1 - position);
-////				position = j + 1;
-////				break;
-////			}
-////				
-////		}
-////		++tempLength;
-////	}
-////
-////	if (maxLength < tempLength)
-////		maxLength = tempLength;
-////	return maxLength;
-////}
+//int lengthOfLongestSubstring1(string s) 
+//{
+//	int maxLength = 0;
+//	int tempLength = 0;
+//	int position = 0;
+//	for (int i = 0; i < s.size(); ++i)
+//	{
+//		for (int j = position; j < i; ++j)
+//		{
+//			if (s[i] == s[j])
+//			{
+//				if(tempLength > maxLength)
+//					maxLength = tempLength;
+//				
+//				tempLength = tempLength -  (j + 1 - position);
+//				position = j + 1;
+//				break;
+//			}
+//				
+//		}
+//		++tempLength;
+//	}
+//
+//	if (maxLength < tempLength)
+//		maxLength = tempLength;
+//	return maxLength;
+//}
 //
 ////method 2
 //int lengthOfLongestSubstring(string s)
 //{
-//	int maxLength = 0;
-//	int position = -1;
-//	vector<int> vec(256, -1);
+//    if (0 == s.size())
+//        return 0;
 //
-//	for (int i = 0; i < s.size(); ++i)
-//	{
-//		if (vec[s[i]] > position)
-//		{
-//			position = vec[s[i]];
-//		}
-//		vec[s[i]] = i;
+//    int maxLength = 0;
+//    int pos = -1;
+//    vector<int> vs(256, -1);
 //
-//		maxLength = max(maxLength, i - position);
-//	}
+//    for (int i = 0; i < s.size(); ++i)
+//    {
+//        if (vs[s[i]] > pos)
+//            pos = vs[s[i]];
 //
+//        vs[s[i]] = i;
 //
-//	return maxLength;
+//        maxLength = max(maxLength, i - pos);
+//    }
+//    
+//    return maxLength;
 //}
 //
 //int main(void)
 //{
-//	string a = "abcabcbb";
-//	string b = "bbtablud";
-//	string c = "pwwkew";
+//    string a = "abcabcbb";
+//    string b = "bbtablud";
+//    string c = "pwwkew";
 //
-//	cout << lengthOfLongestSubstring(b) << endl;
+//    cout << lengthOfLongestSubstring(b) << endl;
 //
-//	system("pause");
-//	return 0;
+//    system("pause");
+//    return 0;
 //}
