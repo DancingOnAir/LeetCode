@@ -134,6 +134,8 @@ string longestPalindrome4(string s)
         }
     }
 
+    cout << dp[0][n - 1] << endl;
+
     int start = 0;
     for (int i = 0; i < n; ++i)
     {
@@ -150,12 +152,52 @@ string longestPalindrome4(string s)
     return s.substr(start, dp[0][n - 1]);
 }
 
+string longestPalindrome5(string s)
+{
+    int n = s.size();
+    if (0 == n || 1 == n)
+        return s;
+
+    int maxLength = 1;
+    int maxStart = 0;
+    vector<vector<bool>> dp(n, vector<bool>(n, false));
+
+    for (int i = 0; i < n; ++i)
+        dp[i][i] = true;
+
+    for (int i = 0; i < n - 1; ++i)
+    { 
+        if (s[i] == s[i + 1])
+        {
+            dp[i][i + 1] = true;
+            maxLength = 2;
+            maxStart = i;
+        }
+    }
+
+    for (int len = 3; len <= n; ++len)
+    {
+        for (int i = 0; i + len - 1< n; ++i)
+        {
+            int j = i + len - 1;
+            if (s[i] == s[j] && dp[i + 1][j - 1])
+            {
+                dp[i][j] = true;
+                maxLength = len;
+                maxStart = i;
+            }
+        }
+    }
+
+    return s.substr(maxStart, maxLength);
+}
+
 int main(void)
 {
-    string s = "cabebaf";
+    string s = "ccc";
     //string result = longestPalindrome2(s);
 
-    cout << longestPalindrome4(s) << endl;
+    cout << longestPalindrome5(s) << endl;
     //cout << result << endl;
     system("pause");
     return 0;
