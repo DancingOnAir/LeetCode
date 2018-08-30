@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="046_Permutations.cpp" />
+    <ClCompile Include="047_PermutationsII.cpp" />
     <ClCompile Include="078_Subsets.cpp" />
     <ClCompile Include="090_SubsetsII.cpp" />
   </ItemGroup>
