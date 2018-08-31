@@ -22,9 +22,6 @@
 //
 //    for(int i = level; i < size; ++i)
 //    {
-//        //if (i > level && nums[i] == nums[i - 1])
-//        //    continue;
-//
 //        temp.push_back(nums[i]);
 //        backtrack2(nums, result, temp, i + 1, size);
 //        temp.pop_back();
