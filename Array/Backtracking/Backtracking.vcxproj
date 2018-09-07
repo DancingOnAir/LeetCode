@@ -152,6 +152,7 @@
     <ClCompile Include="077_Combinations.cpp" />
     <ClCompile Include="078_Subsets.cpp" />
     <ClCompile Include="090_SubsetsII.cpp" />
+    <ClCompile Include="377_CombinationSumIV.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
