@@ -1,67 +1,61 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-
-//void backtrack(vector<vector<int>>& result, vector<int>& current, vector<int>& nums, int target, int sum)
-//{
-//    if (sum > target)
-//        return;
+//#include <iostream>
+//#include <vector>
+//using namespace std;
 //
-//    if (sum == target)
-//    {
-//        result.push_back(current);
-//        return;
-//    }
+////void backtrack(vector<vector<int>>& result, vector<int>& current, vector<int>& nums, int target, int sum)
+////{
+////    if (sum > target)
+////        return;
+////
+////    if (sum == target)
+////    {
+////        result.push_back(current);
+////        return;
+////    }
+////
+////    for (int i = 0; i < nums.size(); ++i)
+////    {
+////        if (nums[i] <= target)
+////        {
+////            current.push_back(nums[i]);
+////            backtrack(result, current, nums, target, sum + nums[i]);
+////            current.pop_back();
+////        }
+////    }
+////}
+////
+////std::vector<std::vector<int>> combinationSum4(vector<int>& nums, int target)
+////{
+////    vector<vector<int>> result;
+////    vector<int> current;
+////    backtrack(result, current, nums, target, 0);
+////
+////    return result;
+////}
 //
-//    for (int i = 0; i < nums.size(); ++i)
+//int combinationSum4(vector<int>& nums, int target) {
+//    vector<int> dp(target + 1, 0);
+//    dp[0] = 1;
+//
+//    for (int i = 1; i <= target; ++i)
 //    {
-//        if (nums[i] <= target)
+//        for (int j = 0; j < nums.size(); ++j)
 //        {
-//            current.push_back(nums[i]);
-//            backtrack(result, current, nums, target, sum + nums[i]);
-//            current.pop_back();
+//            if (i >= nums[j])
+//                dp[i] += dp[i - nums[j]];
 //        }
 //    }
+//
+//    return dp[target];
 //}
 //
-//std::vector<std::vector<int>> combinationSum4(vector<int>& nums, int target)
+//int main()
 //{
-//    vector<vector<int>> result;
-//    vector<int> current;
-//    backtrack(result, current, nums, target, 0);
+//    std::vector<int> candidates = { 1, 2, 3 };
+//    int target = 4;
+//    int result = combinationSum4(candidates, target);
+//    cout << result;
 //
-//    return result;
+//    system("pause");
+//    return 0;
 //}
-
-int combinationSum4(vector<int>& nums, int target) {
-    vector<int> dp(target + 1, 0);
-    dp[0] = 1;
-
-    for (int i = 1; i <= target; ++i)
-    {
-        for (int j = 0; j < nums.size(); ++j)
-        {
-            if (i >= nums[j])
-                dp[i] += dp[i - nums[j]];
-        }
-    }
-
-    return dp[target];
-}
-
-int main()
-{
-    std::vector<int> candidates = { 1, 2, 3 };
-    int target = 4;
-    int result = combinationSum4(candidates, target);
-    cout << result;
-    //for (auto row : result)
-    //{
-    //    for (auto col : row)
-    //        cout << col << ", ";
-    //    cout << endl;
-    //}
-
-    system("pause");
-    return 0;
-}

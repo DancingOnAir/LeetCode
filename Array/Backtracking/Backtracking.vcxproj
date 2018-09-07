@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="031_NextPermutation.cpp" />
     <ClCompile Include="039_CombinationSum.cpp" />
     <ClCompile Include="046_Permutations.cpp" />
     <ClCompile Include="047_PermutationsII.cpp" />

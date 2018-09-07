@@ -36,5 +36,8 @@
     <ClCompile Include="377_CombinationSumIV.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="031_NextPermutation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
