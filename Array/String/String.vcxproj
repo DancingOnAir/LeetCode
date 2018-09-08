@@ -142,7 +142,6 @@
     <ClCompile Include="003_LongestSubstringWithoutRepeatingCharacters.cpp" />
     <ClCompile Include="005_LongestPalindromicSubstring.cpp" />
     <ClCompile Include="008_StringToInteger.cpp" />
-    <ClCompile Include="017_LetterCombinationsOfAPhoneNumber.cpp" />
     <ClCompile Include="020_ValidParentheses.cpp" />
     <ClCompile Include="022_GenerateParentheses.cpp" />
     <ClCompile Include="028_ImplementStrStr.cpp" />

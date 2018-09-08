@@ -42,5 +42,8 @@
     <ClCompile Include="060_PermutationSequence.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\String\017_LetterCombinationsOfAPhoneNumber.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
