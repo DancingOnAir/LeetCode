@@ -150,6 +150,7 @@
     <ClCompile Include="039_CombinationSum.cpp" />
     <ClCompile Include="046_Permutations.cpp" />
     <ClCompile Include="047_PermutationsII.cpp" />
+    <ClCompile Include="060_PermutationSequence.cpp" />
     <ClCompile Include="077_Combinations.cpp" />
     <ClCompile Include="078_Subsets.cpp" />
     <ClCompile Include="090_SubsetsII.cpp" />
