@@ -1,3 +1,6 @@
-﻿  134_GasStation.cpp
-MSVCRTD.lib(exe_main.obj) : error LNK2019: 无法解析的外部符号 main，该符号在函数 "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 中被引用
-D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe : fatal error LNK1120: 1 个无法解析的外部命令
+﻿  004_MedianofTwoSortedArrays.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\004_medianoftwosortedarrays.cpp(13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\004_medianoftwosortedarrays.cpp(33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\004_medianoftwosortedarrays.cpp(34): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
+  Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)
