@@ -73,11 +73,46 @@
 //	return signal * base;
 //}
 //
+//int my_atoi(std::string str)
+//{
+//    if (0 == str.size())
+//        return 0;
+//
+//    bool isNegative = false;
+//    int i = 0;
+//    long long re = 0;
+//
+//    while (' ' == str[i])
+//    {
+//        ++i;
+//    }
+//
+//    if ('-' == str[i] || '+' == str[i])
+//    {
+//        if ('-' == str[i])
+//            isNegative = true;
+//
+//        ++i;
+//    }
+//
+//    while (str[i] >= '0' && str[i] <= '9')
+//    {
+//        re = re * 10 + (str[i] - '0');
+//
+//        ++i;
+//        if (re > INT_MAX)
+//            return isNegative ? INT_MIN : INT_MAX;
+//    }
+//
+//    return isNegative ? re * (-1) : re;
+//}
+//
 //int main()
 //{
-//	string s = "    -45u0123";
-//	cout << myAtoi(s) << endl;
+//    string s = "    -45u0123";
+//    cout << myAtoi(s) << endl;
+//    cout << my_atoi(s) << endl;
 //
-//	system("pause");
-//	return 0;
+//    system("pause");
+//    return 0;
 //}

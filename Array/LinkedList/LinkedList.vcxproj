@@ -143,6 +143,7 @@
     <ClCompile Include="019_RemoveNthNodeFromEnd.cpp" />
     <ClCompile Include="082_RemoveDuplicatesFromSortedListII.cpp" />
     <ClCompile Include="083_RemoveDuplicatesFromSortedList.cpp" />
+    <ClCompile Include="160_IntersectionOfTwoLinkedLists.cpp" />
     <ClCompile Include="206_ReverseLinkedList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
