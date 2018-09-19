@@ -146,6 +146,7 @@
     <ClCompile Include="141_LinkedListCycle.cpp" />
     <ClCompile Include="160_IntersectionOfTwoLinkedLists.cpp" />
     <ClCompile Include="206_ReverseLinkedList.cpp" />
+    <ClCompile Include="024_SwapNodesInPairs.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -36,5 +36,8 @@
     <ClCompile Include="141_LinkedListCycle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="024_SwapNodesInPairs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
