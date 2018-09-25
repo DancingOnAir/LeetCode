@@ -42,5 +42,8 @@
     <ClCompile Include="328_OddEvenLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="092_ReverseLinkedListII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
