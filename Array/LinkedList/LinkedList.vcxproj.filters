@@ -45,5 +45,8 @@
     <ClCompile Include="092_ReverseLinkedListII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="237_DeleteNodeinaLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

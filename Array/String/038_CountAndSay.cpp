@@ -1,9 +1,10 @@
-#include <iostream>
-#include <stdlib.h>
-#include <string>
-
-using namespace std;
-// solution 1
+//#include <iostream>
+//#include <stdlib.h>
+//#include <string>
+//
+//using namespace std;
+//
+////solution 1
 //string recursiveCountAndSay(int n, string s)
 //{
 //	if (1 == n)
@@ -58,8 +59,8 @@ using namespace std;
 //	string start = "1";
 //	return recursiveCountAndSay(n, start);
 //}
-
-// solution 2
+//
+////solution 2
 //string countAndSay(int n)
 //{
 //	if (0 == n)
@@ -88,10 +89,9 @@ using namespace std;
 //
 //int main()
 //{
-//	
-//	int input = 5;
-//	cout << countAndSay(input) << endl;
+//    int input = 5;
+//    cout << countAndSay(input) << endl;
 //
-//	system("pause");
-//	return 0;
+//    system("pause");
+//    return 0;
 //}

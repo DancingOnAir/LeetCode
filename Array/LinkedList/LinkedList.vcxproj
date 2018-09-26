@@ -148,6 +148,7 @@
     <ClCompile Include="160_IntersectionOfTwoLinkedLists.cpp" />
     <ClCompile Include="206_ReverseLinkedList.cpp" />
     <ClCompile Include="024_SwapNodesInPairs.cpp" />
+    <ClCompile Include="237_DeleteNodeinaLinkedList.cpp" />
     <ClCompile Include="328_OddEvenLinkedList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
