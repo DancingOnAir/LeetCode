@@ -51,5 +51,8 @@
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="344_ReverseString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

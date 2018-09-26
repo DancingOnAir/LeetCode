@@ -48,5 +48,8 @@
     <ClCompile Include="237_DeleteNodeinaLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="203_RemoveLinkedListElements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -149,6 +149,7 @@
     <ClCompile Include="032_LongestValidParentheses.cpp" />
     <ClCompile Include="038_CountAndSay.cpp" />
     <ClCompile Include="10_RegularExpressionMatching.cpp" />
+    <ClCompile Include="344_ReverseString.cpp" />
     <ClCompile Include="438_FindAllAnagramsInAString.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />
   </ItemGroup>
