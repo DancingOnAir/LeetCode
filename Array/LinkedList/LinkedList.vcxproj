@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="002_AddTwoNumbers.cpp" />
     <ClCompile Include="019_RemoveNthNodeFromEnd.cpp" />
+    <ClCompile Include="021_MergeTwoSortedLists.cpp" />
     <ClCompile Include="082_RemoveDuplicatesFromSortedListII.cpp" />
     <ClCompile Include="083_RemoveDuplicatesFromSortedList.cpp" />
     <ClCompile Include="092_ReverseLinkedListII.cpp" />

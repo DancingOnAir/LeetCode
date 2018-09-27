@@ -51,5 +51,8 @@
     <ClCompile Include="203_RemoveLinkedListElements.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="021_MergeTwoSortedLists.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
