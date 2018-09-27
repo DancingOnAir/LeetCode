@@ -150,6 +150,7 @@
     <ClCompile Include="203_RemoveLinkedListElements.cpp" />
     <ClCompile Include="206_ReverseLinkedList.cpp" />
     <ClCompile Include="024_SwapNodesInPairs.cpp" />
+    <ClCompile Include="234_PalindromeLinkedList.cpp" />
     <ClCompile Include="237_DeleteNodeinaLinkedList.cpp" />
     <ClCompile Include="328_OddEvenLinkedList.cpp" />
   </ItemGroup>
