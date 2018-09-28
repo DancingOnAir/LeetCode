@@ -146,6 +146,7 @@
     <ClCompile Include="083_RemoveDuplicatesFromSortedList.cpp" />
     <ClCompile Include="092_ReverseLinkedListII.cpp" />
     <ClCompile Include="141_LinkedListCycle.cpp" />
+    <ClCompile Include="143_ReorderList.cpp" />
     <ClCompile Include="160_IntersectionOfTwoLinkedLists.cpp" />
     <ClCompile Include="203_RemoveLinkedListElements.cpp" />
     <ClCompile Include="206_ReverseLinkedList.cpp" />
