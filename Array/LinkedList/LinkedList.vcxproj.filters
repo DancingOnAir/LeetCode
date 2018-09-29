@@ -60,5 +60,11 @@
     <ClCompile Include="143_ReorderList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="142_LinkedListCycleII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="148_SortList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
