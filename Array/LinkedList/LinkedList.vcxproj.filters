@@ -66,5 +66,8 @@
     <ClCompile Include="148_SortList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="025_ReverseNodesInK-Group.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
