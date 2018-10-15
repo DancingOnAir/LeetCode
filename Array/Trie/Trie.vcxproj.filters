@@ -21,5 +21,8 @@
     <ClCompile Include="211_AddAndSearchWord.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="212_WordSearchII.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

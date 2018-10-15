@@ -39,5 +39,8 @@
     <ClCompile Include="106_ConstructBinaryTreeFromInorderAndPostorderTraversal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="235_LowestCommonAncestorOfABinarySearchTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
