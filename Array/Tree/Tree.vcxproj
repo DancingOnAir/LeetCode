@@ -147,6 +147,8 @@
     <ClCompile Include="106_ConstructBinaryTreeFromInorderAndPostorderTraversal.cpp" />
     <ClCompile Include="116_PopulatingNextRightPointersInEachNode.cpp" />
     <ClCompile Include="117_PopulatingNextRightPointersInEachNodeII.cpp" />
+    <ClCompile Include="144_BinaryTreePreorderTraversal.cpp" />
+    <ClCompile Include="145_BinaryTreePostorderTraversal.cpp" />
     <ClCompile Include="235_LowestCommonAncestorOfABinarySearchTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
