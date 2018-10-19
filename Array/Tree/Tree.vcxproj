@@ -143,6 +143,8 @@
     <ClCompile Include="095_UniqueBinarySearchTreesII.cpp" />
     <ClCompile Include="096_UniqueBinarySearchTrees.cpp" />
     <ClCompile Include="098_ValidateBinarySearchTree.cpp" />
+    <ClCompile Include="100_SameTree.cpp" />
+    <ClCompile Include="101_SymmetricTree.cpp" />
     <ClCompile Include="102_BinaryTreeLevelOrderTraversal.cpp" />
     <ClCompile Include="105_ConstructBinaryTreefromPreorderandInorderTraversal.cpp" />
     <ClCompile Include="106_ConstructBinaryTreeFromInorderAndPostorderTraversal.cpp" />

@@ -51,5 +51,11 @@
     <ClCompile Include="102_BinaryTreeLevelOrderTraversal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="100_SameTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="101_SymmetricTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
