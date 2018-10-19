@@ -57,5 +57,8 @@
     <ClCompile Include="101_SymmetricTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="257_BinaryTreePaths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

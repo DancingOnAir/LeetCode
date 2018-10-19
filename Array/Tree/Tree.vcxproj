@@ -153,6 +153,7 @@
     <ClCompile Include="144_BinaryTreePreorderTraversal.cpp" />
     <ClCompile Include="145_BinaryTreePostorderTraversal.cpp" />
     <ClCompile Include="235_LowestCommonAncestorOfABinarySearchTree.cpp" />
+    <ClCompile Include="257_BinaryTreePaths.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
