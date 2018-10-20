@@ -148,6 +148,7 @@
     <ClCompile Include="102_BinaryTreeLevelOrderTraversal.cpp" />
     <ClCompile Include="105_ConstructBinaryTreefromPreorderandInorderTraversal.cpp" />
     <ClCompile Include="106_ConstructBinaryTreeFromInorderAndPostorderTraversal.cpp" />
+    <ClCompile Include="112_PathSum.cpp" />
     <ClCompile Include="116_PopulatingNextRightPointersInEachNode.cpp" />
     <ClCompile Include="117_PopulatingNextRightPointersInEachNodeII.cpp" />
     <ClCompile Include="144_BinaryTreePreorderTraversal.cpp" />

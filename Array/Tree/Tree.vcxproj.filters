@@ -60,5 +60,8 @@
     <ClCompile Include="257_BinaryTreePaths.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="112_PathSum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
