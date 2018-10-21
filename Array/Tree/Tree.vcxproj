@@ -152,6 +152,7 @@
     <ClCompile Include="113_PathSumII.cpp" />
     <ClCompile Include="116_PopulatingNextRightPointersInEachNode.cpp" />
     <ClCompile Include="117_PopulatingNextRightPointersInEachNodeII.cpp" />
+    <ClCompile Include="129_SumRootToLeafNumbers.cpp" />
     <ClCompile Include="144_BinaryTreePreorderTraversal.cpp" />
     <ClCompile Include="145_BinaryTreePostorderTraversal.cpp" />
     <ClCompile Include="235_LowestCommonAncestorOfABinarySearchTree.cpp" />
