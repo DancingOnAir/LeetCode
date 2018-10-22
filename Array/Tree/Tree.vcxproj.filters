@@ -69,5 +69,8 @@
     <ClCompile Include="129_SumRootToLeafNumbers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="104_MaximumDepthOfBinaryTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -146,6 +146,7 @@
     <ClCompile Include="100_SameTree.cpp" />
     <ClCompile Include="101_SymmetricTree.cpp" />
     <ClCompile Include="102_BinaryTreeLevelOrderTraversal.cpp" />
+    <ClCompile Include="104_MaximumDepthOfBinaryTree.cpp" />
     <ClCompile Include="105_ConstructBinaryTreefromPreorderandInorderTraversal.cpp" />
     <ClCompile Include="106_ConstructBinaryTreeFromInorderAndPostorderTraversal.cpp" />
     <ClCompile Include="112_PathSum.cpp" />
