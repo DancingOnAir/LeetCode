@@ -75,5 +75,8 @@
     <ClCompile Include="110_Balanced Binary Tree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="124_BinaryTreeMaximumPathSum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
