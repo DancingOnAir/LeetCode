@@ -81,5 +81,8 @@
     <ClCompile Include="337_HouseRobberIII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="107_BinaryTreeLevelOrderTraversalII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
