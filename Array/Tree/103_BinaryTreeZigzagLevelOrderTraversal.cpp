@@ -12,7 +12,7 @@ struct TreeNode
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
-vector<vector<int>> levelOrderBottom(TreeNode *root)
+vector<vector<int>> zigzagLevelOrder(TreeNode *root)
 {
     vector<vector<int>> result;
     if (nullptr == root)
@@ -43,7 +43,11 @@ vector<vector<int>> levelOrderBottom(TreeNode *root)
         vals.clear();
     }
 
-    std::reverse(result.begin(), result.end());
+    for (auto i = 0; i < result.size(); ++i)
+    {
+        if (i & 1)
+            reverse(result[i].begin(), result[i].end());
+    }
 
     return result;
 }
@@ -61,7 +65,7 @@ void display(vector<vector<int>>& input)
     }
 }
 
-void testLevelOrderBottom()
+void testZigzagLevelOrder()
 {
     TreeNode* node1 = new TreeNode(3);
     TreeNode* node2 = new TreeNode(9);
@@ -74,13 +78,13 @@ void testLevelOrderBottom()
     node3->left = node4;
     node3->right = node5;
 
-    auto result = levelOrderBottom(node1);
+    auto result = zigzagLevelOrder(node1);
     display(result);
 }
 
 int main()
 {
-    testLevelOrderBottom();
+    testZigzagLevelOrder();
     system("pause");
     return 0;
 }

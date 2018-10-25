@@ -84,5 +84,8 @@
     <ClCompile Include="107_BinaryTreeLevelOrderTraversalII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="103_BinaryTreeZigzagLevelOrderTraversal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
