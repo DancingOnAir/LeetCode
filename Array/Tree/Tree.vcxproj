@@ -160,6 +160,7 @@
     <ClCompile Include="129_SumRootToLeafNumbers.cpp" />
     <ClCompile Include="144_BinaryTreePreorderTraversal.cpp" />
     <ClCompile Include="145_BinaryTreePostorderTraversal.cpp" />
+    <ClCompile Include="199_ BinaryTreeRightSideView.cpp" />
     <ClCompile Include="235_LowestCommonAncestorOfABinarySearchTree.cpp" />
     <ClCompile Include="257_BinaryTreePaths.cpp" />
     <ClCompile Include="337_HouseRobberIII.cpp" />
