@@ -93,5 +93,8 @@
     <ClCompile Include="114_FlattenBinaryTreeToLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="173_BinarySearchTreeIterator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
