@@ -154,6 +154,7 @@
     <ClCompile Include="110_Balanced Binary Tree.cpp" />
     <ClCompile Include="112_PathSum.cpp" />
     <ClCompile Include="113_PathSumII.cpp" />
+    <ClCompile Include="114_FlattenBinaryTreeToLinkedList.cpp" />
     <ClCompile Include="116_PopulatingNextRightPointersInEachNode.cpp" />
     <ClCompile Include="117_PopulatingNextRightPointersInEachNodeII.cpp" />
     <ClCompile Include="124_BinaryTreeMaximumPathSum.cpp" />
