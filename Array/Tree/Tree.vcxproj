@@ -164,6 +164,7 @@
     <ClCompile Include="173_BinarySearchTreeIterator.cpp" />
     <ClCompile Include="199_ BinaryTreeRightSideView.cpp" />
     <ClCompile Include="235_LowestCommonAncestorOfABinarySearchTree.cpp" />
+    <ClCompile Include="236_LowestCommonAncestorOfABinaryTree.cpp" />
     <ClCompile Include="257_BinaryTreePaths.cpp" />
     <ClCompile Include="337_HouseRobberIII.cpp" />
   </ItemGroup>
