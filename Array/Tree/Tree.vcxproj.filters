@@ -102,5 +102,8 @@
     <ClCompile Include="108_ConvertSortedArrayToBinarySearchTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="109_ConvertSortedListToBinarySearchTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

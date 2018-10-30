@@ -152,6 +152,7 @@
     <ClCompile Include="106_ConstructBinaryTreeFromInorderAndPostorderTraversal.cpp" />
     <ClCompile Include="107_BinaryTreeLevelOrderTraversalII.cpp" />
     <ClCompile Include="108_ConvertSortedArrayToBinarySearchTree.cpp" />
+    <ClCompile Include="109_ConvertSortedListToBinarySearchTree.cpp" />
     <ClCompile Include="110_Balanced Binary Tree.cpp" />
     <ClCompile Include="112_PathSum.cpp" />
     <ClCompile Include="113_PathSumII.cpp" />
