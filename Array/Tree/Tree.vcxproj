@@ -165,11 +165,14 @@
     <ClCompile Include="145_BinaryTreePostorderTraversal.cpp" />
     <ClCompile Include="173_BinarySearchTreeIterator.cpp" />
     <ClCompile Include="199_ BinaryTreeRightSideView.cpp" />
+    <ClCompile Include="222_CountCompleteTreeNodes.cpp" />
     <ClCompile Include="230_KthSmallestElementinaBST.cpp" />
     <ClCompile Include="235_LowestCommonAncestorOfABinarySearchTree.cpp" />
     <ClCompile Include="236_LowestCommonAncestorOfABinaryTree.cpp" />
     <ClCompile Include="257_BinaryTreePaths.cpp" />
+    <ClCompile Include="297_SerializeAndDeserializeBinaryTree.cpp" />
     <ClCompile Include="337_HouseRobberIII.cpp" />
+    <ClCompile Include="99_RecoverBinarySearchTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
