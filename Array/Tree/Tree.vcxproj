@@ -171,6 +171,7 @@
     <ClCompile Include="236_LowestCommonAncestorOfABinaryTree.cpp" />
     <ClCompile Include="257_BinaryTreePaths.cpp" />
     <ClCompile Include="297_SerializeAndDeserializeBinaryTree.cpp" />
+    <ClCompile Include="331_VerifyPreorderSerializationofaBinaryTree.cpp" />
     <ClCompile Include="337_HouseRobberIII.cpp" />
     <ClCompile Include="99_RecoverBinarySearchTree.cpp" />
   </ItemGroup>
