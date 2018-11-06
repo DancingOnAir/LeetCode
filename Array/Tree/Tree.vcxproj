@@ -173,6 +173,7 @@
     <ClCompile Include="297_SerializeAndDeserializeBinaryTree.cpp" />
     <ClCompile Include="331_VerifyPreorderSerializationofaBinaryTree.cpp" />
     <ClCompile Include="337_HouseRobberIII.cpp" />
+    <ClCompile Include="404_SumOfLeftTree.cpp" />
     <ClCompile Include="99_RecoverBinarySearchTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
