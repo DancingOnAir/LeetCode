@@ -123,5 +123,8 @@
     <ClCompile Include="404_SumOfLeftTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="437_PathSumIII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
