@@ -176,6 +176,7 @@
     <ClCompile Include="404_SumOfLeftTree.cpp" />
     <ClCompile Include="437_PathSumIII.cpp" />
     <ClCompile Include="449_SerializeAndDeserializeBST.cpp" />
+    <ClCompile Include="450_DeleteANodeInABST.cpp" />
     <ClCompile Include="99_RecoverBinarySearchTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

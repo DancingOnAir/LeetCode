@@ -129,5 +129,8 @@
     <ClCompile Include="449_SerializeAndDeserializeBST.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="450_DeleteANodeInABST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
