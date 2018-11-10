@@ -81,5 +81,8 @@
     <ClCompile Include="134_GasStation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="055_JumpGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
