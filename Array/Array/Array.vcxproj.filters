@@ -84,5 +84,8 @@
     <ClCompile Include="055_JumpGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="059_SpiralMatrixII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
