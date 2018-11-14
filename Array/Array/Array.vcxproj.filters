@@ -93,5 +93,8 @@
     <ClCompile Include="064_MinimumPathSum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="066_PlusOne.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
