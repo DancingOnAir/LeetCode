@@ -96,5 +96,8 @@
     <ClCompile Include="066_PlusOne.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="073_SetMatrixZeroes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

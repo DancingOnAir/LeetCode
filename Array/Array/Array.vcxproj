@@ -161,6 +161,7 @@
     <ClCompile Include="063_UniquePathsII.cpp" />
     <ClCompile Include="064_MinimumPathSum.cpp" />
     <ClCompile Include="066_PlusOne.cpp" />
+    <ClCompile Include="073_SetMatrixZeroes.cpp" />
     <ClCompile Include="080_RemoveDuplicatesFromSortedArrayII.cpp" />
     <ClCompile Include="134_GasStation.cpp" />
     <ClCompile Include="189_RotateArray.cpp" />
