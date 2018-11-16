@@ -99,5 +99,8 @@
     <ClCompile Include="073_SetMatrixZeroes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="074_Searcha2DMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
