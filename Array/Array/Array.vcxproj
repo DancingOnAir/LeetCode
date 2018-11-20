@@ -166,6 +166,7 @@
     <ClCompile Include="079_WordSearch.cpp" />
     <ClCompile Include="080_RemoveDuplicatesFromSortedArrayII.cpp" />
     <ClCompile Include="081_SearchInRotatedSortedArrayII.cpp" />
+    <ClCompile Include="084_LargestRectangleInHistogram.cpp" />
     <ClCompile Include="134_GasStation.cpp" />
     <ClCompile Include="189_RotateArray.cpp" />
     <ClCompile Include="299_BullsAndCows.cpp" />

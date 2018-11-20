@@ -108,5 +108,8 @@
     <ClCompile Include="081_SearchInRotatedSortedArrayII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="084_LargestRectangleInHistogram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
