@@ -168,6 +168,7 @@
     <ClCompile Include="081_SearchInRotatedSortedArrayII.cpp" />
     <ClCompile Include="084_LargestRectangleInHistogram.cpp" />
     <ClCompile Include="119_PascalTriangleII.cpp" />
+    <ClCompile Include="120_Triangle.cpp" />
     <ClCompile Include="134_GasStation.cpp" />
     <ClCompile Include="189_RotateArray.cpp" />
     <ClCompile Include="299_BullsAndCows.cpp" />
