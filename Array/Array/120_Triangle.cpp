@@ -27,6 +27,23 @@ int minimumTotal(vector<vector<int>>& triangle)
     return *min_element(result.begin(), result.end());
 }
 
+int minimumTotal2(vector<vector<int>>& triangle)
+{
+    if (triangle.empty())
+        return 0;
+
+    vector<int> path(triangle.back());
+    for (int i = triangle.size() - 2; i >= 0; --i)
+    {
+        for (int j = 0; j <= i; ++j)
+        {
+            path[j] = min(path[j], path[j + 1]) + triangle[i][j];
+        }
+    }
+
+    return path[0];
+}
+
 void testMinimumTotal()
 {
     vector<vector<int>> triangle = { {2}, 
@@ -34,7 +51,7 @@ void testMinimumTotal()
                                     { 6, 5, 7 }, 
                                     { 4, 1, 8, 3 } };
 
-    int result = minimumTotal(triangle);
+    int result = minimumTotal2(triangle);
     cout << result << endl;
 }
 
