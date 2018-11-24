@@ -1,3 +1,5 @@
-﻿  152_MaximumProductSubarray.cpp
+﻿  153_FindMinimumInRotatedSortedArray.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\153_findminimuminrotatedsortedarray.cpp(14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\153_findminimuminrotatedsortedarray.cpp(28): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)

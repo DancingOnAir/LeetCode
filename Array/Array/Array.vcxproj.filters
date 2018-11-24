@@ -123,5 +123,8 @@
     <ClCompile Include="152_MaximumProductSubarray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="153_FindMinimumInRotatedSortedArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
