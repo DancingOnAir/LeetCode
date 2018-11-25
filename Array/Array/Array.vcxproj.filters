@@ -126,5 +126,8 @@
     <ClCompile Include="153_FindMinimumInRotatedSortedArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="154_FindMinimumInRotatedSortedArrayII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
