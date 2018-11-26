@@ -1,4 +1,52 @@
-﻿  154_FindMinimumInRotatedSortedArrayII.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\154_findminimuminrotatedsortedarrayii.cpp(14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  167_TwoSumII_InputArrayIsSorted.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\167_twosumii_inputarrayissorted.cpp(19): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\167_twosumii_inputarrayissorted.cpp(37): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(737): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(857): note: 参见对正在编译的函数 模板 实例化“void std::allocator<_Ty>::construct<_Objty,unsigned __int64>(_Objty *,unsigned __int64 &&)”的引用
+          with
+          [
+              _Ty=int,
+              _Objty=int
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(857): note: 参见对正在编译的函数 模板 实例化“void std::allocator<_Ty>::construct<_Objty,unsigned __int64>(_Objty *,unsigned __int64 &&)”的引用
+          with
+          [
+              _Ty=int,
+              _Objty=int
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(996): note: 参见对正在编译的函数 模板 实例化“void std::allocator_traits<_Alloc>::construct<_Ty,unsigned __int64>(std::allocator<_Ty> &,_Objty *,unsigned __int64 &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<int>,
+              _Ty=int,
+              _Objty=int
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(995): note: 参见对正在编译的函数 模板 实例化“void std::allocator_traits<_Alloc>::construct<_Ty,unsigned __int64>(std::allocator<_Ty> &,_Objty *,unsigned __int64 &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<int>,
+              _Ty=int,
+              _Objty=int
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(930): note: 参见对正在编译的函数 模板 实例化“void std::_Wrap_alloc<std::allocator<_Ty>>::construct<_Ty,unsigned __int64>(_Ty *,unsigned __int64 &&)”的引用
+          with
+          [
+              _Ty=int
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(929): note: 参见对正在编译的函数 模板 实例化“void std::_Wrap_alloc<std::allocator<_Ty>>::construct<_Ty,unsigned __int64>(_Ty *,unsigned __int64 &&)”的引用
+          with
+          [
+              _Ty=int
+          ]
+  d:\dev\projects\gitworkspace\leetcode\array\array\167_twosumii_inputarrayissorted.cpp(24): note: 参见对正在编译的函数 模板 实例化“void std::vector<int,std::allocator<_Ty>>::emplace_back<std::size_t>(size_t &&)”的引用
+          with
+          [
+              _Ty=int
+          ]
+  d:\dev\projects\gitworkspace\leetcode\array\array\167_twosumii_inputarrayissorted.cpp(24): note: 参见对正在编译的函数 模板 实例化“void std::vector<int,std::allocator<_Ty>>::emplace_back<std::size_t>(size_t &&)”的引用
+          with
+          [
+              _Ty=int
+          ]
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)
