@@ -176,6 +176,7 @@
     <ClCompile Include="154_FindMinimumInRotatedSortedArrayII.cpp" />
     <ClCompile Include="167_TwoSumII_InputArrayIsSorted.cpp" />
     <ClCompile Include="189_RotateArray.cpp" />
+    <ClCompile Include="209_MinimumSizeSubarraySum.cpp" />
     <ClCompile Include="299_BullsAndCows.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>

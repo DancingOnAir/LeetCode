@@ -132,5 +132,8 @@
     <ClCompile Include="167_TwoSumII_InputArrayIsSorted.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="209_MinimumSizeSubarraySum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
