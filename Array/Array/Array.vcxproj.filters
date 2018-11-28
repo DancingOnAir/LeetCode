@@ -135,5 +135,8 @@
     <ClCompile Include="209_MinimumSizeSubarraySum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="228_SummaryRanges.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

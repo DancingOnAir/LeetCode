@@ -1,5 +1,3 @@
-﻿  209_MinimumSizeSubarraySum.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\209_minimumsizesubarraysum.cpp(21): warning C4018: “<”: 有符号/无符号不匹配
-d:\dev\projects\gitworkspace\leetcode\array\array\209_minimumsizesubarraysum.cpp(39): warning C4018: “>=”: 有符号/无符号不匹配
+﻿  228_SummaryRanges.cpp
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)
