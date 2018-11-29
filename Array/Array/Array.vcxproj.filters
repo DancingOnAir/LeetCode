@@ -138,5 +138,8 @@
     <ClCompile Include="228_SummaryRanges.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="229_MajorityElementII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
