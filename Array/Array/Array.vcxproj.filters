@@ -141,5 +141,8 @@
     <ClCompile Include="229_MajorityElementII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="085_MaximalRectangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

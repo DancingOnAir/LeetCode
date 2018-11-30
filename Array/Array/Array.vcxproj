@@ -167,6 +167,7 @@
     <ClCompile Include="080_RemoveDuplicatesFromSortedArrayII.cpp" />
     <ClCompile Include="081_SearchInRotatedSortedArrayII.cpp" />
     <ClCompile Include="084_LargestRectangleInHistogram.cpp" />
+    <ClCompile Include="085_MaximalRectangle.cpp" />
     <ClCompile Include="119_PascalTriangleII.cpp" />
     <ClCompile Include="120_Triangle.cpp" />
     <ClCompile Include="123_BestTimeToBuyAndSellStockIII.cpp" />
