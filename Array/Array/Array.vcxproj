@@ -171,6 +171,7 @@
     <ClCompile Include="119_PascalTriangleII.cpp" />
     <ClCompile Include="120_Triangle.cpp" />
     <ClCompile Include="123_BestTimeToBuyAndSellStockIII.cpp" />
+    <ClCompile Include="128_LongestConsecutiveSequence.cpp" />
     <ClCompile Include="134_GasStation.cpp" />
     <ClCompile Include="152_MaximumProductSubarray.cpp" />
     <ClCompile Include="153_FindMinimumInRotatedSortedArray.cpp" />
