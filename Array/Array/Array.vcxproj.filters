@@ -150,5 +150,8 @@
     <ClCompile Include="054_SpiralMatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="048_RotateImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

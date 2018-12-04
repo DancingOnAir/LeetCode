@@ -155,6 +155,7 @@
     <ClCompile Include="040_CombinationSum.cpp" />
     <ClCompile Include="041_FirstMissingPositive.cpp" />
     <ClCompile Include="045_JumpGameII.cpp" />
+    <ClCompile Include="048_RotateImage.cpp" />
     <ClCompile Include="054_SpiralMatrix.cpp" />
     <ClCompile Include="055_JumpGame.cpp" />
     <ClCompile Include="057_InsertInterval.cpp" />
