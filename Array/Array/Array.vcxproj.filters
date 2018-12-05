@@ -153,5 +153,8 @@
     <ClCompile Include="048_RotateImage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="121_BestTimetoBuyandSellStock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
