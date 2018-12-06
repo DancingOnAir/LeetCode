@@ -156,5 +156,8 @@
     <ClCompile Include="121_BestTimetoBuyandSellStock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="088_MergeSortedArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
