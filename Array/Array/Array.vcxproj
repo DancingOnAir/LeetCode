@@ -185,6 +185,7 @@
     <ClCompile Include="209_MinimumSizeSubarraySum.cpp" />
     <ClCompile Include="228_SummaryRanges.cpp" />
     <ClCompile Include="229_MajorityElementII.cpp" />
+    <ClCompile Include="268_MissingNumber.cpp" />
     <ClCompile Include="299_BullsAndCows.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
