@@ -162,5 +162,8 @@
     <ClCompile Include="268_MissingNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="238_ProductofArrayExceptSelf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
