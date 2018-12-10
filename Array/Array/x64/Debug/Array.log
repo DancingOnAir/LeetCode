@@ -1,6 +1,2 @@
-﻿  268_MissingNumber.cpp
-  238_ProductofArrayExceptSelf.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\238_productofarrayexceptself.cpp(13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  正在生成代码...
-  Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
+﻿  Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)

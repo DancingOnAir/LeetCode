@@ -165,5 +165,8 @@
     <ClCompile Include="238_ProductofArrayExceptSelf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="118_Pascal%27sTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
