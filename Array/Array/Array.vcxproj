@@ -160,6 +160,7 @@
     <ClCompile Include="055_JumpGame.cpp" />
     <ClCompile Include="057_InsertInterval.cpp" />
     <ClCompile Include="059_SpiralMatrixII.cpp" />
+    <ClCompile Include="062_UniquePaths.cpp" />
     <ClCompile Include="063_UniquePathsII.cpp" />
     <ClCompile Include="064_MinimumPathSum.cpp" />
     <ClCompile Include="066_PlusOne.cpp" />
