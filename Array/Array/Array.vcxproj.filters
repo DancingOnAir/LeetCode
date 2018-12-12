@@ -171,5 +171,8 @@
     <ClCompile Include="062_UniquePaths.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="053_MaximumSubarray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
