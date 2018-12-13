@@ -174,5 +174,8 @@
     <ClCompile Include="053_MaximumSubarray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="042_TrappingRainWater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
