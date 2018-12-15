@@ -180,5 +180,8 @@
     <ClCompile Include="122_BestTimetoBuyandSellStockII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="056_MergeIntervals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
