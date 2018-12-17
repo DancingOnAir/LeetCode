@@ -186,5 +186,8 @@
     <ClCompile Include="126_WordLadderII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="075_SortColors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
