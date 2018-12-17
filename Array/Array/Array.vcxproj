@@ -181,6 +181,7 @@
     <ClCompile Include="121_BestTimetoBuyandSellStock.cpp" />
     <ClCompile Include="122_BestTimetoBuyandSellStockII.cpp" />
     <ClCompile Include="123_BestTimeToBuyAndSellStockIII.cpp" />
+    <ClCompile Include="126_WordLadderII.cpp" />
     <ClCompile Include="128_LongestConsecutiveSequence.cpp" />
     <ClCompile Include="134_GasStation.cpp" />
     <ClCompile Include="152_MaximumProductSubarray.cpp" />
