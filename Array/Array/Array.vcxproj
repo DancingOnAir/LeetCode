@@ -192,6 +192,7 @@
     <ClCompile Include="169_MajorityElement.cpp" />
     <ClCompile Include="189_RotateArray.cpp" />
     <ClCompile Include="209_MinimumSizeSubarraySum.cpp" />
+    <ClCompile Include="219_ContainsDuplicateII.cpp" />
     <ClCompile Include="228_SummaryRanges.cpp" />
     <ClCompile Include="229_MajorityElementII.cpp" />
     <ClCompile Include="238_ProductofArrayExceptSelf.cpp" />
