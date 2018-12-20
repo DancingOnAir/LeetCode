@@ -195,5 +195,8 @@
     <ClCompile Include="219_ContainsDuplicateII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="217_ContainsDuplicate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
