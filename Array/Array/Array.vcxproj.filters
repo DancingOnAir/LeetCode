@@ -201,5 +201,8 @@
     <ClCompile Include="287_FindtheDuplicateNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="162_FindPeakElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

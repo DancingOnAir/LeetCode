@@ -1,4 +1,7 @@
-﻿  287_FindtheDuplicateNumber.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\287_findtheduplicatenumber.cpp(46): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  162_FindPeakElement.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\162_findpeakelement.cpp(15): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\162_findpeakelement.cpp(37): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\162_findpeakelement.cpp(39): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\162_findpeakelement.cpp(32): warning C4715: “helper”: 不是所有的控件路径都返回值
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)

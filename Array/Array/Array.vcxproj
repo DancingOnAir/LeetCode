@@ -188,6 +188,7 @@
     <ClCompile Include="152_MaximumProductSubarray.cpp" />
     <ClCompile Include="153_FindMinimumInRotatedSortedArray.cpp" />
     <ClCompile Include="154_FindMinimumInRotatedSortedArrayII.cpp" />
+    <ClCompile Include="162_FindPeakElement.cpp" />
     <ClCompile Include="167_TwoSumII_InputArrayIsSorted.cpp" />
     <ClCompile Include="169_MajorityElement.cpp" />
     <ClCompile Include="189_RotateArray.cpp" />
