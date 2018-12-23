@@ -204,5 +204,8 @@
     <ClCompile Include="162_FindPeakElement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="380_InsertDeleteGetRandomO(1).cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

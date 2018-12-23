@@ -1,7 +1,5 @@
-﻿  162_FindPeakElement.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\162_findpeakelement.cpp(15): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
-d:\dev\projects\gitworkspace\leetcode\array\array\162_findpeakelement.cpp(37): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
-d:\dev\projects\gitworkspace\leetcode\array\array\162_findpeakelement.cpp(39): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-d:\dev\projects\gitworkspace\leetcode\array\array\162_findpeakelement.cpp(32): warning C4715: “helper”: 不是所有的控件路径都返回值
+﻿  380_InsertDeleteGetRandomO(1).cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\380_insertdeletegetrandomo(1).cpp(14): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\380_insertdeletegetrandomo(1).cpp(35): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)
