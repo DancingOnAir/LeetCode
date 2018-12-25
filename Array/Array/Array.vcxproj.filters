@@ -210,5 +210,8 @@
     <ClCompile Include="381_InsertDeleteGetRandomO(1)-DuplicatesAllowed.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="289_GameofLife.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -200,6 +200,7 @@
     <ClCompile Include="238_ProductofArrayExceptSelf.cpp" />
     <ClCompile Include="268_MissingNumber.cpp" />
     <ClCompile Include="287_FindtheDuplicateNumber.cpp" />
+    <ClCompile Include="289_GameofLife.cpp" />
     <ClCompile Include="299_BullsAndCows.cpp" />
     <ClCompile Include="380_InsertDeleteGetRandomO(1).cpp" />
     <ClCompile Include="381_InsertDeleteGetRandomO(1)-DuplicatesAllowed.cpp" />
