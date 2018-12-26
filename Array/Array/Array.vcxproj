@@ -204,6 +204,7 @@
     <ClCompile Include="299_BullsAndCows.cpp" />
     <ClCompile Include="380_InsertDeleteGetRandomO(1).cpp" />
     <ClCompile Include="381_InsertDeleteGetRandomO(1)-DuplicatesAllowed.cpp" />
+    <ClCompile Include="414_ThirdMaximumNumber.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -213,5 +213,8 @@
     <ClCompile Include="289_GameofLife.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="414_ThirdMaximumNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
