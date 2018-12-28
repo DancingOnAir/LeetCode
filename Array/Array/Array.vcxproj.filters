@@ -219,5 +219,8 @@
     <ClCompile Include="448_FindAllNumbersDisappearedinanArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="442_FindAllDuplicatesinanArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
