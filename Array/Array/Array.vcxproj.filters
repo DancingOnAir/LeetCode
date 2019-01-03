@@ -225,5 +225,8 @@
     <ClCompile Include="561_ArrayPartitionI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="566_ReshapetheMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
