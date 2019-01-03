@@ -207,6 +207,7 @@
     <ClCompile Include="414_ThirdMaximumNumber.cpp" />
     <ClCompile Include="442_FindAllDuplicatesinanArray.cpp" />
     <ClCompile Include="448_FindAllNumbersDisappearedinanArray.cpp" />
+    <ClCompile Include="561_ArrayPartitionI.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
