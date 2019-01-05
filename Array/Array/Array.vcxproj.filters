@@ -231,5 +231,8 @@
     <ClCompile Include="560_SubarraySumEqualsK.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="581_ShortestUnsortedContinuousSubarray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
