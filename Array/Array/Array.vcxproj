@@ -209,6 +209,7 @@
     <ClCompile Include="448_FindAllNumbersDisappearedinanArray.cpp" />
     <ClCompile Include="560_SubarraySumEqualsK.cpp" />
     <ClCompile Include="561_ArrayPartitionI.cpp" />
+    <ClCompile Include="565_ArrayNesting.cpp" />
     <ClCompile Include="566_ReshapetheMatrix.cpp" />
     <ClCompile Include="581_ShortestUnsortedContinuousSubarray.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />

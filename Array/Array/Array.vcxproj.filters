@@ -234,5 +234,8 @@
     <ClCompile Include="581_ShortestUnsortedContinuousSubarray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="565_ArrayNesting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
