@@ -237,5 +237,8 @@
     <ClCompile Include="565_ArrayNesting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="605_CanPlaceFlowers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
