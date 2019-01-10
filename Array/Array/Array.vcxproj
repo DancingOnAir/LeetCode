@@ -214,6 +214,7 @@
     <ClCompile Include="581_ShortestUnsortedContinuousSubarray.cpp" />
     <ClCompile Include="605_CanPlaceFlowers.cpp" />
     <ClCompile Include="611_ValidTriangleNumber.cpp" />
+    <ClCompile Include="621_TaskScheduler.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
