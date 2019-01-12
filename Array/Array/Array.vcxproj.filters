@@ -249,5 +249,8 @@
     <ClCompile Include="628_MaximumProductofThreeNumbers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="643_MaximumAverageSubarrayI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
