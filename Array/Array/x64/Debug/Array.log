@@ -1,4 +1,5 @@
-﻿  643_MaximumAverageSubarrayI.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\643_maximumaveragesubarrayi.cpp(8): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  661_ImageSmoother.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\661_imagesmoother.cpp(16): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\661_imagesmoother.cpp(20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)

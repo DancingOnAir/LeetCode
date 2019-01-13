@@ -252,5 +252,8 @@
     <ClCompile Include="643_MaximumAverageSubarrayI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="661_ImageSmoother.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
