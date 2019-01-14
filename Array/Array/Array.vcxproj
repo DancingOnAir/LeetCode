@@ -218,6 +218,7 @@
     <ClCompile Include="628_MaximumProductofThreeNumbers.cpp" />
     <ClCompile Include="643_MaximumAverageSubarrayI.cpp" />
     <ClCompile Include="661_ImageSmoother.cpp" />
+    <ClCompile Include="665_Non-decreasingArray.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

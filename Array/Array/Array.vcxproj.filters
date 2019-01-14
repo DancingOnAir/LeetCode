@@ -255,5 +255,8 @@
     <ClCompile Include="661_ImageSmoother.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="665_Non-decreasingArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
