@@ -258,5 +258,11 @@
     <ClCompile Include="665_Non-decreasingArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="667_BeautifulArrangementII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="670_MaximumSwap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

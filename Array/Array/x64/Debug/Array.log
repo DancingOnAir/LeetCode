@@ -1,4 +1,4 @@
-﻿  665_Non-decreasingArray.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\665_non-decreasingarray.cpp(9): warning C4800: “unsigned __int64”: 将值强制为布尔值“true”或“false”(性能警告)
+﻿  670_MaximumSwap.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\670_maximumswap.cpp(85): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)

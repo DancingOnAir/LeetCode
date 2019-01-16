@@ -219,6 +219,8 @@
     <ClCompile Include="643_MaximumAverageSubarrayI.cpp" />
     <ClCompile Include="661_ImageSmoother.cpp" />
     <ClCompile Include="665_Non-decreasingArray.cpp" />
+    <ClCompile Include="667_BeautifulArrangementII.cpp" />
+    <ClCompile Include="670_MaximumSwap.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
