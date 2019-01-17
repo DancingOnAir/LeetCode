@@ -264,5 +264,8 @@
     <ClCompile Include="670_MaximumSwap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="674_LongestContinuousIncreasingSubsequence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

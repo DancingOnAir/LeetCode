@@ -221,6 +221,7 @@
     <ClCompile Include="665_Non-decreasingArray.cpp" />
     <ClCompile Include="667_BeautifulArrangementII.cpp" />
     <ClCompile Include="670_MaximumSwap.cpp" />
+    <ClCompile Include="674_LongestContinuousIncreasingSubsequence.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
