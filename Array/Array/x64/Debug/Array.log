@@ -1,4 +1,4 @@
-﻿  674_LongestContinuousIncreasingSubsequence.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\674_longestcontinuousincreasingsubsequence.cpp(9): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+﻿  689_MaximumSumof3Non-OverlappingSubarrays.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\689_maximumsumof3non-overlappingsubarrays.cpp(12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)
