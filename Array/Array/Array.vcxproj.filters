@@ -270,5 +270,8 @@
     <ClCompile Include="689_MaximumSumof3Non-OverlappingSubarrays.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="695_MaxAreaofIsland.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

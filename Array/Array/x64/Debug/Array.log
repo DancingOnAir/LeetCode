@@ -1,4 +1,7 @@
-﻿  689_MaximumSumof3Non-OverlappingSubarrays.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\689_maximumsumof3non-overlappingsubarrays.cpp(12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  695_MaxAreaofIsland.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\695_maxareaofisland.cpp(8): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\695_maxareaofisland.cpp(9): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\695_maxareaofisland.cpp(31): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\695_maxareaofisland.cpp(32): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)
