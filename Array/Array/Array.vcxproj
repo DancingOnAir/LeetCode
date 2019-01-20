@@ -224,6 +224,7 @@
     <ClCompile Include="674_LongestContinuousIncreasingSubsequence.cpp" />
     <ClCompile Include="689_MaximumSumof3Non-OverlappingSubarrays.cpp" />
     <ClCompile Include="695_MaxAreaofIsland.cpp" />
+    <ClCompile Include="697_Degree ofanArray.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,7 +1,5 @@
-﻿  695_MaxAreaofIsland.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\695_maxareaofisland.cpp(8): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-d:\dev\projects\gitworkspace\leetcode\array\array\695_maxareaofisland.cpp(9): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-d:\dev\projects\gitworkspace\leetcode\array\array\695_maxareaofisland.cpp(31): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-d:\dev\projects\gitworkspace\leetcode\array\array\695_maxareaofisland.cpp(32): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  697_Degree ofanArray.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\697_degree ofanarray.cpp(10): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+d:\dev\projects\gitworkspace\leetcode\array\array\697_degree ofanarray.cpp(59): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)

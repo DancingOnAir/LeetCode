@@ -273,5 +273,8 @@
     <ClCompile Include="695_MaxAreaofIsland.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="697_Degree ofanArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
