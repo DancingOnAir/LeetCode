@@ -279,5 +279,8 @@
     <ClCompile Include="714_BestTimetoBuyandSellStockwithTransactionFee.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="713_SubarrayProductLessThanK.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
