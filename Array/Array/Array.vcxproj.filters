@@ -285,5 +285,8 @@
     <ClCompile Include="715_RangeModule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="717_1-bitand2-bitCharacters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -228,6 +228,7 @@
     <ClCompile Include="713_SubarrayProductLessThanK.cpp" />
     <ClCompile Include="714_BestTimetoBuyandSellStockwithTransactionFee.cpp" />
     <ClCompile Include="715_RangeModule.cpp" />
+    <ClCompile Include="717_1-bitand2-bitCharacters.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
