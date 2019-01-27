@@ -230,6 +230,7 @@
     <ClCompile Include="715_RangeModule.cpp" />
     <ClCompile Include="717_1-bitand2-bitCharacters.cpp" />
     <ClCompile Include="718_MaximumLengthofRepeatedSubarray.cpp" />
+    <ClCompile Include="719_FindK-thSmallestPairDistance.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

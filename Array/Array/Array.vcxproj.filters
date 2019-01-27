@@ -291,5 +291,8 @@
     <ClCompile Include="718_MaximumLengthofRepeatedSubarray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="719_FindK-thSmallestPairDistance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
