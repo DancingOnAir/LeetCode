@@ -297,5 +297,8 @@
     <ClCompile Include="724_FindPivotIndex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="731_MyCalendarII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
