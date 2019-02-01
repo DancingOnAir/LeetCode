@@ -232,6 +232,7 @@
     <ClCompile Include="718_MaximumLengthofRepeatedSubarray.cpp" />
     <ClCompile Include="719_FindK-thSmallestPairDistance.cpp" />
     <ClCompile Include="724_FindPivotIndex.cpp" />
+    <ClCompile Include="729_MyCalendarI.cpp" />
     <ClCompile Include="731_MyCalendarII.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>

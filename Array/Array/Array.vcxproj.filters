@@ -300,5 +300,8 @@
     <ClCompile Include="731_MyCalendarII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="729_MyCalendarI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
