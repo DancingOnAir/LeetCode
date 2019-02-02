@@ -234,6 +234,7 @@
     <ClCompile Include="724_FindPivotIndex.cpp" />
     <ClCompile Include="729_MyCalendarI.cpp" />
     <ClCompile Include="731_MyCalendarII.cpp" />
+    <ClCompile Include="746_MinCostClimbingStairs.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

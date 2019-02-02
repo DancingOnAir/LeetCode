@@ -1,5 +1,4 @@
-﻿  731_MyCalendarII.cpp
-  729_MyCalendarI.cpp
-  正在生成代码...
+﻿  746_MinCostClimbingStairs.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\746_mincostclimbingstairs.cpp(8): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)
