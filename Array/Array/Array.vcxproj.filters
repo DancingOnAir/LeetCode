@@ -306,5 +306,8 @@
     <ClCompile Include="746_MinCostClimbingStairs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="747_LargestNumberAtLeastTwiceofOthers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
