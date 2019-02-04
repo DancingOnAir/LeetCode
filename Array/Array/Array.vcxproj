@@ -236,6 +236,7 @@
     <ClCompile Include="731_MyCalendarII.cpp" />
     <ClCompile Include="746_MinCostClimbingStairs.cpp" />
     <ClCompile Include="747_LargestNumberAtLeastTwiceofOthers.cpp" />
+    <ClCompile Include="766_ToeplitzMatrix.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
