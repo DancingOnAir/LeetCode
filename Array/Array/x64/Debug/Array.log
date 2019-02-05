@@ -1,7 +1,6 @@
-﻿  766_ToeplitzMatrix.cpp
-d:\dev\projects\gitworkspace\leetcode\array\array\766_toeplitzmatrix.cpp(16): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-d:\dev\projects\gitworkspace\leetcode\array\array\766_toeplitzmatrix.cpp(20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-d:\dev\projects\gitworkspace\leetcode\array\array\766_toeplitzmatrix.cpp(75): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-d:\dev\projects\gitworkspace\leetcode\array\array\766_toeplitzmatrix.cpp(79): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  769_MaxChunksToMakeSorted.cpp
+d:\dev\projects\gitworkspace\leetcode\array\array\769_maxchunkstomakesorted.cpp(8): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  766_ToeplitzMatrix.cpp
+  正在生成代码...
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.exe
   Array.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\x64\Debug\Array.pdb (Partial PDB)
