@@ -318,5 +318,8 @@
     <ClCompile Include="768_MaxChunksToMakeSortedII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="775_GlobalandLocalInversions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
