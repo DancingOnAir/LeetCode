@@ -240,6 +240,7 @@
     <ClCompile Include="768_MaxChunksToMakeSortedII.cpp" />
     <ClCompile Include="769_MaxChunksToMakeSorted.cpp" />
     <ClCompile Include="775_GlobalandLocalInversions.cpp" />
+    <ClCompile Include="782_TransformtoChessboard.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

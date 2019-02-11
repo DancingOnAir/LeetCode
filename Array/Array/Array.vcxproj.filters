@@ -321,5 +321,8 @@
     <ClCompile Include="775_GlobalandLocalInversions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="782_TransformtoChessboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
