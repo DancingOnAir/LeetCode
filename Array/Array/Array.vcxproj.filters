@@ -324,5 +324,8 @@
     <ClCompile Include="782_TransformtoChessboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="792_NumberofMatchingSubsequences.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
