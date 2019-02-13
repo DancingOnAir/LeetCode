@@ -327,5 +327,8 @@
     <ClCompile Include="792_NumberofMatchingSubsequences.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="795_NumberofSubarrayswithBoundedMaximum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

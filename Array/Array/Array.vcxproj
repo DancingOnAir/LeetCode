@@ -242,6 +242,7 @@
     <ClCompile Include="775_GlobalandLocalInversions.cpp" />
     <ClCompile Include="782_TransformtoChessboard.cpp" />
     <ClCompile Include="792_NumberofMatchingSubsequences.cpp" />
+    <ClCompile Include="795_NumberofSubarrayswithBoundedMaximum.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
