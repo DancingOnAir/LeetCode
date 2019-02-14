@@ -244,6 +244,7 @@
     <ClCompile Include="792_NumberofMatchingSubsequences.cpp" />
     <ClCompile Include="795_NumberofSubarrayswithBoundedMaximum.cpp" />
     <ClCompile Include="806_NumberofLinesToWriteString.cpp" />
+    <ClCompile Include="825_FriendsOfAppropriateAges.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

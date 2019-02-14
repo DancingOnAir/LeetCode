@@ -330,5 +330,8 @@
     <ClCompile Include="795_NumberofSubarrayswithBoundedMaximum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="825_FriendsOfAppropriateAges.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
