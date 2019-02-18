@@ -247,6 +247,7 @@
     <ClCompile Include="825_FriendsOfAppropriateAges.cpp" />
     <ClCompile Include="830_PositionsofLargeGroups.cpp" />
     <ClCompile Include="832_FlippinganImage.cpp" />
+    <ClCompile Include="835_ImageOverlap.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

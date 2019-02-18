@@ -339,5 +339,8 @@
     <ClCompile Include="832_FlippinganImage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="835_ImageOverlap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
