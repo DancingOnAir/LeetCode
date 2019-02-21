@@ -249,6 +249,7 @@
     <ClCompile Include="832_FlippinganImage.cpp" />
     <ClCompile Include="835_ImageOverlap.cpp" />
     <ClCompile Include="840_MagicSquaresInGrid.cpp" />
+    <ClCompile Include="849_MaximizeDistancetoClosestPerson.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

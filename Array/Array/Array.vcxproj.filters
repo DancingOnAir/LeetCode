@@ -345,5 +345,8 @@
     <ClCompile Include="840_MagicSquaresInGrid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="849_MaximizeDistancetoClosestPerson.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
