@@ -21,5 +21,8 @@
     <ClCompile Include="70_ClimbingStairs.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="72_EditDistance.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
