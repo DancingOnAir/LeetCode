@@ -151,6 +151,7 @@
     <ClCompile Include="72_EditDistance.cpp" />
     <ClCompile Include="87_ScrambleString.cpp" />
     <ClCompile Include="91_DecodeWays.cpp" />
+    <ClCompile Include="97_InterleavingString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
