@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="115_DistinctSubsequences.cpp" />
     <ClCompile Include="132_PalindromePartitioningII.cpp" />
+    <ClCompile Include="139_WordBreak.cpp" />
     <ClCompile Include="264_UglyNumberII.cpp" />
     <ClCompile Include="44_WildcardMatching.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
