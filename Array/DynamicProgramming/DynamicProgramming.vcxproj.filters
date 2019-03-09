@@ -45,5 +45,8 @@
     <ClCompile Include="139_WordBreak.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="140_WordBreakII.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
