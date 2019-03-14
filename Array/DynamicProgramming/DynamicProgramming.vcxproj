@@ -151,6 +151,7 @@
     <ClCompile Include="139_WordBreak.cpp" />
     <ClCompile Include="140_WordBreakII.cpp" />
     <ClCompile Include="174_DungeonGame.cpp" />
+    <ClCompile Include="188_BestTimetoBuyandSellStockIV.cpp" />
     <ClCompile Include="264_UglyNumberII.cpp" />
     <ClCompile Include="44_WildcardMatching.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
