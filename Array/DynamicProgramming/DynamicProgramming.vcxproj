@@ -153,6 +153,7 @@
     <ClCompile Include="174_DungeonGame.cpp" />
     <ClCompile Include="188_BestTimetoBuyandSellStockIV.cpp" />
     <ClCompile Include="198_HouseRobber.cpp" />
+    <ClCompile Include="213_HouseRobberII.cpp" />
     <ClCompile Include="264_UglyNumberII.cpp" />
     <ClCompile Include="44_WildcardMatching.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
