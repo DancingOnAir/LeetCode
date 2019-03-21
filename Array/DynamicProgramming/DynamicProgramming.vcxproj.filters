@@ -63,5 +63,8 @@
     <ClCompile Include="221_MaximalSquare.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="279_PerfectSquares.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
