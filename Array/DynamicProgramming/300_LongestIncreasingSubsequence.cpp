@@ -26,6 +26,24 @@ int lengthOfLIS(vector<int>& nums)
     return res;
 }
 
+int lengthOfLIS2(vector<int>& nums)
+{
+    if (nums.empty())
+        return 0;
+
+    vector<int> res;
+    for (int i = 0; i < nums.size(); ++i)
+    {
+        auto iter = lower_bound(nums.begin(), nums.end(), nums[i]);
+        if (iter == nums.end())
+            res.emplace_back(nums[i]);
+        else
+            *iter = nums[i];
+    }
+
+    return res.size();
+}
+
 void testLengthOfLIS()
 {
     vector<int> nums{ 10,9,2,5,3,7,101,18 };
