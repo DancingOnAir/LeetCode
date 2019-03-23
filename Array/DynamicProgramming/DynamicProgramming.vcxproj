@@ -157,6 +157,7 @@
     <ClCompile Include="221_MaximalSquare.cpp" />
     <ClCompile Include="264_UglyNumberII.cpp" />
     <ClCompile Include="279_PerfectSquares.cpp" />
+    <ClCompile Include="300_LongestIncreasingSubsequence.cpp" />
     <ClCompile Include="44_WildcardMatching.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
     <ClCompile Include="72_EditDistance.cpp" />
