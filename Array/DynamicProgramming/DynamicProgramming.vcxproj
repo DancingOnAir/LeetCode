@@ -159,6 +159,7 @@
     <ClCompile Include="279_PerfectSquares.cpp" />
     <ClCompile Include="300_LongestIncreasingSubsequence.cpp" />
     <ClCompile Include="303_RangeSumQueryImmutable.cpp" />
+    <ClCompile Include="304_RangeSumQuery2DImmutable.cpp" />
     <ClCompile Include="44_WildcardMatching.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
     <ClCompile Include="72_EditDistance.cpp" />
