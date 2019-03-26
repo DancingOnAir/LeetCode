@@ -75,5 +75,8 @@
     <ClCompile Include="304_RangeSumQuery2DImmutable.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="309_BestTimetoBuyandSellStockwithCooldown.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
