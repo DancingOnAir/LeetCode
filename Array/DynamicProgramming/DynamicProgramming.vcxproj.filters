@@ -78,5 +78,8 @@
     <ClCompile Include="309_BestTimetoBuyandSellStockwithCooldown.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="312_BurstBalloons.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
