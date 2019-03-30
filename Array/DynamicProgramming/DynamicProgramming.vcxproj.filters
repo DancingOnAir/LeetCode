@@ -81,5 +81,8 @@
     <ClCompile Include="312_BurstBalloons.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="321_CreateMaximumNumber.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
