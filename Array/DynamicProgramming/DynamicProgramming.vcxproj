@@ -164,6 +164,7 @@
     <ClCompile Include="312_BurstBalloons.cpp" />
     <ClCompile Include="321_CreateMaximumNumber.cpp" />
     <ClCompile Include="322_CoinChange.cpp" />
+    <ClCompile Include="338_CountingBits.cpp" />
     <ClCompile Include="44_WildcardMatching.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
     <ClCompile Include="72_EditDistance.cpp" />
