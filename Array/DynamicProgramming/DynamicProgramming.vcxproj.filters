@@ -90,5 +90,8 @@
     <ClCompile Include="338_CountingBits.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="343_IntegerBreak.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
