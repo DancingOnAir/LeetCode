@@ -167,6 +167,7 @@
     <ClCompile Include="338_CountingBits.cpp" />
     <ClCompile Include="343_IntegerBreak.cpp" />
     <ClCompile Include="354_RussianDollEnvelopes.cpp" />
+    <ClCompile Include="357_CountNumberswithUniqueDigits.cpp" />
     <ClCompile Include="44_WildcardMatching.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
     <ClCompile Include="72_EditDistance.cpp" />
