@@ -99,5 +99,8 @@
     <ClCompile Include="357_CountNumberswithUniqueDigits.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="363_MaxSumofRectangleNoLargerThanK.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
