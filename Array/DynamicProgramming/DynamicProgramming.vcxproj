@@ -169,6 +169,7 @@
     <ClCompile Include="354_RussianDollEnvelopes.cpp" />
     <ClCompile Include="357_CountNumberswithUniqueDigits.cpp" />
     <ClCompile Include="363_MaxSumofRectangleNoLargerThanK.cpp" />
+    <ClCompile Include="368_LargestDivisibleSubset.cpp" />
     <ClCompile Include="44_WildcardMatching.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
     <ClCompile Include="72_EditDistance.cpp" />
