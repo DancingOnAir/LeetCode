@@ -105,5 +105,8 @@
     <ClCompile Include="368_LargestDivisibleSubset.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="375_GuessNumberHigherorLowerII.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
