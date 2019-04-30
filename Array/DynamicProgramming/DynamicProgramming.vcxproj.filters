@@ -129,5 +129,8 @@
     <ClCompile Include="446_ArithmeticSlicesIISubsequence.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="464_CanIWin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

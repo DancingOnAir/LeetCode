@@ -179,6 +179,7 @@
     <ClCompile Include="416_PartitionEqualSubsetSum.cpp" />
     <ClCompile Include="446_ArithmeticSlicesIISubsequence.cpp" />
     <ClCompile Include="44_WildcardMatching.cpp" />
+    <ClCompile Include="464_CanIWin.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
     <ClCompile Include="72_EditDistance.cpp" />
     <ClCompile Include="87_ScrambleString.cpp" />
