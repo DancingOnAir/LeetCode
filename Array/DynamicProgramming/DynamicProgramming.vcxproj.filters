@@ -132,5 +132,8 @@
     <ClCompile Include="464_CanIWin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="466_CountTheRepetitions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
