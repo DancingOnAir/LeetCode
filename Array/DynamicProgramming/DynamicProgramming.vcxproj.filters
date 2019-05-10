@@ -135,5 +135,8 @@
     <ClCompile Include="466_CountTheRepetitions.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="467_UniqueSubstringsinWraparoundString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
