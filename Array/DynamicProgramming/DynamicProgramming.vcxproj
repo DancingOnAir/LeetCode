@@ -182,6 +182,7 @@
     <ClCompile Include="464_CanIWin.cpp" />
     <ClCompile Include="466_CountTheRepetitions.cpp" />
     <ClCompile Include="467_UniqueSubstringsinWraparoundString.cpp" />
+    <ClCompile Include="472_ConcatenatedWords.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
     <ClCompile Include="72_EditDistance.cpp" />
     <ClCompile Include="87_ScrambleString.cpp" />
