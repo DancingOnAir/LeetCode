@@ -141,5 +141,8 @@
     <ClCompile Include="472_ConcatenatedWords.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="474_OnesandZeroes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
