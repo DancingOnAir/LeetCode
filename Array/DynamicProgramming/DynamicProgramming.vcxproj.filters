@@ -147,5 +147,8 @@
     <ClCompile Include="486_PredicttheWinner.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="494_TargetSum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
