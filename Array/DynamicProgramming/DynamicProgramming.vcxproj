@@ -188,6 +188,7 @@
     <ClCompile Include="494_TargetSum.cpp" />
     <ClCompile Include="514_FreedomTrail.cpp" />
     <ClCompile Include="516_LongestPalindromicSubsequence.cpp" />
+    <ClCompile Include="517_SuperWashingMachines.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
     <ClCompile Include="72_EditDistance.cpp" />
     <ClCompile Include="87_ScrambleString.cpp" />

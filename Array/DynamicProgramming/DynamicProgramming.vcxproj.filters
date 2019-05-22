@@ -156,5 +156,8 @@
     <ClCompile Include="516_LongestPalindromicSubsequence.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="517_SuperWashingMachines.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
