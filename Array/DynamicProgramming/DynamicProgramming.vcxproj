@@ -190,6 +190,7 @@
     <ClCompile Include="516_LongestPalindromicSubsequence.cpp" />
     <ClCompile Include="517_SuperWashingMachines.cpp" />
     <ClCompile Include="523_ContinuousSubarraySum.cpp" />
+    <ClCompile Include="546_RemoveBoxes.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
     <ClCompile Include="72_EditDistance.cpp" />
     <ClCompile Include="87_ScrambleString.cpp" />
