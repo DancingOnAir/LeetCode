@@ -193,6 +193,7 @@
     <ClCompile Include="546_RemoveBoxes.cpp" />
     <ClCompile Include="552_StudentAttendanceRecordII.cpp" />
     <ClCompile Include="576_OutofBoundaryPaths.cpp" />
+    <ClCompile Include="600_NonNegativeIntegerswithoutConsecutiveOnes.cpp" />
     <ClCompile Include="70_ClimbingStairs.cpp" />
     <ClCompile Include="72_EditDistance.cpp" />
     <ClCompile Include="87_ScrambleString.cpp" />
