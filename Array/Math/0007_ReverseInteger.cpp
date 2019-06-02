@@ -12,12 +12,35 @@ int reverse(int x)
     string s = to_string(x);
 
     std::reverse(s.begin(), s.end());
-    long long res = isNegative ? -stoll(s) : stoll(s);
-
-    if (res > INT_MAX || res < INT_MIN)
+    try
+    {
+        int res = isNegative ? -stoi(s) : stoi(s);
+        return res;
+    }
+    catch (exception e)
+    {
         return 0;
+    }
 
-    return static_cast<int>(res);
+}
+
+int reverse2(int x)
+{
+    int res = 0;
+    while (x != 0)
+    {
+        int pop = x % 10;
+        x /= 10;
+
+        if (res > INT_MAX / 10 || (res == INT_MAX / 10 && pop > 7))
+            return 0;
+        if (res < INT_MIN / 10 || (res == INT_MIN / 10 && pop < -8))
+            return 0;
+
+        res = res * 10 + pop;
+    }
+
+    return res;
 }
 
 void testReverse()
