@@ -1,4 +1,2 @@
-﻿  040_CombinationSum.cpp
-d:\project\gitworkspace\leetcode\array\array\040_combinationsum.cpp(25): warning C4018: '<': signed/unsigned mismatch
-  Array.vcxproj -> D:\Project\GitWorkspace\LeetCode\Array\Debug\Array.exe
-  Array.vcxproj -> D:\Project\GitWorkspace\LeetCode\Array\Debug\Array.pdb (Partial PDB)
+﻿MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\Array.exe : fatal error LNK1120: 1 unresolved externals
