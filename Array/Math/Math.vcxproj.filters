@@ -21,5 +21,8 @@
     <ClCompile Include="0012_IntegerToRoman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0013_RomantoInteger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
