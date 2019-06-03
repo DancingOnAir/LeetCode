@@ -18,5 +18,8 @@
     <ClCompile Include="0007_ReverseInteger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0012_IntegerToRoman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
