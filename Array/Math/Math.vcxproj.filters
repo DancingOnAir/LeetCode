@@ -24,5 +24,8 @@
     <ClCompile Include="0013_RomantoInteger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0029_DivideTwoIntegers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
