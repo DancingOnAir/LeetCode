@@ -119,6 +119,7 @@
     <ClCompile Include="0012_IntegerToRoman.cpp" />
     <ClCompile Include="0013_RomantoInteger.cpp" />
     <ClCompile Include="0029_DivideTwoIntegers.cpp" />
+    <ClCompile Include="0043_MultiplyStrings.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
