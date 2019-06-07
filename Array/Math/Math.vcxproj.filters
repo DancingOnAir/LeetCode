@@ -30,5 +30,8 @@
     <ClCompile Include="0043_MultiplyStrings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0050_Pow(x, n).cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -120,6 +120,7 @@
     <ClCompile Include="0013_RomantoInteger.cpp" />
     <ClCompile Include="0029_DivideTwoIntegers.cpp" />
     <ClCompile Include="0043_MultiplyStrings.cpp" />
+    <ClCompile Include="0050_Pow(x, n).cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
