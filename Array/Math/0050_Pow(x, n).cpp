@@ -23,6 +23,20 @@ double myPow(double x, int n)
     return (n & 1)? x * myPow(x * x, n >> 1) : myPow(x * x, n >> 1);
 }
 
+double myPow2(double x, int n)
+{
+    if (0 == n)
+        return 1;
+
+    double temp = pow(x, n / 2);
+    if (n & 1)
+    {
+        return n < 0 ? 1 / x * temp * temp : x * temp * temp;
+    }
+    else
+        return temp * temp;
+}
+
 void testMyPow()
 {
     cout << myPow(2, 10) << endl;
