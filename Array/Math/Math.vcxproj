@@ -122,6 +122,7 @@
     <ClCompile Include="0043_MultiplyStrings.cpp" />
     <ClCompile Include="0050_Pow(x, n).cpp" />
     <ClCompile Include="0065_ValidNumber.cpp" />
+    <ClCompile Include="0067_AddBinary.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
