@@ -36,11 +36,29 @@ string addBinary(string a, string b)
     return res;
 }
 
+string addBinary2(string a, string b)
+{
+    string res("");
+    int l1 = a.size() - 1;
+    int l2 = b.size() - 1;
+
+    int carry = 0;
+    while (l1 >= 0 || l2 >= 0 || carry > 0)
+    {
+        carry += l1 >= 0 ? a[l1--] - '0' : 0;
+        carry += l2 >= 0 ? b[l2--] - '0' : 0;
+        res = char(carry % 2 + '0') + res;
+        carry /= 2;
+    }
+
+    return res;
+}
+
 void testAddBinary()
 {
-    cout << addBinary("100", "110010") << endl;
-    cout << addBinary("11", "1") << endl;
-    cout << addBinary("1010", "1011") << endl;
+    //cout << addBinary2("100", "110010") << endl;
+    cout << addBinary2("11", "1") << endl;
+    cout << addBinary2("1010", "1011") << endl;
 }
 
 int main()
