@@ -123,6 +123,7 @@
     <ClCompile Include="0050_Pow(x, n).cpp" />
     <ClCompile Include="0065_ValidNumber.cpp" />
     <ClCompile Include="0067_AddBinary.cpp" />
+    <ClCompile Include="0069_Sqrt(x).cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

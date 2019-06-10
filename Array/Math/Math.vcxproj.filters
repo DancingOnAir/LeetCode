@@ -39,5 +39,8 @@
     <ClCompile Include="0067_AddBinary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0069_Sqrt(x).cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
