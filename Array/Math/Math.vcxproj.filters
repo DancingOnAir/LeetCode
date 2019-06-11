@@ -42,5 +42,8 @@
     <ClCompile Include="0069_Sqrt(x).cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0149_MaxPointsonaLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
