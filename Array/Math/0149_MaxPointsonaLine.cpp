@@ -21,8 +21,11 @@ int maxPoints(vector<vector<int>>& points)
     unordered_map<double, int> records;
     for (int i = 0; i < m; ++i)
     {
-        int numOfHorizontal = 0;
+        int horizontal = 0;
+        int localMax = 0;
+        int overlap = 0;
         records.clear();
+
         for (int j = 0; j < m; ++j)
         {
             if (i == j)
@@ -30,34 +33,26 @@ int maxPoints(vector<vector<int>>& points)
 
             double k = 0;
 
-            if (points[j][1] != points[i][1])
+            if (points[i][0] == points[j][0] && points[i][1] == points[j][1])
             {
-                k = (double)(points[j][0] - points[i][0]) / (double)(points[j][1] - points[i][1]);
-                if (records.count(k))
-                {
-                    records[k]++;
-                }
-                else
-                {
-                    records[k] = 2;
-                }
+                ++overlap;
+            }
+            else if (points[i][1] == points[j][1])
+            {
+                ++horizontal;
             }
             else
             {
-                if (numOfHorizontal)
-                    ++numOfHorizontal;
-                else
-                    numOfHorizontal = 2;
+                k = (double)(points[j][0] - points[i][0]) / (double)(points[j][1] - points[i][1]);
+                records[k]++;
+
+                localMax = max(localMax, records[k]);
             }
-        }
-        
-        int temp = 0;
-        for (auto iter = records.begin(); iter != records.end(); ++iter)
-        {
-            temp = max(temp, iter->second);
+
+            localMax = max(localMax, horizontal);
         }
 
-        res = max(res, max(temp, numOfHorizontal));
+        res = max(res, localMax + overlap + 1);
     }
 
     return res;
