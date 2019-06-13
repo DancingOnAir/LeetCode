@@ -126,6 +126,7 @@
     <ClCompile Include="0069_Sqrt(x).cpp" />
     <ClCompile Include="0149_MaxPointsonaLine.cpp" />
     <ClCompile Include="166_FractiontoRecurringDecimal.cpp" />
+    <ClCompile Include="168_ExcelSheetColumnTitle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
