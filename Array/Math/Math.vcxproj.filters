@@ -51,5 +51,8 @@
     <ClCompile Include="168_ExcelSheetColumnTitle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="171_ExcelSheetColumnNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
