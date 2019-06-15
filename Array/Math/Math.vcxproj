@@ -128,6 +128,7 @@
     <ClCompile Include="166_FractiontoRecurringDecimal.cpp" />
     <ClCompile Include="168_ExcelSheetColumnTitle.cpp" />
     <ClCompile Include="171_ExcelSheetColumnNumber.cpp" />
+    <ClCompile Include="172_FactorialTrailingZeroes.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

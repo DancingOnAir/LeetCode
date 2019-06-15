@@ -54,5 +54,8 @@
     <ClCompile Include="171_ExcelSheetColumnNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="172_FactorialTrailingZeroes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
