@@ -129,6 +129,7 @@
     <ClCompile Include="168_ExcelSheetColumnTitle.cpp" />
     <ClCompile Include="171_ExcelSheetColumnNumber.cpp" />
     <ClCompile Include="172_FactorialTrailingZeroes.cpp" />
+    <ClCompile Include="202_HappyNumber.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
