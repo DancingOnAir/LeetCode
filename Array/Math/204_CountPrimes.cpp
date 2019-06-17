@@ -1,10 +1,11 @@
 #include <iostream>
 #include <math.h>
+#include <vector>
 using namespace std;
 
 int countPrimes(int n)
 {
-    if (n < 2)
+    if (n <= 2)
         return 0;
 
     int res = 0;
@@ -18,7 +19,6 @@ int countPrimes(int n)
                 isPrime = false;
                 break;
             }
-
         }
 
         if (isPrime)
@@ -28,10 +28,35 @@ int countPrimes(int n)
     return res;
 }
 
+int countPrimes2(int n)
+{
+    if (n < 3)
+        return 0;
+
+    vector<bool> isComposite(n, false);
+    int res = 1;
+    for (int i = 3; i < n; i += 2)
+    {
+        if (!isComposite[i])
+        {
+            ++res;
+            if (i > sqrt(n))
+                continue;
+
+            for (int j = i * i; j < n; j += (i << 1))
+            {
+                isComposite[j] = true;
+            }
+        }
+    }
+
+    return res;
+}
+
 void testCountPrimes()
 {
-    cout << countPrimes(10) << endl;
-    cout << countPrimes(12) << endl;
+    cout << countPrimes2(10) << endl;
+    cout << countPrimes2(12) << endl;
 }
 
 int main()
