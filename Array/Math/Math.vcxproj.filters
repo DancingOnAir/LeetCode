@@ -63,5 +63,8 @@
     <ClCompile Include="204_CountPrimes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="223_RectangleArea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -131,6 +131,7 @@
     <ClCompile Include="172_FactorialTrailingZeroes.cpp" />
     <ClCompile Include="202_HappyNumber.cpp" />
     <ClCompile Include="204_CountPrimes.cpp" />
+    <ClCompile Include="223_RectangleArea.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
