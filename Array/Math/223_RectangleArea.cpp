@@ -12,7 +12,7 @@ int computeArea(int A, int B, int C, int D, int E, int F, int G, int H)
     int bottom = max(B, F);
     int top = max(bottom, min(D, H));
 
-    return s1 + s2 - (right - left) * (top - bottom);
+    return s1 - (right - left) * (top - bottom) + s2;
 }
 
 void testComputerArea()
