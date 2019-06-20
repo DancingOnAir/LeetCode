@@ -66,5 +66,8 @@
     <ClCompile Include="223_RectangleArea.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="224_BasicCalculator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
