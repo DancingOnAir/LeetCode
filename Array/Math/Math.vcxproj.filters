@@ -72,5 +72,8 @@
     <ClCompile Include="231_PowerofTwo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="233_NumberofDigitOne.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <cmath>
 
 using namespace std;
 
@@ -9,10 +9,13 @@ int countDigitOne(int n)
         return 0;
     
     int res = 0;
-    while (n > 0)
+    
+    for (long long m = 1; m <= n; m *= 10)
     {
-        int digit = n % 10;
-        n /= 10;
+        int a = n / m;
+        int b = n % m;
+
+        res += ((a + 8) / 10) * m + (a % 10 == 1) * (b + 1);
     }
 
     return res;
