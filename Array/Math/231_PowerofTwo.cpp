@@ -1,18 +1,26 @@
 #include <iostream>
-
+#include <cmath>
 using namespace std;
 
 bool isPowerOfTwo(int n)
 {
-    return (((long long)n - 1) & (long long)n) == 0;
+    if (n <= 0)
+        return false;
+
+    return !((n - 1) & n);
+}
+
+bool isPowerOfTwo2(int n)
+{
+    return n > 0 && ((int)pow(2, 30) % n == 0);
 }
 
 void testIsPowerOfTwo()
 {
-    cout << (isPowerOfTwo(1) ? "T" : "F") << endl;
-    cout << (isPowerOfTwo(16) ? "T" : "F") << endl;
-    cout << (isPowerOfTwo(218) ? "T" : "F") << endl;
-    cout << (isPowerOfTwo(1024) ? "T" : "F") << endl;
+    cout << (isPowerOfTwo2(1) ? "T" : "F") << endl;
+    cout << (isPowerOfTwo2(16) ? "T" : "F") << endl;
+    cout << (isPowerOfTwo2(218) ? "T" : "F") << endl;
+    cout << (isPowerOfTwo2(1024) ? "T" : "F") << endl;
 }
 
 int main()
