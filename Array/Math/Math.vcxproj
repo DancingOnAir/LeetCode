@@ -135,6 +135,7 @@
     <ClCompile Include="224_BasicCalculator.cpp" />
     <ClCompile Include="231_PowerofTwo.cpp" />
     <ClCompile Include="233_NumberofDigitOne.cpp" />
+    <ClCompile Include="258_AddDigits.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

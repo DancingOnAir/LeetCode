@@ -75,5 +75,8 @@
     <ClCompile Include="233_NumberofDigitOne.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="258_AddDigits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
