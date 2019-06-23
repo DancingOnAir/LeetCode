@@ -23,9 +23,18 @@ int addDigits(int num)
     return 0;
 }
 
+//digital root
+int addDigits2(int num)
+{
+    if (num < 1)
+        return 0;
+
+    return (num - 1) % 9 + 1;
+}
+
 void testAddDigits()
 {
-    cout << addDigits(38) << endl;
+    cout << addDigits2(38) << endl;
 }
 
 int main()
