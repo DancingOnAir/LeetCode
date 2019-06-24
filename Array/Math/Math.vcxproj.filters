@@ -78,5 +78,8 @@
     <ClCompile Include="258_AddDigits.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="263_UglyNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
