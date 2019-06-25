@@ -81,5 +81,8 @@
     <ClCompile Include="263_UglyNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="273_IntegertoEnglishWords.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
