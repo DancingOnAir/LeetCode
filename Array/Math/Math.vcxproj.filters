@@ -84,5 +84,8 @@
     <ClCompile Include="273_IntegertoEnglishWords.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="326_PowerofThree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
