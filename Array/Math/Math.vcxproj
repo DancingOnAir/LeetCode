@@ -138,6 +138,7 @@
     <ClCompile Include="258_AddDigits.cpp" />
     <ClCompile Include="263_UglyNumber.cpp" />
     <ClCompile Include="273_IntegertoEnglishWords.cpp" />
+    <ClCompile Include="313_SuperUglyNumber.cpp" />
     <ClCompile Include="326_PowerofThree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
