@@ -141,6 +141,7 @@
     <ClCompile Include="313_SuperUglyNumber.cpp" />
     <ClCompile Include="319_BulbSwitcher.cpp" />
     <ClCompile Include="326_PowerofThree.cpp" />
+    <ClCompile Include="335_SelfCrossing.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
