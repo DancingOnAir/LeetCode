@@ -96,5 +96,8 @@
     <ClCompile Include="335_SelfCrossing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="365_WaterandJugProblem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
