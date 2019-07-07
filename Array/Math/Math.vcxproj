@@ -143,6 +143,7 @@
     <ClCompile Include="326_PowerofThree.cpp" />
     <ClCompile Include="335_SelfCrossing.cpp" />
     <ClCompile Include="365_WaterandJugProblem.cpp" />
+    <ClCompile Include="367_ValidPerfectSquare.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

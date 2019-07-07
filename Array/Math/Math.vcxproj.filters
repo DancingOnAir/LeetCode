@@ -99,5 +99,8 @@
     <ClCompile Include="365_WaterandJugProblem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="367_ValidPerfectSquare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
