@@ -16,6 +16,18 @@ bool isPerfectSquare(int num)
     return x * x == num;
 }
 
+bool isPerfectSquare2(int num)
+{
+    int i = 1;
+    while (num > 0)
+    {
+        num -= i;
+        i += 2;
+    }
+
+    return 0 == num;
+}
+
 void testIsPerfectSquare()
 {
     cout << (isPerfectSquare(16) ? "T" : "F") << endl;
