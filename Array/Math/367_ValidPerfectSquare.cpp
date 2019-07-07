@@ -4,10 +4,16 @@ using namespace std;
 
 bool isPerfectSquare(int num)
 {
-    if (num < 0)
+    if (num < 1)
         return false;
 
-    return true;
+    long x = num;
+    while (x * x > num)
+    {
+        x = (x + num / x) / 2;
+    }
+
+    return x * x == num;
 }
 
 void testIsPerfectSquare()
