@@ -144,6 +144,7 @@
     <ClCompile Include="335_SelfCrossing.cpp" />
     <ClCompile Include="365_WaterandJugProblem.cpp" />
     <ClCompile Include="367_ValidPerfectSquare.cpp" />
+    <ClCompile Include="372_SuperPow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

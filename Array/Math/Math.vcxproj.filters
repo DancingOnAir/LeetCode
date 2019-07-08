@@ -102,5 +102,8 @@
     <ClCompile Include="367_ValidPerfectSquare.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="372_SuperPow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
