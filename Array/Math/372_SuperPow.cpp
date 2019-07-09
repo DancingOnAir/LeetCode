@@ -3,38 +3,31 @@
 
 using namespace std;
 
+int power(int x, int n, int mod)
+{
+    int res = 1;
+    for (x %= mod; n; x = x * x % mod, n >>= 1)
+        if (n & 1)
+            res = res * x % mod;
+
+    return res;
+}
+
+// Fermat's Little Theorem
 int superPow2(int a, vector<int>& b)
 {
-    if (b.empty())
+    // phi(1337) = phi(7) * phi(191) = 6 * 190 = 1140
+    if (!(a % 1337))
         return 0;
-    
-    int idx = 0;
-    for (int i = 0; i < b.size(); ++i)
-    {
-        idx = idx * 10 + b[i];
-    }
 
-    
+    int p = 0;
+    for (int i : b)
+        p = (p * 10 + i) % 1140;
 
-    int num = 1, temp = 0;
-    vector<int> records;
-    while (idx > 0)
-    {
-        num *= a;
-        num = num % 1337;
-        if (find(records.begin(), records.end(), num) != records.end())
-            break;
-        else
-            records.emplace_back(num);
+    if (p == 0)
+        p = 1440;
 
-        --idx;
-    }
-
-    if (idx == 0)
-        return records.back();
-
-    int r = idx % records.size();
-    return records[r];
+    return power(a, p, 1337);
 }
 
 int powmod(int a, int k)
