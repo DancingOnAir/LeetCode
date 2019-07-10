@@ -145,6 +145,7 @@
     <ClCompile Include="365_WaterandJugProblem.cpp" />
     <ClCompile Include="367_ValidPerfectSquare.cpp" />
     <ClCompile Include="372_SuperPow.cpp" />
+    <ClCompile Include="396_RotateFunction.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

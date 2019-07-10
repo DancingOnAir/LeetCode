@@ -105,5 +105,8 @@
     <ClCompile Include="372_SuperPow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="396_RotateFunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
