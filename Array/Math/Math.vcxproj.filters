@@ -108,5 +108,8 @@
     <ClCompile Include="396_RotateFunction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="397_IntegerReplacement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
