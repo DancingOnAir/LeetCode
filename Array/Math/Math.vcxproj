@@ -149,6 +149,7 @@
     <ClCompile Include="397_IntegerReplacement.cpp" />
     <ClCompile Include="400_NthDigit.cpp" />
     <ClCompile Include="423_ReconstructOriginalDigitsFromEnglish.cpp" />
+    <ClCompile Include="441_ArrangingCoins.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -117,5 +117,8 @@
     <ClCompile Include="423_ReconstructOriginalDigitsFromEnglish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="441_ArrangingCoins.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
