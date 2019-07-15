@@ -9,16 +9,12 @@ int minMoves(vector<int>& nums)
     if (len < 2)
         return 0;
 
-    set<int> s;
-    for (int x : nums)
-        s.emplace(x);
+    sort(nums.begin(), nums.end());
 
     int res = 0;
-    while (!s.empty())
+    for (int i = len - 1; i > 0; --i)
     {
-        auto iter = --(s.end());
-        res += *iter - *s.begin();
-        s.erase(iter);
+        res += nums[i] - nums[0];
     }
 
     return res;
