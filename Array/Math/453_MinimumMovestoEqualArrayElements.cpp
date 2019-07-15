@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 using namespace std;
 
 int minMoves(vector<int>& nums)
@@ -20,10 +21,15 @@ int minMoves(vector<int>& nums)
     return res;
 }
 
+int minMoves2(vector<int>& nums)
+{
+    return accumulate(nums.begin(), nums.end(), 0L) - nums.size() * (*min_element(nums.begin(), nums.end()));
+}
+
 void testMinMoves()
 {
     vector<int> nums = { 1, 2, 3 };
-    cout << minMoves(nums) << endl;
+    cout << minMoves2(nums) << endl;
 }
 
 int main()
