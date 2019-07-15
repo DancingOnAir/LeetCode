@@ -120,5 +120,8 @@
     <ClCompile Include="441_ArrangingCoins.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="453_MinimumMovestoEqualArrayElements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
