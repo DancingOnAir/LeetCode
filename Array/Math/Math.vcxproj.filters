@@ -123,5 +123,8 @@
     <ClCompile Include="453_MinimumMovestoEqualArrayElements.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="458_PoorPigs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

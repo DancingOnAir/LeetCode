@@ -151,6 +151,7 @@
     <ClCompile Include="423_ReconstructOriginalDigitsFromEnglish.cpp" />
     <ClCompile Include="441_ArrangingCoins.cpp" />
     <ClCompile Include="453_MinimumMovestoEqualArrayElements.cpp" />
+    <ClCompile Include="458_PoorPigs.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
