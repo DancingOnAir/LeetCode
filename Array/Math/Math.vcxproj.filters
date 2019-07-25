@@ -132,5 +132,8 @@
     <ClCompile Include="483_SmallestGoodBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="462_MinimumMovestoEqualArrayElementsII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
