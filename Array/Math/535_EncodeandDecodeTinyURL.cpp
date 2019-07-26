@@ -1,38 +1,25 @@
 #include <iostream>
 #include <string>
-
+#include <vector>
 using namespace std;
+
+const std::string basic = "http://tinyurl.com/";
+std::vector<std::string> urls;
 
 // Encodes a URL to a shortened URL.
 string encode(string longUrl)
 {
     int n = longUrl.size();
-    int numOfSlash = 0, pos = 0;
-    for (int i = 0; i < n; ++i)
-    {
-        if (longUrl[i] == '/')
-        {
-            ++numOfSlash;
-            if (3 == numOfSlash)
-            {
-                pos = i;
-                break;
-            }
-        }
-    }
+    urls.emplace_back(longUrl);
 
-    string headerUrl = longUrl.substr(0, pos + 1);
-    string tailUrl = longUrl.substr(pos + 1);
-    cout << headerUrl << endl;
-    cout << tailUrl << endl;
-    string res;
-    return res;
+    return basic + to_string(urls.size() - 1);
 }
 
 // Decodes a shortened URL to its original URL.
 string decode(string shortUrl)
 {
-    return "";
+    string part = shortUrl.substr(shortUrl.find_last_of('/') + 1);
+    return urls[stoi(part)];
 }
 
 void testEncodeDecode()
