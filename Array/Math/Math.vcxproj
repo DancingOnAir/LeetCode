@@ -155,6 +155,7 @@
     <ClCompile Include="462_MinimumMovestoEqualArrayElementsII.cpp" />
     <ClCompile Include="483_SmallestGoodBase.cpp" />
     <ClCompile Include="507_PerfectNumber.cpp" />
+    <ClCompile Include="535_EncodeandDecodeTinyURL.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -135,5 +135,8 @@
     <ClCompile Include="462_MinimumMovestoEqualArrayElementsII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="535_EncodeandDecodeTinyURL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
