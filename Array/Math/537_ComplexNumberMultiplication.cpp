@@ -1,9 +1,21 @@
 #include <iostream>
 #include <string>
-
+#include <sstream>
 using namespace std;
 
 string complexNumberMultiply(string a, string b)
+{
+    int ra, ia, rb, ib;
+    char buff;
+    stringstream aa(a), bb(b), res;
+    aa >> ra >> buff >> ia ;
+    bb >> rb >> buff >> ib ;
+
+    res << ra * rb - ia * ib << "+" << ra * ib + rb * ia << "i";
+    return res.str();
+ }
+
+string complexNumberMultiply2(string a, string b)
 {
     int pos1 = a.find('+');
     string a1 = a.substr(0, pos1);
