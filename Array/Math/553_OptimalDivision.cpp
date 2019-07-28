@@ -4,7 +4,7 @@
 
 using namespace std;
 
-string optimalDivision(vector<int>& nums)
+string optimalDivision2(vector<int>& nums)
 {
     int n = nums.size();
     if (0 == n)
@@ -50,6 +50,27 @@ string optimalDivision(vector<int>& nums)
     }
 
     return numerator + '/' + denominator;
+}
+
+string optimalDivision(vector<int>& nums)
+{
+    int n = nums.size();
+    string res;
+    for (int i = 0; i < n; ++i)
+    {
+        if (i > 0)
+            res += '/';
+
+        if (i == 1 && n > 2)
+            res += '(';
+
+        res += to_string(nums[i]);
+
+        if (i == n - 1 && n > 2)
+            res += ')';
+    }
+
+    return res;
 }
 
 void testOptimalDivision()
