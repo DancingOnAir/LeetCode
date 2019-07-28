@@ -157,6 +157,7 @@
     <ClCompile Include="507_PerfectNumber.cpp" />
     <ClCompile Include="535_EncodeandDecodeTinyURL.cpp" />
     <ClCompile Include="537_ComplexNumberMultiplication.cpp" />
+    <ClCompile Include="553_OptimalDivision.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
