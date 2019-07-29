@@ -158,6 +158,7 @@
     <ClCompile Include="535_EncodeandDecodeTinyURL.cpp" />
     <ClCompile Include="537_ComplexNumberMultiplication.cpp" />
     <ClCompile Include="553_OptimalDivision.cpp" />
+    <ClCompile Include="593_ValidSquare.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

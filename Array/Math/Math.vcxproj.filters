@@ -144,5 +144,8 @@
     <ClCompile Include="553_OptimalDivision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="593_ValidSquare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
