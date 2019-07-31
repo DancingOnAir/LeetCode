@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 using namespace std;
 
 int gcd(int lhs, int rhs)
@@ -13,7 +14,7 @@ int lcm(int lhs, int rhs)
     return lhs * rhs / gcd(lhs, rhs);
 }
 
-string fractionAddition(string expression)
+string fractionAddition2(string expression)
 {
     if (expression.empty())
         return "";
@@ -76,6 +77,25 @@ string fractionAddition(string expression)
     numerator /= tempGCD;
     denominator /= tempGCD;
     return to_string(numerator) + '/' + to_string(denominator);
+}
+
+string fractionAddition(string expression)
+{
+    istringstream iss(expression);
+    int A = 0, B = 1, a, b;
+    char _;
+
+    while (iss >> a >> _ >> b)
+    {
+        A = A * b + a * B;
+        B *= b;
+
+        int g = abs(gcd(A, B));
+        A /= g;
+        B /= g;
+    }
+
+    return to_string(A) + '/' + to_string(B);
 }
 
 void testFractionAddtion()
