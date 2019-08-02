@@ -161,6 +161,7 @@
     <ClCompile Include="592_FractionAdditionandSubtraction.cpp" />
     <ClCompile Include="593_ValidSquare.cpp" />
     <ClCompile Include="598_RangeAdditionII.cpp" />
+    <ClCompile Include="633_SumofSquareNumbers.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

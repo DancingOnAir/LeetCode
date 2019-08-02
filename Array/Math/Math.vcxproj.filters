@@ -153,5 +153,8 @@
     <ClCompile Include="598_RangeAdditionII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="633_SumofSquareNumbers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
