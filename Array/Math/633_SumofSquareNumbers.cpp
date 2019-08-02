@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool judgeSquareSum(int c)
+bool judgeSquareSum2(int c)
 {
     if (c < 0)
         return false;
@@ -15,6 +15,24 @@ bool judgeSquareSum(int c)
             return true;
 
         s.emplace(i * i);
+    }
+
+    return false;
+}
+
+bool judgeSquareSum(int c)
+{
+    long long top = sqrt(c);
+    long long bottom = 0, sum = 0;
+    while (bottom <= top)
+    {
+        sum = bottom * bottom + top * top;
+        if (sum == c)
+            return true;
+        else if (sum < c)
+            ++bottom;
+        else
+            --top;
     }
 
     return false;
