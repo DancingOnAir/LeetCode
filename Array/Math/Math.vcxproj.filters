@@ -156,5 +156,8 @@
     <ClCompile Include="633_SumofSquareNumbers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="640_SolvetheEquation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

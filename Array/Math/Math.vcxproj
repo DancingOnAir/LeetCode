@@ -162,6 +162,7 @@
     <ClCompile Include="593_ValidSquare.cpp" />
     <ClCompile Include="598_RangeAdditionII.cpp" />
     <ClCompile Include="633_SumofSquareNumbers.cpp" />
+    <ClCompile Include="640_SolvetheEquation.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
