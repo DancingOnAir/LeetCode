@@ -3,7 +3,7 @@
 #include <sstream>
 using namespace std;
 
-string solveEquation(string equation)
+string solveEquation2(string equation)
 {
     size_t n = equation.size();
     int sign = 1;
@@ -53,6 +53,68 @@ string solveEquation(string equation)
         return "Infinite solutions";
     else
         return "x=" + to_string(- total / coefficient);
+}
+
+string solveEquation(string equation)
+{
+    int n = equation.size();
+    int i = 0, flag = 1;
+    int coeff = 0, tot = 0;
+
+    while (i < n)
+    {
+        int sign = 1;
+        int temp = 0;
+
+        if (equation[i] == '=')
+        {
+            flag = -1;
+            ++i;
+        }
+
+        if (equation[i] == '+')
+        {
+            sign = 1;
+            ++i;
+        }
+
+        if (equation[i] == '-')
+        {
+            sign = -1;
+            ++i;
+        }
+
+        if (isdigit(equation[i]))
+        {
+            while (i < n && isdigit(equation[i]))
+            {
+                temp = temp * 10 + equation[i] - '0';
+                ++i;
+            }
+
+            if (i < n && equation[i] == 'x')
+            {
+                coeff += flag * sign * temp;
+                ++i;
+            }
+            else
+            {
+                tot += flag * sign * temp;
+            }
+        }
+        else
+        {
+            coeff += flag * sign;
+            ++i;
+        }
+    }
+
+    if (tot && coeff == 0)
+        return "No solution";
+    else if (tot == 0 && coeff == 0)
+        return "Infinite solutions";
+    else
+        return "x=" + to_string(-tot / coeff);
 }
 
 void testSolveEquation()
