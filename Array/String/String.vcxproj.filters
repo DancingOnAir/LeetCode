@@ -24,9 +24,6 @@
     <ClCompile Include="008_StringToInteger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="10_RegularExpressionMatching.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="022_GenerateParentheses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -52,6 +49,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="344_ReverseString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="010_RegularExpressionMatching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="006_ZigZagConversion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

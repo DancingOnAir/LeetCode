@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="003_LongestSubstringWithoutRepeatingCharacters.cpp" />
     <ClCompile Include="005_LongestPalindromicSubstring.cpp" />
+    <ClCompile Include="006_ZigZagConversion.cpp" />
     <ClCompile Include="008_StringToInteger.cpp" />
     <ClCompile Include="020_ValidParentheses.cpp" />
     <ClCompile Include="022_GenerateParentheses.cpp" />
@@ -148,7 +149,7 @@
     <ClCompile Include="030_SubstringWithConcatenationOfAllWords.cpp" />
     <ClCompile Include="032_LongestValidParentheses.cpp" />
     <ClCompile Include="038_CountAndSay.cpp" />
-    <ClCompile Include="10_RegularExpressionMatching.cpp" />
+    <ClCompile Include="010_RegularExpressionMatching.cpp" />
     <ClCompile Include="344_ReverseString.cpp" />
     <ClCompile Include="438_FindAllAnagramsInAString.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />
