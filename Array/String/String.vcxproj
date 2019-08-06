@@ -143,6 +143,7 @@
     <ClCompile Include="005_LongestPalindromicSubstring.cpp" />
     <ClCompile Include="006_ZigZagConversion.cpp" />
     <ClCompile Include="008_StringToInteger.cpp" />
+    <ClCompile Include="014_LongestCommonPrefix.cpp" />
     <ClCompile Include="020_ValidParentheses.cpp" />
     <ClCompile Include="022_GenerateParentheses.cpp" />
     <ClCompile Include="028_ImplementStrStr.cpp" />

@@ -1,2 +1,5 @@
 ﻿  006_ZigZagConversion.cpp
+  014_LongestCommonPrefix.cpp
+d:\dev\projects\gitworkspace\leetcode\array\string\014_longestcommonprefix.cpp(16): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   String.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\String.exe
