@@ -60,5 +60,8 @@
     <ClCompile Include="014_LongestCommonPrefix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="049_GroupAnagrams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
