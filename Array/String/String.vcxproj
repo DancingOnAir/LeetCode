@@ -153,6 +153,7 @@
     <ClCompile Include="010_RegularExpressionMatching.cpp" />
     <ClCompile Include="049_GroupAnagrams.cpp" />
     <ClCompile Include="058_LengthofLastWord.cpp" />
+    <ClCompile Include="071_SimplifyPath.cpp" />
     <ClCompile Include="344_ReverseString.cpp" />
     <ClCompile Include="438_FindAllAnagramsInAString.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />

@@ -66,5 +66,8 @@
     <ClCompile Include="058_LengthofLastWord.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="071_SimplifyPath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
