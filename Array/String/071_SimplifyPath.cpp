@@ -2,9 +2,10 @@
 #include <string>
 #include <cassert>
 #include <vector>
+#include <sstream>
 using namespace std;
 
-string simplifyPath(string path)
+string simplifyPath2(string path)
 {
     if (path.empty())
         return "";
@@ -57,6 +58,29 @@ string simplifyPath(string path)
     return res;
 }
 
+string simplifyPath(string path)
+{
+    string res, temp;
+    if (path.empty())
+        return res;
+
+    istringstream iss(path);
+    vector<string> stk;
+    while (getline(iss, temp, '/'))
+    {
+        if (temp == "" || temp == ".")
+            continue;
+        if (temp == ".." && !stk.empty())
+            stk.pop_back();
+        else if (temp != "..")
+            stk.emplace_back(temp);
+    }
+
+    for (auto s : stk)
+        res += "/" + s;
+    return res.empty() ? "/" : res;
+}
+
 void testSimplifyPath()
 {
     string path1 = "/home/";
@@ -70,6 +94,9 @@ void testSimplifyPath()
     string path3 = "/a/./b/../../c/";
     auto res3 = simplifyPath(path3);
     assert("/c" == res3);
+
+    cout << res1 << endl;
+    cout << res2 << endl;
     cout << res3 << endl;
 }
 
