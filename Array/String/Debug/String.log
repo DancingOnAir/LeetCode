@@ -1,2 +1,5 @@
 ﻿  071_SimplifyPath.cpp
+  076_MinimumWindowSubstring.cpp
+d:\dev\projects\gitworkspace\leetcode\array\string\076_minimumwindowsubstring.cpp(15): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   String.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\String.exe

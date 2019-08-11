@@ -69,5 +69,8 @@
     <ClCompile Include="071_SimplifyPath.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="076_MinimumWindowSubstring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
