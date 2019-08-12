@@ -155,6 +155,7 @@
     <ClCompile Include="058_LengthofLastWord.cpp" />
     <ClCompile Include="071_SimplifyPath.cpp" />
     <ClCompile Include="076_MinimumWindowSubstring.cpp" />
+    <ClCompile Include="093_RestoreIPAddresses.cpp" />
     <ClCompile Include="344_ReverseString.cpp" />
     <ClCompile Include="438_FindAllAnagramsInAString.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />

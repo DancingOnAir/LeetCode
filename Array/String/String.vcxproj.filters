@@ -72,5 +72,8 @@
     <ClCompile Include="076_MinimumWindowSubstring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="093_RestoreIPAddresses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,3 @@
-﻿  071_SimplifyPath.cpp
-  076_MinimumWindowSubstring.cpp
-d:\dev\projects\gitworkspace\leetcode\array\string\076_minimumwindowsubstring.cpp(15): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  093_RestoreIPAddresses.cpp
+d:\dev\projects\gitworkspace\leetcode\array\string\093_restoreipaddresses.cpp(18): warning C4018: '>': signed/unsigned mismatch
   String.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\String.exe
