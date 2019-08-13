@@ -75,5 +75,8 @@
     <ClCompile Include="093_RestoreIPAddresses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="125_ValidPalindrome.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
