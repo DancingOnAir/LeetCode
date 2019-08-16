@@ -1,47 +1,29 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <vector>
 using namespace std;
 
 int compareVersion(string version1, string version2)
 {
-    vector<int> v1, v2;
     istringstream iss1(version1), iss2(version2);
-    string temp;
-    while (getline(iss1, temp, '.'))
-    {
-        v1.emplace_back(stoi(temp));
-    }
+    string num1, num2;
 
-    while (getline(iss2, temp, '.'))
+    while (!iss1.eof() || !iss2.eof())
     {
-        v2.emplace_back(stoi(temp));
-    }
+        if (iss1.eof())
+            num1 = "0";
+        else
+            getline(iss1, num1, '.');
 
-    int n1 = v1.size();
-    int n2 = v2.size();
+        if (iss2.eof())
+            num2 = "0";
+        else
+            getline(iss2, num2, '.');
 
-    int i = 0;
-    for (i = 0; i < n1 && i < n2; ++i)
-    {
-        if (v1[i] < v2[i])
-            return -1;
-        else if (v1[i] > v2[i])
-            return 1;
-    }
-
-    if (n1 < n2)
-    {
-        for (int j = i; j < n2; ++j)
-            if (v2[j] != 0)
-                return -1;
-    }
-    else if (n1 > n2)
-    {
-        for (int j = i; j < n1; ++j)
-            if (v1[j] != 0)
-                return 1;
+        int n1 = stoi(num1), n2 = stoi(num2);
+        if (n1 == n2)
+            continue;
+        return n1 > n2 ? 1 : -1;
     }
 
     return 0;
