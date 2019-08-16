@@ -158,6 +158,7 @@
     <ClCompile Include="093_RestoreIPAddresses.cpp" />
     <ClCompile Include="125_ValidPalindrome.cpp" />
     <ClCompile Include="151_ReverseWordsinaString.cpp" />
+    <ClCompile Include="165_CompareVersionNumbers.cpp" />
     <ClCompile Include="344_ReverseString.cpp" />
     <ClCompile Include="438_FindAllAnagramsInAString.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />
