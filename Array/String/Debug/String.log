@@ -1,2 +1,4 @@
 ﻿  214_ShortestPalindrome.cpp
+d:\dev\projects\gitworkspace\leetcode\array\string\214_shortestpalindrome.cpp(17): warning C4018: '<': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\string\214_shortestpalindrome.cpp(35): warning C4018: '<': signed/unsigned mismatch
   String.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\String.exe

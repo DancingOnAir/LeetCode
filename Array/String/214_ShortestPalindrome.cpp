@@ -1,38 +1,48 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <vector>
 using namespace std;
 
-string shortestPalindrome(string s)
+string shortestPalindrome2(string s)
 {
     if (s.empty())
         return "";
 
     int n = s.size();
     int i = n - 1;
-    int maxLen = INT_MIN;
-    for (; i > 0; --i)
-    {
-        int j = i, k = 0;
-        for (; j > k; --j, ++k)
-        {
-            if (s[j] != s[k])
-                break;
-        }
 
-        if (j <= k)
+    string revStr = s;
+    reverse(revStr.begin(), revStr.end());
+    for (int i = 0; i < s.size(); ++i)
+    {
+        if (revStr.substr(i) == s.substr(0, s.size() - i))
         {
-            break;
+            return revStr.substr(0, i) + s;
         }
     }
 
-    string res = s;
-    for (int j = i + 1; j < n; ++j)
+    return revStr + s;
+}
+
+string shortestPalindrome(string s)
+{
+    string rs = s;
+    reverse(rs.begin(), rs.end());
+    string mirror = s + "#" + rs;
+    vector<int> next(mirror.size());
+
+    for (int i = 1; i < mirror.size(); ++i)
     {
-        res = s[j] + res;
+        int j = next[i - 1];
+        while (j > 0 && mirror[i] != mirror[j])
+            j = next[j - 1];
+        next[i] = (j += mirror[i] == mirror[j]);
     }
 
-    return res;
+    int matchnums = next[mirror.size() - 1];
+    int mismatch = s.size() - matchnums;
+    return rs.substr(0, mismatch) + s;
 }
 
 void testShortestPalindrome()
