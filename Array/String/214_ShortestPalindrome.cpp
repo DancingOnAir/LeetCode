@@ -25,22 +25,42 @@ string shortestPalindrome2(string s)
     return revStr + s;
 }
 
+vector<int> getNext(string& p)
+{
+    vector<int> next(p.size());
+    next[0] = -1;
+    int i = -1;
+    int j = 0;
+
+    while (j < p.size() - 1)
+    {
+        if (i == -1 || p[i] == p[j])
+        {
+            ++i;
+            ++j;
+
+
+            next[j] = i;
+
+        }
+        else
+        {
+            i = next[i];
+        }
+    }
+
+    return next;
+}
+
 string shortestPalindrome(string s)
 {
     string rs = s;
     reverse(rs.begin(), rs.end());
     string mirror = s + "#" + rs;
-    vector<int> next(mirror.size());
+    
+    auto next = getNext(mirror);
 
-    for (int i = 1; i < mirror.size(); ++i)
-    {
-        int j = next[i - 1];
-        while (j > 0 && mirror[i] != mirror[j])
-            j = next[j - 1];
-        next[i] = (j += mirror[i] == mirror[j]);
-    }
-
-    int matchnums = next[mirror.size() - 1];
+    int matchnums = next[mirror.size() - 1] + 1;
     int mismatch = s.size() - matchnums;
     return rs.substr(0, mismatch) + s;
 }
