@@ -87,5 +87,8 @@
     <ClCompile Include="214_ShortestPalindrome.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="227_BasicCalculatorII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
