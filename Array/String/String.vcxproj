@@ -161,6 +161,7 @@
     <ClCompile Include="165_CompareVersionNumbers.cpp" />
     <ClCompile Include="214_ShortestPalindrome.cpp" />
     <ClCompile Include="227_BasicCalculatorII.cpp" />
+    <ClCompile Include="336_PalindromePairs.cpp" />
     <ClCompile Include="344_ReverseString.cpp" />
     <ClCompile Include="438_FindAllAnagramsInAString.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />

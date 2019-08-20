@@ -1,9 +1,9 @@
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <vector>
-using namespace std;
-
+//#include <iostream>
+//#include <string>
+//#include <sstream>
+//#include <vector>
+//using namespace std;
+//
 //int calculate2(string s) 
 //{
 //    istringstream iss(s);
@@ -51,51 +51,51 @@ using namespace std;
 //
 //    return res;
 //}
-
-int calculate(string s)
-{
-    istringstream iss("+" + s + "+");
-
-    long long total = 0, term = 0, num = 0;
-    char op;
-
-    while (iss >> op)
-    {
-        if (op == '+' || op == '-')
-        {
-            total += term;
-            iss >> term;
-            term *= 44 - op;
-        }
-        else
-        {
-            iss >> num;
-            if (op == '*')
-                term *= num;
-            else
-                term /= num;
-        }
-    }
-
-    return total;
-}
-
-void testCalculate()
-{
-    string s1 = "3+2*2";
-    cout << calculate(s1) << endl;
-
-    string s2 = " 3/2 ";
-    cout << calculate(s2) << endl;
-
-    string s3 = " 3+5 / 2 ";
-    cout << calculate(s3) << endl;
-}
-
-int main()
-{
-    testCalculate();
-
-    getchar();
-    return 0;
-}
+//
+//int calculate(string s)
+//{
+//    istringstream iss("+" + s + "+");
+//
+//    long long total = 0, term = 0, num = 0;
+//    char op;
+//
+//    while (iss >> op)
+//    {
+//        if (op == '+' || op == '-')
+//        {
+//            total += term;
+//            iss >> term;
+//            term *= 44 - op;
+//        }
+//        else
+//        {
+//            iss >> num;
+//            if (op == '*')
+//                term *= num;
+//            else
+//                term /= num;
+//        }
+//    }
+//
+//    return total;
+//}
+//
+//void testCalculate()
+//{
+//    string s1 = "3+2*2";
+//    cout << calculate(s1) << endl;
+//
+//    string s2 = " 3/2 ";
+//    cout << calculate(s2) << endl;
+//
+//    string s3 = " 3+5 / 2 ";
+//    cout << calculate(s3) << endl;
+//}
+//
+//int main()
+//{
+//    testCalculate();
+//
+//    getchar();
+//    return 0;
+//}

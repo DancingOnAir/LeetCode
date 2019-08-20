@@ -1,3 +1,4 @@
-﻿  227_BasicCalculatorII.cpp
-d:\dev\projects\gitworkspace\leetcode\array\string\227_basiccalculatorii.cpp(80): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+﻿  336_PalindromePairs.cpp
+d:\dev\projects\gitworkspace\leetcode\array\string\336_palindromepairs.cpp(24): warning C4018: '<': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\string\336_palindromepairs.cpp(26): warning C4018: '<': signed/unsigned mismatch
   String.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\String.exe

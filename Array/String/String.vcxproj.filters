@@ -90,5 +90,8 @@
     <ClCompile Include="227_BasicCalculatorII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="336_PalindromePairs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
