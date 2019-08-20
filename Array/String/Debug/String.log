@@ -1,4 +1,5 @@
 ﻿  336_PalindromePairs.cpp
-d:\dev\projects\gitworkspace\leetcode\array\string\336_palindromepairs.cpp(24): warning C4018: '<': signed/unsigned mismatch
 d:\dev\projects\gitworkspace\leetcode\array\string\336_palindromepairs.cpp(26): warning C4018: '<': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\string\336_palindromepairs.cpp(31): warning C4018: '<': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\string\336_palindromepairs.cpp(33): warning C4018: '<=': signed/unsigned mismatch
   String.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\String.exe

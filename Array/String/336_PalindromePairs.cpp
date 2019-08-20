@@ -1,9 +1,10 @@
 #include <iostream>
 #include <string>
+#include <unordered_map>
 #include <vector>
 using namespace std;
 
-bool isPalindrome(string& word)
+bool isPalindrome(string word)
 {
     int i = 0, j = word.size() - 1;
     for (; i < j; ++i, --j)
@@ -18,22 +19,38 @@ bool isPalindrome(string& word)
 vector<vector<int>> palindromePairs(vector<string>& words)
 {
     vector<vector<int>> res;
+    unordered_map<string, int> dict;
     if (words.empty())
         return res;
 
     for (int i = 0; i < words.size(); ++i)
     {
-        for (int j = 0; j < words.size(); ++j)
-        {
-            if (i == j)
-                continue;
+        dict[words[i]] = i;
+    }
 
-            string s = words[i] + words[j];
-            if (isPalindrome(s))
+    for (int i = 0; i < words.size(); ++i)
+    {
+        for (int j = 0; j <= words[i].size(); ++j)
+        {
+            if (isPalindrome(words[i].substr(j)))
             {
-                res.emplace_back(vector<int>({i, j}));
+                string suffix = words[i].substr(0, j);
+                reverse(suffix.begin(), suffix.end());
+                if (dict.find(suffix) != dict.end() && dict[suffix] != i)
+                {
+                    res.push_back({ i, dict[suffix] });
+                }
             }
 
+            if (j > 0 && isPalindrome(words[i].substr(0, j)))
+            {
+                string prefix = words[i].substr(j);
+                reverse(prefix.begin(), prefix.end());
+                if (dict.find(prefix) != dict.end() && dict[prefix] != i)
+                {
+                    res.push_back({ dict[prefix], i });
+                }
+            }
         }
     }
 
