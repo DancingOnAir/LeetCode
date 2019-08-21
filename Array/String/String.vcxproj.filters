@@ -93,5 +93,8 @@
     <ClCompile Include="336_PalindromePairs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="345_ReverseVowelsofaString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
