@@ -11,18 +11,15 @@ string reverseVowels(string s)
     while (i < j)
     {
 
-        while (i < n && t.find(tolower(s[i])) == t.end())
+        while (i < j && t.find(tolower(s[i])) == t.end())
             ++i;
 
-        while (j >= 0 && t.find(tolower(s[j])) == t.end())
+        while (i < j && t.find(tolower(s[j])) == t.end())
             --j;
 
-        if (i < j)
-        {
-            swap(s[i], s[j]);
-            ++i;
-            --j;
-        }
+        swap(s[i], s[j]);
+        ++i;
+        --j;
     }
 
     return s;
