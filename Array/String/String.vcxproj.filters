@@ -96,5 +96,8 @@
     <ClCompile Include="345_ReverseVowelsofaString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="383_RansomNote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
