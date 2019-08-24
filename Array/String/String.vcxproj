@@ -165,6 +165,7 @@
     <ClCompile Include="344_ReverseString.cpp" />
     <ClCompile Include="345_ReverseVowelsofaString.cpp" />
     <ClCompile Include="383_RansomNote.cpp" />
+    <ClCompile Include="385_MiniParser.cpp" />
     <ClCompile Include="438_FindAllAnagramsInAString.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />
   </ItemGroup>

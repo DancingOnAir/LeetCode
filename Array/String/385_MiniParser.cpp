@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 using namespace std;
 
 
@@ -32,10 +33,32 @@ class NestedInteger {
     const vector<NestedInteger> &getList() const;
 };
  
+NestedInteger deserialize(istringstream& iss)
+{
+    int num;
+    if (iss >> num)
+        return NestedInteger(num);
+
+    iss.clear();
+    iss.get();
+
+    NestedInteger list;
+    while (iss.peek() != ']')
+    {
+        list.add(deserialize(iss));
+        if (iss.peek() == ',')
+            iss.get();
+    }
+
+    iss.get();
+    return list;
+}
 
 NestedInteger deserialize(string s)
 {
+    istringstream iss(s);
 
+    return deserialize(iss);
 }
 
 int main()

@@ -99,5 +99,8 @@
     <ClCompile Include="383_RansomNote.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="385_MiniParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
