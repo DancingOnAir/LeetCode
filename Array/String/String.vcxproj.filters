@@ -102,5 +102,8 @@
     <ClCompile Include="385_MiniParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="387_FirstUniqueCharacterinaString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
