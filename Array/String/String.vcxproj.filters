@@ -105,5 +105,8 @@
     <ClCompile Include="387_FirstUniqueCharacterinaString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="415_AddStrings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

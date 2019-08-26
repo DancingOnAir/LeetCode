@@ -167,6 +167,7 @@
     <ClCompile Include="383_RansomNote.cpp" />
     <ClCompile Include="385_MiniParser.cpp" />
     <ClCompile Include="387_FirstUniqueCharacterinaString.cpp" />
+    <ClCompile Include="415_AddStrings.cpp" />
     <ClCompile Include="438_FindAllAnagramsInAString.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />
   </ItemGroup>
