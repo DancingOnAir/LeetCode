@@ -3,7 +3,7 @@
 
 using namespace std;
 
-string addStrings(string num1, string num2)
+string addStrings2(string num1, string num2)
 {
     int d1 = 0, d2 = 0, additional = 0;
     string res;
@@ -31,6 +31,31 @@ string addStrings(string num1, string num2)
         res = to_string(digit) + res;
     }
 
+    return res;
+}
+
+string addStrings(string num1, string num2)
+{
+    int s1 = num1.size() - 1;
+    int s2 = num2.size() - 1;
+    int carry = 0;
+
+    string res("");
+    while (s1 >= 0 || s2 >= 0 || carry)
+    {
+        int sum = 0;
+        if (s1 >= 0)
+            sum += (num1[s1] - '0'); --s1;
+        if (s2 >= 0)
+            sum += (num2[s2] - '0'); --s2;
+
+        sum += carry;
+        carry = sum / 10;
+        sum %= 10;
+        res += to_string(sum);
+    }
+
+    reverse(res.begin(), res.end());
     return res;
 }
 
