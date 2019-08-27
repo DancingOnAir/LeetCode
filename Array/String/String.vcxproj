@@ -168,6 +168,7 @@
     <ClCompile Include="385_MiniParser.cpp" />
     <ClCompile Include="387_FirstUniqueCharacterinaString.cpp" />
     <ClCompile Include="415_AddStrings.cpp" />
+    <ClCompile Include="434_NumberofSegmentsinaString.cpp" />
     <ClCompile Include="438_FindAllAnagramsInAString.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />
   </ItemGroup>
