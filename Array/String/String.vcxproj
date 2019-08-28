@@ -170,6 +170,7 @@
     <ClCompile Include="415_AddStrings.cpp" />
     <ClCompile Include="434_NumberofSegmentsinaString.cpp" />
     <ClCompile Include="438_FindAllAnagramsInAString.cpp" />
+    <ClCompile Include="443_StringCompression.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

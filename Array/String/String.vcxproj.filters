@@ -111,5 +111,8 @@
     <ClCompile Include="434_NumberofSegmentsinaString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="443_StringCompression.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
