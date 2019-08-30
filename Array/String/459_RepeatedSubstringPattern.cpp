@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-
+#include <vector>
 using namespace std;
 
 bool repeatedSubstringPattern2(string s)
@@ -28,9 +28,28 @@ bool repeatedSubstringPattern2(string s)
     return false;
 }
 
-bool repeatedSubstringPattern(string s)
+bool repeatedSubstringPattern3(string s)
 {
     return (s + s).substr(1, 2 * s.size() - 2).find(s) != -1;
+}
+
+bool repeatedSubstringPattern(string s)
+{
+    // i ºó×º£¬j Ç°×º
+    int i = 1, j = 0, n = s.size();
+    vector<int> dp(n + 1);
+    
+    while (i < n)
+    {
+        if (s[i] == s[j])
+            dp[++i] = ++j;
+        else if (j == 0)
+            ++i;
+        else
+            j = dp[j];
+    }
+
+    return dp[n] && dp[n] % (n - dp[n]) == 0;
 }
 
 void testRepeatedSubstringPattern()
