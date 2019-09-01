@@ -173,6 +173,7 @@
     <ClCompile Include="443_StringCompression.cpp" />
     <ClCompile Include="459_RepeatedSubstringPattern.cpp" />
     <ClCompile Include="468_ValidateIPAddress.cpp" />
+    <ClCompile Include="520_DetectCapital.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

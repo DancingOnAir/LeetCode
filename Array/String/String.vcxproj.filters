@@ -120,5 +120,8 @@
     <ClCompile Include="468_ValidateIPAddress.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="520_DetectCapital.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
