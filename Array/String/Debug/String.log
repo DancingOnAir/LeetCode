@@ -1,3 +1,3 @@
-﻿  520_DetectCapital.cpp
-d:\dev\projects\gitworkspace\leetcode\array\string\520_detectcapital.cpp(8): warning C4018: '<': signed/unsigned mismatch
+﻿  028_ImplementStrStr.cpp
+d:\dev\projects\gitworkspace\leetcode\array\string\028_implementstrstr.cpp(40): warning C4018: '<': signed/unsigned mismatch
   String.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\String.exe
