@@ -17,7 +17,7 @@ struct TreeNode
     }
 };
 
-vector<int> findMode(TreeNode* root)
+vector<int> findMode2(TreeNode* root)
 {
     if (root == nullptr)
         return vector<int>();
@@ -50,6 +50,41 @@ vector<int> findMode(TreeNode* root)
             res.emplace_back(v.first);
     }
 
+    return res;
+}
+
+int maxFreq = 0, currFreq = 0, precursor = INT_MIN;
+vector<int> res;
+
+void inorderTraversal(TreeNode* root)
+{
+    if (!root)
+        return;
+
+    inorderTraversal(root->left);
+    if (precursor == root->val)
+        ++currFreq;
+    else
+        currFreq = 1;
+
+    if (currFreq > maxFreq)
+    {
+        maxFreq = 1;
+        res.clear();
+        res.emplace_back(root->val);
+    }
+    else if (currFreq == maxFreq)
+    {
+        res.emplace_back(root->val);
+    }
+
+    precursor = root->val;
+    inorderTraversal(root->right);
+}
+
+vector<int> findMode(TreeNode* root)
+{
+    inorderTraversal(root);
     return res;
 }
 
