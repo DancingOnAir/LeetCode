@@ -135,5 +135,8 @@
     <ClCompile Include="501_FindModeinBinarySearchTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="508_MostFrequentSubtreeSum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
