@@ -2,6 +2,7 @@
 #include <vector>
 #include <stack>
 #include <string>
+#include <deque>
 using namespace std;
 
 struct TreeNode
@@ -130,27 +131,62 @@ vector<int> inorderTraversal(TreeNode* root)
     return res;
 }
 
-TreeNode* createBinaryTree(vector<string>& bt, int pos)
+TreeNode* createBinaryTree(const vector<string>& nums)
 {
-    if (bt.empty() || bt[pos] == "null")
+    if (nums.empty())
     {
-        ++pos;
         return nullptr;
     }
 
-    TreeNode* root = new TreeNode(stoi(bt[pos]));
+    TreeNode* root = new TreeNode(stoi(nums[0]));
+    int nextLevel = 2;
+    int pos = 1;
+    int restNum = nums.size() - 1;
+    deque<TreeNode*> q;
+    TreeNode* pCurrent = nullptr;
+    q.emplace_back(root);
+
+    while (restNum > 0)
+    {
+        for (int i = pos; i < pos + nextLevel; i += 2)
+        {
+            if (i == nums.size())
+                return root;
+
+            pCurrent = q.front();
+            q.pop_front();
+            if (nums[i] != "null")
+            {
+                pCurrent->left = new TreeNode(stoi(nums[i]));
+                q.emplace_back(pCurrent->left);
+            }
+
+            if (i + 1 == nums.size())
+                return root;
+
+            if (nums[i + 1] != "null")
+            {
+                pCurrent->right = new TreeNode(stoi(nums[i + 1]));
+                q.emplace_back(pCurrent->right);
+            }
+        }
+        pos += nextLevel;
+        restNum -= nextLevel;
+        nextLevel = q.size() * 2;
+    }
+
     return root;
 }
 
 void testInorderTraversal()
 {
-    //vector<string> bt{ "1", "null", "2", "3" };
-    //TreeNode* root = createBinaryTree(bt, 0);
-    TreeNode* root = new TreeNode(1);
-    TreeNode* node1 = new TreeNode(2);
-    TreeNode* node2 = new TreeNode(3);
-    root->right = node1;
-    node1->left = node2;
+    vector<string> bt{ "1", "null", "2", "3" };
+    TreeNode* root = createBinaryTree(bt);
+    //TreeNode* root = new TreeNode(1);
+    //TreeNode* node1 = new TreeNode(2);
+    //TreeNode* node2 = new TreeNode(3);
+    //root->right = node1;
+    //node1->left = node2;
 
     vector<int> res = inorderTraversal(root);
     for (int x : res)
