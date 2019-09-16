@@ -1,4 +1,2 @@
-﻿  104_MaximumDepthOfBinaryTree.cpp
-d:\dev\projects\gitworkspace\leetcode\array\tree\104_maximumdepthofbinarytree.cpp(123): warning C4018: '>=': signed/unsigned mismatch
-d:\dev\projects\gitworkspace\leetcode\array\tree\104_maximumdepthofbinarytree.cpp(134): warning C4018: '>=': signed/unsigned mismatch
+﻿  105_ConstructBinaryTreefromPreorderandInorderTraversal.cpp
   Tree.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\Tree.exe

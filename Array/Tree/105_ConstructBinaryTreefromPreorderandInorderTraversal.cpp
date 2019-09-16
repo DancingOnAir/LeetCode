@@ -274,3 +274,93 @@
 //    system("pause");
 //    return 0;
 //}
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <queue>
+#include <stack>
+
+using namespace std;
+
+struct TreeNode
+{
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr)
+    {
+
+    }
+};
+
+TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder)
+{
+    if (preorder.empty() || inorder.empty())
+        return nullptr;
+
+    TreeNode* root = new TreeNode(preorder[0]);
+    auto inorderPos = find(inorder.begin(), inorder.end(), preorder[0]);
+    vector<int> inorderLeft(inorder.begin(), inorderPos);
+    vector<int> inorderRight(inorderPos + 1, inorder.end());
+
+    vector<int> preorderLeft(preorder.begin() + 1, preorder.begin() + inorderLeft.size() + 1);
+    vector<int> preorderRight(preorder.begin() + inorderLeft.size() + 1, preorder.end());
+
+    root->left = buildTree(preorderLeft, inorderLeft);
+    root->right = buildTree(preorderRight, inorderRight);
+
+    return root;
+}
+
+vector<int> preorderTraversal(TreeNode* root)
+{
+    if (!root)
+        return vector<int>();
+
+    vector<int> res;
+    stack<TreeNode*> s;
+    TreeNode* pCurrent = root;
+
+    while (!s.empty() || pCurrent)
+    {
+        if (pCurrent)
+        {
+            res.emplace_back(pCurrent->val);
+            s.emplace(pCurrent);
+            pCurrent = pCurrent->left;
+        }
+        else
+        {
+            pCurrent = s.top();
+            s.pop();
+            pCurrent = pCurrent->right;
+        }
+    }
+    return res;
+}
+
+void display(const vector<int>& nums)
+{
+    for (int x : nums)
+        cout << x << ", ";
+    cout << endl;
+}
+
+void testBuildTree()
+{
+    vector<int> preorder = { 3,9,20,15,7 };
+    vector<int> inorder = { 9,3,15,20,7 };
+
+    TreeNode* root = buildTree(preorder, inorder);
+    vector<int> nums = preorderTraversal(root);
+    display(nums);
+}
+
+int main()
+{
+    testBuildTree();
+
+    getchar();
+    return 0;
+}
