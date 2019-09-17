@@ -106,3 +106,98 @@
 //    system("pause");
 //    return 0;
 //}
+
+#include <iostream>
+#include <vector>
+#include <stack>
+
+using namespace std;
+
+struct TreeNode
+{
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
+};
+
+TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) 
+{
+    if (inorder.empty() || postorder.empty())
+        return nullptr;
+
+    int len = postorder.size();
+    TreeNode* root = new TreeNode(postorder[len - 1]);
+    auto inorderPos = find(inorder.begin(), inorder.end(), root->val);
+    vector<int> inorderLeft(inorder.begin(), inorderPos);
+    vector<int> inorderRight(inorderPos + 1, inorder.end());
+
+    int postorderPos = inorderLeft.size();
+    vector<int> postorderLeft(postorder.begin(), postorder.begin() + postorderPos);
+    vector<int> postorderRight(postorder.begin() + postorderPos, postorder.end() - 1);
+
+    root->left = buildTree(inorderLeft, postorderLeft);
+    root->right = buildTree(inorderRight, postorderRight);
+
+    return root;
+}
+
+vector<int> postorderTraversal(TreeNode* root)
+{
+    if (!root)
+        return vector<int>();
+
+    vector<int> res;
+    stack<TreeNode*> s, t;
+    TreeNode* pCurrent = nullptr;
+    s.emplace(root);
+
+    while (!s.empty())
+    {
+        pCurrent = s.top();
+        s.pop();
+
+        t.emplace(pCurrent);
+
+        if (pCurrent->left)
+            s.emplace(pCurrent->left);
+        if (pCurrent->right)
+            s.emplace(pCurrent->right);
+    }
+
+    while (!t.empty())
+    {
+        res.emplace_back(t.top()->val);
+        t.pop();
+    }
+
+    return res;
+}
+
+void display(const vector<int>& nums)
+{
+    if (nums.empty())
+        return;
+
+    for (int x : nums)
+        cout << x << ", ";
+    cout << endl;
+}
+
+void testBuildTree()
+{
+    vector<int> inorder = { 9, 3, 15, 20, 7 };
+    vector<int> postorder = { 9, 15, 7, 20, 3 };
+
+    auto root = buildTree(inorder, postorder);
+    auto res = postorderTraversal(root);
+    display(res);
+}
+
+int main()
+{
+    testBuildTree();
+
+    getchar();
+    return 0;
+}
