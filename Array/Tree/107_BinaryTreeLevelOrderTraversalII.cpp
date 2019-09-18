@@ -84,3 +84,131 @@
 //    system("pause");
 //    return 0;
 //}
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <queue>
+
+using namespace std;
+
+struct TreeNode
+{
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr)
+    {
+
+    }
+};
+
+int getMaxDepth(TreeNode* root)
+{
+    if (!root)
+        return 0;
+
+    return max(getMaxDepth(root->left), getMaxDepth(root->right)) + 1;
+}
+
+vector<vector<int>> levelOrderBottom(TreeNode* root)
+{
+    int depth = getMaxDepth(root);
+    vector<vector<int>> res(depth, vector<int>());
+
+    queue<TreeNode*> q;
+    q.emplace(root);
+    TreeNode* pCurrent = nullptr;
+
+    for (int j = depth - 1; j >= 0; --j)
+    {
+        int len = q.size();
+        vector<int> temp(len);
+        for (int i = 0; i < len; ++i)
+        {
+            pCurrent = q.front();
+            q.pop();
+            temp[i] = pCurrent->val;
+
+            if (pCurrent->left)
+                q.emplace(pCurrent->left);
+            if (pCurrent->right)
+                q.emplace(pCurrent->right);
+        }
+        res[j].assign(temp.begin(), temp.end());
+    }
+
+    return res;
+}
+
+TreeNode* createBinaryTree(const vector<string>& nums)
+{
+    if (nums.empty())
+        return nullptr;
+
+    TreeNode* root = new TreeNode(stoi(nums[0]));
+    queue<TreeNode*> q;
+    q.emplace(root);
+    TreeNode* pCurrent = nullptr;
+
+    int startIndex = 1;
+    int nextLevelIndex = 2;
+    int restIndex = nums.size() - 1;
+
+    while (restIndex > 0)
+    {
+        for (int i = startIndex; i < startIndex + nextLevelIndex; i += 2)
+        {
+            if (i >= nums.size())
+                return root;
+
+            pCurrent = q.front();
+            q.pop();
+            if (nums[i] != "null")
+            {
+                pCurrent->left = new TreeNode(stoi(nums[i]));
+                q.emplace(pCurrent->left);
+            }
+
+            if (i + 1 >= nums.size())
+                return root;
+            if (nums[i + 1] != "null")
+            {
+                pCurrent->right = new TreeNode(stoi(nums[i + 1]));
+                q.emplace(pCurrent->right);
+            }
+        }
+
+        startIndex += nextLevelIndex;
+        restIndex -= nextLevelIndex;
+        nextLevelIndex = q.size() * 2;
+    }
+
+    return root;
+}
+
+void display(const vector<vector<int>>& matrix)
+{
+    for (auto& row : matrix)
+    {
+        for (auto& col : row)
+            cout << col << ", ";
+        cout << endl;
+    }
+}
+
+void testLevelOrderBottom()
+{
+    vector<string> nums = { "3", "9", "20", "null", "null", "15", "7" };
+    TreeNode* root = createBinaryTree(nums);
+    auto res = levelOrderBottom(root);
+    display(res);
+}
+
+int main()
+{
+    testLevelOrderBottom();
+
+    getchar();
+    return 0;
+}
