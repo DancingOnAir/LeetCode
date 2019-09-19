@@ -49,3 +49,61 @@
 //    system("pause");
 //    return 0;
 //}
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+struct TreeNode
+{
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr)
+    {
+
+    }
+};
+
+TreeNode* sortedArrayToBST(vector<int>& nums)
+{
+    if (nums.empty())
+        return nullptr;
+
+    int len = nums.size();
+    int mid = len / 2;
+
+    TreeNode* root = new TreeNode(nums[mid]);
+    vector<int> nums_left(nums.begin(), nums.begin() + mid);
+    vector<int> nums_right(nums.begin() + mid + 1, nums.end());
+    root->left = sortedArrayToBST(nums_left);
+    root->right = sortedArrayToBST(nums_right);
+
+    return root;
+}
+
+void postorderTraversal(TreeNode* root)
+{
+    if (!root)
+        return;
+
+    postorderTraversal(root->left);
+    cout << root->val << endl;
+    postorderTraversal(root->right);
+}
+
+void testSortedArrayToBST()
+{
+    vector<int> nums = { -10, -3, 0, 5, 9 };
+    TreeNode* root = sortedArrayToBST(nums);
+    postorderTraversal(root);
+}
+
+int main()
+{
+    testSortedArrayToBST();
+
+    getchar();
+    return 0;
+}
