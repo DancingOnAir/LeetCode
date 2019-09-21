@@ -154,6 +154,7 @@
     <ClCompile Include="108_ConvertSortedArrayToBinarySearchTree.cpp" />
     <ClCompile Include="109_ConvertSortedListToBinarySearchTree.cpp" />
     <ClCompile Include="110_Balanced Binary Tree.cpp" />
+    <ClCompile Include="111_MinimumDepthofBinaryTree.cpp" />
     <ClCompile Include="112_PathSum.cpp" />
     <ClCompile Include="113_PathSumII.cpp" />
     <ClCompile Include="114_FlattenBinaryTreeToLinkedList.cpp" />
