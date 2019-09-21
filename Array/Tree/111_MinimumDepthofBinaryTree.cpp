@@ -16,7 +16,7 @@ struct TreeNode
     }
 };
 
-int minDepth(TreeNode* root)
+int minDepth2(TreeNode* root)
 {
     if (!root)
         return 0;
@@ -46,6 +46,17 @@ int minDepth(TreeNode* root)
     }
 
     return res;
+}
+
+int minDepth(TreeNode* root)
+{
+    if (!root)
+        return 0;
+
+    int left = minDepth(root->left);
+    int right = minDepth(root->right);
+
+    return (min(left, right) ? min(left, right) : max(left, right)) + 1;
 }
 
 TreeNode* createBinaryTree(const vector<string>& nums)
