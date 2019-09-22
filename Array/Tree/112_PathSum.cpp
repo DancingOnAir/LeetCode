@@ -135,6 +135,17 @@ bool hasPathSum(TreeNode* root, int sum)
     return iter != res.end();
 }
 
+bool hasPathSum2(TreeNode* root, int sum)
+{
+    if (!root)
+        return false;
+
+    if (root->val == sum && !root->left && !root->right)
+        return true;
+
+    return hasPathSum2(root->left, sum - root->val) || hasPathSum2(root->right, sum - root->val);
+}
+
 TreeNode* createBinaryTree(const vector<string>& nums)
 {
     if (nums.empty())
