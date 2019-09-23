@@ -141,5 +141,8 @@
     <ClCompile Include="111_MinimumDepthofBinaryTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="513_FindBottomLeftTreeValue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
