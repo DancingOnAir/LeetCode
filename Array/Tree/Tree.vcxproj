@@ -182,6 +182,7 @@
     <ClCompile Include="508_MostFrequentSubtreeSum.cpp" />
     <ClCompile Include="099_RecoverBinarySearchTree.cpp" />
     <ClCompile Include="513_FindBottomLeftTreeValue.cpp" />
+    <ClCompile Include="515_FindLargestValueinEachTreeRow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

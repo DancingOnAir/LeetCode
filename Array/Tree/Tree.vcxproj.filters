@@ -144,5 +144,8 @@
     <ClCompile Include="513_FindBottomLeftTreeValue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="515_FindLargestValueinEachTreeRow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
