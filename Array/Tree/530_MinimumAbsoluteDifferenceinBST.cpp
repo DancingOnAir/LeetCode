@@ -30,11 +30,45 @@ void inorderTraversal(TreeNode* root, TreeNode* pre, int& minVal)
         inorderTraversal(root->right, pre, minVal);
 }
 
-int getMinimumDifference(TreeNode* root)
+int getMinimumDifference2(TreeNode* root)
 {
     int minVal = INT_MAX;
     TreeNode* pre = nullptr;
     inorderTraversal(root, pre, minVal);
+
+    return minVal;
+}
+
+void helper(TreeNode* root, int& minVal)
+{
+    if (!root)
+        return;
+
+    if (root->left)
+    {
+        TreeNode* tmp = root->left;
+        while (tmp->right)
+            tmp = tmp->right;
+
+        minVal = min(minVal, root->val - tmp->val);
+        helper(root->left, minVal);
+    }
+
+    if (root->right)
+    {
+        TreeNode* tmp = root->right;
+        while (tmp->left)
+            tmp = tmp->left;
+
+        minVal = min(minVal, tmp->val - root->val);
+        helper(root->right, minVal);
+    }
+}
+
+int getMinimumDifference(TreeNode* root)
+{
+    int minVal = INT_MAX;
+    helper(root, minVal);
 
     return minVal;
 }

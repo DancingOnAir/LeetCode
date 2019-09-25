@@ -1,4 +1,4 @@
 ﻿  530_MinimumAbsoluteDifferenceinBST.cpp
-d:\dev\projects\gitworkspace\leetcode\array\tree\530_minimumabsolutedifferenceinbst.cpp(60): warning C4018: '>=': signed/unsigned mismatch
-d:\dev\projects\gitworkspace\leetcode\array\tree\530_minimumabsolutedifferenceinbst.cpp(72): warning C4018: '>=': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\tree\530_minimumabsolutedifferenceinbst.cpp(94): warning C4018: '>=': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\tree\530_minimumabsolutedifferenceinbst.cpp(106): warning C4018: '>=': signed/unsigned mismatch
   Tree.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\Tree.exe
