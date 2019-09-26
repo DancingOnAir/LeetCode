@@ -150,5 +150,8 @@
     <ClCompile Include="530_MinimumAbsoluteDifferenceinBST.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="538_ConvertBSTtoGreaterTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
