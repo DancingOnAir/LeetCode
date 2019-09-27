@@ -1,4 +1,4 @@
 ﻿  543_DiameterofBinaryTree.cpp
-d:\dev\projects\gitworkspace\leetcode\array\tree\543_diameterofbinarytree.cpp(66): warning C4018: '>=': signed/unsigned mismatch
-d:\dev\projects\gitworkspace\leetcode\array\tree\543_diameterofbinarytree.cpp(78): warning C4018: '>=': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\tree\543_diameterofbinarytree.cpp(87): warning C4018: '>=': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\tree\543_diameterofbinarytree.cpp(99): warning C4018: '>=': signed/unsigned mismatch
   Tree.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\Tree.exe

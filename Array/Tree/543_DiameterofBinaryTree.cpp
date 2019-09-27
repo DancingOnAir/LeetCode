@@ -16,12 +16,12 @@ struct TreeNode
     }
 };
 
-int depthOfBinaryTree(TreeNode* root)
+int depthOfBinaryTree2(TreeNode* root)
 {
     if (!root)
         return 0;
 
-    return max(depthOfBinaryTree(root->left), depthOfBinaryTree(root->right)) + 1;
+    return max(depthOfBinaryTree2(root->left), depthOfBinaryTree2(root->right)) + 1;
 }
 
 void preorderTraversal(TreeNode* root, int& maxVal)
@@ -29,9 +29,31 @@ void preorderTraversal(TreeNode* root, int& maxVal)
     if (!root)
         return;
 
-    maxVal = max(maxVal, depthOfBinaryTree(root->left) + depthOfBinaryTree(root->right));
+    maxVal = max(maxVal, depthOfBinaryTree2(root->left) + depthOfBinaryTree2(root->right));
     preorderTraversal(root->left, maxVal);
     preorderTraversal(root->right, maxVal);
+}
+
+int diameterOfBinaryTree2(TreeNode* root)
+{
+    if (!root)
+        return 0;
+
+    int maxVal = INT_MIN;
+    preorderTraversal(root, maxVal);
+
+    return maxVal;
+}
+
+int maxVal = INT_MIN;
+
+int depthOfBinaryTree(TreeNode* root)
+{
+    if (!root)
+        return 0;
+
+    maxVal = max(maxVal, depthOfBinaryTree(root->left) + depthOfBinaryTree(root->right));
+    return max(depthOfBinaryTree(root->left), depthOfBinaryTree(root->right)) + 1;
 }
 
 int diameterOfBinaryTree(TreeNode* root)
@@ -39,8 +61,7 @@ int diameterOfBinaryTree(TreeNode* root)
     if (!root)
         return 0;
 
-    int maxVal = INT_MIN;
-    preorderTraversal(root, maxVal);
+    depthOfBinaryTree(root);
 
     return maxVal;
 }
