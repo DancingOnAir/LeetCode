@@ -186,6 +186,7 @@
     <ClCompile Include="530_MinimumAbsoluteDifferenceinBST.cpp" />
     <ClCompile Include="538_ConvertBSTtoGreaterTree.cpp" />
     <ClCompile Include="543_DiameterofBinaryTree.cpp" />
+    <ClCompile Include="563_BinaryTreeTilt.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
