@@ -1,4 +1,4 @@
-﻿  563_BinaryTreeTilt.cpp
-d:\dev\projects\gitworkspace\leetcode\array\tree\563_binarytreetilt.cpp(61): warning C4018: '>=': signed/unsigned mismatch
-d:\dev\projects\gitworkspace\leetcode\array\tree\563_binarytreetilt.cpp(73): warning C4018: '>=': signed/unsigned mismatch
+﻿  572_SubtreeofAnotherTree.cpp
+d:\dev\projects\gitworkspace\leetcode\array\tree\572_subtreeofanothertree.cpp(79): warning C4018: '>=': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\tree\572_subtreeofanothertree.cpp(91): warning C4018: '>=': signed/unsigned mismatch
   Tree.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\Tree.exe
