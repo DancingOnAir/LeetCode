@@ -165,5 +165,8 @@
     <ClCompile Include="606_ConstructStringfromBinaryTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="617_MergeTwoBinaryTrees.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
