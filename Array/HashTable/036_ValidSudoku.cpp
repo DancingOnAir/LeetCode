@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-bool isValidSudoku(vector<vector<char>>& board)
+bool isValidSudoku2(vector<vector<char>>& board)
 {
     vector<char> nums = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
     unordered_map<char, int> m, n;
@@ -55,6 +55,31 @@ bool isValidSudoku(vector<vector<char>>& board)
         }
     }
 
+    return true;
+}
+
+bool isValidSudoku(vector<vector<char>>& board)
+{
+    vector<short> col(9);
+    vector<short> row(9);
+    vector<short> block(9);
+
+    for (int i = 0; i < 9; ++i)
+    {
+        for (int j = 0; j < 9; ++j)
+        {
+            if (board[i][j] != '.')
+            {
+                int idx = 1 << (board[i][j] - '0');
+                if (idx & col[j] || idx & row[i] || idx & block[i / 3 * 3 + j / 3])
+                    return false;
+
+                col[j] |= idx;
+                row[i] |= idx;
+                block[i / 3 * 3 + j / 3] |= idx;
+            }
+        }
+    }
 
     return true;
 }
