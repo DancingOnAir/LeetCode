@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="036_ValidSudoku.cpp" />
+    <ClCompile Include="037_SudokuSolver.cpp" />
     <ClCompile Include="136_SingleNumber.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
