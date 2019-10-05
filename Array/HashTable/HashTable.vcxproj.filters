@@ -24,5 +24,8 @@
     <ClCompile Include="037_SudokuSolver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="138_CopyListwithRandomPointer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
