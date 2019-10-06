@@ -27,5 +27,8 @@
     <ClCompile Include="138_CopyListwithRandomPointer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="187_RepeatedDNASequences.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

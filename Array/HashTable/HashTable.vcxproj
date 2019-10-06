@@ -119,6 +119,7 @@
     <ClCompile Include="037_SudokuSolver.cpp" />
     <ClCompile Include="136_SingleNumber.cpp" />
     <ClCompile Include="138_CopyListwithRandomPointer.cpp" />
+    <ClCompile Include="187_RepeatedDNASequences.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
