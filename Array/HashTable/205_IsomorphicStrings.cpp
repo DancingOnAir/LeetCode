@@ -3,7 +3,7 @@
 #include <unordered_map>
 using namespace std;
 
-bool isIsomorphic(string s, string t)
+bool isIsomorphic2(string s, string t)
 {
     if (s.size() != t.size())
         return false;
@@ -26,6 +26,23 @@ bool isIsomorphic(string s, string t)
 
     return ms == mt;
 }
+
+bool isIsomorphic(string s, string t)
+{
+    vector<int> ms(256, -1);
+    vector<int> mt(256, -1);
+
+    for (int i = 0; i < s.size(); ++i)
+    {
+        if (ms[s[i]] != mt[t[i]])
+            return false;
+
+        ms[s[i]] = mt[t[i]] = i;
+    }
+
+    return true;
+}
+
 
 void testIsIsomorphic()
 {
