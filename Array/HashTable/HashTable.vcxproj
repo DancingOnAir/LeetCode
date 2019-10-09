@@ -122,6 +122,7 @@
     <ClCompile Include="187_RepeatedDNASequences.cpp" />
     <ClCompile Include="205_IsomorphicStrings.cpp" />
     <ClCompile Include="242_ValidAnagram.cpp" />
+    <ClCompile Include="274_H-Index.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
