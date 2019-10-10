@@ -123,6 +123,7 @@
     <ClCompile Include="205_IsomorphicStrings.cpp" />
     <ClCompile Include="242_ValidAnagram.cpp" />
     <ClCompile Include="274_H-Index.cpp" />
+    <ClCompile Include="290_WordPattern.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
