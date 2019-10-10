@@ -2,10 +2,11 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include <sstream>
 
 using namespace std;
 
-bool wordPattern(string pattern, string str)
+bool wordPattern2(string pattern, string str)
 {
     if (pattern.empty() || str.empty())
         return false;
@@ -53,6 +54,38 @@ bool wordPattern(string pattern, string str)
     }
 
     return startIndex == str.size();
+}
+
+bool wordPattern(string pattern, string str)
+{
+    istringstream iss(str);
+    vector<string> vs;
+    string tmp("");
+    while (iss >> tmp)
+    {
+        vs.emplace_back(tmp);
+    }
+
+    if (vs.size() != pattern.size())
+        return false;
+
+    unordered_map<char, string> c2s;
+    unordered_map<string, char> s2c;
+
+    for (int i = 0; i < vs.size(); ++i)
+    {
+        if (!s2c.count(vs[i]) && !c2s.count(pattern[i]))
+        {
+            s2c[vs[i]] = pattern[i];
+            c2s[pattern[i]] = vs[i];
+            continue;
+        }
+
+        if (s2c[vs[i]] != pattern[i])
+            return false;
+    }
+
+    return true;
 }
 
 void testWordPattern()
