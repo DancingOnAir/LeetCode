@@ -42,5 +42,8 @@
     <ClCompile Include="290_WordPattern.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="347_TopKFrequentElements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
