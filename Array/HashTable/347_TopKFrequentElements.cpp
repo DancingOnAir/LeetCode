@@ -1,41 +1,35 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <unordered_map>
 using namespace std;
 
 vector<int> topKFrequent(vector<int>& nums, int k)
 {
-    map<int, int> m;
-    map<int, vector<int>, greater<int>> n;
+    unordered_map<int, int> m;
     for (int x : nums)
     {
         ++m[x];
     }
 
+    map<int, vector<int>, greater<int>> n;
     for (auto iter : m)
     {
         n[iter.second].emplace_back(iter.first);
     }
 
     vector<int> res;
-    int count = 0;
-
-        for (auto iter = n.begin(); iter != n.end();)
+    for (auto iter = n.begin(); iter != n.end(); ++iter)
+    {
+        for (int x : iter->second)
         {
-            if (count < k)
-            {
-                ++count;
-                res.emplace_back(iter->second.back());
-                iter->second.pop_back();
-            }
-            else
-                break;
+            if (res.size() >= k)
+                return res;
 
-            if (iter->second.empty())
-                ++iter;
+            res.emplace_back(x);
         }
+    }
     
-
     return res;
 }
 
