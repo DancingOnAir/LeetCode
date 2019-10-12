@@ -125,6 +125,7 @@
     <ClCompile Include="274_H-Index.cpp" />
     <ClCompile Include="290_WordPattern.cpp" />
     <ClCompile Include="347_TopKFrequentElements.cpp" />
+    <ClCompile Include="349_IntersectionofTwoArrays.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
