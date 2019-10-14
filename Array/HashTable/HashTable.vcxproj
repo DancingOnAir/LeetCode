@@ -127,6 +127,7 @@
     <ClCompile Include="347_TopKFrequentElements.cpp" />
     <ClCompile Include="349_IntersectionofTwoArrays.cpp" />
     <ClCompile Include="350_IntersectionofTwoArraysII.cpp" />
+    <ClCompile Include="355_DesignTwitter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

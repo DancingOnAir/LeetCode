@@ -51,5 +51,8 @@
     <ClCompile Include="350_IntersectionofTwoArraysII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="355_DesignTwitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
