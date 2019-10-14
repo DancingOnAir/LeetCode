@@ -3,55 +3,61 @@
 #include <unordered_map>
 #include <algorithm>
 #include <list>
+#include <set>
+#include <queue>
 
 using namespace std;
 
 class Twitter {
 public:
     /** Initialize your data structure here. */
-    Twitter() {
-
+    Twitter(): time(0)
+    {
     }
 
     /** Compose a new tweet. */
     void postTweet(int userId, int tweetId)
     {
-        posts.emplace_back(make_pair(userId, tweetId));
+        tw[userId].emplace_back(make_pair(++time, tweetId));
     }
 
     /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */
     vector<int> getNewsFeed(int userId)
     {
-        vector<int> res;
-
-        for (auto iter = posts.rbegin(); iter != posts.rend(); ++iter)
-        {
-            if (iter->first == userId || find(follows[userId].begin(), follows[userId].end(), iter->first) != follows[userId].end())
-                res.emplace_back(iter->second);
-
-            if (res.size() == 10)
-                return res;
+        priority_queue<pair<int, int>> maxHeap;
+        for (auto it = tw[userId].begin(); it != tw[userId].end(); ++it)
+            maxHeap.push(*it);
+        for (auto it1 = fo[userId].begin(); it1 != fo[userId].end(); ++it1) {
+            int usr = *it1;
+            for (auto it2 = tw[usr].begin(); it2 != tw[usr].end(); ++it2)
+                maxHeap.emplace(*it2);
         }
-
+        vector<int> res;
+        while (maxHeap.size() > 0) {
+            res.emplace_back(maxHeap.top().second);
+            if (res.size() == 10) break;
+            maxHeap.pop();
+        }
         return res;
     }
 
     /** Follower follows a followee. If the operation is invalid, it should be a no-op. */
     void follow(int followerId, int followeeId)
     {
-        follows[followerId].emplace_back(followeeId);
+        if (followerId != followeeId)
+            fo[followerId].emplace(followeeId);
     }
 
     /** Follower unfollows a followee. If the operation is invalid, it should be a no-op. */
     void unfollow(int followerId, int followeeId)
     {
-        follows[followerId].remove(followeeId);
+        fo[followerId].erase(followeeId);
     }
 
 private:
-    //unordered_map<int, vector<int>> posts;
-    vector<pair<int, int>> posts;
-    unordered_map<int, list<int>> follows;
+    long long time;
+    unordered_map<int, vector<pair<int, int>>> tw;
+    unordered_map<int, set<int>> fo;
 };
 
 void testTwitter()
