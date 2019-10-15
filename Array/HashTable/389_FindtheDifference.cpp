@@ -1,10 +1,11 @@
 #include <iostream>
 #include <unordered_map>
 #include <string>
-
+#include <numeric>
+#include <functional>
 using namespace std;
 
-char findTheDifference(string s, string t)
+char findTheDifference2(string s, string t)
 {
     if (s.empty())
         return t[0];
@@ -26,6 +27,11 @@ char findTheDifference(string s, string t)
     }
 
     return t[0];
+}
+
+char findTheDifference(string s, string t)
+{
+    return accumulate(begin(t), end(t), accumulate(begin(s), end(s), 0, bit_xor<int>()), bit_xor<int>());
 }
 
 void testFindTheDifference()
