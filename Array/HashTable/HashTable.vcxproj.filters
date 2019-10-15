@@ -54,5 +54,8 @@
     <ClCompile Include="355_DesignTwitter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="389_FindtheDifference.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

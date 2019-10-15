@@ -128,6 +128,7 @@
     <ClCompile Include="349_IntersectionofTwoArrays.cpp" />
     <ClCompile Include="350_IntersectionofTwoArraysII.cpp" />
     <ClCompile Include="355_DesignTwitter.cpp" />
+    <ClCompile Include="389_FindtheDifference.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
