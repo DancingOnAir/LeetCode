@@ -129,6 +129,7 @@
     <ClCompile Include="350_IntersectionofTwoArraysII.cpp" />
     <ClCompile Include="355_DesignTwitter.cpp" />
     <ClCompile Include="389_FindtheDifference.cpp" />
+    <ClCompile Include="409_LongestPalindrome.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
