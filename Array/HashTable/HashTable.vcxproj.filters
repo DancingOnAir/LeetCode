@@ -60,5 +60,8 @@
     <ClCompile Include="409_LongestPalindrome.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="447_NumberofBoomerangs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
