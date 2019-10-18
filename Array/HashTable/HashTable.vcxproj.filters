@@ -63,5 +63,8 @@
     <ClCompile Include="447_NumberofBoomerangs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="451_SortCharactersByFrequency.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
