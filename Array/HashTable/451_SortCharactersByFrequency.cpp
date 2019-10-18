@@ -3,9 +3,10 @@
 #include <string>
 #include <map>
 #include <unordered_map>
+#include <algorithm>
 using namespace std;
 
-string frequencySort(string s)
+string frequencySort2(string s)
 {
     int len = s.size();
     if (len < 3)
@@ -30,6 +31,23 @@ string frequencySort(string s)
     }
 
     return res;
+}
+
+string frequencySort(string s)
+{
+    unordered_map<char, int> count;
+    for (char c : s)
+        ++count[c];
+
+    sort(s.begin(), s.end(), [&](char a, char b) {
+        if (count[a] > count[b])
+            return true;
+        if (count[a] == count[b])
+            return a < b;
+        return false;
+    });
+
+    return s;
 }
 
 void testFrequencySort()
