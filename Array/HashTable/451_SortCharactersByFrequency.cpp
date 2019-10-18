@@ -17,19 +17,16 @@ string frequencySort(string s)
         ++count[c];
     }
 
-    map<int, vector<char>, greater<int>> m;
+    vector<string> bucket(len + 1, "");
     for (auto& iter : count)
     {
-        m[iter.second].emplace_back(iter.first);
+        bucket[iter.second].append(string(iter.second, iter.first));
     }
 
     string res;
-    for (auto& iter : m)
+    for (int i = len; i > 0; --i)
     {
-        for (char c : iter.second)
-        {
-            res += string(iter.first, c);
-        }
+        res += bucket[i];
     }
 
     return res;
