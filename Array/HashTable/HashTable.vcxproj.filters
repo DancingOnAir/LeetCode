@@ -66,5 +66,8 @@
     <ClCompile Include="451_SortCharactersByFrequency.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="454_4SumII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
