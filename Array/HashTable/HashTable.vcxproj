@@ -133,6 +133,7 @@
     <ClCompile Include="447_NumberofBoomerangs.cpp" />
     <ClCompile Include="451_SortCharactersByFrequency.cpp" />
     <ClCompile Include="454_4SumII.cpp" />
+    <ClCompile Include="463_IslandPerimeter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
