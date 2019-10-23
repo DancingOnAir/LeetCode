@@ -72,5 +72,8 @@
     <ClCompile Include="463_IslandPerimeter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="500_KeyboardRow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
