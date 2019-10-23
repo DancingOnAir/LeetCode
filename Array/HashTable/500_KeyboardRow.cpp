@@ -6,7 +6,7 @@
 
 using namespace std;
 
-vector<string> findWords(vector<string>& words)
+vector<string> findWords2(vector<string>& words)
 {
     if (words.empty())
         return vector<string>();
@@ -20,7 +20,7 @@ vector<string> findWords(vector<string>& words)
     {
         for (auto& iter : count)
         {
-            if (iter.second.count(word[0]))
+            if (iter.second.count(toupper(word[0])))
                 flag = iter.first;
         }
 
@@ -35,6 +35,37 @@ vector<string> findWords(vector<string>& words)
         if (i == word.size())
             res.emplace_back(word);
         flag = 0;
+    }
+
+    return res;
+}
+
+vector<string> findWords(vector<string>& words)
+{
+    if (words.empty())
+        return vector<string>();
+
+    vector<int> dict(26);
+    vector<string> rows = { "QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM" };
+    for (int i = 0; i < rows.size(); ++i)
+    {
+        for (char c : rows[i])
+            dict[toupper(c) - 'A'] = 1 << i;
+    }
+
+    vector<string> res;
+    for (auto& w : words)
+    {
+        int r = 7;
+        for (char c : w)
+        {
+            r &= dict[toupper(c) - 'A'];
+            if (!r)
+                break;
+        }
+
+        if (r)
+            res.emplace_back(w);
     }
 
     return res;
