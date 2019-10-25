@@ -11,19 +11,17 @@ int findMaxLength(vector<int>& nums)
         return 0;
 
     unordered_map<int, int> m;
-    int res = 0, tmp = 0;
-    for (int i = 0; i + res < n; ++i)
+    m[0] = -1;
+    int res = 0, sum = 0;
+    
+    for (int i = 0; i < n; ++i)
     {
-        for (int j = i; j < n; ++j)
-        {
-            ++m[nums[j]];
-            if (m[0] == m[1])
-            {
-                res = max(res, m[0] * 2);
-            }
-        }
-
-        m.clear();
+        sum += (nums[i] == 0) ? -1 : 1;
+        auto iter = m.find(sum);
+        if (iter != m.end())
+            res = max(res, i - iter->second);
+        else
+            m[sum] = i;
     }
 
     return res;
