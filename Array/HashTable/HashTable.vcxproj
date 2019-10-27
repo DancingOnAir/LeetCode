@@ -136,6 +136,7 @@
     <ClCompile Include="463_IslandPerimeter.cpp" />
     <ClCompile Include="500_KeyboardRow.cpp" />
     <ClCompile Include="525_ContiguousArray.cpp" />
+    <ClCompile Include="554_BrickWall.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

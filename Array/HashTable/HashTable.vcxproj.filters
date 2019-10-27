@@ -78,5 +78,8 @@
     <ClCompile Include="525_ContiguousArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="554_BrickWall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
