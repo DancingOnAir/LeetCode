@@ -8,25 +8,19 @@ using namespace std;
 int leastBricks(vector<vector<int>>& wall)
 {
     unordered_map<int, int> count;
-    int res = INT_MIN;
-    int row = wall.size();
+    int res = 0;
 
-    for (int i = 0; i < row; ++i)
+    for (int i = 0; i < wall.size(); ++i)
     {
-        int tmp = 0;
-        for (int j = 0; j < wall[i].size(); ++j)
+        int sum = 0;
+        for (int j = 0; j + 1 < wall[i].size(); ++j)
         {
-            tmp += wall[i][j];
-            if (j != wall[i].size() - 1)
-            {
-                ++count[tmp];
-                res = max(res, count[tmp]);
-            }
-
+            count[sum += wall[i][j]]++;
+            res = max(res, count[sum]);
         }
     }
 
-    return (count.size() == 0)? row : (row - res);
+    return wall.size() - res;
 }
 
 void testLeastBricks()
