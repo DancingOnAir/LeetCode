@@ -81,5 +81,8 @@
     <ClCompile Include="554_BrickWall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="575_DistributeCandies.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
