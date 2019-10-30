@@ -138,6 +138,7 @@
     <ClCompile Include="525_ContiguousArray.cpp" />
     <ClCompile Include="554_BrickWall.cpp" />
     <ClCompile Include="575_DistributeCandies.cpp" />
+    <ClCompile Include="594_LongestHarmoniousSubsequence.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

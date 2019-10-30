@@ -84,5 +84,8 @@
     <ClCompile Include="575_DistributeCandies.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="594_LongestHarmoniousSubsequence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
