@@ -6,28 +6,27 @@ using namespace std;
 
 vector<string> findRestaurant(vector<string>& list1, vector<string>& list2)
 {
-    unordered_map<string, int> m1, m2;
-    for (int i = 0; i < list1.size(); ++i)
-        m1[list1[i]] = i;
-
-    for (int i = 0; i < list2.size(); ++i)
-        m2[list2[i]] = i;
-
+    unordered_map<string, int> m;
     vector<string> res;
     int minIndex = INT_MAX;
-    for (auto iter = m1.begin(); iter != m1.end(); ++iter)
+
+    for (int i = 0; i < list1.size(); ++i)
+        m[list1[i]] = i;
+
+    for (int i = 0; i < list2.size(); ++i)
     {
-        if (m2.count(iter->first))
+        if (m.count(list2[i]))
         {
-            int tmp = iter->second + m2[iter->first];
-            if (tmp < minIndex)
+            if (m[list2[i]] + i < minIndex)
             {
                 res.clear();
-                minIndex = tmp;
-                res.emplace_back(iter->first);
+                res.emplace_back(list2[i]);
+                minIndex = m[list2[i]] + i;
             }
-            else if (tmp == minIndex)
-                res.emplace_back(iter->first);
+            else if (m[list2[i]] + i == minIndex)
+            {
+                res.emplace_back(list2[i]);
+            }
         }
     }
 
