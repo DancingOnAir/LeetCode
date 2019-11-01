@@ -90,5 +90,8 @@
     <ClCompile Include="599_MinimumIndexSumofTwoLists.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="609_FindDuplicateFileinSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

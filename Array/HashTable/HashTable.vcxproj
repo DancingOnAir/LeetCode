@@ -140,6 +140,7 @@
     <ClCompile Include="575_DistributeCandies.cpp" />
     <ClCompile Include="594_LongestHarmoniousSubsequence.cpp" />
     <ClCompile Include="599_MinimumIndexSumofTwoLists.cpp" />
+    <ClCompile Include="609_FindDuplicateFileinSystem.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
