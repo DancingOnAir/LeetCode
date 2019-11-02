@@ -93,5 +93,8 @@
     <ClCompile Include="609_FindDuplicateFileinSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="632_SmallestRangeCoveringElementsfromKLists.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

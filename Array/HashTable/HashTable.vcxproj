@@ -141,6 +141,7 @@
     <ClCompile Include="594_LongestHarmoniousSubsequence.cpp" />
     <ClCompile Include="599_MinimumIndexSumofTwoLists.cpp" />
     <ClCompile Include="609_FindDuplicateFileinSystem.cpp" />
+    <ClCompile Include="632_SmallestRangeCoveringElementsfromKLists.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
