@@ -8,15 +8,16 @@ using namespace std;
 vector<int> smallestRange(vector<vector<int>>& nums)
 {
     typedef vector<int>::iterator vi;
-    struct comp
-    {
-        bool operator()(pair<vi, vi> p1, pair<vi, vi> p2)
-        {
-            return *p1.first > *p2.first;
-        }
-    };
+    //struct comp
+    //{
+    //    bool operator()(pair<vi, vi> p1, pair<vi, vi> p2)
+    //    {
+    //        return *p1.first > *p2.first;
+    //    }
+    //};
 
-    priority_queue<pair<vi, vi>, vector<pair<vi, vi>>, comp> pq;
+    auto cmp = [](const pair<vi, vi>& a, const pair<vi, vi>& b) { return *a.first > *b.first; };
+    priority_queue <pair<vi, vi>, vector<pair<vi, vi>>, decltype(cmp)> pq(cmp);
     int lo = INT_MAX, hi = INT_MIN;
     for (auto& row : nums)
     {
@@ -68,6 +69,16 @@ void testSmallestRange()
 int main()
 {
     testSmallestRange();
+
+    //vector<int> vec1 = { 0, 1, 2, 3, 4 };
+    //auto iter1 = vec1.begin();
+    //auto iter2 = prev(vec1.end());
+    //cout << *iter1 << " " << *iter2 << endl;
+    //advance(iter1, 2);
+    //cout << *iter1 << endl;
+
+    //auto cmp = [](const int& lhs, const int& rhs) { return lhs > rhs; };
+    //priority_queue<int, vector<int>, decltype(cmp)> pq(cmp);
 
     getchar();
     return 0;
