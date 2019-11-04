@@ -2,10 +2,11 @@
 #include <vector>
 #include <algorithm>
 #include <queue>
+#include <map>
 
 using namespace std;
 
-vector<int> smallestRange(vector<vector<int>>& nums)
+vector<int> smallestRange2(vector<vector<int>>& nums)
 {
     typedef vector<int>::iterator vi;
     //struct comp
@@ -44,6 +45,47 @@ vector<int> smallestRange(vector<vector<int>>& nums)
         }
    
     return res;
+}
+
+vector<int> smallestRange(vector<vector<int>>& nums)
+{
+    int n = nums.size();
+    map<int, vector<int>> m;
+    vector<int> pos(n);
+    for (int i = 0; i < n; ++i)
+    {
+        int tmp = nums[i][pos[i]];
+        m[tmp].emplace_back(i);
+    }
+
+    int minRange = INT_MAX;
+    vector<int> res(2);
+    while (true)
+    {
+        auto lo = m.begin();
+        auto hi = prev(m.end());
+
+        int st = (*lo).first;
+        int ed = (*hi).first;
+        if (ed - st < minRange)
+        {
+            minRange = ed - st;
+            res[0] = st;
+            res[1] = ed;
+        }
+
+        vector<int> v = (*lo).second;
+        m.erase(lo);
+        for (int i : v)
+        {
+            ++pos[i];
+            if (pos[i] >= nums[i].size())
+                return res;
+
+            int num = nums[i][pos[i]];
+            m[num].emplace_back(i);
+        }
+    }
 }
 
 void display(const vector<int>& nums)
