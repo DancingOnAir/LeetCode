@@ -143,6 +143,7 @@
     <ClCompile Include="609_FindDuplicateFileinSystem.cpp" />
     <ClCompile Include="632_SmallestRangeCoveringElementsfromKLists.cpp" />
     <ClCompile Include="648_ReplaceWords.cpp" />
+    <ClCompile Include="676_ImplementMagicDictionary.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

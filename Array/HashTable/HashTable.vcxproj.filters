@@ -99,5 +99,8 @@
     <ClCompile Include="648_ReplaceWords.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="676_ImplementMagicDictionary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
