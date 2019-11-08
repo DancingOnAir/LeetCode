@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <queue>
 using namespace std;
 
 struct Employee
@@ -41,7 +42,7 @@ int getImportanceRecursive(unordered_map<int, Employee*>& m, int id)
     return total;
 }
 
-int getImportance(vector<Employee*> employees, int id)
+int getImportance2(vector<Employee*> employees, int id)
 {
     if (employees.empty() || id < 0)
         return 0;
@@ -53,6 +54,35 @@ int getImportance(vector<Employee*> employees, int id)
     }
 
     return getImportanceRecursive(m, id);
+}
+
+int getImportance(vector<Employee*> employees, int id)
+{
+    if (employees.empty() || id < 0)
+        return 0;
+    
+    unordered_map<int, int> m;
+    for (int i = 0; i < employees.size(); ++i)
+        m[employees[i]->id] = i;
+
+    queue<int> q;
+    q.emplace(id);
+    int res = 0;
+
+    while (!q.empty())
+    {
+        int tmp = q.front();
+        q.pop();
+
+        res += employees[m[tmp]]->importance;
+        vector<int> vec = employees[m[tmp]]->subordinates;
+        for (int v : vec)
+        {
+            q.emplace(v);
+        }
+    }
+
+    return res;
 }
 
 void testGetImportance()
