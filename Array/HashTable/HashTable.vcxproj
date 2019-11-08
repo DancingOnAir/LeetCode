@@ -144,6 +144,7 @@
     <ClCompile Include="632_SmallestRangeCoveringElementsfromKLists.cpp" />
     <ClCompile Include="648_ReplaceWords.cpp" />
     <ClCompile Include="676_ImplementMagicDictionary.cpp" />
+    <ClCompile Include="690_EmployeeImportance.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

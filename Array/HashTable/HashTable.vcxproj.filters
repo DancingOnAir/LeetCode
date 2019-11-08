@@ -102,5 +102,8 @@
     <ClCompile Include="676_ImplementMagicDictionary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="690_EmployeeImportance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
