@@ -105,5 +105,8 @@
     <ClCompile Include="690_EmployeeImportance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="692_TopKFrequentWords.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
