@@ -108,5 +108,8 @@
     <ClCompile Include="692_TopKFrequentWords.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="720_LongestWordinDictionary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

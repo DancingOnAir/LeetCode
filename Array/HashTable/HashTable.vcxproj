@@ -146,6 +146,7 @@
     <ClCompile Include="676_ImplementMagicDictionary.cpp" />
     <ClCompile Include="690_EmployeeImportance.cpp" />
     <ClCompile Include="692_TopKFrequentWords.cpp" />
+    <ClCompile Include="720_LongestWordinDictionary.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
