@@ -6,7 +6,7 @@
 #include <set>
 using namespace std;
 
-string longestWord(vector<string>& words)
+string longestWord2(vector<string>& words)
 {
 
     if (words.empty())
@@ -54,13 +54,99 @@ string longestWord(vector<string>& words)
     return *res.begin();
 }
 
+struct TrieNode
+{
+    bool isEnd;
+    vector<TrieNode*> next;
+
+    TrieNode(bool end = false) : isEnd(end), next(26, nullptr)
+    {
+
+    }
+};
+
+
+class Solution
+{
+public:
+    Solution()
+    {
+        root = new TrieNode();
+    }
+
+    ~Solution()
+    {
+        delete root;
+        root = nullptr;
+    }
+
+    void insert(string& word)
+    {
+        auto p = root;
+        for (char c : word)
+        {
+            int index = c - 'a';
+            if (p->next[index] == nullptr)
+                p->next[index] = new TrieNode();
+            p = p->next[index];
+        }
+
+        p->isEnd = true;
+    }
+
+    string search()
+    {
+        string res("");
+        int maxLen = INT_MIN;
+        helper(root, 0, "", maxLen, res);
+
+        return res;
+    }
+
+    void helper(TrieNode* node, int curr, string str, int& maxLen, string& res)
+    {
+        TrieNode* temp = node;
+        for (int i = 0; i < 26; ++i)
+        {
+            if (temp->next[i] == nullptr)
+                continue;
+
+            if (temp->next[i]->isEnd)
+            {
+                ++curr;
+                str += (char)(i + 'a');
+
+                res = curr > maxLen ? str : res;
+                maxLen = curr > maxLen ? curr : maxLen;
+
+                helper(temp->next[i], curr, str, maxLen, res);
+
+                --curr;
+                str.pop_back();
+            }
+        }
+    }
+
+    string longestWord(vector<string>& words)
+    {
+        for (string& word : words)
+            insert(word);
+
+        return search();
+    }
+
+private:
+    TrieNode* root;
+};
+
 void testLongestWord()
 {
     //vector<string> words1 = { "w", "wo", "wor", "worl", "world" };
     //cout << longestWord(words1) << endl;
 
     vector<string> words2 = { "a", "banana", "app", "appl", "ap", "apply", "apple" };
-    cout << longestWord(words2) << endl;
+    Solution solution;
+    cout << solution.longestWord(words2) << endl;
 }
 
 int main()
