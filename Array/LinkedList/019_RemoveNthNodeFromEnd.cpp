@@ -91,7 +91,7 @@ struct ListNode
     ListNode(int x): val(x), next(nullptr) {}
 };
 
-ListNode* removeNthFromEnd(ListNode* head, int n) 
+ListNode* removeNthFromEnd2(ListNode* head, int n) 
 {
 
     ListNode* preHead = new ListNode(0);
@@ -115,6 +115,29 @@ ListNode* removeNthFromEnd(ListNode* head, int n)
 
     slow->next = slow->next->next;
     return preHead->next;
+}
+
+ListNode* removeNthFromEnd(ListNode* head, int n)
+{
+    ListNode preHead(0);
+    preHead.next = head;
+
+    ListNode* p = &preHead;
+    ListNode* q = &preHead;
+    for (int i = 0; i < n; ++i)
+        p = p->next;
+
+    for (int i = 0; p->next != nullptr; ++i)
+    {
+        p = p->next;
+        q = q->next;
+    }
+
+    ListNode* toBeDelete = q->next;
+    q->next = toBeDelete->next;
+    delete toBeDelete;
+
+    return preHead.next;
 }
 
 void display(ListNode* node)
