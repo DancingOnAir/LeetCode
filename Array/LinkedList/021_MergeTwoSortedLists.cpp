@@ -79,7 +79,7 @@ struct ListNode
     ListNode(int x): val(x), next(nullptr) {}
 };
 
-ListNode* mergeTwoLists(ListNode* l1, ListNode* l2)
+ListNode* mergeTwoLists2(ListNode* l1, ListNode* l2)
 {
     if (!l1 || !l2)
         return l1 == nullptr ? l2 : l1;
@@ -88,15 +88,41 @@ ListNode* mergeTwoLists(ListNode* l1, ListNode* l2)
     if (l1->val <= l2->val)
     {
         res->val = l1->val;
-        res->next = mergeTwoLists(l1->next, l2);
+        res->next = mergeTwoLists2(l1->next, l2);
     }
     else
     {
         res->val = l2->val;
-        res->next = mergeTwoLists(l1, l2->next);
+        res->next = mergeTwoLists2(l1, l2->next);
     }
     
     return res;
+}
+
+ListNode* mergeTwoLists(ListNode* l1, ListNode* l2)
+{
+    ListNode preHead = ListNode(INT_MIN);
+    ListNode* p = &preHead;
+
+    while (l1 && l2)
+    {
+        if (l1->val <= l2->val)
+        {
+            p->next = new ListNode(l1->val);
+            l1 = l1->next;
+        }
+        else
+        {
+            p->next = new ListNode(l2->val);
+            l2 = l2->next;
+        }
+
+        p = p->next;
+    }
+
+    p->next = l1 ? l1 : l2;
+
+    return preHead.next;
 }
 
 void display(ListNode* head)
