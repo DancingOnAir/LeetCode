@@ -1,3 +1,5 @@
 ﻿  023_MergekSortedLists.cpp
 d:\dev\projects\gitworkspace\leetcode\array\linkedlist\023_mergeksortedlists.cpp(23): warning C4018: '<': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\linkedlist\023_mergeksortedlists.cpp(86): warning C4018: '<': signed/unsigned mismatch
+d:\dev\projects\gitworkspace\leetcode\array\linkedlist\023_mergeksortedlists.cpp(88): warning C4018: '<': signed/unsigned mismatch
   LinkedList.vcxproj -> D:\dev\Projects\GitWorkspace\LeetCode\Array\Debug\LinkedList.exe

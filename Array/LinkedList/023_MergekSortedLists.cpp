@@ -10,7 +10,7 @@ struct ListNode
     ListNode(int x): val(x), next(nullptr) {}
 };
 
-ListNode* mergeKLists(vector<ListNode*>& lists)
+ListNode* mergeKLists2(vector<ListNode*>& lists)
 {
     ListNode preHead(INT_MIN);
     ListNode* p = &preHead;
@@ -55,6 +55,42 @@ ListNode* mergeKLists(vector<ListNode*>& lists)
         p->next = lists[0];
 
     return preHead.next;
+}
+
+ListNode* mergeTwoLists(ListNode* lhs, ListNode* rhs)
+{
+    if (!lhs)
+        return rhs;
+
+    if (!rhs)
+        return lhs;
+
+    if (lhs->val <= rhs->val)
+    {
+        lhs->next = mergeTwoLists(lhs->next, rhs);
+        return lhs;
+    }
+    else
+    {
+        rhs->next = mergeTwoLists(lhs, rhs->next);
+        return rhs;
+    }
+}
+
+ListNode* mergeKLists(vector<ListNode*>& lists)
+{
+    if (lists.empty())
+        return nullptr;
+
+    int interval = 1;
+    while (interval < lists.size())
+    {
+        for (int i = 0; i < lists.size() - interval; i += interval * 2)
+            lists[i] = mergeTwoLists(lists[i], lists[i + interval]);
+        interval *= 2;
+    }
+
+    return lists[0];
 }
 
 void display(ListNode* head)
