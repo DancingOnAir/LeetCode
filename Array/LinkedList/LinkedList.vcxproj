@@ -142,6 +142,7 @@
     <ClCompile Include="002_AddTwoNumbers.cpp" />
     <ClCompile Include="019_RemoveNthNodeFromEnd.cpp" />
     <ClCompile Include="021_MergeTwoSortedLists.cpp" />
+    <ClCompile Include="023_MergekSortedLists.cpp" />
     <ClCompile Include="025_ReverseNodesInK-Group.cpp" />
     <ClCompile Include="082_RemoveDuplicatesFromSortedListII.cpp" />
     <ClCompile Include="083_RemoveDuplicatesFromSortedList.cpp" />
