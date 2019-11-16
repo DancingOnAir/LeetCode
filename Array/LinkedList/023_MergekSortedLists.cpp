@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <queue>
 using namespace std;
 
 struct ListNode
@@ -77,7 +78,7 @@ ListNode* mergeTwoLists(ListNode* lhs, ListNode* rhs)
     }
 }
 
-ListNode* mergeKLists(vector<ListNode*>& lists)
+ListNode* mergeKLists3(vector<ListNode*>& lists)
 {
     if (lists.empty())
         return nullptr;
@@ -91,6 +92,36 @@ ListNode* mergeKLists(vector<ListNode*>& lists)
     }
 
     return lists[0];
+}
+
+ListNode* mergeKLists(vector<ListNode*>& lists)
+{
+    auto comp = [&](ListNode* lhs, ListNode* rhs) 
+    {
+        return lhs->val > rhs->val;
+    };
+
+    priority_queue<ListNode*, vector<ListNode*>, decltype(comp)> pq(comp);
+    for (auto l : lists)
+    {
+        if (l)
+            pq.emplace(l);
+    }
+
+    ListNode preHead = ListNode(0);
+    ListNode* p = &preHead;
+
+    while (!pq.empty())
+    {
+        p->next = pq.top();
+        pq.pop();
+        p = p->next;
+
+        if (p->next)
+            pq.emplace(p->next);
+    }
+
+    return preHead.next;
 }
 
 void display(ListNode* head)
