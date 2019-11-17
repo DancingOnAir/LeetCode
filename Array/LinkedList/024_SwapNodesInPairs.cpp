@@ -99,7 +99,7 @@ ListNode* reverse(ListNode* preHead)
     return preHead;
 }
 
-ListNode* swapPairs(ListNode* head)
+ListNode* swapPairs2(ListNode* head)
 {
     if (!head || !head->next)
         return head;
@@ -122,6 +122,42 @@ ListNode* swapPairs(ListNode* head)
     }
 
     return preHead.next;
+}
+
+ListNode* reverseList(ListNode* head)
+{
+    if (head == nullptr || head->next == nullptr)
+        return head;
+
+    ListNode* tmp = reverseList(head->next);
+    head->next->next = head;
+    head->next = nullptr;
+
+    return tmp;
+}
+
+ListNode* reverseKGroup(ListNode* head, int k)
+{
+    ListNode* temp = head;
+    for (int i = 1; i < k && temp != nullptr; ++i)
+        temp = temp->next;
+
+    if (temp == nullptr)
+        return head;
+
+    ListNode* nextHead = temp->next;
+    temp->next = nullptr;
+
+    ListNode* newHead = reverseList(head);
+    ListNode* newTemp = reverseKGroup(nextHead, k);
+
+    head->next = newTemp;
+    return newHead;
+}
+
+ListNode* swapPairs(ListNode* head)
+{
+    return reverseKGroup(head, 2);
 }
 
 void display(ListNode* head)
