@@ -67,3 +67,96 @@
 //    system("pause");
 //    return 0;
 //}
+
+#include <iostream>
+
+using namespace std;
+
+struct ListNode
+{
+    int val;
+    ListNode* next;
+    ListNode(int x): val(x), next(nullptr) {}
+};
+
+ListNode* reverse(ListNode* preHead)
+{
+
+    if (!preHead->next)
+        return preHead;
+    ListNode* p = preHead->next;
+
+    if (!p->next)
+        return preHead;
+    ListNode* q = p->next;
+
+    p->next = q->next;
+    q->next = p;
+
+    preHead->next = q;
+
+
+    return preHead;
+}
+
+ListNode* swapPairs(ListNode* head)
+{
+    if (!head || !head->next)
+        return head;
+
+    ListNode preHead(0);
+    preHead.next = head;
+
+    ListNode *pre, *cur, *next;
+    pre = cur = &preHead;
+
+    while (cur->next && cur->next->next)
+    {
+        pre = cur;
+        cur = cur->next;
+        next = cur->next;
+
+        cur->next = next->next;
+        next->next = cur;
+        pre->next = next;
+    }
+
+    return preHead.next;
+}
+
+void display(ListNode* head)
+{
+    if (!head)
+    {
+        cout << endl;
+        return;
+    }
+
+    cout << head->val << "->";
+    display(head->next);
+}
+
+void testSwapPairs()
+{
+    ListNode *node1 = new ListNode(1);
+    ListNode *node2 = new ListNode(2);
+    ListNode *node3 = new ListNode(3);
+    ListNode *node4 = new ListNode(4);
+    node1->next = node2;
+    node2->next = node3;
+    node3->next = node4;
+
+    display(node1);
+    //display(reverse(node1));
+
+    display(swapPairs(node1));
+
+}
+
+int main()
+{
+    testSwapPairs();
+
+    getchar();
+    return 0;
+}
