@@ -98,3 +98,84 @@
 //    system("pause");
 //    return 0;
 //}
+
+#include <iostream>
+
+using namespace std;
+
+struct ListNode
+{
+    int val;
+    ListNode* next;
+    ListNode(int x): val(x), next(nullptr) {}
+};
+
+ListNode* reverseList(ListNode* head)
+{
+    if (!head || !head->next)
+        return head;
+
+    ListNode* temp = reverseList(head->next);
+    head->next->next = head;
+    head->next = nullptr;
+
+    return temp;
+}
+
+ListNode* reverseKGroup(ListNode* head, int k)
+{
+    if (k < 2)
+        return head;
+
+    ListNode* temp = head;
+    for (int i = 1; i < k && temp != nullptr; ++i)
+        temp = temp->next;
+
+    if (temp == nullptr)
+        return head;
+
+    ListNode* nextHead = temp->next;
+    temp->next = nullptr;
+
+    ListNode* newHead = reverseList(head);
+    ListNode* nextTemp = reverseKGroup(nextHead, k);
+
+    head->next = nextTemp;
+    return newHead;
+}
+
+void display(ListNode* head)
+{
+    while (head)
+    {
+        cout << head->val << "->";
+        head = head->next;
+    }
+
+    cout << endl;
+}
+
+void testReverseKGroup()
+{
+    ListNode *node1 = new ListNode(1);
+    ListNode *node2 = new ListNode(2);
+    ListNode *node3 = new ListNode(3);
+    ListNode *node4 = new ListNode(4);
+    ListNode *node5 = new ListNode(5);
+    node1->next = node2;
+    node2->next = node3;
+    node3->next = node4;
+    node4->next = node5;
+
+    display(node1);
+    //display(reverseKGroup(node1, 2));
+    display(reverseKGroup(node1, 3));
+}
+
+int main()
+{
+    testReverseKGroup();
+
+    getchar();
+    return 0;
+}
