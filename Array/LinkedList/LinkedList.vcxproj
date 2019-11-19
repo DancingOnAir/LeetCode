@@ -144,6 +144,7 @@
     <ClCompile Include="021_MergeTwoSortedLists.cpp" />
     <ClCompile Include="023_MergekSortedLists.cpp" />
     <ClCompile Include="025_ReverseNodesInK-Group.cpp" />
+    <ClCompile Include="061_RotateList.cpp" />
     <ClCompile Include="082_RemoveDuplicatesFromSortedListII.cpp" />
     <ClCompile Include="083_RemoveDuplicatesFromSortedList.cpp" />
     <ClCompile Include="092_ReverseLinkedListII.cpp" />
