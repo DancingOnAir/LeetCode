@@ -11,36 +11,38 @@ struct ListNode
 
 ListNode* rotateRight(ListNode* head, int k)
 {
-    if (!head || !head->next || !k)
+    if (!head || head->next == nullptr || !k)
         return head;
 
     ListNode* p = head;
-    ListNode* q = nullptr;
+    ListNode* q = head;
     int len = 0;
 
     while (p)
     {
         ++len;
-        q = p->next;
-        if (!q)
-            break;
-        p = q;
+        p = p->next;
     }
+    p = head;
 
     k = k % len;
     if (!k)
         return head;
+    
+    while (k--)
+        q = q->next;
 
-    p->next = head;
-    p = head;
-    int t = len - k;
-    while (--t && p)
+    while (q->next != nullptr)
+    {
         p = p->next;
+        q = q->next;
+    }
 
-    q = p->next;
+    auto res = p->next;
     p->next = nullptr;
+    q->next = head;
 
-    return q;
+    return res;
 }
 
 void display(ListNode* head)
