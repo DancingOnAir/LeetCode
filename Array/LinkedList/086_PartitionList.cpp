@@ -9,7 +9,7 @@ struct ListNode
     ListNode(int x): val(x), next(nullptr) {}
 };
 
-ListNode* partition(ListNode* head, int x)
+ListNode* partition2(ListNode* head, int x)
 {
     if (!head || head->next == nullptr)
         return head;
@@ -43,6 +43,43 @@ ListNode* partition(ListNode* head, int x)
     }
 
     return preHead.next;
+}
+
+ListNode* partition(ListNode* head, int x)
+{
+    if (!head || head->next == nullptr)
+        return head;
+
+    ListNode* lessList = new ListNode(0);
+    ListNode* greaterList = new ListNode(0);
+
+    auto p1 = lessList;
+    auto p2 = greaterList;
+    auto p = head;
+    while (p)
+    {
+        if (p->val < x)
+        {
+            p1->next = p;
+            p1 = p1->next;
+        }
+        else
+        {
+            p2->next = p;
+            p2 = p2->next;
+        }
+
+        p = p->next;
+    }
+
+    p1->next = greaterList->next;
+    auto res = lessList->next;
+    p2->next = nullptr;
+
+    delete lessList;
+    delete greaterList;
+
+    return res;
 }
 
 void display(ListNode* head)
