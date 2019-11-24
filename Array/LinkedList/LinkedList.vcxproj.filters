@@ -78,5 +78,8 @@
     <ClCompile Include="086_PartitionList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="109_ConvertSortedListtoBinarySearchTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
