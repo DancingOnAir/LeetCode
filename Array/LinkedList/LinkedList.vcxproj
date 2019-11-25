@@ -150,6 +150,7 @@
     <ClCompile Include="086_PartitionList.cpp" />
     <ClCompile Include="092_ReverseLinkedListII.cpp" />
     <ClCompile Include="109_ConvertSortedListtoBinarySearchTree.cpp" />
+    <ClCompile Include="138_CopyListwithRandomPointer.cpp" />
     <ClCompile Include="141_LinkedListCycle.cpp" />
     <ClCompile Include="142_LinkedListCycleII.cpp" />
     <ClCompile Include="143_ReorderList.cpp" />
