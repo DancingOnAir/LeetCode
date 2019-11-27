@@ -1,103 +1,50 @@
 //#include <iostream>
+//using namespace std;
 //
 //struct ListNode
 //{
 //    int val;
-//    ListNode *next;
-//    ListNode(int x) : val(x), next(nullptr) {}
+//    ListNode* next;
+//    ListNode(int x): val(x), next(nullptr) {}
 //};
 //
-//bool hasCycle(ListNode *head) 
+//bool hasCycle(ListNode *head)
 //{
-//        ListNode *slow = head;
-//        ListNode *fast = head;
-//
-//        while (slow  && fast && fast->next)
-//        {
-//            slow = slow->next;
-//            fast = fast->next->next;
-//
-//            if (fast == slow)
-//                return true;
-//        }
-//
+//    if (!head)
 //        return false;
+//
+//    auto slow = head;
+//    auto fast = head;
+//
+//    while (fast && fast->next)
+//    {
+//        slow = slow->next;
+//        fast = fast->next->next;
+//        if (slow == fast)
+//            return true;
+//    }
+//
+//    return false;
 //}
 //
 //void testHasCycle()
 //{
-//    ListNode *head = new ListNode(1);
-//    ListNode *node2 = new ListNode(2);
-//    ListNode *node3 = new ListNode(3);
-//    ListNode *node4 = new ListNode(4);
-//    ListNode *node5 = new ListNode(5);
-//    ListNode *node6 = new ListNode(6);
-//
-//    head->next = node2;
+//    ListNode* node1 = new ListNode(3);
+//    ListNode* node2 = new ListNode(2);
+//    ListNode* node3 = new ListNode(0);
+//    ListNode* node4 = new ListNode(-4);
+//    node1->next = node2;
 //    node2->next = node3;
 //    node3->next = node4;
-//    node4->next = node5;
-//    node5->next = node6;
-//    node6->next = node4;
+//    node4->next = node2;
 //
-//    bool status = hasCycle(head);
-//    std::cout << (status ? "has cycle" : "no cycle") << std::endl;
+//    cout << (hasCycle(node1) ? "True" : "False") << endl;
 //}
 //
 //int main()
 //{
 //    testHasCycle();
-//    system("pause");
+//
+//    getchar();
 //    return 0;
 //}
-
-#include <iostream>
-using namespace std;
-
-struct ListNode
-{
-    int val;
-    ListNode* next;
-    ListNode(int x): val(x), next(nullptr) {}
-};
-
-bool hasCycle(ListNode *head)
-{
-    if (!head)
-        return false;
-
-    auto slow = head;
-    auto fast = head;
-
-    while (fast && fast->next)
-    {
-        slow = slow->next;
-        fast = fast->next->next;
-        if (slow == fast)
-            return true;
-    }
-
-    return false;
-}
-
-void testHasCycle()
-{
-    ListNode* node1 = new ListNode(3);
-    ListNode* node2 = new ListNode(2);
-    ListNode* node3 = new ListNode(0);
-    ListNode* node4 = new ListNode(-4);
-    node1->next = node2;
-    node2->next = node3;
-    node3->next = node4;
-    node4->next = node2;
-
-    cout << (hasCycle(node1) ? "True" : "False") << endl;
-}
-
-int main()
-{
-    testHasCycle();
-
-    getchar();
-    return 0;
-}
