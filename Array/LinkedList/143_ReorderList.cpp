@@ -99,7 +99,7 @@ struct ListNode
     ListNode(int x): val(x), next(nullptr) {}
 };
 
-void reorderList(ListNode* head)
+void reorderList2(ListNode* head)
 {
     if (!head || head->next == nullptr)
         return;
@@ -127,6 +127,64 @@ void reorderList(ListNode* head)
         }
     }
     cur->next = nullptr;
+}
+
+ListNode* reverse(ListNode* head)
+{
+    if (!head || !(head->next))
+        return head;
+
+    ListNode* pre = nullptr;
+    ListNode* next = nullptr;
+
+    while (head)
+    {
+        next = head->next;
+        head->next = pre;
+
+        pre = head;
+        head = next;
+    }
+
+    return pre;
+}
+
+void merge(ListNode* p, ListNode* q)
+{
+    if (!p || !q)
+        return;
+
+    while (p && q)
+    {
+        auto temp1 = p->next;
+        auto temp2 = q->next;
+
+        p->next = q;
+        p = temp1;
+        q->next = p;
+        q = temp2;
+    }
+}
+
+void reorderList(ListNode* head)
+{
+    if (!head || !(head->next))
+        return;
+
+    auto slow = head;
+    auto fast = head;
+
+    while (fast->next && fast->next->next)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+
+
+    auto head2 = reverse(slow->next);
+    slow->next = nullptr;
+    
+    merge(head, head2);
 }
 
 void display(ListNode* head)
