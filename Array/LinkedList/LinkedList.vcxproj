@@ -154,6 +154,7 @@
     <ClCompile Include="141_LinkedListCycle.cpp" />
     <ClCompile Include="142_LinkedListCycleII.cpp" />
     <ClCompile Include="143_ReorderList.cpp" />
+    <ClCompile Include="147_InsertionSortList.cpp" />
     <ClCompile Include="148_SortList.cpp" />
     <ClCompile Include="160_IntersectionOfTwoLinkedLists.cpp" />
     <ClCompile Include="203_RemoveLinkedListElements.cpp" />
