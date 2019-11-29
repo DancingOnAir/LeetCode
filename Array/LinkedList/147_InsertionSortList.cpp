@@ -14,37 +14,22 @@ ListNode* insertionSortList(ListNode* head)
         return head;
 
     ListNode preHead = ListNode(INT_MIN);
-    //preHead.next = head;
-
-    auto cur = head;
-    auto pre = &preHead;
+    ListNode* cur = head;
+    ListNode* pre = &preHead;
+    ListNode* next = nullptr;
 
     while (cur)
     {
-        auto insertNode = cur;
-        cur = cur->next;
+        next = cur->next;
+        if (!pre->next || pre->next->val > cur->val)
+            pre = &preHead;
+        while (pre->next && pre->next->val <= cur->val)
+            pre = pre->next;
 
-        insertNode->next = nullptr;
+        cur->next = pre->next;
+        pre->next = cur;
 
-        for (auto p = &preHead; p != nullptr; p = p->next)
-        {
-            if (p->next)
-            {
-                if (p->next->val >= insertNode->val)
-                {
-                    auto temp = p->next;
-                    p->next = insertNode;
-                    insertNode->next = temp;
-                    break;
-                }
-            }
-            else
-            {
-                p->next = insertNode;
-                break;
-            }
-
-        }
+        cur = next;
     }
 
     return preHead.next;
