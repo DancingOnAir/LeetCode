@@ -83,3 +83,99 @@
 //    system("pause");
 //    return 0;
 //}
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+struct ListNode
+{
+    int val;
+    ListNode* next;
+    ListNode(int x): val(x), next(nullptr) {}
+};
+
+ListNode* sortList2(ListNode* head)
+{
+    if (nullptr == head || nullptr == head->next)
+        return head;
+
+    ListNode preHead = ListNode(INT_MIN);
+    ListNode* pre = &preHead;
+    ListNode* cur = head;
+    ListNode* next = nullptr;
+
+    while (cur)
+    {
+        next = cur->next;
+        if (!pre->next || pre->next->val > cur->val)
+            pre = &preHead;
+
+        while (pre->next && pre->next->val <= cur->val)
+            pre = pre->next;
+
+        cur->next = pre->next;
+        pre->next = cur;
+
+        cur = next;
+    }
+
+    return preHead.next;
+}
+
+ListNode* sortList(ListNode* head)
+{
+    if (nullptr == head || nullptr == head->next)
+        return head;
+
+    map<int, ListNode*> m;
+    while (head)
+    {
+        m[head->val] = head;
+        head = head->next;
+    }
+
+    ListNode preHead = ListNode(0);
+    ListNode* cur = &preHead;
+    for (auto iter = m.begin(); iter != m.end(); ++iter)
+    {
+        cur->next = iter->second;
+        cur = cur->next;
+    }
+
+    cur->next = nullptr;
+    return preHead.next;
+}
+
+void display(ListNode* head)
+{
+    while (head)
+    {
+        cout << head->val << "->";
+        head = head->next;
+    }
+    cout << endl;
+}
+
+void testSortList()
+{
+    ListNode* node1 = new ListNode(-1);
+    ListNode* node2 = new ListNode(5);
+    ListNode* node3 = new ListNode(3);
+    ListNode* node4 = new ListNode(4);
+    ListNode* node5 = new ListNode(0);
+    node1->next = node2;
+    node2->next = node3;
+    node3->next = node4;
+    node4->next = node5;
+    auto res1 = sortList(node1);
+    display(res1);
+}
+
+int main()
+{
+    testSortList();
+
+    getchar();
+    return 0;
+}
