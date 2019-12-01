@@ -128,3 +128,73 @@
 //    system("pause");
 //    return 0;
 //}
+
+#include <iostream>
+#include <unordered_set>
+using namespace std;
+
+struct ListNode
+{
+    int val;
+    ListNode* next;
+    ListNode(int x): val(x), next(nullptr) {}
+};
+
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
+{
+    if (!headA || !headB)
+        return nullptr;
+
+    unordered_set<ListNode*> s;
+    auto head1 = headA;
+    auto head2 = headB;
+
+    while (head1)
+    {
+        s.emplace(head1);
+        head1 = head1->next;
+    }
+
+    while (head2)
+    {
+        if (s.count(head2))
+            return head2;
+
+        head2 = head2->next;
+    }
+
+    return nullptr;
+}
+
+void testGetIntersectionNode()
+{
+    ListNode *headA = new ListNode(4);
+    ListNode *node2 = new ListNode(1);
+    ListNode *node3 = new ListNode(8);
+    ListNode *node4 = new ListNode(4);
+    ListNode *node5 = new ListNode(5);
+
+    ListNode *headB = new ListNode(5);
+    ListNode *node7 = new ListNode(0);
+    ListNode *node8 = new ListNode(1);
+
+    headA->next = node2;
+    node2->next = node3;
+    node3->next = node4;
+    node4->next = node5;
+
+    headB->next = node7;
+    node7->next = node8;
+    node8->next = node3;
+
+    ListNode* result = getIntersectionNode(headA, headB);
+    std::cout << result->val << std::endl;
+}
+
+int main()
+{
+    testGetIntersectionNode();
+
+    getchar();
+    return 0;
+}
