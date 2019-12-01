@@ -140,7 +140,7 @@ struct ListNode
     ListNode(int x): val(x), next(nullptr) {}
 };
 
-ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
+ListNode *getIntersectionNode2(ListNode *headA, ListNode *headB)
 {
     if (!headA || !headB)
         return nullptr;
@@ -164,6 +164,23 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
     }
 
     return nullptr;
+}
+
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
+{
+    if (!headA || !headB)
+        return nullptr;
+
+    auto p1 = headA;
+    auto p2 = headB;
+
+    while(p1 != p2)
+    {
+        p1 = p1 ? p1->next : headB;
+        p2 = p2 ? p2->next : headA;
+    }
+
+    return p1;
 }
 
 void testGetIntersectionNode()
