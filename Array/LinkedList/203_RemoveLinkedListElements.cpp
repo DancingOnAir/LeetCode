@@ -84,7 +84,7 @@ struct ListNode
     ListNode(int x): val(x), next(nullptr) {}
 };
 
-ListNode* removeElements(ListNode* head, int val)
+ListNode* removeElements2(ListNode* head, int val)
 {
     if (!head)
         return nullptr;
@@ -109,6 +109,24 @@ ListNode* removeElements(ListNode* head, int val)
     }
 
     return preHead.next;
+}
+
+ListNode* removeElements(ListNode* head, int val)
+{
+    if (!head)
+        return nullptr;
+
+    ListNode** cur = &head;
+
+    while (*cur)
+    {
+        if ((*cur)->val == val)
+            *cur = (*cur)->next;
+        else
+            cur = &(*cur)->next;
+    }
+
+    return head;
 }
 
 void display(ListNode* head)
