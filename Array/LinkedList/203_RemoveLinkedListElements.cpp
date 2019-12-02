@@ -100,13 +100,12 @@ ListNode* removeElements(ListNode* head, int val)
         if (cur->val == val)
         {
             pre->next = cur->next;
-            cur = cur->next;
         }
         else
         {
             pre = pre->next;
-            cur = cur->next;
         }
+        cur = cur->next;
     }
 
     return preHead.next;
