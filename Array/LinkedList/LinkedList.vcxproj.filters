@@ -90,5 +90,8 @@
     <ClCompile Include="445_AddTwoNumbersII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="725_SplitLinkedListinParts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
