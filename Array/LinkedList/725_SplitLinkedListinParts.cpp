@@ -15,28 +15,19 @@ vector<ListNode*> splitListToParts(ListNode* root, int k)
     if (1 == k)
         return vector<ListNode*> {root};
 
-    vector<ListNode*> res;
-    int s = 0;
-    auto p = root;
-    while (p)
-    {
-        ++s;
-        p = p->next;
-    }
+    int len = 0;
+    for (auto p = root; p; ++len, p = p->next)
+        ;
 
-    int a = s / k;
-    int b = s % k;
+    int n = len / k;
+    int r = len % k;
 
-    ListNode* newHead = nullptr;
+    vector<ListNode*> res(k);
     ListNode* next = nullptr;
-
-    while (root)
+    for (int i = 0; i < k && root; ++i)
     {
-
-        newHead = root;
-        
-        int flag = b > 0 ? 1 : 0;
-        for (int i = 0; i < a + flag - 1; ++i)
+        res[i] = root;
+        for (int j = 1; j < n + (i < r); ++j)
         {
             root = root->next;
         }
@@ -44,15 +35,6 @@ vector<ListNode*> splitListToParts(ListNode* root, int k)
         next = root->next;
         root->next = nullptr;
         root = next;
-
-        --b;
-        --k;
-        res.emplace_back(newHead);
-    }
-
-    while (k--)
-    {
-        res.emplace_back(nullptr);
     }
 
     return res;
