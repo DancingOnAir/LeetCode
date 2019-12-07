@@ -163,6 +163,7 @@
     <ClCompile Include="234_PalindromeLinkedList.cpp" />
     <ClCompile Include="237_DeleteNodeinaLinkedList.cpp" />
     <ClCompile Include="328_OddEvenLinkedList.cpp" />
+    <ClCompile Include="430_FlattenaMultilevelDoublyLinkedList.cpp" />
     <ClCompile Include="445_AddTwoNumbersII.cpp" />
     <ClCompile Include="725_SplitLinkedListinParts.cpp" />
   </ItemGroup>
