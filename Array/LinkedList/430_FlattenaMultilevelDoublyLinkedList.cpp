@@ -12,36 +12,49 @@ struct Node
     Node(int _val, Node* _prev, Node* _next, Node* _child): val(_val), prev(_prev), next(_next), child(_child) {}
 };
 
+Node* helper(Node* head, Node* rest = nullptr)
+{
+    if (!head)
+        return rest;
+
+    head->next = helper(head->child, helper(head->next, rest));
+    if (head->next)
+        head->next->prev = head;
+    head->child = nullptr;
+
+    return head;
+}
+
 Node* flatten(Node* head)
 {
     if (!head)
         return nullptr;
 
-    auto cur = head;
-    while (cur)
+    return helper(head, nullptr);
+}
+
+Node* flatten2(Node* head)
+{
+    if (!head)
+        return nullptr;
+
+    for (auto p = head; p; p = p->next)
     {
-        while (cur && !cur->child)
+        if (p->child)
         {
-            cur = cur->next;
+            auto next = p->next;
+            p->next = p->child;
+            p->next->prev = p;
+            p->child = nullptr;
+
+            auto tmp = p->next;
+            while (tmp->next)
+                tmp = tmp->next;
+
+            tmp->next = next;
+            if (next)
+                next->prev = tmp;
         }
-
-        if (!cur)
-            return head;
-
-        auto next = cur->next;
-        auto newHead = flatten(cur->child);
-        cur->next = newHead;
-        cur->child = nullptr;
-        newHead->prev = cur;
-
-        while (cur->next)
-        {
-            cur = cur->next;
-        }
-        cur->next = next;
-
-        if (next)
-            next->prev = cur;
     }
 
     return head;
