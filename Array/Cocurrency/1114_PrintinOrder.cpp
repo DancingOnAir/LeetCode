@@ -49,6 +49,44 @@ private:
     int count;
 };
 
+class Foo2 {
+public:
+    Foo2() : 
+    {
+        mtx1.lock();
+        mtx2.lock();
+    }
+
+    void first(function<void()> printFirst)
+    {
+        // printFirst() outputs "first". Do not change or remove this line.
+        printFirst();
+        mtx1.unlock();
+    }
+
+    void second(function<void()> printSecond)
+    {
+        mtx1.lock();
+        // printSecond() outputs "second". Do not change or remove this line.
+        printSecond();
+        
+        mtx1.unlock();
+        mtx2.unlock();
+    }
+
+    void third(function<void()> printThird)
+    {
+        mtx2.lock();
+        // printThird() outputs "third". Do not change or remove this line.
+        printThird();
+        mtx2.unlock();
+    }
+
+private:
+    mutex mtx1;
+    mutex mtx2;
+};
+
 void printFirst()
 {
     cout << "fisrt" << endl;
