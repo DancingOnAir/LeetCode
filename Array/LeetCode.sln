@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Math", "Math\Math.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HashTable", "HashTable\HashTable.vcxproj", "{1A3F475F-E18E-43E2-B85C-8147601F91AE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cocurrency", "Cocurrency\Cocurrency.vcxproj", "{85DF9273-F167-4BCE-85CB-5DEF22111382}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -141,6 +143,14 @@ Global
 		{1A3F475F-E18E-43E2-B85C-8147601F91AE}.Release|x64.Build.0 = Release|x64
 		{1A3F475F-E18E-43E2-B85C-8147601F91AE}.Release|x86.ActiveCfg = Release|Win32
 		{1A3F475F-E18E-43E2-B85C-8147601F91AE}.Release|x86.Build.0 = Release|Win32
+		{85DF9273-F167-4BCE-85CB-5DEF22111382}.Debug|x64.ActiveCfg = Debug|x64
+		{85DF9273-F167-4BCE-85CB-5DEF22111382}.Debug|x64.Build.0 = Debug|x64
+		{85DF9273-F167-4BCE-85CB-5DEF22111382}.Debug|x86.ActiveCfg = Debug|Win32
+		{85DF9273-F167-4BCE-85CB-5DEF22111382}.Debug|x86.Build.0 = Debug|Win32
+		{85DF9273-F167-4BCE-85CB-5DEF22111382}.Release|x64.ActiveCfg = Release|x64
+		{85DF9273-F167-4BCE-85CB-5DEF22111382}.Release|x64.Build.0 = Release|x64
+		{85DF9273-F167-4BCE-85CB-5DEF22111382}.Release|x86.ActiveCfg = Release|Win32
+		{85DF9273-F167-4BCE-85CB-5DEF22111382}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
