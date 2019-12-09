@@ -18,5 +18,8 @@
     <ClCompile Include="1114_PrintinOrder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="1115_PrintFooBarAlternately.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
