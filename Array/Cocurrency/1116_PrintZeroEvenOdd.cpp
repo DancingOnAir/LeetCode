@@ -10,15 +10,15 @@ private:
     int n;
     condition_variable cv;
     mutex mtx;
-    int count;
-    int flag;
+    bool isZero;
+    bool isEven;
 
 public:
     ZeroEvenOdd(int n)
     {
         this->n = n;
-        count = 1;
-        flag = -1;
+        this->isZero = true;
+        this->isEven = false;
     }
 
     // printNumber(x) outputs "x", where x is an integer.
@@ -26,13 +26,16 @@ public:
     {
         unique_lock<mutex> lck(mtx);
 
-        while (count <= n)
+        for (int i = 0; i < n; ++i)
         {
-            while (-1 != flag)
+            //cv.wait(lck, [&] { return isZero; });
+            while (!isZero)
                 cv.wait(lck);
 
             printNumber(0);
-            flag = count & 1;
+
+            isZero = false;
+            cv.notify_all();
         }
     }
 
@@ -40,13 +43,16 @@ public:
     {
         unique_lock<mutex> lck(mtx);
 
-        while (count <= n)
+        for (int i = 2; 2 <= n; i += 2)
         {
-            while (1 != flag)
+            //cv.wait(lck, [&] { return (!isZero && isEven); });
+            while (isZero || !isEven)
                 cv.wait(lck);
+            printNumber(i);
 
-            printNumber(count++);
-            flag = -1;
+            isEven = false;
+            isZero = true;
+            cv.notify_all();
         }
     }
 
@@ -54,13 +60,16 @@ public:
     {
         unique_lock<mutex> lck(mtx);
 
-        while (count <= n)
+        for (int i = 1; i <=n; i += 2)
         {
-            while (0 != flag)
+            //cv.wait(lck, [&] { return (!isZero && !isEven); });
+            while (isZero || isEven)
                 cv.wait(lck);
 
-            printNumber(count++);
-            flag = -1;
+            printNumber(i);
+            isZero = true;
+            isEven = true;
+            cv.notify_all();
         }
     }
 
@@ -89,7 +98,7 @@ void testZeroEvenOdd()
 {
     function<void(int)> f = printNumber;
     
-    ZeroEvenOdd* p = new ZeroEvenOdd(4);
+    ZeroEvenOdd* p = new ZeroEvenOdd(2);
     thread A, B, C;
     A = p->threadZero(f);
     B = p->threadEven(f);
