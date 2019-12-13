@@ -2,22 +2,35 @@
 #include <thread>
 #include <string>
 #include <vector>
+#include <future>
+#include <atomic>
 using namespace std;
 
 class H2O {
 public:
     H2O() {
-
+        count = 0;
+        //lck = ATOMIC_FLAG_INIT;
     }
 
     void hydrogen(function<void()> releaseHydrogen) {
+        
 
+
+        while (count % 3 == 2)
+            this_thread::yield();
+
+        ++count;
         // releaseHydrogen() outputs "H". Do not change or remove this line.
         releaseHydrogen();
     }
 
     void oxygen(function<void()> releaseOxygen) {
 
+        while (count % 3 != 2)
+            this_thread::yield();
+
+        count = 0;
         // releaseOxygen() outputs "O". Do not change or remove this line.
         releaseOxygen();
     }
@@ -31,6 +44,11 @@ public:
     {
         return thread([=] {return oxygen(releaseOxygen); });
     }
+
+private:
+    promise<function<void()>> promOxygen;
+    atomic<int> count;
+    atomic_flag lck;
 };
 
 void printHydrogen()
