@@ -118,6 +118,7 @@
     <ClCompile Include="1114_PrintinOrder.cpp" />
     <ClCompile Include="1115_PrintFooBarAlternately.cpp" />
     <ClCompile Include="1116_PrintZeroEvenOdd.cpp" />
+    <ClCompile Include="1117_BuildingH2O.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

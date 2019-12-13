@@ -24,5 +24,8 @@
     <ClCompile Include="1116_PrintZeroEvenOdd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="1117_BuildingH2O.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
