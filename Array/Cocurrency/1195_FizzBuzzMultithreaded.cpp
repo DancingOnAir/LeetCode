@@ -1,12 +1,15 @@
 #include <iostream>
 #include <vector>
 #include <thread>
+#include <future>
 
 using namespace std;
 
 class FizzBuzz {
 private:
     int n;
+    promise<function<void()>> promFizz, promBuzz, promFizzBuzz;
+    promise<function<void(int)>> promNumber;
 
 public:
     FizzBuzz(int n) {
@@ -15,22 +18,36 @@ public:
 
     // printFizz() outputs "fizz".
     void fizz(function<void()> printFizz) {
-
+        promFizz.set_value(printFizz);
     }
 
     // printBuzz() outputs "buzz".
     void buzz(function<void()> printBuzz) {
-
+        promBuzz.set_value(printBuzz);
     }
 
     // printFizzBuzz() outputs "fizzbuzz".
     void fizzbuzz(function<void()> printFizzBuzz) {
-
+        promFizzBuzz.set_value(printFizzBuzz);
     }
 
     // printNumber(x) outputs "x", where x is an integer.
     void number(function<void(int)> printNumber) {
+        auto f = promFizz.get_future().get();
+        auto b = promBuzz.get_future().get();
+        auto fb = promFizzBuzz.get_future().get();
 
+        for (int i = 1; i <= n; ++i)
+        {
+            if (i % 5 == 0 && i % 3 == 0)
+                fb();
+            else if (i % 3 == 0)
+                f();
+            else if (i % 5 == 0)
+                b();
+            else
+                printNumber(i);
+        }
     }
 
     thread threadPrintFizz(function<void()> printFizz)
