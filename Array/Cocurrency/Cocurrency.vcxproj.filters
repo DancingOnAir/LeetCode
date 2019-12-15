@@ -27,5 +27,8 @@
     <ClCompile Include="1117_BuildingH2O.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="1195_FizzBuzzMultithreaded.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
