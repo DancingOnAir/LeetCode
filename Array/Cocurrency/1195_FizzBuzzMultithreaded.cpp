@@ -4,6 +4,7 @@
 #include <future>
 #include <mutex>
 #include <condition_variable>
+#include <atomic>
 using namespace std;
 
 //class FizzBuzz {
@@ -72,12 +73,117 @@ using namespace std;
 //    }
 //};
 
+//class FizzBuzz3 {
+//private:
+//    int n;
+//    int count;
+//    mutex mtx;
+//    condition_variable cv;
+//
+//public:
+//    FizzBuzz3(int n) {
+//        this->n = n;
+//        this->count = 1;
+//    }
+//
+//    // printFizz() outputs "fizz".
+//    void fizz(function<void()> printFizz) {
+//        while (true)
+//        {
+//            unique_lock<mutex> lck(mtx);
+//            while (count <= n && (count % 3 != 0 || count % 5 == 0))
+//                cv.wait(lck);
+//
+//            if (count > n)
+//                return;
+//
+//            printFizz();
+//            ++count;
+//
+//            cv.notify_all();
+//        }
+//    }
+//
+//    // printBuzz() outputs "buzz".
+//    void buzz(function<void()> printBuzz) {
+//        while (true)
+//        {
+//            unique_lock<mutex> lck(mtx);
+//
+//            while (count <= n && (count % 5 != 0 || count % 3 == 0))
+//                cv.wait(lck);
+//
+//            if (count > n)
+//                return;
+//
+//            printBuzz();
+//            ++count;
+//
+//            cv.notify_all();
+//        }
+//    }
+//
+//    // printFizzBuzz() outputs "fizzbuzz".
+//    void fizzbuzz(function<void()> printFizzBuzz) {
+//        while (true)
+//        {
+//            unique_lock<mutex> lck(mtx);
+//            while (count <= n && (count % 3 != 0 || count % 5 != 0))
+//                cv.wait(lck);
+//
+//            if (count > n)
+//                return;
+//
+//            printFizzBuzz();
+//            ++count;
+//
+//            cv.notify_all();
+//        }
+//    }
+//
+//    // printNumber(x) outputs "x", where x is an integer.
+//    void number(function<void(int)> printNumber) {
+//
+//        while (true)
+//        {
+//            unique_lock<mutex> lck(mtx);
+//            while (count <= n && (count % 3 == 0 || count % 5 == 0))
+//                cv.wait(lck);
+//
+//            if (count > n)
+//                return;
+//                
+//            printNumber(count++);
+//            cv.notify_all();
+//        }
+//
+//    }
+//
+//    thread threadPrintFizz(function<void()> printFizz)
+//    {
+//        return thread([=] { return fizz(printFizz); });
+//    }
+//
+//    thread threadPrintBuzz(function<void()> printBuzz)
+//    {
+//        return thread([=] { return buzz(printBuzz); });
+//    }
+//
+//    thread threadPrintFizzBuzz(function<void()> printFizzBuzz)
+//    {
+//        return thread([=] {return fizzbuzz(printFizzBuzz); });
+//    }
+//
+//    thread threadPrintNumber(function<void(int)> printNumber)
+//    {
+//        return thread([=] {return number(printNumber); });
+//    }
+//};
+
 class FizzBuzz {
 private:
     int n;
-    int count;
-    mutex mtx;
-    condition_variable cv;
+    atomic<int> count;
 
 public:
     FizzBuzz(int n) {
@@ -87,75 +193,42 @@ public:
 
     // printFizz() outputs "fizz".
     void fizz(function<void()> printFizz) {
-        while (true)
-        {
-            unique_lock<mutex> lck(mtx);
-            while (count <= n && (count % 3 != 0 || count % 5 == 0))
-                cv.wait(lck);
-
-            if (count > n)
-                return;
-
-            printFizz();
-            ++count;
-
-            cv.notify_all();
-        }
+        auto outputx = [&](auto i) { return printFizz(); };
+        output_if(outputx, [](auto i) { return i % 3 == 0 && i % 5 != 0; });
     }
 
     // printBuzz() outputs "buzz".
     void buzz(function<void()> printBuzz) {
-        while (true)
-        {
-            unique_lock<mutex> lck(mtx);
-
-            while (count <= n && (count % 5 != 0 || count % 3 == 0))
-                cv.wait(lck);
-
-            if (count > n)
-                return;
-
-            printBuzz();
-            ++count;
-
-            cv.notify_all();
-        }
+        auto outputx = [&](auto i) { return printBuzz(); };
+        output_if(outputx, [](auto i) { return i % 3 != 0 && i % 5 == 0; });
     }
 
     // printFizzBuzz() outputs "fizzbuzz".
     void fizzbuzz(function<void()> printFizzBuzz) {
-        while (true)
-        {
-            unique_lock<mutex> lck(mtx);
-            while (count <= n && (count % 3 != 0 || count % 5 != 0))
-                cv.wait(lck);
-
-            if (count > n)
-                return;
-
-            printFizzBuzz();
-            ++count;
-
-            cv.notify_all();
-        }
+        auto outputx = [&](auto i) { return printFizzBuzz(); };
+        output_if(outputx, [](auto i) { return i % 3 == 0 && i % 5 == 0; });
     }
 
     // printNumber(x) outputs "x", where x is an integer.
     void number(function<void(int)> printNumber) {
+        auto outputx = [&](auto i) { return printNumber(i); };
+        output_if(outputx, [](auto i) { return i % 3 != 0 && i % 5 != 0; });
+    }
 
-        while (true)
+    template<typename T, typename U>
+    inline void output_if(T printFunc, U condition)
+    {
+        while (count.load() <= n)
         {
-            unique_lock<mutex> lck(mtx);
-            while (count <= n && (count % 3 == 0 || count % 5 == 0))
-                cv.wait(lck);
-
-            if (count > n)
-                return;
-                
-            printNumber(count++);
-            cv.notify_all();
+            auto i = count.load();
+            if (condition(i))
+            {
+                printFunc(i);
+                count.store(i + 1);
+            }
+            else
+                this_thread::yield();
         }
-
     }
 
     thread threadPrintFizz(function<void()> printFizz)
