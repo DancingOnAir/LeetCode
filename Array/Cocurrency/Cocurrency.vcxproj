@@ -120,6 +120,7 @@
     <ClCompile Include="1116_PrintZeroEvenOdd.cpp" />
     <ClCompile Include="1117_BuildingH2O.cpp" />
     <ClCompile Include="1195_FizzBuzzMultithreaded.cpp" />
+    <ClCompile Include="1226_TheDiningPhilosophers.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
