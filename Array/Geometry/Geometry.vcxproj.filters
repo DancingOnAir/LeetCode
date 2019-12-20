@@ -18,5 +18,8 @@
     <ClCompile Include="0892_SurfaceAreaof3DShapes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0963_MinimumAreaRectangleII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
