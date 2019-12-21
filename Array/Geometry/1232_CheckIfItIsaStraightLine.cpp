@@ -6,16 +6,16 @@ using namespace std;
 bool checkStraightLine2(vector<vector<int>>& coordinates)
 {
     int n = coordinates.size();
-    if (n < 2)
-        return false;
-
-    auto p0 = coordinates[0];
-    for (int i = 1; i < n - 1; ++i)
+    int k = INT_MIN;
+    for (int i = 1; i < n; ++i)
     {
-        auto p1 = coordinates[i];
-        auto p2 = coordinates[i + 1];
+        double x = coordinates[i][0] - coordinates[i - 1][0];
+        double y = coordinates[i][1] - coordinates[i - 1][1];
+        double cur = (x != 0 ? y / x : INT_MAX);
         
-        if ((p2[1] - p0[1]) * (p1[0] - p0[0]) != (p1[1] - p0[1]) * (p2[0] - p0[0]))
+        if (k == INT_MIN)
+            k = cur;
+        else if (k != cur)
             return false;
     }
 
