@@ -24,5 +24,8 @@
     <ClCompile Include="1232_CheckIfItIsaStraightLine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0587_ErecttheFence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

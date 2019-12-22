@@ -118,6 +118,7 @@
     <ClCompile Include="0892_SurfaceAreaof3DShapes.cpp" />
     <ClCompile Include="0963_MinimumAreaRectangleII.cpp" />
     <ClCompile Include="1232_CheckIfItIsaStraightLine.cpp" />
+    <ClCompile Include="0587_ErecttheFence.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
