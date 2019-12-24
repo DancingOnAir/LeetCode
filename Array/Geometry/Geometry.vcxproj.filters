@@ -27,5 +27,8 @@
     <ClCompile Include="0587_ErecttheFence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="1266_MinimumTimeVisitingAllPoints.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
