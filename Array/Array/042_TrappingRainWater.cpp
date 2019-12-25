@@ -33,3 +33,44 @@
 //    testTrap();
 //    getchar();
 //}
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int trap(vector<int>& height)
+{
+    int n = height.size();
+    if (n < 3)
+        return 0;
+
+    int left = 0;
+    int right = n - 1;
+    int lower = 0;
+    int level = 0;
+    int res = 0;
+
+    while (left < right)
+    {
+        lower = height[height[left] < height[right] ? left++ : right--];
+        level = level > lower ? level : lower;
+        res += level - lower;
+    }
+
+    return res;
+}
+
+void testTrap()
+{
+    vector<int> height1 = { 0,1,0,2,1,0,1,3,2,1,2,1 };
+    cout << trap(height1) << endl;
+}
+
+int main()
+{
+    testTrap();
+
+    getchar();
+    return 0;
+}
