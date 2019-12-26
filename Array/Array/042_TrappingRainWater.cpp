@@ -39,7 +39,7 @@
 
 using namespace std;
 
-int trap(vector<int>& height)
+int trap2(vector<int>& height)
 {
     int n = height.size();
     if (n < 3)
@@ -59,6 +59,40 @@ int trap(vector<int>& height)
     }
 
     return res;
+}
+
+int trap(vector<int>& height)
+{
+    int n = height.size();
+    if (n < 3)
+        return 0;
+
+    int sumMap = 0, sumTot = 0;
+    for (int x : height)
+        sumMap += x;
+
+    int left = 0, right = n - 1;
+    int maxLeft = 0, maxRight = 0;
+
+    while (left <= right)
+    {
+        maxLeft = maxLeft > height[left] ? maxLeft : height[left];
+        maxRight = maxRight > height[right] ? maxRight : height[right];
+
+        if (maxLeft <= maxRight)
+        {
+            sumTot += maxLeft;
+            ++left;
+        }
+        else
+        {
+            sumTot += maxRight;
+            --right;
+        }
+
+    }
+
+    return sumTot - sumMap;
 }
 
 void testTrap()
