@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="44_WildcardMatching.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="70_ClimbingStairs.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="72_EditDistance.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="87_ScrambleString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="91_DecodeWays.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="97_InterleavingString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="115_DistinctSubsequences.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="264_UglyNumberII.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="132_PalindromePartitioningII.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="139_WordBreak.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="140_WordBreakII.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="174_DungeonGame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="188_BestTimetoBuyandSellStockIV.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="198_HouseRobber.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="213_HouseRobberII.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="221_MaximalSquare.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="279_PerfectSquares.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="300_LongestIncreasingSubsequence.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="303_RangeSumQueryImmutable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="304_RangeSumQuery2DImmutable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="309_BestTimetoBuyandSellStockwithCooldown.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="312_BurstBalloons.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="321_CreateMaximumNumber.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="322_CoinChange.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="338_CountingBits.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="343_IntegerBreak.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="354_RussianDollEnvelopes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="357_CountNumberswithUniqueDigits.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="363_MaxSumofRectangleNoLargerThanK.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="368_LargestDivisibleSubset.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="375_GuessNumberHigherorLowerII.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="376_WiggleSubsequence.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="392_IsSubsequence.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="403_FrogJump.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="410_SplitArrayLargestSum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="413_ArithmeticSlices.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="416_PartitionEqualSubsetSum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="446_ArithmeticSlicesIISubsequence.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="464_CanIWin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="466_CountTheRepetitions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="467_UniqueSubstringsinWraparoundString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="472_ConcatenatedWords.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="474_OnesandZeroes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="486_PredicttheWinner.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="494_TargetSum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="514_FreedomTrail.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="516_LongestPalindromicSubsequence.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="517_SuperWashingMachines.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="523_ContinuousSubarraySum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="546_RemoveBoxes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="552_StudentAttendanceRecordII.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="576_OutofBoundaryPaths.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="600_NonNegativeIntegerswithoutConsecutiveOnes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
