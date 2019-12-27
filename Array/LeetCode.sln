@@ -23,7 +23,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Trie", "Trie\Trie.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TopologicalSort", "TopologicalSort\TopologicalSort.vcxproj", "{7F798A12-F8EF-4E5C-A8C9-ECE258E07B6C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicProgramming", "DynamicProgramming\DynamicProgramming.vcxproj", "{39A9910B-C9E2-45C0-A0A9-E94B8DCF4DEB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicProgrammingPrev", "DynamicProgramming\DynamicProgramming.vcxproj", "{39A9910B-C9E2-45C0-A0A9-E94B8DCF4DEB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Math", "Math\Math.vcxproj", "{C7659EE9-5BDE-4C94-9E34-A910425ED4AD}"
 EndProject
@@ -32,6 +32,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cocurrency", "Cocurrency\Cocurrency.vcxproj", "{85DF9273-F167-4BCE-85CB-5DEF22111382}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Geometry", "Geometry\Geometry.vcxproj", "{8A374AD1-D288-4B5D-8B8E-25DEF4AA35F5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DP", "DP\DP.vcxproj", "{6F9616FB-0C70-4427-BEF6-77BC773B37BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -161,6 +163,14 @@ Global
 		{8A374AD1-D288-4B5D-8B8E-25DEF4AA35F5}.Release|x64.Build.0 = Release|x64
 		{8A374AD1-D288-4B5D-8B8E-25DEF4AA35F5}.Release|x86.ActiveCfg = Release|Win32
 		{8A374AD1-D288-4B5D-8B8E-25DEF4AA35F5}.Release|x86.Build.0 = Release|Win32
+		{6F9616FB-0C70-4427-BEF6-77BC773B37BB}.Debug|x64.ActiveCfg = Debug|x64
+		{6F9616FB-0C70-4427-BEF6-77BC773B37BB}.Debug|x64.Build.0 = Debug|x64
+		{6F9616FB-0C70-4427-BEF6-77BC773B37BB}.Debug|x86.ActiveCfg = Debug|Win32
+		{6F9616FB-0C70-4427-BEF6-77BC773B37BB}.Debug|x86.Build.0 = Debug|Win32
+		{6F9616FB-0C70-4427-BEF6-77BC773B37BB}.Release|x64.ActiveCfg = Release|x64
+		{6F9616FB-0C70-4427-BEF6-77BC773B37BB}.Release|x64.Build.0 = Release|x64
+		{6F9616FB-0C70-4427-BEF6-77BC773B37BB}.Release|x86.ActiveCfg = Release|Win32
+		{6F9616FB-0C70-4427-BEF6-77BC773B37BB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
