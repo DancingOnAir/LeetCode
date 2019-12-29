@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="0005_LongestPalindromicSubstring.cpp" />
     <ClCompile Include="0010_RegularExpressionMatching.cpp" />
+    <ClCompile Include="0032_LongestValidParentheses.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

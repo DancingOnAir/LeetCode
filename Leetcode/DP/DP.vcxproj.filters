@@ -21,5 +21,8 @@
     <ClCompile Include="0010_RegularExpressionMatching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0032_LongestValidParentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
