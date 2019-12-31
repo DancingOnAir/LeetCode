@@ -27,5 +27,8 @@
     <ClCompile Include="0044_WildcardMatching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0053_MaximumSubarray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
