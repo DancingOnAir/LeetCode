@@ -120,6 +120,7 @@
     <ClCompile Include="0032_LongestValidParentheses.cpp" />
     <ClCompile Include="0044_WildcardMatching.cpp" />
     <ClCompile Include="0053_MaximumSubarray.cpp" />
+    <ClCompile Include="0062_UniquePaths.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
