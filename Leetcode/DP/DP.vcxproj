@@ -121,6 +121,7 @@
     <ClCompile Include="0044_WildcardMatching.cpp" />
     <ClCompile Include="0053_MaximumSubarray.cpp" />
     <ClCompile Include="0062_UniquePaths.cpp" />
+    <ClCompile Include="0063_UniquePathsII.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
