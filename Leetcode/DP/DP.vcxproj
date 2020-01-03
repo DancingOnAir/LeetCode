@@ -122,6 +122,7 @@
     <ClCompile Include="0053_MaximumSubarray.cpp" />
     <ClCompile Include="0062_UniquePaths.cpp" />
     <ClCompile Include="0063_UniquePathsII.cpp" />
+    <ClCompile Include="0064_MinimumPathSum.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

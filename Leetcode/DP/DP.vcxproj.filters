@@ -36,5 +36,8 @@
     <ClCompile Include="0063_UniquePathsII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0064_MinimumPathSum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
