@@ -39,5 +39,8 @@
     <ClCompile Include="0064_MinimumPathSum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0070_ClimbingStairs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
