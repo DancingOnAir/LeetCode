@@ -1,30 +1,30 @@
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-int climbStairs(int n)
-{
-    vector<int> dp(n + 1);
-    dp[0] = 1;
-    dp[1] = 1;
-    
-    for (int i = 2; i <= n; ++i)
-        dp[i] = dp[i - 1] + dp[i - 2];
-
-    return dp[n];
-}
-
-void testClimbStairs()
-{
-    cout << climbStairs(3) << endl;
-    cout << climbStairs(4) << endl;
-}
-
-int main()
-{
-    testClimbStairs();
-
-    getchar();
-    return 0;
-}
+//#include <iostream>
+//#include <vector>
+//
+//using namespace std;
+//
+//int climbStairs(int n)
+//{
+//    vector<int> dp(n + 1);
+//    dp[0] = 1;
+//    dp[1] = 1;
+//    
+//    for (int i = 2; i <= n; ++i)
+//        dp[i] = dp[i - 1] + dp[i - 2];
+//
+//    return dp[n];
+//}
+//
+//void testClimbStairs()
+//{
+//    cout << climbStairs(3) << endl;
+//    cout << climbStairs(4) << endl;
+//}
+//
+//int main()
+//{
+//    testClimbStairs();
+//
+//    getchar();
+//    return 0;
+//}

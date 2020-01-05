@@ -42,5 +42,8 @@
     <ClCompile Include="0070_ClimbingStairs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0072_EditDistance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

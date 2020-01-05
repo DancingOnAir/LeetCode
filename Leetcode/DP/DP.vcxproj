@@ -124,6 +124,7 @@
     <ClCompile Include="0063_UniquePathsII.cpp" />
     <ClCompile Include="0064_MinimumPathSum.cpp" />
     <ClCompile Include="0070_ClimbingStairs.cpp" />
+    <ClCompile Include="0072_EditDistance.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
