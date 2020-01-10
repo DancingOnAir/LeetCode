@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="0146_LRUCache.cpp" />
     <ClCompile Include="0155_MinStack.cpp" />
+    <ClCompile Include="0173_BinarySearchTreeIterator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
