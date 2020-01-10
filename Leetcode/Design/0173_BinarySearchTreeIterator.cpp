@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <queue>
+#include <stack>
 
 struct TreeNode
 {
@@ -11,42 +12,75 @@ struct TreeNode
     TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
 };
 
+//class BSTIterator {
+//public:
+//    BSTIterator(TreeNode* root): curIndex(0), root_(root)
+//    {
+//        inorderTraversal(root_, nums_);
+//    }
+//
+//    /** @return the next smallest number */
+//    int next()
+//    {
+//        if (hasNext())
+//            return nums_[curIndex++];
+//
+//        return -1;
+//    }
+//
+//    /** @return whether we have a next smallest number */
+//    bool hasNext()
+//    {
+//        return curIndex < nums_.size();
+//    }
+//
+//    void inorderTraversal(TreeNode* root, std::vector<int>& nums)
+//    {
+//        if (!root)
+//            return;
+//
+//        inorderTraversal(root->left, nums);
+//        nums.emplace_back(root->val);
+//        inorderTraversal(root->right, nums);
+//    }
+//
+//private:
+//    TreeNode* root_;
+//    std::vector<int> nums_;
+//    int curIndex;
+//};
+
 class BSTIterator {
 public:
-    BSTIterator(TreeNode* root): curIndex(0), root_(root)
+    BSTIterator(TreeNode* root)
     {
-        inorderTraversal(root_, nums_);
+        pushTreeNode(root);
     }
 
     /** @return the next smallest number */
     int next()
     {
-        if (hasNext())
-            return nums_[curIndex++];
+        auto temp = stk.top();
+        stk.pop();
+        pushTreeNode(temp->right);
 
-        return -1;
+        return temp->val;
     }
 
     /** @return whether we have a next smallest number */
     bool hasNext()
     {
-        return curIndex < nums_.size();
+        return !stk.empty();
     }
 
-    void inorderTraversal(TreeNode* root, std::vector<int>& nums)
+    void pushTreeNode(TreeNode* root)
     {
-        if (!root)
-            return;
-
-        inorderTraversal(root->left, nums);
-        nums.emplace_back(root->val);
-        inorderTraversal(root->right, nums);
+        for (; root != nullptr; root = root->left)
+            stk.emplace(root);
     }
 
 private:
-    TreeNode* root_;
-    std::vector<int> nums_;
-    int curIndex;
+    std::stack<TreeNode*> stk;
 };
 
 TreeNode* createBinaryTree(const std::vector<std::string>& nums)
