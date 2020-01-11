@@ -9,7 +9,7 @@ struct TriNode
     bool isEnd;
     vector<TriNode*> children;
 
-    TriNode(bool x = false) : isEnd(x), children(26, nullptr) {};
+    TriNode() : isEnd(false), children(26, nullptr) {};
 };
 
 class Trie 
@@ -34,52 +34,41 @@ public:
             }
 
             cur = cur->children[pos];
-
-            if (i == word.size() - 1)
-                cur->isEnd = true;
         }
 
+        cur->isEnd = true;
     }
 
     /** Returns if the word is in the trie. */
     bool search(string word)
     {
-        if (word.empty())
-            return true;
+        auto p = retrieve(word);
 
-        auto head = root;
-        for (int i = 0; i < word.size(); ++i)
-        {
-            int pos = word[i] - 'a';
-            if (head->children[pos] == nullptr)
-                return false;
-
-            head = head->children[pos];
-        }
-
-        return head->isEnd;
+        return p && p->isEnd;
     }
 
     /** Returns if there is any word in the trie that starts with the given prefix. */
     bool startsWith(string prefix)
     {
-        if (prefix.empty())
-            return true;
-
-        auto head = root;
-        for (int i = 0; i < prefix.size(); ++i)
-        {
-            int pos = prefix[i] - 'a';
-            if (head->children[pos] == nullptr)
-                return false;
-
-            head = head->children[pos];
-        }
-
-        return true;
+        return retrieve(prefix);
     }
 
 private:
+    TriNode* retrieve(const string& prefix)
+    {
+        auto cur = root;
+        for (char c : prefix)
+        {
+            int pos = c - 'a';
+            cur = cur->children[pos];
+
+            if (!cur)
+                break;
+        }
+
+        return cur;
+    }
+
     TriNode* root;
 };
 
