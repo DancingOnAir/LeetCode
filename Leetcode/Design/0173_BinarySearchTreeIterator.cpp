@@ -50,109 +50,109 @@ struct TreeNode
 //    int curIndex;
 //};
 
-class BSTIterator {
-public:
-    BSTIterator(TreeNode* root)
-    {
-        pushTreeNode(root);
-    }
-
-    /** @return the next smallest number */
-    int next()
-    {
-        auto temp = stk.top();
-        stk.pop();
-        pushTreeNode(temp->right);
-
-        return temp->val;
-    }
-
-    /** @return whether we have a next smallest number */
-    bool hasNext()
-    {
-        return !stk.empty();
-    }
-
-    void pushTreeNode(TreeNode* root)
-    {
-        for (; root != nullptr; root = root->left)
-            stk.emplace(root);
-    }
-
-private:
-    std::stack<TreeNode*> stk;
-};
-
-TreeNode* createBinaryTree(const std::vector<std::string>& nums)
-{
-    if (nums.empty())
-        return nullptr;
-
-    auto root = new TreeNode(std::stoi(nums[0]));
-    std::queue<TreeNode*> q;
-    q.emplace(root);
-    TreeNode* pCur = nullptr;
-
-    int startIndex = 1;
-    int nextLevelIndex = 2;
-    int restIndex = nums.size() - 1;
-
-    while (restIndex > 0)
-    {
-        for (int i = startIndex; i < startIndex + nextLevelIndex; i += 2)
-        {
-            if (i > nums.size())
-                return root;
-
-            pCur = q.front();
-            q.pop();
-
-            if (nums[i] != "null")
-            {
-                pCur->left = new TreeNode(std::stoi(nums[i]));
-                q.emplace(pCur->left);
-            }
-
-            if (i + 1 > nums.size())
-                return root;
-
-            if (nums[i + 1] != "null")
-            {
-                pCur->right = new TreeNode(std::stoi(nums[i + 1]));
-                q.emplace(pCur->right);
-            }
-        }
-
-        startIndex += nextLevelIndex;
-        restIndex -= nextLevelIndex;
-        nextLevelIndex = q.size() * 2;
-    }
-
-    return root;
-}
-
-void test()
-{
-
-    std::vector<std::string> nums = { "7", "3", "15", "null", "null", "9", "20" };
-    TreeNode* root = createBinaryTree(nums);
-
-    BSTIterator iterator = BSTIterator(root);
-    std::cout << iterator.next() << std::endl;    // return 3
-    std::cout << iterator.next() << std::endl;    // return 7
-    std::cout << (iterator.hasNext() ? "True" : "False") << std::endl; // return true
-    std::cout << iterator.next() << std::endl;    // return 9
-    std::cout << (iterator.hasNext() ? "True" : "False") << std::endl; // return true
-    std::cout << iterator.next() << std::endl;    // return 15
-    std::cout << (iterator.hasNext() ? "True" : "False") << std::endl; // return true
-    std::cout << iterator.next() << std::endl;    // return 20
-    std::cout << (iterator.hasNext() ? "True" : "False") << std::endl; // return false
-}
-
-int main()
-{
-    test();
-
-    getchar();
-    return 0;
-}
+//class BSTIterator {
+//public:
+//    BSTIterator(TreeNode* root)
+//    {
+//        pushTreeNode(root);
+//    }
+//
+//    /** @return the next smallest number */
+//    int next()
+//    {
+//        auto temp = stk.top();
+//        stk.pop();
+//        pushTreeNode(temp->right);
+//
+//        return temp->val;
+//    }
+//
+//    /** @return whether we have a next smallest number */
+//    bool hasNext()
+//    {
+//        return !stk.empty();
+//    }
+//
+//    void pushTreeNode(TreeNode* root)
+//    {
+//        for (; root != nullptr; root = root->left)
+//            stk.emplace(root);
+//    }
+//
+//private:
+//    std::stack<TreeNode*> stk;
+//};
+//
+//TreeNode* createBinaryTree(const std::vector<std::string>& nums)
+//{
+//    if (nums.empty())
+//        return nullptr;
+//
+//    auto root = new TreeNode(std::stoi(nums[0]));
+//    std::queue<TreeNode*> q;
+//    q.emplace(root);
+//    TreeNode* pCur = nullptr;
+//
+//    int startIndex = 1;
+//    int nextLevelIndex = 2;
+//    int restIndex = nums.size() - 1;
+//
+//    while (restIndex > 0)
+//    {
+//        for (int i = startIndex; i < startIndex + nextLevelIndex; i += 2)
+//        {
+//            if (i > nums.size())
+//                return root;
+//
+//            pCur = q.front();
+//            q.pop();
+//
+//            if (nums[i] != "null")
+//            {
+//                pCur->left = new TreeNode(std::stoi(nums[i]));
+//                q.emplace(pCur->left);
+//            }
+//
+//            if (i + 1 > nums.size())
+//                return root;
+//
+//            if (nums[i + 1] != "null")
+//            {
+//                pCur->right = new TreeNode(std::stoi(nums[i + 1]));
+//                q.emplace(pCur->right);
+//            }
+//        }
+//
+//        startIndex += nextLevelIndex;
+//        restIndex -= nextLevelIndex;
+//        nextLevelIndex = q.size() * 2;
+//    }
+//
+//    return root;
+//}
+//
+//void test()
+//{
+//
+//    std::vector<std::string> nums = { "7", "3", "15", "null", "null", "9", "20" };
+//    TreeNode* root = createBinaryTree(nums);
+//
+//    BSTIterator iterator = BSTIterator(root);
+//    std::cout << iterator.next() << std::endl;    // return 3
+//    std::cout << iterator.next() << std::endl;    // return 7
+//    std::cout << (iterator.hasNext() ? "True" : "False") << std::endl; // return true
+//    std::cout << iterator.next() << std::endl;    // return 9
+//    std::cout << (iterator.hasNext() ? "True" : "False") << std::endl; // return true
+//    std::cout << iterator.next() << std::endl;    // return 15
+//    std::cout << (iterator.hasNext() ? "True" : "False") << std::endl; // return true
+//    std::cout << iterator.next() << std::endl;    // return 20
+//    std::cout << (iterator.hasNext() ? "True" : "False") << std::endl; // return false
+//}
+//
+//int main()
+//{
+//    test();
+//
+//    getchar();
+//    return 0;
+//}

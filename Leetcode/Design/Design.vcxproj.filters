@@ -24,5 +24,8 @@
     <ClCompile Include="0173_BinarySearchTreeIterator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0208_ImplementTrie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
