@@ -27,5 +27,13 @@
     <ClCompile Include="0208_ImplementTrie.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0211_AddandSearchWord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="0211_AddandSearchWord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

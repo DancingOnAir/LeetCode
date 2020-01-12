@@ -119,6 +119,10 @@
     <ClCompile Include="0155_MinStack.cpp" />
     <ClCompile Include="0173_BinarySearchTreeIterator.cpp" />
     <ClCompile Include="0208_ImplementTrie.cpp" />
+    <ClCompile Include="0211_AddandSearchWord.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="0211_AddandSearchWord.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
