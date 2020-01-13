@@ -35,5 +35,8 @@
     <ClInclude Include="0211_AddandSearchWord.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0225_ImplementStackusingQueues.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
