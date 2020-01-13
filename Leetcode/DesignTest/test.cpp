@@ -1,24 +1,46 @@
 #include "pch.h"
 #include "../Design/0211_AddandSearchWord.h"
 
-TEST(AddandSearchWordTest, searchNormalWord)
+class WordDictionaryTest: public testing::Test
 {
-    WordDictionary wordDictionary;
-    wordDictionary.addWord("bad");
-    wordDictionary.addWord("dad");
-    wordDictionary.addWord("mad");
+public:
+    virtual void SetUp()
+    {
+        wordDictionary_ = new WordDictionary();
+        wordDictionary_->addWord("bad");
+        wordDictionary_->addWord("dad");
+        wordDictionary_->addWord("mad");
+    }
 
-    EXPECT_FALSE(wordDictionary.search("pad"));
-    EXPECT_TRUE(wordDictionary.search("bad"));
+    void TearDown()
+    {
+        if (!wordDictionary_)
+        {
+            delete wordDictionary_;
+            wordDictionary_ = nullptr;
+        }
+    }
+
+protected:
+    WordDictionary* wordDictionary_;
+};
+
+TEST_F(WordDictionaryTest, addWord)
+{
+    ASSERT_TRUE(wordDictionary_->getRoot()->children[0] == nullptr);
+    ASSERT_TRUE(wordDictionary_->getRoot()->children['b' - 'a'] != nullptr);
+    ASSERT_TRUE(wordDictionary_->getRoot()->children['d' - 'a'] != nullptr);
+    ASSERT_TRUE(wordDictionary_->getRoot()->children['m' - 'a'] != nullptr);
 }
 
-TEST(AddandSearchWordTest, searchTokenWord)
+TEST_F(WordDictionaryTest, searchNormalWord)
 {
-    WordDictionary wordDictionary;
-    wordDictionary.addWord("bad");
-    wordDictionary.addWord("dad");
-    wordDictionary.addWord("mad");
+    EXPECT_FALSE(wordDictionary_->search("pad"));
+    EXPECT_TRUE(wordDictionary_->search("bad"));
+}
 
-    EXPECT_TRUE(wordDictionary.search(".ad"));
-    EXPECT_TRUE(wordDictionary.search("b.."));
+TEST_F(WordDictionaryTest, searchTokenWord)
+{
+    EXPECT_TRUE(wordDictionary_->search(".ad"));
+    EXPECT_TRUE(wordDictionary_->search("b.."));
 }

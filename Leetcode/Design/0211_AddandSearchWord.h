@@ -46,6 +46,11 @@ public:
         return retrieve(word, root_);
     }
 
+    TriNode* getRoot()
+    {
+        return root_;
+    }
+
 private:
     bool retrieve(const string& word, TriNode* root)
     {
