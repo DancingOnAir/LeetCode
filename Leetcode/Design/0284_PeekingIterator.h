@@ -15,6 +15,47 @@ public:
     bool hasNext() const;
 };
 
+//class PeekingIterator : public Iterator {
+//private:
+//    bool hasPeeked;
+//    int peekedElement;
+//public:
+//    PeekingIterator(const vector<int>& nums) : Iterator(nums) {
+//        // Initialize any member here.
+//        // **DO NOT** save a copy of nums and manipulate it directly.
+//        // You should only use the Iterator interface methods.  
+//        hasPeeked = false;
+//        peekedElement = 0;
+//    }
+//
+//    // Returns the next element in the iteration without advancing the iterator.
+//    int peek() {
+//        if (!hasPeeked)
+//        {
+//            peekedElement = Iterator::next();
+//            hasPeeked = true;
+//        }
+//
+//        return peekedElement;
+//    }
+//
+//    // hasNext() and next() should behave the same as in the Iterator interface.
+//    // Override them if needed.
+//    int next() {
+//        if (!hasPeeked)
+//            return Iterator::next();
+//
+//        int res = peekedElement;
+//        hasPeeked = false;
+//        peekedElement = 0;
+//
+//        return res;
+//    }
+//
+//    bool hasNext() const {
+//        return hasPeeked || Iterator::hasNext();
+//    }
+//};
 
 class PeekingIterator : public Iterator {
 private:
@@ -25,35 +66,20 @@ public:
         // Initialize any member here.
         // **DO NOT** save a copy of nums and manipulate it directly.
         // You should only use the Iterator interface methods.  
-        hasPeeked = false;
-        peekedElement = 0;
     }
 
     // Returns the next element in the iteration without advancing the iterator.
     int peek() {
-        if (!hasPeeked)
-        {
-            peekedElement = Iterator::next();
-            hasPeeked = true;
-        }
-
-        return peekedElement;
+        return Iterator(*this).next();
     }
 
     // hasNext() and next() should behave the same as in the Iterator interface.
     // Override them if needed.
     int next() {
-        if (!hasPeeked)
-            return Iterator::next();
-
-        int res = peekedElement;
-        hasPeeked = false;
-        peekedElement = 0;
-
-        return res;
+        return Iterator::next();
     }
 
     bool hasNext() const {
-        return hasPeeked || Iterator::hasNext();
+        return Iterator::hasNext();
     }
 };
