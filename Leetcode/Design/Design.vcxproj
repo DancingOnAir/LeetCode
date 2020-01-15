@@ -125,6 +125,7 @@
     <ClInclude Include="0211_AddandSearchWord.h" />
     <ClInclude Include="0225_ImplementStackusingQueues.h" />
     <ClInclude Include="0232_ImplementQueueusingStacks.h" />
+    <ClInclude Include="0284_PeekingIterator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

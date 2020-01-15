@@ -41,5 +41,8 @@
     <ClInclude Include="0232_ImplementQueueusingStacks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0284_PeekingIterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
