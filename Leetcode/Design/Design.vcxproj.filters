@@ -30,6 +30,9 @@
     <ClCompile Include="0211_AddandSearchWord.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0295_FindMedianfromDataStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0211_AddandSearchWord.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="0284_PeekingIterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="0295_FindMedianfromDataStream.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
