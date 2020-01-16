@@ -20,6 +20,7 @@ protected:
     MedianFinder* medianFinder_;
 };
 
-TEST_F(MedianFinderTest, findMedian) {
+TEST_F(MedianFinderTest, findMedian)
+{
     EXPECT_EQ(medianFinder_->findMedian(), 1.5);
 }

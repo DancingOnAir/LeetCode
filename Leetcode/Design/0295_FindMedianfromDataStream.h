@@ -5,12 +5,13 @@
 #include <memory>
 #include <algorithm>
 #include <set>
+#include <queue>
 
-class MedianFinder
+class MedianFinder1
 {
 public:
     /** initialize your data structure here. */
-    MedianFinder(): lowMedian_(nums_.end()), highMedian_(nums_.end())
+    MedianFinder1(): lowMedian_(nums_.end()), highMedian_(nums_.end())
     {
     }
 
@@ -49,4 +50,39 @@ public:
 private:
     std::multiset<int> nums_;
     std::multiset<int>::iterator lowMedian_, highMedian_;
+};
+
+class MedianFinder
+{
+public:
+    /** initialize your data structure here. */
+    MedianFinder(): count(0)
+    {
+
+    }
+
+    void addNum(int num)
+    {
+        maxHeap.emplace(num);
+
+        minHeap.emplace(maxHeap.top());
+        maxHeap.pop();
+        ++count;
+
+        if (count & 1)
+        {
+            maxHeap.emplace(minHeap.top());
+            minHeap.pop();
+        }
+    }
+
+    double findMedian()
+    {
+        return count & 1 ? maxHeap.top() : static_cast<double>(maxHeap.top() + minHeap.top()) * 0.5;
+    }
+
+private:
+    std::priority_queue<int> maxHeap;
+    std::priority_queue<int, std::vector<int>, std::greater<int>>minHeap;
+    size_t count;
 };
