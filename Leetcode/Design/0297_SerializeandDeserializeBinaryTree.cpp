@@ -18,7 +18,7 @@ void test()
 
     string res1 = codec->serialize(root);
     cout << res1 << endl;
-    string data = "[1,2]";
+    string data = "[1,2,3,4,5]";
     TreeNode* res2 = codec->deserialize(data);
 }
 

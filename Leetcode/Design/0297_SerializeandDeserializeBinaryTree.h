@@ -91,6 +91,9 @@ public:
         {
             for (int i = startIndex; i < startIndex + nextLevelIndex; i += 2)
             {
+                if (i >= nums.size())
+                    return root;
+
                 pCur = q.front();
                 q.pop();
 
@@ -100,7 +103,7 @@ public:
                     q.emplace(pCur->left);
                 }
 
-                if (i + 1 > nums.size())
+                if (i + 1 >= nums.size())
                     return root;
 
                 if (nums[i + 1] != "null")
