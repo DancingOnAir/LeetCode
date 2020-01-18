@@ -3,6 +3,7 @@
 #include <vector>
 #include <stack>
 #include <queue>
+#include <sstream>
 using namespace std;
 
 struct TreeNode
@@ -13,7 +14,7 @@ struct TreeNode
     TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
 };
  
-class Codec
+class Codec1
 {
 public:
 
@@ -123,3 +124,58 @@ public:
     }
 
 };
+
+class Codec
+{
+public:
+
+    // Encodes a tree to a single string.
+    string serialize(TreeNode* root)
+    {
+        ostringstream oss;
+        serialize(root, oss);
+
+        return oss.str();
+    }
+
+    // Decodes your encoded data to tree.
+    TreeNode* deserialize(string data)
+    {
+        istringstream iss(data);
+        return deserialize(iss);
+    }
+
+private:
+    void serialize(TreeNode* root, ostringstream& oss)
+    {
+        if (root)
+        {
+            oss << root->val << " ";
+            serialize(root->left, oss);
+            serialize(root->right, oss);
+        }
+        else
+        {
+            oss << "null ";
+        }
+    }
+
+    TreeNode* deserialize(istringstream& iss)
+    {
+        string temp;
+        iss >> temp;
+
+        if (temp == "null")
+            return nullptr;
+        else
+        {
+            TreeNode* root = new TreeNode(stoi(temp));
+            root->left = deserialize(iss);
+            root->right = deserialize(iss);
+
+            return root;
+        }
+
+    }
+};
+
