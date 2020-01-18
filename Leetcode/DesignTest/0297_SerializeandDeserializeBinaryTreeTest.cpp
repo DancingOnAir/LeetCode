@@ -18,7 +18,7 @@ public:
         node3->left = node4;
         node3->right = node5;
 
-        data_ = "[1,2,3,null,null,4,5]";
+
     }
 
     virtual void TearDown()
@@ -32,12 +32,14 @@ protected:
     string data_;
 };
 
-TEST_F(CodecTest, checkSerialize)
+TEST_F(CodecTest, checkCodec)
 {
-    EXPECT_TRUE(codec_->serialize(root_) == data_);
-}
-
-TEST_F(CodecTest, checkDeserialize)
-{
-    EXPECT_TRUE(codec_->deserialize(data_)->val == 1);
+    TreeNode* root = codec_->deserialize(codec_->serialize(root_));
+    EXPECT_TRUE(root->val == 1);
+    EXPECT_TRUE(root->left->val == 2);
+    EXPECT_TRUE(root->right->val == 3);
+    EXPECT_TRUE(root->left->left == nullptr);
+    EXPECT_TRUE(root->left->right == nullptr);
+    EXPECT_TRUE(root->right->left->val == 4);
+    EXPECT_TRUE(root->right->right->val == 5);
 }
