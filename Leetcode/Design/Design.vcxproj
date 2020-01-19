@@ -130,6 +130,8 @@
     <ClInclude Include="0284_PeekingIterator.h" />
     <ClInclude Include="0295_FindMedianfromDataStream.h" />
     <ClInclude Include="0297_SerializeandDeserializeBinaryTree.h" />
+    <ClInclude Include="0341_FlattenNestedListIterator.h" />
+    <ClInclude Include="0355_DesignTwitter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
