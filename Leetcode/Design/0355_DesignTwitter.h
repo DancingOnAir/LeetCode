@@ -18,8 +18,10 @@ public:
     /** Compose a new tweet. */
     void postTweet(int userId, int tweetId)
     {
-        posts_[time_] = { userId, tweetId };
+        posts_[time_++] = { userId, tweetId };
 
+        if (!followers_.count(userId))
+            followers_[userId].emplace(userId);
     }
 
     /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */
@@ -29,7 +31,7 @@ public:
         if (!followers_.count(userId))
             return res;
 
-        for (auto iter = posts_.begin(); iter != posts_.end(); ++iter)
+        for (auto iter = posts_.begin(); iter != posts_.end() && res.size() < 11; ++iter)
         {
             if (followers_[userId].count(iter->second.first))
                 res.emplace_back(iter->second.second);

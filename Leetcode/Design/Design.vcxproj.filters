@@ -36,6 +36,9 @@
     <ClCompile Include="0297_SerializeandDeserializeBinaryTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0355_DesignTwitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0211_AddandSearchWord.h">

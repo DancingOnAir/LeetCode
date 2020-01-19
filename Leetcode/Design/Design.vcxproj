@@ -122,6 +122,7 @@
     <ClCompile Include="0211_AddandSearchWord.cpp" />
     <ClCompile Include="0295_FindMedianfromDataStream.cpp" />
     <ClCompile Include="0297_SerializeandDeserializeBinaryTree.cpp" />
+    <ClCompile Include="0355_DesignTwitter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0211_AddandSearchWord.h" />
