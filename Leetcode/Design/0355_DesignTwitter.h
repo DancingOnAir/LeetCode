@@ -114,6 +114,9 @@ public:
     /** Follower follows a followee. If the operation is invalid, it should be a no-op. */
     void follow(int followerId, int followeeId)
     {
+        if (followeeId == followerId)
+            return;
+
         userFollower_[followerId].emplace(followeeId);
     }
 

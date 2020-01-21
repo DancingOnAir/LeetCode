@@ -133,6 +133,7 @@
     <ClInclude Include="0297_SerializeandDeserializeBinaryTree.h" />
     <ClInclude Include="0341_FlattenNestedListIterator.h" />
     <ClInclude Include="0355_DesignTwitter.h" />
+    <ClInclude Include="0380_InsertDeleteGetRandom.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
