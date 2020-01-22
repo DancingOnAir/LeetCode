@@ -46,7 +46,7 @@ public:
     /** Get a random element from the set. */
     int getRandom()
     {
-        return v_[(rand() % v_.size())];
+        return v_[rand() % v_.size()];
     }
 
 private:

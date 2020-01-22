@@ -25,13 +25,13 @@ TEST_F(RandomizedSetTest, checkInsert)
     EXPECT_TRUE(randomizedSet_->insert(2));
 }
 
-TEST_F(RandomizedSetTest, checkInsert)
+TEST_F(RandomizedSetTest, checkRemove)
 {
     EXPECT_FALSE(randomizedSet_->remove(2));
     EXPECT_TRUE(randomizedSet_->remove(1));
 }
 
-TEST_F(RandomizedSetTest, checkInsert)
+TEST_F(RandomizedSetTest, checkGetRandom)
 {
     EXPECT_FALSE(randomizedSet_->getRandom() == 2);
     EXPECT_TRUE(randomizedSet_->getRandom() == 1);
