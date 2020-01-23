@@ -68,5 +68,8 @@
     <ClInclude Include="0380_InsertDeleteGetRandom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0381_InsertDeleteGetRandomDuplicatesAllowed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
