@@ -135,6 +135,8 @@
     <ClInclude Include="0355_DesignTwitter.h" />
     <ClInclude Include="0380_InsertDeleteGetRandom.h" />
     <ClInclude Include="0381_InsertDeleteGetRandomDuplicatesAllowed.h" />
+    <ClInclude Include="0432_AllOoneDataStructure.h" />
+    <ClInclude Include="0460_LFUCache.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

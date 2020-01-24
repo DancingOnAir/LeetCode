@@ -14,7 +14,7 @@ public:
 
     int get(int key)
     {
-        if (!m_.count(key))
+        if (capacity_ <= 0 || !m_.count(key))
             return -1;
 
         increaseFrequency(key);
@@ -24,6 +24,9 @@ public:
 
     void put(int key, int value)
     {
+        if (capacity_ <= 0)
+            return;
+
         if (m_.count(key))
         {
             increaseFrequency(key);
