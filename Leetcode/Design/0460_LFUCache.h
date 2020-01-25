@@ -4,10 +4,10 @@
 
 using namespace std;
 
-class LFUCache
+class LFUCache1
 {
 public:
-    LFUCache(int capacity): capacity_(capacity)
+    LFUCache1(int capacity): capacity_(capacity)
     {
 
     }
@@ -96,4 +96,92 @@ private:
     int capacity_;
     list<Bucket> matrix_;
     unordered_map<int, pair<list<Bucket>::iterator, list<pair<int, int>>::iterator>> m_;
+};
+
+
+static const auto fast=[]()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+
+    return nullptr;
+}();
+
+class LFUCache {
+public:
+
+    int n;
+    int minFreq;
+
+    unordered_map<int, list<int>>frequency_map;
+    unordered_map<int, pair<int, pair<int, list<int>::iterator>>> p_map;
+
+    void increaseFreqCount(int key)
+    {
+        int count;
+        list<int>::iterator it;
+        p_map[key].second.first++;
+
+        count = p_map[key].second.first;
+        it = p_map[key].second.second;
+
+        frequency_map[count - 1].erase(it);
+        if (frequency_map[count - 1].size() == 0)
+        {
+            frequency_map.erase(count - 1);
+            if (count - 1 == minFreq)
+                minFreq = count;
+        }
+
+        frequency_map[count].push_back(key);
+        p_map[key].second.second = --(frequency_map[count].end());
+    }
+
+    LFUCache(int capacity)
+    {
+        n = capacity;
+        frequency_map.erase(frequency_map.begin(), frequency_map.end());
+        p_map.erase(p_map.begin(), p_map.end());
+    }
+
+    int get(int key)
+    {
+        int ans;
+        int count;
+        list<int>::iterator it;
+
+        if (n == 0 || (p_map.find(key) == p_map.end()))
+            return -1;
+
+        ans = p_map[key].first;
+        increaseFreqCount(key);
+        return ans;
+    }
+
+    void put(int key, int value)
+    {
+        int size = p_map.size();
+
+        if (n == 0)
+            return;
+
+        if (p_map.find(key) == p_map.end())
+        {
+            if (p_map.size() == n)
+            {
+                p_map.erase(frequency_map[minFreq].front());
+                frequency_map[minFreq].pop_front();
+            }
+            frequency_map[1].push_back(key);
+            p_map[key] = { value, {1, --(frequency_map[1].end())} };
+            minFreq = 1;
+        }
+        else
+        {
+            p_map[key].first = value;
+            increaseFreqCount(key);
+        }
+        return;
+    }
 };
