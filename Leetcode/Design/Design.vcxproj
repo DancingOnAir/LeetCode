@@ -138,6 +138,7 @@
     <ClInclude Include="0432_AllOoneDataStructure.h" />
     <ClInclude Include="0460_LFUCache.h" />
     <ClInclude Include="0705_DesignHashSet.h" />
+    <ClInclude Include="0706_DesignHashMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
