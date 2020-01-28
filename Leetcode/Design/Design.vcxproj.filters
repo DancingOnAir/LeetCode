@@ -83,5 +83,8 @@
     <ClInclude Include="0706_DesignHashMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0707_DesignLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
