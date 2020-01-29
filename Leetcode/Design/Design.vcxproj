@@ -137,6 +137,7 @@
     <ClInclude Include="0381_InsertDeleteGetRandomDuplicatesAllowed.h" />
     <ClInclude Include="0432_AllOoneDataStructure.h" />
     <ClInclude Include="0460_LFUCache.h" />
+    <ClInclude Include="0641_DesignCircularDeque.h" />
     <ClInclude Include="0705_DesignHashSet.h" />
     <ClInclude Include="0706_DesignHashMap.h" />
     <ClInclude Include="0707_DesignLinkedList.h" />
