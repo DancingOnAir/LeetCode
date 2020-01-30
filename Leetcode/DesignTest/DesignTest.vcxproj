@@ -44,6 +44,7 @@
     <ClCompile Include="0355_DesignTwitterTest.cpp" />
     <ClCompile Include="0380_InsertDeleteGetRandomTest.cpp" />
     <ClCompile Include="0460_LFUCacheTest.cpp" />
+    <ClCompile Include="0622_DesignCircularQueueTest.cpp" />
     <ClCompile Include="0641_DesignCircularDequeTest.cpp" />
     <ClCompile Include="0705_DesignHashSetTest.cpp" />
     <ClCompile Include="0706_DesignHashMapTest.cpp" />
