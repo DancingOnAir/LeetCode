@@ -1,7 +1,8 @@
 #pragma once
 #include <vector>
 #include <stack>
-
+#include <map>
+#include <queue>
 using namespace std;
 
 class DinnerPlates
@@ -17,77 +18,44 @@ public:
         if (capacity_ < 1)
             return;
 
-        if (plates_.empty())
-        {
-            stack<int> temp;
-            temp.emplace(val);
+        if (available_.empty())
+            available_.emplace(m_.size());
 
-            if (capacity_ == 1)
-                plates_.emplace_back(make_pair(true, temp));
-            else
-                plates_.emplace_back(make_pair(false, temp));
-            
-            return;
-        }
+        m_[*available_.begin()].emplace_back(val);
 
-        for (int i = 0; i < plates_.size(); ++i)
-        {
-            if (plates_[i].first == false)
-            {
-                plates_[i].second.emplace(val);
-                if (plates_[i].second.size() == capacity_)
-                    plates_[i].first = true;
-
-                return;
-            }
-        }
-
-        stack<int> temp;
-        temp.emplace(val);
-        plates_.emplace_back(make_pair(capacity_ == 1 ? true : false, temp));
-
+        if (m_[*available_.begin()].size() == capacity_)
+            available_.erase(available_.begin());
     }
 
     int pop()
     {
-        if (capacity_ < 1 || plates_.empty())
+        if (capacity_ < 1 || m_.empty())
             return -1;
 
-        for (int i = plates_.size() - 1; i >= 0; --i)
-        {
-            if (!plates_[i].second.empty())
-            {
-                int res = plates_[i].second.top();
-
-                plates_[i].second.pop();
-                plates_[i].first = false;
-                return res;
-            }
-        }
-
-        return -1;
+        return popAtStack(m_.rbegin()->first);
     }
 
     int popAtStack(int index)
     {
-        if (index >= plates_.size() || plates_[index].second.empty())
+        if (!m_.count(index) || m_[index].empty())
             return -1;
 
-        int res = plates_[index].second.top();
-        plates_[index].second.pop();
-        plates_[index].first = false;
+        int res = m_[index].back();
+        m_[index].pop_back();
+        available_.emplace(index);
+        if (m_[index].empty())
+            m_.erase(index);
 
         return res;
     }
 
     int getSize() const
     {
-        return plates_.size();
+        return m_.size();
     }
 
 private:
     int capacity_;
-
-    // pair: 1->is full = true, 2-> stack for value
-    vector<pair<bool, stack<int>>> plates_;
+    map<int, vector<int>> m_;
+    set<int> available_;
 };
