@@ -142,6 +142,7 @@
     <ClInclude Include="0705_DesignHashSet.h" />
     <ClInclude Include="0706_DesignHashMap.h" />
     <ClInclude Include="0707_DesignLinkedList.h" />
+    <ClInclude Include="1172_DinnerPlateStacks.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

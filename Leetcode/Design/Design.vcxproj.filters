@@ -92,5 +92,8 @@
     <ClInclude Include="0622_DesignCircularQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="1172_DinnerPlateStacks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
