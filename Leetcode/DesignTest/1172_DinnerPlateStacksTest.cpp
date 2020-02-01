@@ -26,9 +26,6 @@ TEST_F(DinnerPlatesTest, PushValue)
 {
     EXPECT_EQ(dinnerPlates_->getSize(), 3);
 
-    dinnerPlates_->push(6);
-    EXPECT_EQ(dinnerPlates_->getSize(), 3);
-
     dinnerPlates_->push(7);
     EXPECT_EQ(dinnerPlates_->getSize(), 4);
 }
