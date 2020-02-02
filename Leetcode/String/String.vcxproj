@@ -176,6 +176,9 @@
     <ClCompile Include="520_DetectCapital.cpp" />
     <ClCompile Include="521_LongestUncommonSubsequenceI.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="0522_LongestUncommonSubsequenceII.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
