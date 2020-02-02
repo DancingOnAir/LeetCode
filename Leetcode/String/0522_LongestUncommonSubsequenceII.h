@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 using namespace std;
 
 class Solution
@@ -9,25 +10,14 @@ class Solution
 public:
     bool isSubstring(const string& lhs, const string& rhs)
     {
-        if (lhs.empty() || rhs.empty())
-            return true;
-
         if (lhs.size() > rhs.size())
-            return isSubstring(rhs, lhs);
+            return false;
 
-        int i = 0, j = 0;
-        while (i < lhs.size() && j < rhs.size())
+        int i = 0;
+        for (char c : rhs)
         {
-            while (j < rhs.size() && lhs[i] != rhs[j])
-            {
-                ++j;
-            }
-
-            if (j < rhs.size())
-            {
+            if (i < lhs.size() && c == lhs[i])
                 ++i;
-                ++j;
-            }
         }
 
         return i == lhs.size();
@@ -35,55 +25,27 @@ public:
 
     int findLUSlength(vector<string>& strs)
     {
-        map<int, vector<pair<string, bool>>, greater<int>> counts;
-        for (auto& str : strs)
-        {
-            counts[str.size()].emplace_back(make_pair(str, false));
-        }
+        if (strs.empty())
+            return -1;
 
-        for (auto iter = counts.begin(); iter != counts.end(); ++iter)
+        int res = -1;
+        for (auto i = 0; i < strs.size(); ++i)
         {
-            for (int i = 0; i < iter->second.size(); ++i)
+            int j = 0;
+            for (; j < strs.size(); ++j)
             {
-                if (iter->second[i].second)
+                if (i == j)
                     continue;
 
-                for (int j = i + 1; j < iter->second.size(); ++j)
-                {
-                    if (iter->second[j].second)
-                        continue;
-
-                    if (iter->second[i].first == iter->second[j].first)
-                    {
-                        iter->second[i].second = true;
-                        iter->second[j].second = true;
-                    }
-                }
-
+                if (isSubstring(strs[i], strs[j]))
+                    break;
             }
 
-            for (int i = 0; i < iter->second.size(); ++i)
-            {
-                if (iter->second[i].second)
-                    continue;
-
-                for (auto j = counts.begin(); j != iter; ++j)
-                {
-                    for (auto& p : j->second)
-                    {
-                        if (isSubstring(iter->second[i].first, p.first))
-                        {
-                            iter->second[i].second = true;
-                        }
-                    }
-                }
-
-                if (iter->second[i].second == false)
-                    return iter->first;
-            }
+            if (j == strs.size())
+                res = max(res, static_cast<int>(strs[i].size()));
         }
 
-        return -1;
+        return res;
     }
 
 };
