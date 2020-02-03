@@ -128,5 +128,8 @@
     <ClInclude Include="0522_LongestUncommonSubsequenceII.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0583_DeleteOperationforTwoStrings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

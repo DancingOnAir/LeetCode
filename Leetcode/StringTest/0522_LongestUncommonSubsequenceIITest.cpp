@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "../String/0522_LongestUncommonSubsequenceII.h"
 
-TEST(LongestUncommonSubsequenceIISolution, FindLUSlength)
+TEST(LongestUncommonSubsequenceII, FindLUSlength)
 {
     Solution solution;
     vector<string> strs1 = { "aa", "aaaa", "aaaa" };
