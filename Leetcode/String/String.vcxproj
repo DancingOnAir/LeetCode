@@ -179,6 +179,7 @@
   <ItemGroup>
     <ClInclude Include="0522_LongestUncommonSubsequenceII.h" />
     <ClInclude Include="0583_DeleteOperationforTwoStrings.h" />
+    <ClInclude Include="1332_RemovePalindromicSubsequences.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
