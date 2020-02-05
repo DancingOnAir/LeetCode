@@ -134,5 +134,8 @@
     <ClInclude Include="1332_RemovePalindromicSubsequences.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="1328_BreakaPalindrome.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
