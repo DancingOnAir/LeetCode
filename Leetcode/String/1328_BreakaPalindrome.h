@@ -24,7 +24,7 @@ public:
         return true;
     }
 
-    string breakPalindrome(string palindrome)
+    string breakPalindrome1(string palindrome)
     {
         int n = palindrome.size();
         if (n < 2)
@@ -46,6 +46,25 @@ public:
             if (i == n - 1)
                 palindrome[i] = 'b';
         }
+
+        return palindrome;
+    }
+
+    string breakPalindrome(string palindrome)
+    {
+        int n = palindrome.size();
+        if (n < 2)
+            return "";
+
+        for (int i = 0; i < n / 2; ++i)
+        {
+            if (palindrome[i] != 'a')
+            {
+                palindrome[i] = 'a';
+                return palindrome;
+            }
+        }
+        palindrome[n - 1] = 'b';
 
         return palindrome;
     }

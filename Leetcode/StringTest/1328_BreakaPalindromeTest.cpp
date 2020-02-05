@@ -39,7 +39,4 @@ TEST(BreakPalindrome, InputSpecialPalindrome)
 
     string s1 = "aba";
     EXPECT_EQ(solution.breakPalindrome(s1), "abb");
-
-    string s2 = "abba";
-    EXPECT_EQ(solution.breakPalindrome(s1), "abb");
 }
