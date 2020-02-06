@@ -38,6 +38,7 @@
   <ItemGroup>
     <ClCompile Include="0522_LongestUncommonSubsequenceIITest.cpp" />
     <ClCompile Include="0583_DeleteOperationforTwoStringsTest.cpp" />
+    <ClCompile Include="1324_PrintWordsVerticallyTest.cpp" />
     <ClCompile Include="1328_BreakaPalindromeTest.cpp" />
     <ClCompile Include="1332_RemovePalindromicSubsequencesTest.cpp" />
     <ClCompile Include="pch.cpp">

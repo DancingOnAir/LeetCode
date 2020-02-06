@@ -137,5 +137,8 @@
     <ClInclude Include="1328_BreakaPalindrome.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="1324_PrintWordsVertically.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
