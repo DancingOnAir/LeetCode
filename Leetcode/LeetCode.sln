@@ -46,6 +46,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BitManipulation", "BitManip
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BitManipulationTest", "BitManipulationTest\BitManipulationTest.vcxproj", "{A9EA9EE1-7BCF-4645-A175-FA6ABD394EC1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlidingWindow", "SlidingWindow\SlidingWindow.vcxproj", "{78C0ECF4-8706-4141-88E9-515739392057}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlidingWindowTest", "SlidingWindowTest\SlidingWindowTest.vcxproj", "{B8037577-CD3A-41C1-993E-FC8E614760DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -214,6 +218,22 @@ Global
 		{A9EA9EE1-7BCF-4645-A175-FA6ABD394EC1}.Release|x64.Build.0 = Release|x64
 		{A9EA9EE1-7BCF-4645-A175-FA6ABD394EC1}.Release|x86.ActiveCfg = Release|Win32
 		{A9EA9EE1-7BCF-4645-A175-FA6ABD394EC1}.Release|x86.Build.0 = Release|Win32
+		{78C0ECF4-8706-4141-88E9-515739392057}.Debug|x64.ActiveCfg = Debug|x64
+		{78C0ECF4-8706-4141-88E9-515739392057}.Debug|x64.Build.0 = Debug|x64
+		{78C0ECF4-8706-4141-88E9-515739392057}.Debug|x86.ActiveCfg = Debug|Win32
+		{78C0ECF4-8706-4141-88E9-515739392057}.Debug|x86.Build.0 = Debug|Win32
+		{78C0ECF4-8706-4141-88E9-515739392057}.Release|x64.ActiveCfg = Release|x64
+		{78C0ECF4-8706-4141-88E9-515739392057}.Release|x64.Build.0 = Release|x64
+		{78C0ECF4-8706-4141-88E9-515739392057}.Release|x86.ActiveCfg = Release|Win32
+		{78C0ECF4-8706-4141-88E9-515739392057}.Release|x86.Build.0 = Release|Win32
+		{B8037577-CD3A-41C1-993E-FC8E614760DA}.Debug|x64.ActiveCfg = Debug|x64
+		{B8037577-CD3A-41C1-993E-FC8E614760DA}.Debug|x64.Build.0 = Debug|x64
+		{B8037577-CD3A-41C1-993E-FC8E614760DA}.Debug|x86.ActiveCfg = Debug|Win32
+		{B8037577-CD3A-41C1-993E-FC8E614760DA}.Debug|x86.Build.0 = Debug|Win32
+		{B8037577-CD3A-41C1-993E-FC8E614760DA}.Release|x64.ActiveCfg = Release|x64
+		{B8037577-CD3A-41C1-993E-FC8E614760DA}.Release|x64.Build.0 = Release|x64
+		{B8037577-CD3A-41C1-993E-FC8E614760DA}.Release|x86.ActiveCfg = Release|Win32
+		{B8037577-CD3A-41C1-993E-FC8E614760DA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
