@@ -49,6 +49,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlidingWindow", "SlidingWindow\SlidingWindow.vcxproj", "{78C0ECF4-8706-4141-88E9-515739392057}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlidingWindowTest", "SlidingWindowTest\SlidingWindowTest.vcxproj", "{B8037577-CD3A-41C1-993E-FC8E614760DA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{78C0ECF4-8706-4141-88E9-515739392057} = {78C0ECF4-8706-4141-88E9-515739392057}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
