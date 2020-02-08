@@ -18,5 +18,8 @@
     <ClInclude Include="0239_SlidingWindowMaximum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0209_MinimumSizeSubarraySum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
