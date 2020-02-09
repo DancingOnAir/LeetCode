@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClInclude Include="0209_MinimumSizeSubarraySum.h" />
     <ClInclude Include="0239_SlidingWindowMaximum.h" />
+    <ClInclude Include="0438_FindAllAnagramsinaString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
