@@ -24,5 +24,8 @@
     <ClInclude Include="0438_FindAllAnagramsinaString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0003_LongestSubstringWithoutRepeatingCharacters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

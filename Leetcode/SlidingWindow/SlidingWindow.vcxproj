@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="0003_LongestSubstringWithoutRepeatingCharacters.h" />
     <ClInclude Include="0209_MinimumSizeSubarraySum.h" />
     <ClInclude Include="0239_SlidingWindowMaximum.h" />
     <ClInclude Include="0438_FindAllAnagramsinaString.h" />

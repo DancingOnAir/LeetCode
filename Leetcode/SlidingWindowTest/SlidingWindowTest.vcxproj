@@ -36,6 +36,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="0003_LongestSubstringWithoutRepeatingCharactersTest.cpp" />
     <ClCompile Include="0209_MinimumSizeSubarraySumTest.cpp" />
     <ClCompile Include="0239_SlidingWindowMaximumTest.cpp" />
     <ClCompile Include="0438_FindAllAnagramsinaStringTest.cpp" />
