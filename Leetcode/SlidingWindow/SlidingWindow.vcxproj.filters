@@ -27,5 +27,8 @@
     <ClInclude Include="0003_LongestSubstringWithoutRepeatingCharacters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0076_MinimumWindowSubstring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
