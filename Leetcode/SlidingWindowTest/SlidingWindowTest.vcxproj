@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0003_LongestSubstringWithoutRepeatingCharactersTest.cpp" />
+    <ClCompile Include="0030_SubstringwithConcatenationofAllWordsTest.cpp" />
     <ClCompile Include="0076_MinimumWindowSubstringTest.cpp" />
     <ClCompile Include="0209_MinimumSizeSubarraySumTest.cpp" />
     <ClCompile Include="0239_SlidingWindowMaximumTest.cpp" />
