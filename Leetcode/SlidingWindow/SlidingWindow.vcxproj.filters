@@ -33,5 +33,8 @@
     <ClInclude Include="0030_SubstringwithConcatenationofAllWords.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0424_LongestRepeatingCharacterReplacement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
