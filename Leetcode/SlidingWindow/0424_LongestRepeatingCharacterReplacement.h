@@ -7,7 +7,7 @@ using namespace std;
 class Solution
 {
 public:
-    int characterReplacement(string s, int k)
+    int characterReplacement2(string s, int k)
     {
         if (s.empty())
             return 0;
@@ -39,5 +39,18 @@ public:
         }
 
         return res;
+    }
+
+    int characterReplacement(string s, int k)
+    {
+        int left = 0, right = 0, count[91] = {};
+        while (right < s.size())
+        {
+            count[s[right++]]++;
+            if (right - left - *max_element(count + 65, count + 91) > k)
+                count[s[left++]]--;
+        }
+
+        return right - left;
     }
 };
