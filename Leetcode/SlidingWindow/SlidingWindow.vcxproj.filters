@@ -36,5 +36,8 @@
     <ClInclude Include="0424_LongestRepeatingCharacterReplacement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0567_PermutationinString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -122,6 +122,7 @@
     <ClInclude Include="0239_SlidingWindowMaximum.h" />
     <ClInclude Include="0424_LongestRepeatingCharacterReplacement.h" />
     <ClInclude Include="0438_FindAllAnagramsinaString.h" />
+    <ClInclude Include="0567_PermutationinString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -43,6 +43,7 @@
     <ClCompile Include="0239_SlidingWindowMaximumTest.cpp" />
     <ClCompile Include="0424_LongestRepeatingCharacterReplacementTest.cpp" />
     <ClCompile Include="0438_FindAllAnagramsinaStringTest.cpp" />
+    <ClCompile Include="0567_PermutationinStringTest.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
