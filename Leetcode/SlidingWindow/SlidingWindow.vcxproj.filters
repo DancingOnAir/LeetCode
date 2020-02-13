@@ -39,5 +39,8 @@
     <ClInclude Include="0567_PermutationinString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0978_LongestTurbulentSubarray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
