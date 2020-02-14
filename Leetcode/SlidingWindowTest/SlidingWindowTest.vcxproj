@@ -43,6 +43,7 @@
     <ClCompile Include="0239_SlidingWindowMaximumTest.cpp" />
     <ClCompile Include="0424_LongestRepeatingCharacterReplacementTest.cpp" />
     <ClCompile Include="0438_FindAllAnagramsinaStringTest.cpp" />
+    <ClCompile Include="0480_SlidingWindowMedianTest.cpp" />
     <ClCompile Include="0567_PermutationinStringTest.cpp" />
     <ClCompile Include="0978_LongestTurbulentSubarrayTest.cpp" />
     <ClCompile Include="pch.cpp">
