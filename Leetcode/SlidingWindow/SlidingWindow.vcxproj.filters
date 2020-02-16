@@ -45,5 +45,8 @@
     <ClInclude Include="0480_SlidingWindowMedian.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0992_SubarrayswithKDifferentIntegers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
