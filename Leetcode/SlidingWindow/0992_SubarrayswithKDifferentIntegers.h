@@ -1,13 +1,13 @@
 #pragma once
 #include <vector>
 #include <set>
-
+#include <unordered_map>
 using namespace std;
 
 class Solution
 {
 public:
-    int subarraysWithKDistinct(vector<int>& A, int K)
+    int subarraysWithKDistinct2(vector<int>& A, int K)
     {
         int n = A.size();
 
@@ -48,5 +48,36 @@ public:
         
 
         return records.size();
+    }
+
+    int subarraysWithKDistinct(vector<int>& A, int K)
+    {
+        unordered_map<int, int> hashLeft, hashRight;
+        int left = 0, right = 0, pos = 0, count = 0, res = 0;
+
+        while (pos < A.size())
+        {
+            hashRight[A[pos]]++;
+            hashLeft[A[pos]]++;
+            ++pos;
+
+            while (hashRight.size() >= K)
+            {
+                if (hashRight[A[right]]-- == 1)
+                    hashRight.erase(A[right]);
+                ++right;
+            }
+
+            while (hashLeft.size() > K)
+            {
+                if (hashLeft[A[left]]-- == 1)
+                    hashLeft.erase(A[left]);
+                ++left;
+            }
+
+            res += right - left;
+        }
+
+        return res;
     }
 };
