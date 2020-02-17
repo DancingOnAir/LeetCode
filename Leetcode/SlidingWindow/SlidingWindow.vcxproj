@@ -126,6 +126,7 @@
     <ClInclude Include="0567_PermutationinString.h" />
     <ClInclude Include="0978_LongestTurbulentSubarray.h" />
     <ClInclude Include="0992_SubarrayswithKDifferentIntegers.h" />
+    <ClInclude Include="0995_MinimumNumberofKConsecutiveBitFlips.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

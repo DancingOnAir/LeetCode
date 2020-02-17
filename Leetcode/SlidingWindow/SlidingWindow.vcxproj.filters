@@ -48,5 +48,8 @@
     <ClInclude Include="0992_SubarrayswithKDifferentIntegers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0995_MinimumNumberofKConsecutiveBitFlips.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
