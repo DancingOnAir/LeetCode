@@ -113,18 +113,19 @@ public:
 
     int n;
     int minFreq;
-
+    //            freq      keys
     unordered_map<int, list<int>>frequency_map;
+    //            key       val       freq         keys*
     unordered_map<int, pair<int, pair<int, list<int>::iterator>>> p_map;
 
     void increaseFreqCount(int key)
     {
-        int count;
-        list<int>::iterator it;
-        p_map[key].second.first++;
+        
+        //list<int>::iterator it;
+        int count = ++(p_map[key].second.first);
 
-        count = p_map[key].second.first;
-        it = p_map[key].second.second;
+        // count = p_map[key].second.first;
+        auto it = p_map[key].second.second;
 
         frequency_map[count - 1].erase(it);
         if (frequency_map[count - 1].size() == 0)
@@ -134,8 +135,8 @@ public:
                 minFreq = count;
         }
 
-        frequency_map[count].push_back(key);
-        p_map[key].second.second = --(frequency_map[count].end());
+        frequency_map[count].emplace_back(key);
+        p_map[key].second.second = prev(frequency_map[count].end());
     }
 
     LFUCache(int capacity)
@@ -173,8 +174,8 @@ public:
                 p_map.erase(frequency_map[minFreq].front());
                 frequency_map[minFreq].pop_front();
             }
-            frequency_map[1].push_back(key);
-            p_map[key] = { value, {1, --(frequency_map[1].end())} };
+            frequency_map[1].emplace_back(key);
+            p_map[key] = { value, {1, prev(frequency_map[1].end())} };
             minFreq = 1;
         }
         else
