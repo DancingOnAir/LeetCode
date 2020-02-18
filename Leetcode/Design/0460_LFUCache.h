@@ -120,11 +120,7 @@ public:
 
     void increaseFreqCount(int key)
     {
-        
-        //list<int>::iterator it;
         int count = ++(p_map[key].second.first);
-
-        // count = p_map[key].second.first;
         auto it = p_map[key].second.second;
 
         frequency_map[count - 1].erase(it);

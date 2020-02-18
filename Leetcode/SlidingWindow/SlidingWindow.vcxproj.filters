@@ -51,5 +51,8 @@
     <ClInclude Include="0995_MinimumNumberofKConsecutiveBitFlips.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="1004_MaxConsecutiveOnesIII.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
