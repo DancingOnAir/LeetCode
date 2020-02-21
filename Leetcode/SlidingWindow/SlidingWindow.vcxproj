@@ -129,6 +129,7 @@
     <ClInclude Include="0995_MinimumNumberofKConsecutiveBitFlips.h" />
     <ClInclude Include="1004_MaxConsecutiveOnesIII.h" />
     <ClInclude Include="1040_MovingStonesUntilConsecutiveII.h" />
+    <ClInclude Include="1052_GrumpyBookstoreOwner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

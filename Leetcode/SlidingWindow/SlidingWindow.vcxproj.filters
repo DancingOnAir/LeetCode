@@ -57,5 +57,8 @@
     <ClInclude Include="1040_MovingStonesUntilConsecutiveII.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="1052_GrumpyBookstoreOwner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
