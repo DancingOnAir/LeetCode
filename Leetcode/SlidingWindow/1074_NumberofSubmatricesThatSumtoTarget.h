@@ -6,6 +6,7 @@ using namespace std;
 class Solution
 {
 public:
+    // TLE
     int numSubmatrixSumTarget2(vector<vector<int>>& matrix, int target)
     {
         int m = matrix.size();
@@ -40,7 +41,8 @@ public:
         return res;
     }
 
-    int numSubmatrixSumTarget(vector<vector<int>>& matrix, int target)
+    // 2d presum, sliding window
+    int numSubmatrixSumTarget1(vector<vector<int>>& matrix, int target)
     {
         int m = matrix.size();
         int n = matrix[0].size();
@@ -72,6 +74,36 @@ public:
                         res += counter[sum - target];
 
                     counter[sum]++;
+                }
+            }
+        }
+
+        return res;
+    }
+
+    // 1d presum & sliding window
+    int numSubmatrixSumTarget(vector<vector<int>>& matrix, int target)
+    {
+        int m = matrix.size();
+        int n = matrix[0].size();
+        int res = 0;
+        for (int left = 0; left < n; ++left)
+        {
+            vector<int> presumRows(m);
+            for (int right = left; right < n; ++right)
+            {
+                for (int i = 0; i < m; ++i)
+                    presumRows[i] += matrix[i][right];
+
+                int sum = 0;
+                unordered_map<int, int> visited;
+                for (int i = 0; i < m; ++i)
+                {
+                    visited[sum]++;
+                    sum += presumRows[i];
+ 
+                    if (visited.count(sum - target))
+                        res += visited[sum - target];
                 }
             }
         }
