@@ -63,5 +63,8 @@
     <ClInclude Include="1074_NumberofSubmatricesThatSumtoTarget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="1208_GetEqualSubstringsWithinBudget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

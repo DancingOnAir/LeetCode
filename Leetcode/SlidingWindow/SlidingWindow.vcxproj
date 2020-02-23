@@ -131,6 +131,7 @@
     <ClInclude Include="1040_MovingStonesUntilConsecutiveII.h" />
     <ClInclude Include="1052_GrumpyBookstoreOwner.h" />
     <ClInclude Include="1074_NumberofSubmatricesThatSumtoTarget.h" />
+    <ClInclude Include="1208_GetEqualSubstringsWithinBudget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
