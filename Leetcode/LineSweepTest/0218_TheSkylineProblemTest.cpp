@@ -16,3 +16,11 @@ TEST_F(ATheSkylineProblem, AnswerBuildingContains5)
 
     ASSERT_EQ(solution.getSkyline(buildings), expectSkyline);
 }
+
+TEST_F(ATheSkylineProblem, AnswerBuildingContains2)
+{
+    vector<vector<int>> buildings{ {0, 2, 3}, {2, 5, 3} };
+    vector<vector<int>> expectSkyline{ {0, 3}, {5, 0} };
+
+    ASSERT_EQ(solution.getSkyline(buildings), expectSkyline);
+}

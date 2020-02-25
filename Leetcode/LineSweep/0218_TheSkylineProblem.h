@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    vector<vector<int>> getSkyline(vector<vector<int>>& buildings)
+    vector<vector<int>> getSkyline1(vector<vector<int>>& buildings)
     {
         if (buildings.empty())
             return vector<vector<int>>();
@@ -40,6 +40,53 @@ public:
             }
         }
 
+        return res;
+    }
+
+    struct Node
+    {
+        int l, r, z, cover;
+        Node* left;
+        Node* right;
+        Node() : left(nullptr), right(nullptr), z(0), cover(0)
+        {
+
+        }
+
+        void buildTree(int x, int y)
+        {
+            l = x;
+            r = y;
+            if (x < y)
+            {
+                int mid = x + y >> 1;
+                left = new Node();
+                left->buildTree(x, mid);
+                right = new Node();
+                right->buildTree(mid + 1, y);
+            }
+        }
+
+        void change(int x, int y, int c)
+        {
+            if (l == x && r == y)
+            {
+                cover += c;
+                if (cover == 0)
+                    z = left != nullptr ? left->z + right->z : 0;
+
+                if (cover == 1)
+                    z = r - l + 1;
+            }
+        }
+    };
+
+    vector<vector<int>> getSkyline(vector<vector<int>>& buildings)
+    {
+        if (buildings.empty())
+            return vector<vector<int>>();
+
+        vector<vector<int>> res;
         return res;
     }
 };
