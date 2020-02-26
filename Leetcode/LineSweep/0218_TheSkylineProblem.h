@@ -45,39 +45,24 @@ public:
 
     struct Node
     {
-        int l, r, z, cover;
-        Node* left;
-        Node* right;
-        Node() : left(nullptr), right(nullptr), z(0), cover(0)
+        int x_;
+        int h_;
+        int isStart_;
+
+        Node(int x, int h, int isStart) : x_(x), h_(h), isStart_(isStart)
         {
 
         }
 
-        void buildTree(int x, int y)
+        bool operator < (const Node& rhs)
         {
-            l = x;
-            r = y;
-            if (x < y)
-            {
-                int mid = x + y >> 1;
-                left = new Node();
-                left->buildTree(x, mid);
-                right = new Node();
-                right->buildTree(mid + 1, y);
-            }
-        }
-
-        void change(int x, int y, int c)
-        {
-            if (l == x && r == y)
-            {
-                cover += c;
-                if (cover == 0)
-                    z = left != nullptr ? left->z + right->z : 0;
-
-                if (cover == 1)
-                    z = r - l + 1;
-            }
+            //1. start node always prioritize end node
+            //2. if both r start nodes, higher height first
+            //3. if both r end nodes, lower height first
+            if (x_ == rhs.x_)
+                return h_ * isStart_ > rhs.h_ * rhs.isStart_;
+            //4. lower x first
+            return x_ < rhs.x_;
         }
     };
 
@@ -87,6 +72,32 @@ public:
             return vector<vector<int>>();
 
         vector<vector<int>> res;
+        vector<Node> nodes;
+
+        for (const auto& b : buildings)
+        {
+            nodes.emplace_back(Node(b[0], b[2], 1));
+            nodes.emplace_back(Node(b[1], b[2], -1));
+        }
+
+        sort(nodes.begin(), nodes.end());
+        multiset<int, greater<int>> maxHeap{ 0 };
+        int maxHeight = 0;
+
+        for (auto node : nodes)
+        {
+            if (node.isStart_ == 1)
+                maxHeap.emplace(node.h_);
+            else
+                maxHeap.erase(maxHeap.find(node.h_));
+
+            if (*maxHeap.begin() != maxHeight)
+            {
+                res.push_back({ node.x_, *maxHeap.begin() });
+                maxHeight = *maxHeap.begin();
+            }
+        }
+
         return res;
     }
 };
