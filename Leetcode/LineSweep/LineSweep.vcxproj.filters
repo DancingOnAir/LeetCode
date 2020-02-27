@@ -18,5 +18,8 @@
     <ClInclude Include="0218_TheSkylineProblem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0391_PerfectRectangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
