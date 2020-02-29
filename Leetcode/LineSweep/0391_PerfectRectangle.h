@@ -2,12 +2,13 @@
 #include <vector>
 #include <queue>
 #include <map>
+#include <unordered_map>
 using namespace std;
 
 class Solution
 {
 public:
-    bool isRectangleCover(vector<vector<int>>& rectangles)
+    bool isRectangleCover2(vector<vector<int>>& rectangles)
     {
         auto cmp = [&rectangles](const vector<int>& v1, const vector<int>& v2)
         {
@@ -85,6 +86,74 @@ public:
                 curWidth -= right - left;
             }
         }
+
+        return true;
+    }
+
+    bool isRectangleCover(vector<vector<int>>& rectangles)
+    {
+        map<int, vector<pair<int, int>>> insertInvertals;
+        map<int, vector<pair<int, int>>> removeInvertals;
+
+        for (int i = 0; i < rectangles.size(); ++i)
+        {
+            insertInvertals[rectangles[i][0]].emplace_back(make_pair(rectangles[i][1], rectangles[i][3]));
+            removeInvertals[rectangles[i][2]].emplace_back(make_pair(rectangles[i][1], rectangles[i][3]));
+        }
+
+        auto iter1 = insertInvertals.begin();
+        vector<pair<int, int>> temp;
+        if (mergePairs(iter1->second, temp) == false || temp.size() > 1)
+            return false;
+        insertInvertals.erase(iter1);
+
+        auto iter2 = removeInvertals.begin();
+        while (iter2 != removeInvertals.end())
+        {
+            vector<pair<int, int>> remove;
+            if (mergePairs(iter2->second, remove) == false)
+                return false;
+            if (insertInvertals.find(iter2->first) == insertInvertals.end())
+            {
+                if (removeInvertals.size() != 1)
+                    return false;
+            }
+            else
+            {
+                vector<pair<int, int>> insert;
+                if (mergePairs(insertInvertals[iter2->first], insert) == false)
+                    return false;
+                if (remove != insert)
+                    return false;
+                insertInvertals.erase(iter2->first);
+            }
+
+            removeInvertals.erase(iter2);
+            iter2 = removeInvertals.begin();
+        }
+        
+        return insertInvertals.empty();
+    }
+
+    bool mergePairs(vector<pair<int, int>>& pairs, vector<pair<int, int>>& temp)
+    {
+        sort(pairs.begin(), pairs.end(), 
+            [&](const pair<int, int>& lhs, const pair<int, int>& rhs) { return lhs.first < rhs.first; });
+        int curStart = pairs[0].first;
+
+        for (int i = 1; i < pairs.size(); ++i)
+        {
+            if (pairs[i].first < pairs[i - 1].second)
+                return false;
+
+            if (pairs[i].first > pairs[i - 1].second)
+            {
+                temp.emplace_back(curStart, pairs[i - 1].second);
+                curStart = pairs[i].first;
+            }
+
+        }
+        temp.emplace_back(curStart, prev(pairs.end())->second);
 
         return true;
     }
