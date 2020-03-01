@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClInclude Include="0218_TheSkylineProblem.h" />
     <ClInclude Include="0391_PerfectRectangle.h" />
+    <ClInclude Include="0850_RectangleAreaII.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
