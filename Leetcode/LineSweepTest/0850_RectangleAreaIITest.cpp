@@ -17,5 +17,5 @@ TEST_F(RectangleAreaII, Answer3Rectangles)
 TEST_F(RectangleAreaII, Answer3RectanglesTestOverflow)
 {
     vector<vector<int>> rectangles{ {25, 20, 70, 27},{68, 80, 79, 100},{37, 41, 66, 76} };
-    ASSERT_EQ(solution.rectangleArea(rectangles), 6);
+    ASSERT_EQ(solution.rectangleArea(rectangles), 1550);
 }

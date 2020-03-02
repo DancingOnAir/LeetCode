@@ -54,7 +54,7 @@ public:
         pushup(start, end, segIndex);
     }
 
-    int rectangleArea(vector<vector<int>>& rectangles)
+    int rectangleArea1(vector<vector<int>>& rectangles)
     {
         vector<ScanLine> lines;
         nodes.emplace_back(0);
@@ -88,6 +88,62 @@ public:
 
         return res;
     }
+
+    int rectangleArea(vector<vector<int>>& rectangles)
+    {
+        int OPEN = 0, CLOSE = 1;
+        vector<vector<int>> events;
+        int cnt = 0;
+        for (auto& rectangle : rectangles)
+        {
+            events.push_back({ rectangle[1], OPEN, rectangle[0], rectangle[2] });
+            events.push_back({ rectangle[3], CLOSE, rectangle[0], rectangle[2] });
+        }
+
+        sort(events.begin(), events.end(), [&](const vector<int>& lhs, const vector<int>& rhs) { return lhs[0] < rhs[0]; });
+        // save valid width of rectangles
+        vector<vector<int>> active;
+        int curY = events[0][0];
+        long long res = 0;
+        for (auto& e : events)
+        {
+            int y = e[0], type = e[1], x1 = e[2], x2 = e[3];
+            long long query = 0;
+            int cur = -1;
+            
+            for (auto& xs : active)
+            {
+                cur = max(cur, xs[0]);
+                query += max(xs[1] - cur, 0);
+                cur = max(cur, xs[1]);
+            }
+
+            res += query * (y - curY);
+
+            if (type == OPEN)
+            {
+                active.push_back({ x1, x2 });
+                sort(active.begin(), active.end(), [](const vector<int>& lhs, const vector<int>& rhs) { return lhs[0] < rhs[0]; });
+            }
+            else
+            {
+                for (auto iter = active.begin(); iter != active.end(); ++iter)
+                {
+                    if ((*iter)[0] == x1 && (*iter)[1] == x2)
+                    {
+                        active.erase(iter);
+                        break;
+                    }
+                }
+            }
+
+            curY = y;
+        }
+
+        res %= 1000000007;
+        return res;
+    }
+
 private:
     vector<int> covers;
     vector<int> heights;
