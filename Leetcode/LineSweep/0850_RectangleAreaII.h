@@ -1,10 +1,23 @@
 #pragma once
 #include <vector>
 #include <set>
+#include <unordered_map>
 using namespace std;
 
 class Solution
 {
+
+private:
+    const int mod = 1e9 + 7;
+    int addArea(int prevArea, int w, int h)
+    {
+        return prevArea + ((long long)w * h) % mod;
+    }
+
+    vector<int> covers;
+    vector<int> heights;
+    vector<int> nodes;
+
 public:
     struct ScanLine
     {
@@ -54,6 +67,7 @@ public:
         pushup(start, end, segIndex);
     }
 
+    // segment tree method 1, line scan from left to right
     int rectangleArea1(vector<vector<int>>& rectangles)
     {
         vector<ScanLine> lines;
@@ -89,7 +103,97 @@ public:
         return res;
     }
 
+    struct Segment
+    {
+        int start;
+        int end;
+        int height;
+        bool in;
+
+        Segment(): start(0), end(0), height(0), in(false){}
+
+        Segment(int s, int e, int h, bool i) : start(s), end(e), height(h), in(i)
+        {
+
+        }
+    };
+
+    bool comp(const Segment& lhs, const Segment& rhs)
+    {
+        if (lhs.height == rhs.height)
+            return lhs.start < rhs.start;
+        return lhs.height < rhs.height;
+    }
+
+    vector<Segment> segs;
+    map<pair<int, int>, int> cover;
+
+    int coverRange()
+    {
+        if (cover.empty())
+            return 0;
+
+        int res = 0;
+        auto iter = cover.begin();
+        auto ptr = iter->first;
+        int start = ptr.first;
+        int end = ptr.second;
+
+        ++iter;
+        while (iter != cover.end())
+        {
+            ptr = iter->first;
+            if (ptr.first > end)
+            {
+                res += (end - start);
+                start = ptr.first;
+                end = ptr.second;
+            }
+            else
+            {
+                end = max(end, ptr.second);
+            }
+            ++iter;
+        }
+
+        res += (end - start);
+        return res;
+    }
+    //segment tree method 2
     int rectangleArea(vector<vector<int>>& rectangles)
+    {
+        if (rectangles.empty())
+            return 0;
+
+        for (const auto& rect : rectangles)
+        {
+            int x1 = rect[0];
+            int x2 = rect[2];
+            int y1 = rect[1];
+            int y2 = rect[3];
+            segs.emplace_back(Segment(x1, x2, y1, true));
+            segs.emplace_back(Segment(x1, x2, y2, false));
+        }
+
+        sort(segs.begin(), segs.end(), comp);
+
+        long long res = 0;
+        int n = segs.size();
+        int curHeight = segs[0].height;
+        const int mod = 1e9 + 7;
+        for (int i = 0; i < n; ++i)
+        {
+            int cover = coverRange();
+            res = (res + (segs[i].height - curHeight) * (long long)cover) % mod;
+
+            curHeight = segs[i].height;
+            auto 
+        }
+
+        return res;
+    }
+
+    int rectangleArea2(vector<vector<int>>& rectangles)
     {
         int OPEN = 0, CLOSE = 1;
         vector<vector<int>> events;
@@ -144,8 +248,4 @@ public:
         return res;
     }
 
-private:
-    vector<int> covers;
-    vector<int> heights;
-    vector<int> nodes;
 };
