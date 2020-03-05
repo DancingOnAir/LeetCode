@@ -2,6 +2,7 @@
 #include <vector>
 #include <set>
 #include <unordered_map>
+#include <algorithm>
 using namespace std;
 
 class Solution
@@ -118,14 +119,13 @@ public:
         }
     };
 
-    bool comp(const Segment& lhs, const Segment& rhs)
+    static bool comp(Segment& lhs, Segment& rhs)
     {
         if (lhs.height == rhs.height)
             return lhs.start < rhs.start;
         return lhs.height < rhs.height;
     }
 
-    vector<Segment> segs;
     map<pair<int, int>, int> cover;
 
     int coverRange()
@@ -165,6 +165,7 @@ public:
         if (rectangles.empty())
             return 0;
 
+        vector<Segment> segs;
         for (const auto& rect : rectangles)
         {
             int x1 = rect[0];
@@ -183,11 +184,19 @@ public:
         const int mod = 1e9 + 7;
         for (int i = 0; i < n; ++i)
         {
-            int cover = coverRange();
-            res = (res + (segs[i].height - curHeight) * (long long)cover) % mod;
+            int cov = coverRange();
+            res = (res + (segs[i].height - curHeight) * (long long)cov) % mod;
 
             curHeight = segs[i].height;
-            auto 
+            auto ptr = make_pair(segs[i].start, segs[i].end);
+            if (segs[i].in)
+                ++cover[ptr];
+            else
+            {
+                --cover[ptr];
+                if (cover[ptr] == 0)
+                    cover.erase(ptr);
+            }
         }
 
         return res;
