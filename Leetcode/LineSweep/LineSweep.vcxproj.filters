@@ -24,5 +24,8 @@
     <ClInclude Include="0850_RectangleAreaII.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="1288_RemoveCoveredIntervals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
