@@ -117,14 +117,12 @@ public:
         {
 
         }
-    };
 
-    static bool comp(Segment& lhs, Segment& rhs)
-    {
-        if (lhs.height == rhs.height)
-            return lhs.start < rhs.start;
-        return lhs.height < rhs.height;
-    }
+        bool operator<(const Segment& rhs) const
+        {
+            return height < rhs.height || (height == rhs.height && start < rhs.start);
+        }
+    };
 
     map<pair<int, int>, int> cover;
 
@@ -176,7 +174,7 @@ public:
             segs.emplace_back(Segment(x1, x2, y2, false));
         }
 
-        sort(segs.begin(), segs.end(), comp);
+        sort(segs.begin(), segs.end());
 
         long long res = 0;
         int n = segs.size();
