@@ -21,6 +21,12 @@ protected:
     NumArray* pNumArray;
 };
 
+TEST_F(ARangeSumQueryMutable, AnswerEmptyNumArray)
+{
+    NumArray emptyNumArray = NumArray(vector<int>());
+    ASSERT_EQ(emptyNumArray.sumRange(0, 0), 0);
+}
+
 TEST_F(ARangeSumQueryMutable, AnswerTotalSum)
 {
     int n = nums.size();
@@ -31,4 +37,15 @@ TEST_F(ARangeSumQueryMutable, AnswerTotalSum)
     ASSERT_EQ(pNumArray->sumRange(0, n - 1), expectSum);
 }
 
+TEST_F(ARangeSumQueryMutable, AnswerUpdateVal)
+{
+    int n = nums.size();
+    pNumArray->update(1, 2);
+    nums[1] = 2;
 
+    int expectSum = 0;
+    for (int x : nums)
+        expectSum += x;
+
+    ASSERT_EQ(pNumArray->sumRange(0, n - 1), expectSum);
+}
