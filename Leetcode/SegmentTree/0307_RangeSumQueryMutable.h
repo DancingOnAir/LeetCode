@@ -298,22 +298,76 @@ public:
     }
 };
 
+// implemented segment tree by array
 class NumArray
 {
-public:
-    NumArray(vector<int>& nums)
-    {
-        int n = nums.size();
+private:
+    int len_;
+    vector<int> treeArray_;
 
+    void buildSegmentTree(vector<int>& nums)
+    {
+        for (int i = len_; i < 2 * len_; ++i)
+            treeArray_[i] = nums[i - len_];
+
+        for (int i = len_ - 1; i > 0; --i)
+            treeArray_[i] = treeArray_[i << 1] + treeArray_[i << 1 | 1];
+    }
+
+public:
+    NumArray(vector<int>& nums): len_(nums.size())
+    {
+        if (len_)
+        {
+            treeArray_ = vector<int>(2 * len_);
+            buildSegmentTree(nums);
+        }
     }
 
     void update(int i, int val)
     {
+        if (i < 0 || i >= len_)
+            return;
 
+        int pos = i + len_;
+        treeArray_[pos] = val;
+        while (pos > 1)
+        {
+            pos >>= 1;
+            treeArray_[pos] = treeArray_[pos << 1] + treeArray_[pos << 1 | 1];
+        }
     }
 
     int sumRange(int i, int j)
     {
+        if (i < 0 || j > len_)
+            return 0;
 
+        int left = max(0, i);
+        int right = min(len_ - 1, j);
+
+        left += len_;
+        right += len_;
+        int res = 0;
+
+        while (left <= right)
+        {
+            if (left & 1)
+            {
+                res += treeArray_[left];
+                ++left;
+            }
+
+            if (!(right & 1))
+            {
+                res += treeArray_[right];
+                --right;
+            }
+
+            left >>= 1;
+            right >>= 1;
+        }
+
+        return res;
     }
 };
