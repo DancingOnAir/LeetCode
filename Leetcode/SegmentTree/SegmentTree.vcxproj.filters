@@ -18,5 +18,8 @@
     <ClInclude Include="0307_RangeSumQueryMutable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0315_CountofSmallerNumbersAfterSelf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
