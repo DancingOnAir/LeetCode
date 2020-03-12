@@ -269,10 +269,12 @@ private:
         pushDown(root);
 
         int mid = root->start_ + ((root->end_ - root->start_) >> 1);
-        if (i <= mid)
-            querySegmentTree(i, j, root->left_, sum);
-        if (j > mid)
-            querySegmentTree(i, j, root->right_, sum);
+        //if (i <= mid)
+        //    querySegmentTree(i, j, root->left_, sum);
+        //if (j > mid)
+        //    querySegmentTree(i, j, root->right_, sum);
+        querySegmentTree(i, j, root->left_, sum);
+        querySegmentTree(i, j, root->right_, sum);
 
         pushUp(root);
     }

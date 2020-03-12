@@ -21,5 +21,8 @@
     <ClInclude Include="0315_CountofSmallerNumbersAfterSelf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0327_CountofRangeSum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

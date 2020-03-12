@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClInclude Include="0307_RangeSumQueryMutable.h" />
     <ClInclude Include="0315_CountofSmallerNumbersAfterSelf.h" />
+    <ClInclude Include="0327_CountofRangeSum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
