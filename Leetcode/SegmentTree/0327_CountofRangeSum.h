@@ -3,23 +3,16 @@
 using namespace std;
 struct SegmentTreeNode
 {
-    int start_;
-    int end_;
-    int sum_;
-    int lazy_;
+    int min_;
+    int max_;
+    int count_;
 
     SegmentTreeNode* left_;
     SegmentTreeNode* right_;
 
-    SegmentTreeNode(int start, int end) : start_(start), end_(end), sum_(0), lazy_(0), left_(nullptr), right_(nullptr)
+    SegmentTreeNode(int min, int max) : min_(min), max_(max), count_(0), left_(nullptr), right_(nullptr)
     {
 
-    }
-
-    void updateByValue(int val)
-    {
-        lazy_ += val;
-        sum_ += (end_ - start_ + 1) * val;
     }
 };
 
@@ -28,82 +21,46 @@ class Solution
 private:
     SegmentTreeNode* root_;
 
-    void pushUp(SegmentTreeNode* root)
-    {
-        root->sum_ = root->left_->sum_ + root->right_->sum_;
-    }
-
-    void pushDown(SegmentTreeNode* root)
-    {
-        int lazy = root->lazy_;
-        if (lazy)
-        {
-            root->left_->updateByValue(lazy);
-            root->right_->updateByValue(lazy);
-            root->lazy_ = 0;
-        }
-    }
-
-    SegmentTreeNode* build(vector<int>& nums, int start, int end, vector<int>& sums)
+    SegmentTreeNode* build(vector<int>& nums, int start, int end)
     {
         if (start > end)
             return nullptr;
 
-        SegmentTreeNode* root = new SegmentTreeNode(start, end);
+        SegmentTreeNode* root = new SegmentTreeNode(nums[start], nums[end]);
         if (start == end)
         {
-            root->sum_ = nums[start];
-            sums.emplace_back(root->sum_);
-
             return root;
         }
 
         int mid = start + ((end - start) >> 1);
-        root->left_ = build(nums, start, mid, sums);
-        root->right_ = build(nums, mid + 1, end, sums);
-        pushUp(root);
-        sums.emplace_back(root->sum_);
+        root->left_ = build(nums, start, mid);
+        root->right_ = build(nums, mid + 1, end);
 
         return root;
     }
 
-    //void update(SegmentTreeNode* root, int i, int val)
-    //{
-    //    if (!root)
-    //        return;
-
-    //    if (root->start_ == i && root->end_ == i)
-    //    {
-    //        root->sum_ = val;
-    //        return;
-    //    }
-
-    //    pushDown(root);
-    //    int mid = root->start_ + ((root->end_ - root->start_) >> 1);
-    //    if (i <= mid)
-    //        update(root->left_, i, val);
-    //    else
-    //        update(root->right_, i, val);
-
-    //    pushUp(root);
-    //}
-
-    void query(SegmentTreeNode* root, int start, int end, int& sum)
+    void update(SegmentTreeNode* root, int val)
     {
-        if (start > root->end_ || end < root->start_)
+        if (!root || val < root->min_ || val > root->max_)
             return;
 
-        if (start <= root->start_ && end >= root->end_)
-        {
-            sum += root->sum_;
+        root->count_++;
+        if (root->min_ == root->max_)
             return;
-        }
+        
+        update(root->left_, val);
+        update(root->right_, val);
+    }
 
-        pushDown(root);
-        int mid = root->start_ + ((root->end_ - root->start_) >> 1);
-        query(root->left_, start, end, sum);
-        query(root->right_, start, end, sum);
-        pushUp(root);
+    int query(SegmentTreeNode* root, int min, int max)
+    {
+        if (!root || max < root->min_ || min > root->max_)
+            return 0;
+
+        if (min <= root->min_ && max >= root->max_)
+            return root->count_;
+        
+        return query(root->left_, min, max) + query(root->right_, min, max);
     }
 
 public:
@@ -113,19 +70,27 @@ public:
             return 0;
 
         int n = nums.size();
-        vector<int> sums;
+        vector<int> presum;
+        
+        int tmpSum = 0;
+        for (int x : nums)
+        {
+            tmpSum += x;
+            presum.emplace_back(tmpSum);
+        }
 
-        root_ = build(nums, 0, n - 1, sums);
-        sort(sums.begin(), sums.end());
-        auto iter1 = lower_bound(sums.begin(), sums.end(), lower);
-        auto iter2 = upper_bound(sums.begin(), sums.end(), upper);
+        sort(presum.begin(), presum.end());
+        presum.erase(unique(presum.begin(), presum.end()), presum.end());
 
-        if (iter1 == sums.end())
-            return 0;
+        root_ = build(presum, 0, presum.size() - 1);
+        int res = 0;
+        for (int i = nums.size() - 1; i >= 0; --i)
+        {
+            update(root_, tmpSum);
+            tmpSum -= nums[i];
+            res += query(root_, lower + tmpSum, upper + tmpSum);
+        }
 
-        if (iter2 == sums.end())
-            return iter2 - iter1 - 1;
-
-        return iter2 - iter1;
+        return res;
     }
 };
