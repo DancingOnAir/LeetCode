@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <set>
+#include <unordered_map>
 using namespace std;
 
 struct SegmentTreeNode
@@ -19,7 +21,7 @@ struct SegmentTreeNode
 class Solution
 {
 private:
-    SegmentTreeNode* build(long long start, long long end)
+    SegmentTreeNode* buildSegmentTree(long long start, long long end)
     {
         if (start > end)
             return nullptr;
@@ -31,8 +33,8 @@ private:
         }
 
         long long mid = start + ((end - start) >> 1);
-        root->left_ = build(start, mid);
-        root->right_ = build(mid + 1, end);
+        root->left_ = buildSegmentTree(start, mid);
+        root->right_ = buildSegmentTree(mid + 1, end);
 
         return root;
     }
@@ -59,7 +61,7 @@ private:
         if (!root || start > root->end_ || end < root->start_)
             return 0;
 
-        if (start <= root->start_, end > root->end_)
+        if (start <= root->start_ && end >= root->end_)
             return root->count_;
 
         return querySegmentTree(root->left_, start, end) + querySegmentTree(root->right_, start, end);
@@ -69,22 +71,28 @@ public:
     int reversePairs(vector<int>& nums)
     {
         int n = nums.size();
-        if (n == 0 || n == 1)
+        if (n < 2)
             return 0;
 
-        //int minVal = abs(*min_element(nums.begin(), nums.end()));
-        //for (int& num : nums)
-        //    num += minVal;
-
-        int res = 0;
-        int maxVal = *max_element(nums.begin(), nums.end());
-        SegmentTreeNode* root = build(0, maxVal * 2);
-
-        reverse(nums.begin(), nums.end());
+        set<long long> s;
         for (int num : nums)
         {
-            res += querySegmentTree(root, 0, num);
-            updateSegmentTree(root, (long long)num * 2);
+            s.emplace(num);
+            s.emplace(num * 2L + 1);
+        }
+
+        unordered_map<long long, int> idxs;
+        int k = 0;
+        for (long long num : s)
+            idxs[num] = k++;
+
+        SegmentTreeNode* root = buildSegmentTree(0, k - 1);
+        int res = 0;
+        for (int num : nums)
+        {
+            int idx = idxs[num * 2L + 1];
+            res += querySegmentTree(root, idx, k - 1);
+            updateSegmentTree(root, idxs[num]);
         }
 
         return res;

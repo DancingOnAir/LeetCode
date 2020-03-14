@@ -30,3 +30,9 @@ TEST_F(AReversePairs, AnswerNumsContainsFiveNumsReturnThree)
     vector<int> fiveNums{ 2, 4, 3, 5, 1 };
     ASSERT_EQ(solution.reversePairs(fiveNums), 3);
 }
+
+TEST_F(AReversePairs, AnswerNumsContainsTwoNegtiveNumsReturnOne)
+{
+    vector<int> twoNegtiveNums{ -5, -5 };
+    ASSERT_EQ(solution.reversePairs(twoNegtiveNums), 1);
+}
