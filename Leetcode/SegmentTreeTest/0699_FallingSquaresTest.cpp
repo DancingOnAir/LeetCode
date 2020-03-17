@@ -14,3 +14,24 @@ TEST_F(AFallingSquares, AnswerInputContainsThreeSquares)
     vector<int> expectHeights{ 2, 5, 5 };
     ASSERT_EQ(solution.fallingSquares(positions), expectHeights);
 }
+
+TEST_F(AFallingSquares, AnswerInputContainsTwoSquaresWithLeftAdjacent)
+{
+    vector<vector<int>> positions{ {100, 100}, {200, 100} };
+    vector<int> expectHeights{ 100, 100 };
+    ASSERT_EQ(solution.fallingSquares(positions), expectHeights);
+}
+
+TEST_F(AFallingSquares, AnswerInputContainsTwoSquaresWithRightAdjacent)
+{
+    vector<vector<int>> positions{ {6, 1}, {9, 2}, {2, 4} };
+    vector<int> expectHeights{ 1, 2, 4 };
+    ASSERT_EQ(solution.fallingSquares(positions), expectHeights);
+}
+
+TEST_F(AFallingSquares, AnswerInputContainsThreeSquaresFailCase)
+{
+    vector<vector<int>> positions{ {1, 5}, {2, 2}, {7, 5}};
+    vector<int> expectHeights{ 5, 7, 7 };
+    ASSERT_EQ(solution.fallingSquares(positions), expectHeights);
+}

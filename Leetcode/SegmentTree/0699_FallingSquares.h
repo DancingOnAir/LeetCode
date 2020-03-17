@@ -9,12 +9,19 @@ struct SegmentTreeNode
     int start_;
     int end_;
     int height_;
+    int lazy_;
 
     SegmentTreeNode* left_;
     SegmentTreeNode* right_;
-    SegmentTreeNode(int start, int end) : start_(start), end_(end), height_(0), left_(nullptr), right_(nullptr)
+    SegmentTreeNode(int start, int end) : start_(start), end_(end), height_(0), lazy_(0), left_(nullptr), right_(nullptr)
     {
 
+    }
+
+    void updateByValue(int val)
+    {
+        lazy_ = val;
+        height_ = val;
     }
 };
 
@@ -39,22 +46,35 @@ private:
 
     void pushUp(SegmentTreeNode* root)
     {
-        root->height_ = root->left_->height_ + root->right_->height_;
+        root->height_ = max(root->left_->height_, root->right_->height_);
     }
 
-    void update(SegmentTreeNode* root, int pos, int val)
+    void pushDown(SegmentTreeNode* root)
     {
-        if (!root || pos < root->start_ || pos > root->end_)
+        int lazy = root->lazy_;
+        if (lazy)
+        {
+            root->left_->updateByValue(lazy);
+            root->right_->updateByValue(lazy);
+            root->lazy_ = 0;
+        }
+    }
+
+    void update(SegmentTreeNode* root, int start, int end, int val)
+    {
+        if (!root || end < root->start_ || start > root->end_)
             return;
 
-        if (pos == root->start_ && pos == root->end_);
+        if (start <= root->start_ && end >= root->end_)
         {
-            root->height_ = max(root->height_, val);
+            root->updateByValue(val);
             return;
         }
 
-        update(root->left_, pos, val);
-        update(root->right_, pos, val);
+        pushDown(root);
+
+        update(root->left_, start, end, val);
+        update(root->right_, start, end, val);
 
         pushUp(root);
     }
@@ -67,7 +87,8 @@ private:
         if (start <= root->start_ && end >= root->end_)
             return root->height_;
 
-        return query(root->left_, start, end) + query(root->right_, start, end);
+        pushDown(root);
+        return max(query(root->left_, start, end), query(root->right_, start, end));
     }
 
 public:
@@ -75,7 +96,11 @@ public:
     {
         set<int> s;
         for (auto& pos : positions)
+        {
             s.emplace(pos[0]);
+            //这里减1为了让邻接的square高度不累加
+            s.emplace(pos[0] + pos[1] - 1);
+        }
 
         unordered_map<int, int> idxs;
         int k = 0;
@@ -87,9 +112,12 @@ public:
         vector<int> res;
         for (auto& pos : positions)
         {
-            update(root, pos[0], pos[1]);
-            int val = query(root, 0, pos[0]);
-            res.emplace_back(val);
+            int l = idxs[pos[0]];
+            int r = idxs[pos[0] + pos[1] - 1];
+
+            int maxHeight = query(root, l, r);
+            update(root, l, r, maxHeight + pos[1]);
+            res.emplace_back(query(root, 0, k - 1));
         }
 
         return res;
