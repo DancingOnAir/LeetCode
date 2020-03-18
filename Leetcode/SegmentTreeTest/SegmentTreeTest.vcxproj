@@ -41,6 +41,7 @@
     <ClCompile Include="0327_CountofRangeSumTest.cpp" />
     <ClCompile Include="0493_ReversePairsTest.cpp" />
     <ClCompile Include="0699_FallingSquaresTest.cpp" />
+    <ClCompile Include="0715_RangeModuleTest.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

@@ -30,5 +30,8 @@
     <ClInclude Include="0699_FallingSquares.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0715_RangeModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -120,6 +120,7 @@
     <ClInclude Include="0327_CountofRangeSum.h" />
     <ClInclude Include="0493_ReversePairs.h" />
     <ClInclude Include="0699_FallingSquares.h" />
+    <ClInclude Include="0715_RangeModule.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
