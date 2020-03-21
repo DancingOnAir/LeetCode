@@ -112,13 +112,13 @@ public:
     }
 };
 
-class MyCalendarThree
+class MyCalendarThree1
 {
 private:
     map<int, int> count = { {-1, 0} };
     int res = 0;
 public:
-    MyCalendarThree()
+    MyCalendarThree1()
     {
 
     }

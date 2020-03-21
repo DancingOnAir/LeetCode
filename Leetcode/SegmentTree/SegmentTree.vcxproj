@@ -122,6 +122,7 @@
     <ClInclude Include="0699_FallingSquares.h" />
     <ClInclude Include="0715_RangeModule.h" />
     <ClInclude Include="0732_MyCalendarIII.h" />
+    <ClInclude Include="1157_OnlineMajorityElementInSubarray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -36,5 +36,8 @@
     <ClInclude Include="0732_MyCalendarIII.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="1157_OnlineMajorityElementInSubarray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

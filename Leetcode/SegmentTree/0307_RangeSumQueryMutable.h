@@ -192,7 +192,7 @@ struct SegmentTreeNode
     }
 };
 
-class NumArray1
+class NumArray
 {
 private:
     SegmentTreeNode* root_;
@@ -255,32 +255,52 @@ private:
         pushUp(root);
     }
 
-    void querySegmentTree(int i, int j, SegmentTreeNode* root, int& sum)
+    int querySegmentTree(SegmentTreeNode* root, int left, int right)
     {
         if (!root)
-            return;
+            return 0;
 
-        if (i <= root->start_ && j >= root->end_)
+        if (left <= root->start_ && right >= root->end_)
         {
-            sum += root->sum_;
-            return;
+            return root->sum_;
         }
 
         pushDown(root);
-
         int mid = root->start_ + ((root->end_ - root->start_) >> 1);
-        //if (i <= mid)
-        //    querySegmentTree(i, j, root->left_, sum);
-        //if (j > mid)
-        //    querySegmentTree(i, j, root->right_, sum);
-        querySegmentTree(i, j, root->left_, sum);
-        querySegmentTree(i, j, root->right_, sum);
-
-        pushUp(root);
+        if (right <= mid)
+            return querySegmentTree(root->left_, left, right);
+        else if (left > mid)
+            return querySegmentTree(root->right_, left, right);
+        else
+            return querySegmentTree(root->left_, left, right) + querySegmentTree(root->right_, left, right);
     }
 
+    //void querySegmentTree(int i, int j, SegmentTreeNode* root, int& sum)
+    //{
+    //    if (!root)
+    //        return;
+
+    //    if (i <= root->start_ && j >= root->end_)
+    //    {
+    //        sum += root->sum_;
+    //        return;
+    //    }
+
+    //    pushDown(root);
+
+    //    int mid = root->start_ + ((root->end_ - root->start_) >> 1);
+    //    //if (i <= mid)
+    //    //    querySegmentTree(i, j, root->left_, sum);
+    //    //if (j > mid)
+    //    //    querySegmentTree(i, j, root->right_, sum);
+    //    querySegmentTree(i, j, root->left_, sum);
+    //    querySegmentTree(i, j, root->right_, sum);
+
+    //    //pushUp(root);
+    //}
+
 public:
-    NumArray1(vector<int>& nums)
+    NumArray(vector<int>& nums)
     {
         int n = nums.size();
         root_ = buildSegmentTree(nums, 0, n - 1);
@@ -293,15 +313,15 @@ public:
 
     int sumRange(int i, int j)
     {
-        int sum = 0;
-        querySegmentTree(i, j, root_, sum);
+        //int sum = 0;
+        //querySegmentTree(i, j, root_, sum);
         
-        return sum;
+        return querySegmentTree(root_, i, j);
     }
 };
 
 // implemented segment tree by array
-class NumArray
+class NumArray1
 {
 private:
     int len_;
@@ -317,7 +337,7 @@ private:
     }
 
 public:
-    NumArray(vector<int>& nums): len_(nums.size())
+    NumArray1(vector<int>& nums): len_(nums.size())
     {
         if (len_)
         {
