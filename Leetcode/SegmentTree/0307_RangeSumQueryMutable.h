@@ -313,9 +313,6 @@ public:
 
     int sumRange(int i, int j)
     {
-        //int sum = 0;
-        //querySegmentTree(i, j, root_, sum);
-        
         return querySegmentTree(root_, i, j);
     }
 };
