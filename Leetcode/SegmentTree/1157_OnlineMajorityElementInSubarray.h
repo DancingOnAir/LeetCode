@@ -6,91 +6,89 @@ using namespace std;
 
 struct stNode
 {
-    int start_;
-    int end_;
-    int length_;
-    // val, count
-    unordered_map<int, int> frequency_;
+    int val_;
+    int count_;
 
-    stNode* left_;
-    stNode* right_;
-
-    stNode(int start, int end)
-        : start_(start), end_(end), length_(end - start + 1), left_(nullptr), right_(nullptr)
+    stNode() : val_(0), count_(-1)
     {
 
     }
 
-    void initFrequency(int val)
+    stNode operator+ (const stNode& rhs) const
     {
-        frequency_[val]++;
+        stNode res;
+        if (val_ == rhs.val_)
+        {
+            res.val_ = val_;
+            res.count_ = count_ + rhs.count_;
+        }
+        else if (count_ >= rhs.count_)
+        {
+            res.val_ = val_;
+            res.count_ = count_ - rhs.count_;
+        }
+        else
+        {
+            res.val_ = rhs.val_;
+            res.count_ = rhs.count_ - count_;
+        }
+
+        return res;
+    }
+
+    void updateStNode(int val)
+    {
+        val_ = val;
+        count_ = 1;
     }
 };
-
-unordered_map<int, int> mergeFrequency(unordered_map<int, int>& lhs, unordered_map<int, int>& rhs)
-{
-    for (auto iter = rhs.begin(); iter != rhs.end(); ++iter)
-    {
-        lhs[iter->first] += iter->second;
-    }
-
-    return lhs;
-}
-
-void pushUpSegmentTree(stNode* root)
-{
-    mergeFrequency(root->frequency_, root->left_->frequency_);
-    mergeFrequency(root->frequency_, root->right_->frequency_);
-}
-
-stNode* buildSegmentTree(const vector<int>& nums, int left, int right)
-{
-    if (left > right)
-        return nullptr;
-
-    auto root = new stNode(left, right);
-    if (left == right)
-    {
-        root->initFrequency(nums[left]);
-        return root;
-    }
-
-    int mid = root->start_ + ((root->end_ - root->start_) >> 1);
-    root->left_ = buildSegmentTree(nums, left, mid);
-    root->right_ = buildSegmentTree(nums, mid + 1, right);
-    pushUpSegmentTree(root);
-
-    return root;
-}
-
-unordered_map<int, int> querySegmentTree(stNode* root, int left, int right, int threshold)
-{
-    if (!root || left > root->end_ || right < root->start_)
-        return { {0, -1} };
-
-    if (left <= root->start_ && right >= root->end_)
-    {
-        return root->frequency_;
-    }
-
-    int mid = root->start_ + ((root->end_ - root->start_) >> 1);
-
-    if (right <= mid)
-        return querySegmentTree(root->left_, left, right, threshold);
-    else if (left > mid)
-        return querySegmentTree(root->right_, left, right, threshold);
-    else
-        return mergeFrequency(querySegmentTree(root->left_, left, right, threshold), querySegmentTree(root->right_, left, right, threshold));
-}
 
 class MajorityChecker
 {
 private:
-    stNode* root_;
+    int size_;
+    vector<vector<int>> hash_;
+    vector<stNode> tree_;
+
+    void buildSegmentTree(vector<int>& nums, int root, int left, int right)
+    {
+        if (left == right)
+        {
+            tree_[root].updateStNode(nums[left]);
+            return;
+        }
+
+        int mid = left + (right - left) / 2;
+        buildSegmentTree(nums, root << 1, left, mid);
+        buildSegmentTree(nums, root << 1 | 1, mid + 1, right);
+        tree_[root] = tree_[root << 1] + tree_[root << 1 | 1];
+    }
+
+    stNode querySegmentTree(int root, int left, int right, int x, int y)
+    {
+        if (x == left && y == right)
+            return tree_[root];
+
+        int mid = left + (right - left) / 2;
+        if (y <= mid)
+            return querySegmentTree(root << 1, left, mid, x, y);
+
+        if (x > mid)
+            return querySegmentTree(root << 1 | 1, mid + 1, right, x, y);
+
+        return querySegmentTree(root << 1, left, mid, x, mid) + querySegmentTree(root << 1 | 1, mid + 1, right, mid + 1, y);
+    }
+
 public:
     MajorityChecker(vector<int>& arr)
+        : size_(arr.size()), hash_(20001, vector<int>()), tree_(4 * size_, stNode())
     {
-        root_ = buildSegmentTree(arr, 0, arr.size() - 1);
+        for (int i = 0; i < size_; ++i)
+        {
+            hash_[arr[i]].emplace_back(i);
+        }
+
+        buildSegmentTree(arr, 1, 0, size_ - 1);
     }
 
     int query(int left, int right, int threshold)
@@ -98,12 +96,12 @@ public:
         if (threshold > right - left + 1)
             return -1;
 
-        auto res = querySegmentTree(root_, left, right, threshold);
-        for (auto iter : res)
-        {
-            if (iter.second >= threshold)
-                return iter.first;
-        }
+        auto res = querySegmentTree(1, 0, size_ - 1, left, right);
+        auto l = lower_bound(hash_[res.val_].begin(), hash_[res.val_].end(), left);
+        auto r = upper_bound(hash_[res.val_].begin(), hash_[res.val_].end(), right);
+
+        if (r - l >= threshold)
+            return res.val_;
 
         return -1;
     }
