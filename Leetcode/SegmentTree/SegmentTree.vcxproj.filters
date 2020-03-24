@@ -39,5 +39,8 @@
     <ClInclude Include="1157_OnlineMajorityElementInSubarray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="1353_MaximumNumberofEventsThatCanBeAttended.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

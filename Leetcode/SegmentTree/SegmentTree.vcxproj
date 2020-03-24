@@ -123,6 +123,7 @@
     <ClInclude Include="0715_RangeModule.h" />
     <ClInclude Include="0732_MyCalendarIII.h" />
     <ClInclude Include="1157_OnlineMajorityElementInSubarray.h" />
+    <ClInclude Include="1353_MaximumNumberofEventsThatCanBeAttended.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
