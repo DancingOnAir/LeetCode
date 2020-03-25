@@ -5,32 +5,33 @@
 #include <queue>
 using namespace std;
 
-//struct SegmentTreeNode
-//{
-//    int start_;
-//    int end_;
-//    int count_;
-//    int lazy_;
-//
-//    SegmentTreeNode* left_;
-//    SegmentTreeNode* right_;
-//    SegmentTreeNode(int start, int end) : start_(start), end_(end), count_(0), lazy_(0), left_(nullptr), right_(nullptr)
-//    {
-//
-//    }
-//
-//    void updateVal(int val)
-//    {
-//        lazy_ += val;
-//        count_ += val;
-//    }
-//};
-//
-//void pushup(SegmentTreeNode* root)
-//{
-//    root->count_ = max(root->left_->count_, root->right_->count_);
-//}
-//
+const int N = 1e5 + 5;
+struct SegmentTreeNode
+{
+    int start_;
+    int end_;
+    int val_;
+    //int lazy_;
+
+    SegmentTreeNode* left_;
+    SegmentTreeNode* right_;
+    SegmentTreeNode(int start, int end) : start_(start), end_(end), val_(0), left_(nullptr), right_(nullptr)
+    {
+
+    }
+
+    //void updateVal(int val)
+    //{
+    //    lazy_ += val;
+    //    val_ = val;
+    //}
+};
+
+void pushup(SegmentTreeNode* root)
+{
+    root->val_ = min(root->left_->val_, root->right_->val_);
+}
+
 //void pushdown(SegmentTreeNode* root)
 //{
 //    int lazy = root->lazy_;
@@ -41,65 +42,80 @@ using namespace std;
 //        root->lazy_ = 0;
 //    }
 //}
-//
-//SegmentTreeNode* build(int left, int right)
-//{
-//    if (left > right)
-//        return nullptr;
-//
-//    auto root = new SegmentTreeNode(left, right);
-//    if (left == right)
-//        return root;
-//
-//    int mid = left + (right - left) / 2;
-//    root->left_ = build(left, mid);
-//    root->right_ = build(mid + 1, right);
-//
-//    return root;
-//}
-//
-//void update(SegmentTreeNode* root, int left, int right, int val)
-//{
-//    if (!root || left > root->end_ || right < root->start_)
-//        return;
-//
-//    if (left == root->start_ && right == root->end_)
-//    {
-//        root->updateVal(val);
-//        return;
-//    }
-//
-//    pushdown(root);
-//    int mid = root->start_ + (root->end_ - root->start_) / 2;
-//
-//    update(root->left_, left, mid, val);
-//    update(root->right_, mid + 1, right, val);
-//
-//    pushup(root);
-//}
-//
-//int queryTree(SegmentTreeNode* root, int left, int right)
-//{
-//    if (!root || left > root->end_ || right < root->start_)
-//        return 0;
-//
-//    if (left <= root->start_ && right >= root->end_)
-//    {
-//        return root->count_;
-//    }
-//
-//    pushdown(root);
-//    int mid = root->start_ + (root->end_ - root->start_) / 2;
-//    if (right <= mid)
-//        return queryTree(root->left_, left, mid);
-//    else if (left > mid)
-//        return queryTree(root->right_, mid + 1, right);
-//    else
-//        return queryTree(root->left_, left, mid) + queryTree(root->right_, mid + 1, right);
-//}
+
+SegmentTreeNode* buildTree(int left, int right)
+{
+    if (left > right)
+        return nullptr;
+
+    auto root = new SegmentTreeNode(left, right);
+    if (left == right)
+    {
+        root->val_ = left;
+        return root;
+    }
+
+    int mid = left + (right - left) / 2;
+    root->left_ = buildTree(left, mid);
+    root->right_ = buildTree(mid + 1, right);
+
+    pushup(root);
+    return root;
+}
+
+void updateTree(SegmentTreeNode* root, int val)
+{
+    if (root->start_ ==  root->end_)
+    {
+        root->val_ = N + 1;
+        return;
+    }
+
+    int mid = root->start_ + (root->end_ - root->start_) / 2;
+    if (val <= mid)
+        updateTree(root->left_, val);
+    else
+        updateTree(root->right_, val);
+
+    pushup(root);
+}
+
+int queryTree(SegmentTreeNode* root, int left, int right)
+{
+    if (!root || left > root->end_ || right < root->start_)
+        return 0;
+
+    if (left <= root->start_ && right >= root->end_)
+    {
+        return root->val_;
+    }
+
+    int mid = root->start_ + (root->end_ - root->start_) / 2;
+
+    if (right <= mid)
+    {
+        int temp = queryTree(root->left_, left, right);
+        if (temp <= N)
+            return temp;
+    }
+    else if (left > mid)
+    {
+        int temp = queryTree(root->right_, left, right);
+        if (temp <= N)
+            return temp;
+    }
+    else
+    {
+        int temp = min(queryTree(root->left_, left, right), queryTree(root->right_, left, right));
+        if (temp <= N)
+            return temp;
+    }
+
+    return N + 1;
+}
 
 
-const int N = 1e5 + 5;
+
 class Solution
 {
 private:
@@ -151,9 +167,28 @@ private:
         return N + 1;
     }
 
+    SegmentTreeNode* root_;
 public:
-
     int maxEvents(vector<vector<int>>& events)
+    {
+        root_ = buildTree(1, N);
+        sort(events.begin(), events.end(), [](const vector<int>& lhs, const vector<int>& rhs) { return lhs[1] < rhs[1]; });
+        int res = 0;
+        for (auto& event : events)
+        {
+            int minDay = queryTree(root_, event[0], event[1]);
+            if (minDay != 0 && minDay <= event[1])
+            {
+                ++res;
+                updateTree(root_, minDay);
+            }
+        }
+
+        return res;
+    }
+
+
+    int maxEvents1(vector<vector<int>>& events)
     {
         build(1, 1, N);
         sort(events.begin(), events.end(), [](const vector<int>& e1, const vector<int>& e2) { return e1[1] < e2[1]; });
@@ -171,7 +206,7 @@ public:
         return res;
     }
 
-    int maxEvents1(vector<vector<int>>& events)
+    int maxEvents2(vector<vector<int>>& events)
     {
         sort(events.rbegin(), events.rend());
         priority_queue<int, vector<int>, greater<int>> pq;
