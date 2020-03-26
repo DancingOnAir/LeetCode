@@ -18,7 +18,7 @@ struct SegmentTreeNode
 
     }
 
-    void updateByValue(int val)
+    void updateValue(int val)
     {
         lazy_ = val;
         height_ = val;
@@ -54,8 +54,8 @@ private:
         int lazy = root->lazy_;
         if (lazy)
         {
-            root->left_->updateByValue(lazy);
-            root->right_->updateByValue(lazy);
+            root->left_->updateValue(lazy);
+            root->right_->updateValue(lazy);
             root->lazy_ = 0;
         }
     }
@@ -67,7 +67,7 @@ private:
 
         if (start <= root->start_ && end >= root->end_)
         {
-            root->updateByValue(val);
+            root->updateValue(val);
             return;
         }
 
