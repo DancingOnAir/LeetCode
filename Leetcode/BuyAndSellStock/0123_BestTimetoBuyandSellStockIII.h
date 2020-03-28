@@ -7,7 +7,32 @@ const int NINF = 0xc0c0c0c0;
 class SolutionIII
 {
 public:
+    // optimize 3d dp to 1dp
+    // dp[i][2][0] = max(dp[i - 1][2][0], dp[i - 1][2][1] + prices[i])
+    // dp[i][2][1] = max(dp[i - 1][2][1], dp[i - 1][1][0] - prices[i])
+    // dp[i][1][0] = max(dp[i - 1][1][0], dp[i - 1][1][1] + prices[i])
+    // dp[i][1][1] = max(dp[i - 1][1][1], 0 - prices[i])
     int maxProfit(vector<int>& prices)
+    {
+        int n = prices.size();
+        if (n < 2)
+            return 0;
+
+        int dp_i10 = 0, dp_i11 = NINF;
+        int dp_i20 = 0, dp_i21 = NINF;
+
+        for (int price : prices)
+        {
+            dp_i20 = max(dp_i20, dp_i21 + price);
+            dp_i21 = max(dp_i21, dp_i10 - price);
+            dp_i10 = max(dp_i10, dp_i11 + price);
+            dp_i11 = max(dp_i11, -price);
+        }
+
+        return dp_i20;
+    }
+
+    int maxProfit1(vector<int>& prices)
     {
         int n = prices.size();
         if (n < 2)
@@ -35,7 +60,7 @@ public:
         return dp[n - 1][k][0];
     }
 
-    int maxProfit1(vector<int>& prices)
+    int maxProfit2(vector<int>& prices)
     {
         int n = prices.size();
         if (n < 2)
