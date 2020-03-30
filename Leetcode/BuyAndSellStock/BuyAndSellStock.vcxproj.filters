@@ -27,5 +27,8 @@
     <ClInclude Include="0188_BestTimetoBuyandSellStockIV.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0309_BestTimetoBuyandSellStockwithCooldown.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
