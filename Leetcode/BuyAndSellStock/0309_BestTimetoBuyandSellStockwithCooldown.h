@@ -3,13 +3,31 @@
 
 using namespace std;
 
+const int NINF = 0xc0c0c0c0;
+
 class SolutionV
 {
 public:
     // consider 2nd condition for dp[day][status], status = buy, sell & cooldown, size = 3
     int maxProfit(vector<int>& prices)
     {
-        return 0;
+        int n = prices.size();
+        if (n < 2)
+            return 0;
+
+        vector<vector<int>> dp(n, vector<int>(3));
+        dp[0][0] = 0;
+        dp[0][1] = -prices[0];
+        dp[0][2] = NINF;
+
+        for (int i = 1; i < n; ++i)
+        {
+            dp[i][0] = max(dp[i - 1][0], dp[i - 1][2]);
+            dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
+            dp[i][2] = dp[i - 1][1] + prices[i];
+        }
+
+        return max(dp[n - 1][0], dp[n - 1][2]);
     }
 
     // coz the cooldown for buying stock after sell the stock.
