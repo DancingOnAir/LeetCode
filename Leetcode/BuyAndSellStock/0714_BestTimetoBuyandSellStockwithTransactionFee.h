@@ -11,6 +11,24 @@ public:
         if (n < 2)
             return 0;
 
+        int dp_i0 = 0;
+        int dp_i1 = -prices[0];
+
+        for (int i = 1; i < n; ++i)
+        {
+            dp_i0 = max(dp_i0, dp_i1 + prices[i] - fee);
+            dp_i1 = max(dp_i1, dp_i0 - prices[i]);
+        }
+
+        return dp_i0;
+    }
+
+    int maxProfit1(vector<int>& prices, int fee)
+    {
+        int n = prices.size();
+        if (n < 2)
+            return 0;
+
         vector<vector<int>> dp(n, vector<int>(2));
         dp[0][0] = 0;
         dp[0][1] = -prices[0];
