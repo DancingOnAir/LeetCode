@@ -120,6 +120,7 @@
     <ClInclude Include="0123_BestTimetoBuyandSellStockIII.h" />
     <ClInclude Include="0188_BestTimetoBuyandSellStockIV.h" />
     <ClInclude Include="0309_BestTimetoBuyandSellStockwithCooldown.h" />
+    <ClInclude Include="0714_BestTimetoBuyandSellStockwithTransactionFee.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
