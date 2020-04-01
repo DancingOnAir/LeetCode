@@ -18,5 +18,8 @@
     <ClInclude Include="1310_XORQueriesofaSubarray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0136_SingleNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

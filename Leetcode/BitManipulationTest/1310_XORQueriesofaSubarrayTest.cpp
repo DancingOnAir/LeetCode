@@ -1,7 +1,8 @@
 #include "pch.h"
 #include "../BitManipulation/1310_XORQueriesofaSubarray.h"
 
-TEST(XORQueriesofaSubarray, InputEmptyQuery) {
+TEST(AXORQueriesofaSubarray, InputEmptyQuery)
+{
     Solution solution;
 
     vector<int> arr1;
@@ -9,7 +10,8 @@ TEST(XORQueriesofaSubarray, InputEmptyQuery) {
     EXPECT_EQ(solution.xorQueries(arr1, queries1), vector<int>());
 }
 
-TEST(XORQueriesofaSubarray, InputRegularQueries) {
+TEST(AXORQueriesofaSubarray, InputRegularQueries)
+{
     Solution solution;
 
     vector<int> arr1 = {1, 3, 4, 8};
