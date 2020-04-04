@@ -6,9 +6,30 @@ using namespace std;
 class ReverseBitsSolution
 {
 public:
+    // Redis code, optimize the below function.
+    // 32 - abcd efgh ijkl mnop qrst uvwx yzAB CDEF
+    // 16 - qrst uvwx yzAB CDEF abcd efgh ijkl mnop
+    // 08 - yzAB CDEF qrst uvwx ijkl mnop abcd efgh
+    // 04 - CDEF yzAB uvwx qrst mnop ijkl efgh abcd
+    // 02 - EFCD AByz wxuv stqr opmn klij ghef cdab
+    // 01 - FEDC BAzy xwvu tsrq ponm lkji hgfe dcba
+    uint32_t reverseBits(uint32_t n)
+    {
+        unsigned int s = 8 * sizeof(n);
+        uint32_t mask = ~0;
+
+        while ((s >>= 1) > 0)
+        {
+            mask ^= mask << s;
+            n = ((n >> s) & mask) | ((n << s) & ~mask);
+        }
+
+        return n;
+    }
+
     // for 8 bit binary number abcdefgh, the process is as follow:
     // abcdefgh->efghabcd->ghefcdab->hgfedcba
-    uint32_t reverseBits(uint32_t n)
+    uint32_t reverseBits1(uint32_t n)
     {
         n = (n << 16) | (n >> 16);
         n = ((n & 0xff00ff00) >> 8) | ((n & 0x00ff00ff) << 8);
@@ -19,7 +40,7 @@ public:
         return n;
     }
 
-    uint32_t reverseBits1(uint32_t n)
+    uint32_t reverseBits2(uint32_t n)
     {
         vector<int> digits(32);
         for (int i = 31; i >= 0; --i)
