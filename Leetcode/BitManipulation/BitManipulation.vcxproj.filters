@@ -27,5 +27,8 @@
     <ClInclude Include="0260_SingleNumberIII.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="0190_ReverseBits.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
