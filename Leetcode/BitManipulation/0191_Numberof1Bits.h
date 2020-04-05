@@ -4,8 +4,17 @@
 class Numberof1BitsSolution
 {
 public:
-
     int hammingWeight(uint32_t n)
+    {
+        n -= (n >> 1) & 0x55555555;
+        n = (n & 0x33333333) + ((n >> 2) & 0x33333333);
+        n = (n + (n >> 4)) & 0x0f0f0f0f;
+
+        // return left 8 bits of x + (x << 8) + (x << 16) + (x << 24)
+        return n * 0x01010101 >> 24;
+    }
+
+    int hammingWeight1(uint32_t n)
     {
         // eg. for 2 digits
         // ab - ((ab >> 1) & 0x01) = ab - a = 2 * a + b - a = a + b
@@ -23,7 +32,7 @@ public:
     // explation for below bit operations
     // eg. for 2 digits
     // (ab & 0x01) + ((ab >> 1) & 0x01) = b + a
-    int hammingWeight1(uint32_t n)
+    int hammingWeight2(uint32_t n)
     {
         n = (n & 0x55555555) + ((n >> 1) & 0x55555555);
         n = (n & 0x33333333) + ((n >> 2) & 0x33333333);
@@ -34,7 +43,7 @@ public:
         return n;
     }
 
-    int hammingWeight2(uint32_t n)
+    int hammingWeight3(uint32_t n)
     {
         int res = 0;
         while (n)
