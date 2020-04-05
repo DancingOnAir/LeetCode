@@ -118,6 +118,7 @@
     <ClInclude Include="0136_SingleNumber.h" />
     <ClInclude Include="0137_SingleNumberII.h" />
     <ClInclude Include="0190_ReverseBits.h" />
+    <ClInclude Include="0191_Numberof1Bits.h" />
     <ClInclude Include="0260_SingleNumberIII.h" />
     <ClInclude Include="1310_XORQueriesofaSubarray.h" />
   </ItemGroup>

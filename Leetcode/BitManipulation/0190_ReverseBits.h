@@ -6,7 +6,7 @@ using namespace std;
 class ReverseBitsSolution
 {
 public:
-    // Redis code, optimize the below function.
+    // Redis code, optimize the below function: reverseBits1.
     // 32 - abcd efgh ijkl mnop qrst uvwx yzAB CDEF
     // 16 - qrst uvwx yzAB CDEF abcd efgh ijkl mnop
     // 08 - yzAB CDEF qrst uvwx ijkl mnop abcd efgh
