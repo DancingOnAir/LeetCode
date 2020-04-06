@@ -40,6 +40,7 @@
     <ClCompile Include="0137_SingleNumberIITest.cpp" />
     <ClCompile Include="0190_ReverseBits.cpp" />
     <ClCompile Include="0191_Numberof1BitsTest.cpp" />
+    <ClCompile Include="0201_BitwiseANDofNumbersRangeTest.cpp" />
     <ClCompile Include="0260_SingleNumberIIITest.cpp" />
     <ClCompile Include="1310_XORQueriesofaSubarrayTest.cpp" />
     <ClCompile Include="pch.cpp">
