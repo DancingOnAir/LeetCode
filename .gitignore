@@ -254,3 +254,6 @@ Temp
 GeneratedFiles
 /enc_temp_folder
 *.ini
+
+# MAC-OS
+.DS_Store
