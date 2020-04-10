@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
 public:
-    bool isPowerOfFour(int num)
+    bool isPowerOfFour1(int num)
     {
         if (num < 1)
             return false;
@@ -18,7 +18,7 @@ public:
         return false;
     }
 
-    bool isPowerOfFour1(int num)
+    bool isPowerOfFour2(int num)
     {
         if (num <= 0)
             return false;
