@@ -3,9 +3,14 @@ using namespace std;
 
 class Solution {
 public:
+    int getSum(int a, int b)
+    {
+        return b == 0? a : getSum(a^b, static_cast<unsigned int>(a&b) << 1);
+    }
+
     // 0^0 = 1^1 = 0, 0^1 = 1^0 = 1
     // 0&0 = 0&1 = 1&0 = 0, 1&1 = 1
-    int getSum(int a, int b) {
+    int getSum1(int a, int b) {
         
         int carry = a & b;
         int res = a ^ b;
