@@ -258,3 +258,4 @@ GeneratedFiles
 # MAC-OS
 .DS_Store
 *.dSYM
+*.out
