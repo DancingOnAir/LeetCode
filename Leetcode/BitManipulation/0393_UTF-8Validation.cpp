@@ -4,51 +4,46 @@ using namespace std;
 
 class Solution {
 public:
-    int getNumofFirstOneBits(int num) {
-        int res = 0;
-        int flag = 0x1 << 7;
-
-        while ((num & flag)) {
-            ++res;
-            flag >>= 1;
+    int getNumofFirstOnes(int num) {
+        for (int i = 7; i >= 0; --i) {
+            if ((num & (1 << i)) == 0)
+                return 7 - i;
         }
 
-        return res;
+        return 8;
     }
 
     bool validUtf8(vector<int>& data) {
         if (data.empty())
             return true;
 
-        // sort(data.begin(), data.end(), greater<int>());
-        int n = data.size();
-        if (n > 4)
-            return false;
+        // 1000 0000
+        int one = 1 << 7;
+        // 1100 0000
+        int two = 3 << 6;
 
-        int i = 0;
-        for (i = 0; i < n;) {
-            int temp = getNumofFirstOneBits(data[i]);
-            if (temp > 7 || i + temp > n)
-                return false;
-
-            if (temp == 1) {
-                return false;
-            }
-
-            if (temp == 0) {
-                ++i;
-                continue;
-            }
-
-            for (int j = 1; j < temp; ++j) {
-                if (getNumofFirstOneBits(data[i + j]) != 1)
+        int k = 0;
+        for (int num : data) {
+            if (k == 0) {
+                if ((num & two) == one) {
                     return false;
-            }
+                }
 
-            i += temp;
+                if (num & one) {
+                    k = getNumofFirstOnes(num);
+                    if (k > 4)
+                        return false;
+
+                    --k;
+                }
+            }else {
+                if ((num & two) != one)
+                    return false;
+                --k;
+            }
         }
 
-        return i == n;
+        return k == 0;
     }
 };
 
