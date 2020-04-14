@@ -7,6 +7,32 @@ private:
     unordered_map<int, int> m;
 public:
     int integerReplacement(int n) {
+        if (n <= 0)
+            return -1;
+
+        if (n == 3)
+            return 2;
+
+        int res = 0;
+        unsigned long long ull = n;
+        int mask = 0b11;
+        while (ull > 1) {
+            if ((ull & mask) == 0b00 || (ull & mask) == 0b10) {
+                ull >>= 1;
+            }
+            else if ((ull & mask) == 0b01 || ull == 3) {
+                --ull;
+            }
+            else {
+                ++ull;
+            }
+            ++res;
+        }
+
+        return res;
+    }
+
+    int integerReplacement1(int n) {
         if (n == 1)
             return 0;
 
