@@ -19,7 +19,7 @@ public:
         return res;
     }
 };
- 
+
 void display(const vector<string>& v) {
     for (auto& str : v) {
         cout << str << ", ";
