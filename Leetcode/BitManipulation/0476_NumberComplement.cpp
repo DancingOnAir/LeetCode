@@ -1,11 +1,23 @@
 #include <iostream>
-
+#include <cmath>
 using namespace std;
 
 class Solution {
 public:
     int findComplement(int num) {
-        return 0;
+
+        int count = 0, mask = 0;
+        int reverse = ~num;
+        while (num) {
+            mask <<= 1;
+            num >>= 1;
+
+            ++mask;
+            ++count;
+        }
+
+
+        return (reverse & mask);
     }
 };
 
