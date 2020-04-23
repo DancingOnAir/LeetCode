@@ -3,7 +3,14 @@ using namespace std;
 
 class Solution {
 public:
+    // cancel bits
     bool hasAlternatingBits(int n) {
+        n ^= (n >> 2);
+
+        return !(n & (n - 1));
+    }
+
+    bool hasAlternatingBits2(int n) {
         if (!n)
             return false;
 
