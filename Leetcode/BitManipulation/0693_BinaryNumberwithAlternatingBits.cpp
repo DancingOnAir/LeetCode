@@ -3,8 +3,15 @@ using namespace std;
 
 class Solution {
 public:
-    // cancel bits
+    // complete bits
     bool hasAlternatingBits(int n) {
+        n ^= (n >> 1);
+
+        return !((n + 1) & n);
+    }
+
+    // cancel bits
+    bool hasAlternatingBits1(int n) {
         n ^= (n >> 2);
 
         return !(n & (n - 1));
