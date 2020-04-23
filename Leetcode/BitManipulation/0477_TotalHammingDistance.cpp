@@ -4,29 +4,51 @@ using namespace std;
 
 class Solution {
 public:
-    int hammingWeight(unsigned int num) {
-        num = (num & 0x55555555) + ((num >> 1) & 0x55555555);
-        num = (num & 0x33333333) + ((num >> 2) & 0x33333333);
-        num = (num & 0x0f0f0f0f) + ((num >> 4) & 0x0f0f0f0f);
-        num = (num & 0x00ff00ff) + ((num >> 8) & 0x00ff00ff);
-        num = (num & 0x0000ffff) + ((num >> 16) & 0x0000ffff);
-
-        return num;
-    }
-
     int totalHammingDistance(vector<int>& nums) {
         int n = nums.size();
         if (n < 2)
             return 0;
         
-        int res = 0;
-        for (int i = 0; i < n - 1; ++i) {
-            for (int j = i + 1; j < n; ++j) {
-                res += hammingWeight(nums[i] ^ nums[j]);
+        vector<int> count(32);
+        for (int i = 0; i < n; ++i) {
+            int j = 0;
+            while (nums[i]) {
+                count[j] = nums[i] & 0x1;
+                nums[i] >>= 1;
+                ++j;
             }
         }
 
+        int res = 0;
+        for (int x : count) {
+            res += x * (n - x);
+        }
+        
         return res;
+    }
+
+    int totalHammingDistance1(vector<int>& nums) {   
+        int n = nums.size();
+        if (n < 2)
+            return 0;
+        
+        int res = 0;
+        while (true) {
+            int count = 0;
+            vector<int> digits(2, 0);
+            for (int i = 0; i < n; ++i) {
+                if (nums[i] == 0)
+                    ++count;
+                
+                digits[nums[i] & 1]++;
+                nums[i] >>= 1;
+            }
+
+            res += digits[0] * digits[1];
+
+            if (count == n)
+                return res;
+        }
     }
 };
 
