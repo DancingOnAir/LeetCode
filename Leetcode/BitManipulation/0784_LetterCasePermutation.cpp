@@ -7,7 +7,28 @@ using namespace std;
 class Solution {
 public:
     vector<string> letterCasePermutation(string S) {
-        return vector<string>();
+        if (S.empty())
+            return vector<string>();
+
+        vector<string> res = {""};
+        
+        for (int i = 0; i < S.size(); ++i) {
+            int n = res.size();
+            if (isalpha(S[i])) {
+                for (int j = 0; j < n ; ++j) {
+                    res.emplace_back(res[j]);
+                    res[j] += tolower(S[i]);
+                    res[j + n] += toupper(S[i]);
+                }
+            }
+            else {
+                for (int j = 0; j < n ; ++j) {
+                    res[j] += S[i];
+                }
+            }
+        }
+
+        return res;
     }
 };
 
