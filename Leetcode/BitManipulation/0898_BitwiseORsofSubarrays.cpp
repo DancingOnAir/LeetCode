@@ -7,14 +7,35 @@ using namespace std;
 
 class Solution {
 public:
-    int hammingWeight(int num) {
-        num = (num & 0x55555555) + ((num >> 1) & 0x55555555);
-        num = (num & 0x33333333) + ((num >> 2) & 0x33333333);
-        num = (num & 0x0f0f0f0f) + ((num >> 4) & 0x0f0f0f0f);
-        num = (num & 0x00ff00ff) + ((num >> 8) & 0x00ff00ff);
-        num = (num & 0xffff) + ((num >> 16) & 0xffff);
+    int subarrayBitwiseORs1(vector<int>& A) {
+        unordered_set<int> res;
+        vector<int> memo(A.size());
+        int pre = -1;
 
-        return num;
+        for (int i = 0; i < A.size(); ++i) {
+            if (A[i] == pre) {
+                memo[i] = A[i];
+                continue;
+            }
+
+            pre = A[i];
+            if (A[i] == 0) {
+                res.emplace(0);
+            } else {
+                for (int j = i; j >= 0; --j) {
+                    int v = A[i] | memo[j];
+                    if (v == memo[j])
+                        break;
+                    else
+                    {
+                        memo[j] = v;
+                        res.emplace(v);
+                    }
+                }
+            }
+        }
+
+        return res.size();
     }
 
     int subarrayBitwiseORs(vector<int>& A) {
@@ -22,19 +43,21 @@ public:
         if (n < 2)
             return n;
 
-        unordered_set<int> s;
-        set<int> t;
-        for (int i : A) {
-            set<int> r;
-            r.insert(i);
-            for (int j : t)
-                r.insert(j | i);
-            t = r;
-            for (int j : t)
-                s.insert(j);
+        unordered_set<int> res;
+        for (int i = 0; i < n; ++i) {
+            res.emplace(A[i]);
+
+            for (int j = i - 1; j >= 0; --j) {
+                int temp = (A[i] | A[j]);
+                if (A[j] == temp)
+                    break;
+
+                A[j] |= A[i];
+                res.emplace(A[j]);
+            }
         }
 
-        return s.size();
+        return res.size();
     }
 };
 
