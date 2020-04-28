@@ -1,33 +1,40 @@
 #include <iostream>
 #include <vector>
 #include <unordered_set>
+#include <set>
 
 using namespace std;
 
 class Solution {
 public:
+    int hammingWeight(int num) {
+        num = (num & 0x55555555) + ((num >> 1) & 0x55555555);
+        num = (num & 0x33333333) + ((num >> 2) & 0x33333333);
+        num = (num & 0x0f0f0f0f) + ((num >> 4) & 0x0f0f0f0f);
+        num = (num & 0x00ff00ff) + ((num >> 8) & 0x00ff00ff);
+        num = (num & 0xffff) + ((num >> 16) & 0xffff);
+
+        return num;
+    }
+
     int subarrayBitwiseORs(vector<int>& A) {
         int n = A.size();
         if (n < 2)
             return n;
 
-        int orSum = 0;
-        unordered_set<int> s(A.begin(), A.end());
-
-        for (int num : s) {
-            orSum |= num;
+        unordered_set<int> s;
+        set<int> t;
+        for (int i : A) {
+            set<int> r;
+            r.insert(i);
+            for (int j : t)
+                r.insert(j | i);
+            t = r;
+            for (int j : t)
+                s.insert(j);
         }
 
-        if (!orSum)
-            return 0;
-
-        int count = 0;
-        while (orSum) {
-            orSum &= (orSum - 1);
-            ++count;
-        }
-
-        return count * (count + 1) / 2;
+        return s.size();
     }
 };
 
