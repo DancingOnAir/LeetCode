@@ -1,11 +1,27 @@
 #include <vector>
 #include <iostream>
+#include <set>
 
 using namespace std;
 
 class Solution {
 public:
     vector<int> advantageCount(vector<int>& A, vector<int>& B) {
+        multiset<int> s(A.begin(), A.end());
+
+        for (int i = 0; i < B.size(); ++i) {
+            auto p = s.upper_bound(B[i]);
+            if (p == s.end())
+                p = s.begin();
+
+            A[i] = *p;
+            s.erase(p);
+        }
+
+        return A;
+    }
+
+    vector<int> advantageCount1(vector<int>& A, vector<int>& B) {
         if (A.size() != B.size())
             return vector<int>();
 
