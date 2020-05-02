@@ -8,8 +8,54 @@ using std::cout;
 using std::endl;
 
 class Solution {
+private:
+    int len;
+    inline int getNextIndex(const vector<int>& nums, int k) {
+        return (nums[k] + k + len) % len;
+    }
+
 public:
     bool circularArrayLoop(vector<int>& nums) {
+        len = nums.size();
+        for (int& num : nums) {
+            num %= len;
+        }
+
+        for (int i = 0; i < len; ++i) {
+            if (!nums[i])
+                continue;
+
+            int sign = nums[i] > 0 ? 1 : -1;
+            int slow = i;
+            int fast = i;
+
+            while (true) {
+                fast = getNextIndex(nums, fast);
+                if (sign * nums[fast] <= 0)
+                    break;
+
+                fast = getNextIndex(nums, fast);
+                if (sign * nums[fast] <= 0)
+                    break;
+
+                slow = getNextIndex(nums, slow);
+                if (slow == fast) {
+                    return true;
+                }
+            }
+
+            slow = i;
+            while (slow != fast) {
+                int temp = slow;
+                slow = getNextIndex(nums, slow);
+                nums[temp] = 0;
+            }
+        }
+
+        return false;
+    }
+
+    bool circularArrayLoop1(vector<int>& nums) {
         if (nums.empty())
             return false;
 
