@@ -14,31 +14,40 @@ public:
             return false;
 
         int n = nums.size();
-        unordered_set<int> s;
-        vector<int> v;
-        int idx = 0;
-
-        while (!s.count(idx)) {
+        for (int i = 0; i < n; ++i) {
+            int idx = i;
             if (!nums[idx])
-                return false;
+                continue;
 
-            s.emplace(idx);
-            v.emplace_back(idx);
+            unordered_set<int> s;
+            vector<int> v;
 
-            int temp = nums[idx] % n;
-            idx = (idx + temp + n) % n;
+            while (!s.count(idx)) {
+                s.emplace(idx);
+                v.emplace_back(idx);
+
+                int temp = nums[idx] % n;
+                idx = (idx + temp + n) % n;
+            }
+
+            auto iter = find(v.begin(), v.end(), idx);
+            if (iter == prev(v.end()))
+                continue;
+
+            bool isPositive = true;
+            for (int i = iter - v.begin(); i < v.size() - 1; ++i) {
+                if (nums[v[i]] * nums[v[i + 1]] < 0) {
+                    isPositive = false;
+                    break;
+                }
+
+            }
+
+            if (isPositive)
+                return true;
         }
 
-        auto iter = find(v.begin(), v.end(), idx);
-        if (iter == prev(v.end()))
-            return false;
-
-        for (int i = iter - v.begin(); i < v.size() - 1; ++i) {
-            if (nums[v[i]] * nums[v[i + 1]] < 0)
-                return false;
-        }
-
-        return true;
+        return false;
     }
 };
 
