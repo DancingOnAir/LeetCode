@@ -1,12 +1,31 @@
 #include <iostream>
 #include <vector>
 #include <unordered_set>
+#include <unordered_map>
 #include <algorithm>
 using namespace std;
 
 class Solution {
 public:
     int lenLongestFibSubseq(vector<int>& A) {
+        unordered_map<int, int> m;
+        int n = A.size();
+        int res = 0;
+        vector<vector<int>> dp(n, vector<int>(n));
+
+        for (int i = 0; i < n; ++i) {
+            m[A[i]] = i;
+            for (int j = 0; j < i; ++j) {
+                int k = m.find(A[i] - A[j]) == m.end() ? -1 : m[A[i] - A[j]];
+                dp[j][i] = (A[i] - A[j] < A[j] && k >= 0) ? dp[k][j] + 1 : 2;
+                res = max(res, dp[j][i]);
+            }
+        }
+
+        return res > 2 ? res : 0;
+    }
+
+    int lenLongestFibSubseq1(vector<int>& A) {
         unordered_set<int> s(A.begin(), A.end());
 
         int res = 2;
@@ -33,8 +52,7 @@ public:
         return res > 2 ? res : 0;
     }
 
-
-    int lenLongestFibSubseq1(vector<int>& A) {
+    int lenLongestFibSubseq2(vector<int>& A) {
         int n = A.size();
 
         if (n < 3)
