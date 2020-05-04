@@ -9,11 +9,15 @@ public:
     int lenLongestFibSubseq(vector<int>& A) {
         unordered_set<int> s(A.begin(), A.end());
 
-        int res = 0;
+        int res = 2;
         for (int i = 0; i < A.size(); ++i) {
             for (int j = i + 1; j < A.size(); ++j) {
-                int a = A[i];
-                int b = A[j];
+                long long a = A[i];
+                long long b = A[j];
+                // multiplication maybe overflow, use long long type
+                if (b * (res - 2) >= A.back())
+                    break;
+
                 int l = 2;
 
                 while (s.count(a + b)) {
