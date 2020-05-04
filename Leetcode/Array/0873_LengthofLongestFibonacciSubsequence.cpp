@@ -6,8 +6,31 @@ using namespace std;
 
 class Solution {
 public:
-
     int lenLongestFibSubseq(vector<int>& A) {
+        unordered_set<int> s(A.begin(), A.end());
+
+        int res = 0;
+        for (int i = 0; i < A.size(); ++i) {
+            for (int j = i + 1; j < A.size(); ++j) {
+                int a = A[i];
+                int b = A[j];
+                int l = 2;
+
+                while (s.count(a + b)) {
+                    b = a + b;
+                    a = b - a;
+                    ++l;
+                }
+
+                res = max(res, l);
+            }
+        }
+
+        return res > 2 ? res : 0;
+    }
+
+
+    int lenLongestFibSubseq1(vector<int>& A) {
         int n = A.size();
 
         if (n < 3)
