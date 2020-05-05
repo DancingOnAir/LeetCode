@@ -2,6 +2,7 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+#include <bitset>
 using namespace std;
 
 class Solution {
@@ -13,24 +14,20 @@ public:
         }
 
         int sum2 = 0;
-        unordered_set<int> s;
+        bitset<100001> s;
         for (int b : B) {
             sum2 += b;
-            s.emplace(b);
+            s.set(b);
         }
 
         int diff = (sum1 - sum2) / 2;
 
-        vector<int> res;
         for (int i = 0; i < A.size(); ++i) {
-            if (s.count(A[i] - diff)) {
-                res.emplace_back(A[i]);
-                res.emplace_back(A[i] - diff);
-
-                return res;
-            }
+            int x = A[i] - diff;
+            if (x > 0 && x < 100001 && s.test(x))
+                return {A[i], x};
         }
-        return res;
+        return {-1, -1};
     }
 };
 
