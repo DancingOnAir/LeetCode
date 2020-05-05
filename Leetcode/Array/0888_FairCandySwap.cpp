@@ -1,39 +1,33 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <unordered_set>
 using namespace std;
 
 class Solution {
 public:
-
-    int getSum(const vector<int>& nums) {
-        if (nums.empty())
-            return 0;
-
-        int res = 0;
-        for (int num : nums) {
-            res += num;
+    vector<int> fairCandySwap(vector<int>& A, vector<int>& B) {
+        int sum1 = 0;
+        for (int a : A) {
+            sum1 += a;
         }
 
-        return res;
-    }
+        int sum2 = 0;
+        unordered_set<int> s;
+        for (int b : B) {
+            sum2 += b;
+            s.emplace(b);
+        }
 
-    vector<int> fairCandySwap(vector<int>& A, vector<int>& B) {
-        int sum1 = getSum(A);
-        int sum2 = getSum(B);
-
-        // int sum = (sum1 + sum2) / 2;
         int diff = (sum1 - sum2) / 2;
 
         vector<int> res;
         for (int i = 0; i < A.size(); ++i) {
-            for (int j = 0; j < B.size(); ++j) {
-                if (diff == (A[i] - B[j])) {
-                    res.emplace_back(A[i]);
-                    res.emplace_back(B[j]);
-                    
-                    return res;
-                }
+            if (s.count(A[i] - diff)) {
+                res.emplace_back(A[i]);
+                res.emplace_back(A[i] - diff);
+
+                return res;
             }
         }
         return res;
