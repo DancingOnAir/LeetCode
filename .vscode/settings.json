@@ -16,6 +16,7 @@
         "unordered_set": "cpp",
         "functional": "cpp",
         "string": "cpp",
-        "__tree": "cpp"
+        "__tree": "cpp",
+        "algorithm": "cpp"
     }
 }
