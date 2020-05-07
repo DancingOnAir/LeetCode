@@ -10,28 +10,20 @@ public:
         if (n < 2)
             return 0;
 
-        // int minVal = *min_element(A.begin(), A.end());
-        // int maxVal = *max_element(A.begin(), A.end());
-
-        int res = 0;
-        for (int i = 0; i < n; ++i) {
-            for (int j = 2; j <= n && i + j <= n; ++j) {
-                int minVal = *min_element(A.begin() + i, A.begin() + i + j);
-                int maxVal = *max_element(A.begin() + i, A.begin() + i + j);
-
-                res += maxVal - minVal;
-            }
+        const long long mod = 1e9 + 7;
+        vector<long long> count(n + 1);
+        count[0] = 1;
+        for (int i = 1; i <= n; ++i) {
+            count[i] = (count[i - 1] << 1) % mod;
         }
-        // res = maxVal - minVal;
-        // for (int i = 0; i < A.size(); ++i) {
-        //     for (int j = n - 1; j > 1; --j) {
-        //         while (i + j <= n) {
 
-        //         }
-        //     }
-        // }
+        sort(A.begin(), A.end());
+        long long res = 0;
+        for (int i = 0; i < n; ++i) {
+            res = (res + A[i] * (count[i] - count[n - i - 1])) % mod;
+        }
 
-        return res;
+        return (res + mod) % mod;
     }
 };
 
