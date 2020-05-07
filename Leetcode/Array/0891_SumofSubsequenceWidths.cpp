@@ -10,20 +10,22 @@ public:
         if (n < 2)
             return 0;
 
-        const long long mod = 1e9 + 7;
-        vector<long long> count(n + 1);
+        static const int mod = 1e9 + 7;
+        
+        vector<int> count(n);
         count[0] = 1;
-        for (int i = 1; i <= n; ++i) {
+        for (int i = 1; i < n; ++i) {
             count[i] = (count[i - 1] << 1) % mod;
         }
 
         sort(A.begin(), A.end());
-        long long res = 0;
+        int res = 0;
         for (int i = 0; i < n; ++i) {
-            res = (res + A[i] * (count[i] - count[n - i - 1])) % mod;
+            res += (long long)A[i] * (count[i] - count[n - i - 1]) % mod;
+            res %= mod;
         }
 
-        return (res + mod) % mod;
+        return res;
     }
 };
 
