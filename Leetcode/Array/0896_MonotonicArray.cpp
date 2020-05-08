@@ -5,6 +5,21 @@ using namespace std;
 class Solution {
 public:
     bool isMonotonic(vector<int>& A) {
+        bool asc = true;
+        bool desc = true;
+
+        for (int i = 1; i < A.size(); ++i) {
+            if (A[i] < A[i - 1])
+                asc = false;
+
+            if (A[i] > A[i -1])
+                desc = false;
+        }
+
+        return asc || desc;
+    }
+
+    bool isMonotonic1(vector<int>& A) {
         int n = A.size();
         if (n < 2)
             return true;
