@@ -17,6 +17,7 @@
         "functional": "cpp",
         "string": "cpp",
         "__tree": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "ostream": "cpp"
     }
 }
