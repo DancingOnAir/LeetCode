@@ -6,6 +6,27 @@ using namespace std;
 class Solution {
 public:
     int sumSubarrayMins(vector<int>& A) {
+        int res = 0, n = A.size(), j = 0, k = 0, mod = 1e9 + 7;
+        stack<int> stk;
+
+        for (int i = 0; i <= n; ++i) {
+            while (!stk.empty() && A[stk.top()] > (i == n ? 0 : A[i])) {
+                j = stk.top();
+                stk.pop();
+
+                k = stk.empty() ? -1 : stk.top();
+
+                res = (res + A[j] * (i - j) * (j - k)) % mod;
+            }
+
+            stk.emplace(i);
+        }
+
+        return res;
+    }
+
+    // monotonous increase stack
+    int sumSubarrayMins1(vector<int>& A) {
         if (A.empty())
             return 0;
 
@@ -43,7 +64,7 @@ public:
     }
 
     // brute force
-    int sumSubarrayMins1(vector<int>& A) {
+    int sumSubarrayMins2(vector<int>& A) {
         if (A.empty())
             return 0;
 
