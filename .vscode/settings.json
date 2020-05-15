@@ -18,6 +18,7 @@
         "string": "cpp",
         "__tree": "cpp",
         "algorithm": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "ios": "cpp"
     }
 }

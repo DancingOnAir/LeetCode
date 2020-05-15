@@ -8,6 +8,32 @@ class Solution {
 public:
     int partitionDisjoint(vector<int>& A) {
         int n = A.size();
+
+        vector<int> left(n);
+        int leftMax = A[0];
+        for (int i = 0; i < n; ++i) {
+            leftMax = max(leftMax, A[i]);
+            left[i] = leftMax;
+        }
+
+        vector<int> right(n);
+        int rightMin = A[n - 1];
+        for (int i = n - 1; i >= 0; --i) {
+            rightMin = min(rightMin, A[i]);
+            right[i] = rightMin;
+        }
+
+        for (int i = 1; i < n; ++i) {
+            if (left[i - 1] <= right[i]) {
+                return i;
+            }
+        }
+
+        return 0;
+    }
+
+    int partitionDisjoint1(vector<int>& A) {
+        int n = A.size();
         if (n < 2)
             return -1;
 
