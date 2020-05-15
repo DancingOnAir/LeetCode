@@ -4,12 +4,15 @@
 #include <set>
 using namespace std;
 
-int gcd(int lhs, int rhs) {
-    return (rhs == 0) ? lhs : gcd(rhs, lhs % rhs);
-}
+
 
 class Solution {
 public:
+
+    int gcd(int lhs, int rhs) {
+        return (rhs == 0) ? lhs : gcd(rhs, lhs % rhs);
+    }
+    
     bool hasGroupsSizeX(vector<int>& deck) {
         int n = deck.size();
         if (n < 2)
