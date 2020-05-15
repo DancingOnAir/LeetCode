@@ -1,12 +1,33 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
-#include <map>
+#include <set>
 using namespace std;
 
 class Solution {
 public:
     int partitionDisjoint(vector<int>& A) {
+        int n = A.size();
+        vector<pair<int, int>> vii(n);
+        for (int i = 0; i < n; ++i) {
+            vii[i] = make_pair(A[i], i);
+        }
+
+        stable_sort(vii.begin(), vii.end(), [](pair<int, int> lhs, pair<int, int> rhs) { return lhs.first < rhs.first; });
+        set<int> original, now;
+
+        for (int i = 0; i < n; ++i) {
+            original.emplace(vii[i].second);
+            now.emplace(i);
+
+            if (original == now)
+                return i + 1;
+        }
+
+        return 0;
+    }
+
+    int partitionDisjoint1(vector<int>& A) {
         int n = A.size();
 
         vector<int> left(n);
@@ -32,7 +53,7 @@ public:
         return 0;
     }
 
-    int partitionDisjoint1(vector<int>& A) {
+    int partitionDisjoint2(vector<int>& A) {
         int n = A.size();
         if (n < 2)
             return -1;
