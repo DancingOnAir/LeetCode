@@ -5,8 +5,23 @@ using namespace std;
 
 class Solution {
 public:
-    // presum solution, but TLE
     int maxSubarraySumCircular(vector<int>& A) {
+        int sum = 0, maxSum = A[0], curMax = 0, minSum = A[0], curMin = 0;
+        for (int i : A) {
+            curMax = i + max(curMax, 0);
+            maxSum = max(maxSum, curMax);
+
+            curMin = i + min(curMin, 0);
+            minSum = min(minSum, curMin);
+
+            sum += i;
+        }
+
+        return maxSum > 0 ? max(maxSum, sum - minSum) : maxSum;
+    }
+
+    // presum solution, but TLE
+    int maxSubarraySumCircular1(vector<int>& A) {
         int n = A.size();
         if (n == 0)
             return 0;
