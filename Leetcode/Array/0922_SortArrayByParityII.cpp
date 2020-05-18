@@ -6,24 +6,23 @@ using namespace std;
 class Solution {
 public:
     vector<int> sortArrayByParityII(vector<int>& A) {
-        if (A.empty())
-            return vector<int>();
-        
-        int n = A.size();
-        int even = 0, odd = 1;
-        while (even < n && odd < n) {
-            while (even < n && !(A[even] & 1)) {
-                even += 2;
+        const unsigned n = A.size();
+        unsigned odd = 1u;
+        unsigned even = 0u;
+
+        while (even < n) {
+            while (even < n && (A[even] & 1u) == 0u)
+                even += 2u;
+
+            while (odd < n && (A[odd] & 1u)) {
+                odd += 2u;
             }
 
-            while (odd < n && A[odd] & 1) {
-                odd += 2;
-            }
+            if (even < n) 
+                swap(A[even], A[odd]);
 
-            if (even >= n || odd >= n)
-                break;
-
-            swap(A[even], A[odd]);
+            even += 2u;
+            odd += 2u;
         }
 
         return A;
