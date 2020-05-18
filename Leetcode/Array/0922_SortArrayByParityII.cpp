@@ -6,6 +6,19 @@ using namespace std;
 class Solution {
 public:
     vector<int> sortArrayByParityII(vector<int>& A) {
+        for (int i = 0, j = 1; i < A.size(); i += 2, j += 2) {
+            while (i < A.size() && (A[i] & 1) == 0)
+                i += 2;
+            while (j < A.size() && (A[j] & 1))
+                j += 2;
+            
+            if (i < A.size())
+                swap(A[i], A[j]);
+        }
+        return A;
+    }
+
+    vector<int> sortArrayByParityII1(vector<int>& A) {
         const unsigned n = A.size();
         unsigned odd = 1u;
         unsigned even = 0u;
