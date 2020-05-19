@@ -8,6 +8,21 @@ class Solution {
 public:
     int minFlipsMonoIncr(string S) {
         int n = S.size();
+        vector<int> presum(n + 1);
+        for (int i = 0; i < n; ++i) {
+            presum[i + 1] = presum[i] + (S[i] - '0');
+        }
+
+        int res = INT_MAX;
+        for (int i = 0; i <= n; ++i) {
+            res = min(res, presum[i] + n - i - (presum[n] - presum[i]));
+        }
+
+        return res;
+    }
+
+    int minFlipsMonoIncr1(string S) {
+        int n = S.size();
         if (n < 2)
             return 0;
         
