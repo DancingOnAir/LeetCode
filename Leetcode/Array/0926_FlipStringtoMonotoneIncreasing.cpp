@@ -8,6 +8,28 @@ class Solution {
 public:
     int minFlipsMonoIncr(string S) {
         int n = S.size();
+        if (n < 2)
+            return 0;
+
+        int res = 0;
+        int numOfOnes = 0;
+
+        for (int i = 0; i < n; ++i) {
+            if (numOfOnes != 0 && S[i] == '0')
+                ++res;
+            
+            if (S[i] == '1')
+                ++numOfOnes;
+
+            if (res > numOfOnes)
+                res = numOfOnes;
+        }
+
+        return res;
+    }
+
+    int minFlipsMonoIncr1(string S) {
+        int n = S.size();
         vector<int> presum(n + 1);
         for (int i = 0; i < n; ++i) {
             presum[i + 1] = presum[i] + (S[i] - '0');
@@ -21,7 +43,7 @@ public:
         return res;
     }
 
-    int minFlipsMonoIncr1(string S) {
+    int minFlipsMonoIncr2(string S) {
         int n = S.size();
         if (n < 2)
             return 0;
