@@ -1,11 +1,52 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <map>
 using namespace std;
 
 class Solution {
 public:
+    int minIncrementForUnique2(vector<int>& A) {
+        int n = A.size();
+        if (n < 2)
+            return 0;
+
+        unordered_map<int, int> m;
+        int res = 0;
+        for (int a : A) {
+            int temp = 0;
+            while (m.count(a + temp)) {
+                ++temp;
+            }
+
+            for (int i = a; i <= a + temp; ++i)
+                m[i] = a + temp;
+
+            res += m[a] - a;
+        }
+
+        return res;
+    }
+
     int minIncrementForUnique(vector<int>& A) {
+        int n = A.size();
+        if (n < 2)
+            return 0;
+
+        map<int, int> m;
+        for (int a : A)
+            ++m[a];
+        
+        int res = 0, need = 0;
+        for (auto& x : m) {
+            res += x.second * max(need - x.first, 0) + x.second * (x.second - 1) / 2;
+            need = max(need, x.first) + x.second;
+        }
+
+        return res;
+    }
+
+    int minIncrementForUnique1(vector<int>& A) {
         int n = A.size();
         if (n < 2)
             return 0;
