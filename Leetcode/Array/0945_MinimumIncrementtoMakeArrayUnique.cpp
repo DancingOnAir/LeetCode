@@ -9,18 +9,16 @@ public:
         int n = A.size();
         if (n < 2)
             return 0;
-        
-        unordered_map<int, int> m;
-        int res = 0;
-        for (int i = 0; i < n; ++i) {
-            int val = 0;
-            while (m.count(A[i])) {
-                ++val;
-                ++A[i];
-            }
 
-            m[A[i]] = 1;
-            res += val;
+        sort(A.begin(), A.end());
+        int res = 0;
+
+        for (int i = 1; i < n; ++i) {
+            if (A[i] <= A[i - 1]) {
+                int pre = A[i];
+                A[i] = A[i - 1] + 1;
+                res += A[i] - pre;
+            }
         }
 
         return res;
