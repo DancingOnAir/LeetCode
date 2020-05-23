@@ -6,7 +6,33 @@ using namespace std;
 
 class Solution {
 public:
-    int minIncrementForUnique2(vector<int>& A) {
+    int minIncrementForUnique(vector<int>& A) {
+        int n = A.size();
+        if (n < 2)
+            return 0;
+
+        vector<int> count(80000);
+        for (int a : A)
+            ++count[a];
+
+        int res = 0;
+        int need = 0;
+
+        for (int i = 0; i < 80000; ++i) {
+            if (count[i] > 1) {
+                need += count[i] - 1;
+                res -= i * (count[i] - 1);
+            }
+            else if (count[i] == 0 && need > 0) {
+                --need;
+                res += i;
+            }
+        }
+
+        return res;
+    }
+
+    int minIncrementForUnique3(vector<int>& A) {
         int n = A.size();
         if (n < 2)
             return 0;
@@ -28,7 +54,7 @@ public:
         return res;
     }
 
-    int minIncrementForUnique(vector<int>& A) {
+    int minIncrementForUnique2(vector<int>& A) {
         int n = A.size();
         if (n < 2)
             return 0;
