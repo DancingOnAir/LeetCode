@@ -6,6 +6,21 @@ using namespace std;
 class Solution {
 public:
     vector<int> deckRevealedIncreasing(vector<int>& deck) {
+        sort(deck.rbegin(), deck.rend());
+        deque<int> d;
+        d.emplace_back(deck[0]);
+        
+        for (int i = 1; i < deck.size(); ++i) {
+            d.emplace_front(d.back());
+            d.pop_back();
+            d.emplace_front(deck[i]);
+        }
+
+        vector<int> res(d.begin(), d.end());
+        return res;
+    }
+
+    vector<int> deckRevealedIncreasing1(vector<int>& deck) {
         int n = deck.size();
         if (n < 2)
             return deck;
