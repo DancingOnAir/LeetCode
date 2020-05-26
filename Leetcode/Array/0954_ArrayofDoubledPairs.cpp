@@ -8,43 +8,23 @@ class Solution {
 public:
 
     bool canReorderDoubled(vector<int>& A) {
-        int n = A.size();
-        unordered_map<int, int> m;
-        
+        map<int, int> m;
         for (int a : A) {
-            m[a]++;
+            m[abs(a)]++;
         }
 
-        sort(A.begin(), A.end());
-        int delimiter = 0;
-        while (delimiter < n && A[delimiter] < 0) {
-            ++delimiter;
-        }
-
-        int count = 0;
-        for (int i = delimiter - 1; i >= 0 && count < delimiter / 2; --i) {
-            if (m.count(A[i]) && m.count(A[i] * 2)) {
-                if (--m[A[i]] < 0 || --m[A[i] * 2] < 0)
+        auto iter = m.begin();
+        while (iter != m.end()) {
+            if (iter->second > 0) {
+                if (!m.count(iter->first * 2) || m[iter->first * 2] <= 0)
                     return false;
+
+                --iter->second;
+                --m[iter->first * 2];
             }
             else {
-                return false;
+                ++iter;
             }
-
-            ++count;
-        }
-
-        count = 0;
-        for (int i = delimiter; i < n && count < (n - delimiter) / 2; ++i) {
-            if (m.count(A[i]) && m.count(A[i] * 2)) {
-                if (--m[A[i]] < 0 || --m[A[i] * 2] < 0)
-                    return false;
-            }
-            else {
-                return false;
-            }
-
-            ++count;
         }
 
         return true;
@@ -54,17 +34,20 @@ public:
 void testCanReorderDoubled() {
     Solution solution;
 
-    vector<int> A1 {3, 1, 3, 6};
-    cout << (solution.canReorderDoubled(A1)? "True" : "False") << endl;
+    // vector<int> A1 {3, 1, 3, 6};
+    // cout << (solution.canReorderDoubled(A1)? "True" : "False") << endl;
 
-    vector<int> A2 {2, 1, 2, 6};
-    cout << (solution.canReorderDoubled(A2)? "True" : "False") << endl;
+    // vector<int> A2 {2, 1, 2, 6};
+    // cout << (solution.canReorderDoubled(A2)? "True" : "False") << endl;
 
-    vector<int> A3 {4, -2, 2, -4};
-    cout << (solution.canReorderDoubled(A3)? "True" : "False") << endl;
+    // vector<int> A3 {4, -2, 2, -4};
+    // cout << (solution.canReorderDoubled(A3)? "True" : "False") << endl;
 
-    vector<int> A4 {1, 2, 4, 16, 8, 4};
-    cout << (solution.canReorderDoubled(A4)? "True" : "False") << endl;
+    // vector<int> A4 {1, 2, 4, 16, 8, 4};
+    // cout << (solution.canReorderDoubled(A4)? "True" : "False") << endl;
+
+    vector<int> A5 {1, 2, 4, 8};
+    cout << (solution.canReorderDoubled(A5)? "True" : "False") << endl;
 }
 
 int main() {
