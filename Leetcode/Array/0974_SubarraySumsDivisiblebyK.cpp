@@ -6,20 +6,13 @@ using namespace std;
 class Solution {
 public:
     int subarraysDivByK(vector<int>& A, int K) {
-        int n = A.size();
-        vector<int> presum(1);
+        int res = 0, presum = 0;
+        vector<int> remainder(K);
+        remainder[0] = 1;
 
         for (int a : A) {
-            presum.emplace_back(presum.back() + a);
-        }
-        
-        int res = 0;
-        for (int i = 0; i < n; ++i) {
-            for (int j = i + 1; j < n + 1; ++j) {
-                if ((presum[j] - presum[i]) % K == 0) {
-                    ++res;
-                }
-            }
+            presum = (presum + a % K + K) % K;
+            res += remainder[presum]++;
         }
 
         return res;
