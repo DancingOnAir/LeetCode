@@ -6,10 +6,33 @@ using namespace std;
 class Solution {
 public:
     vector<int> sortedSquares(vector<int>& A) {
+        
+        int n = A.size();
+        int left = 0, right = n - 1, idx = n - 1;
+        vector<int> res(n);
+
+        while (left <= right) {
+            int leftSquare = A[left] * A[left];
+            int rightSquare = A[right] * A[right];
+
+            if (leftSquare > rightSquare) {
+                res[idx--] = leftSquare;
+                ++left;
+            }
+            else {
+                res[idx--] = rightSquare;
+                right--;
+            }
+        }
+
+        return res;
+    }
+
+    vector<int> sortedSquares1(vector<int>& A) {
         if (A[0] < 0) {
             sort(A.begin(), A.end(), [](int a, int b) { return abs(a) < abs(b); });
         }
-        
+
         vector<int> res;
         for (int a : A) {
             res.emplace_back(a * a);
