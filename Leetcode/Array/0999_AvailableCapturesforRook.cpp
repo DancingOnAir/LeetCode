@@ -7,7 +7,6 @@ class Solution {
 public:
     int numRookCaptures(vector<vector<char>>& board) {
         int rowOfR = 0, colOfR = 0;
-
         for (int i = 0; i < 8; ++i) {
             for (int j = 0; j < 8; ++j) {
                 if (board[i][j] == 'R') {
@@ -19,47 +18,13 @@ public:
         }
 
         int res = 0;
-        int idx = rowOfR;
-        while (--idx >= 0) {
-            if (board[idx][colOfR] == 'p') {
-                ++res;
-                break;
-            }
-            else if (board[idx][colOfR] == 'B') {
-                break;
-            }
-        }
-
-        idx = rowOfR;
-        while (++idx < 8) {
-            if (board[idx][colOfR] == 'p') {
-                ++res;
-                break;
-            }
-            else if (board[idx][colOfR] == 'B') {
-                break;
-            }
-        }
-
-        idx = colOfR;
-        while (--idx >= 0) {
-            if (board[rowOfR][idx] == 'p') {
-                ++res;
-                break;
-            }
-            else if (board[rowOfR][idx] == 'B') {
-                break;
-            }
-        }
-
-        idx = colOfR;
-        while (++idx < 8) {
-            if (board[rowOfR][idx] == 'p') {
-                ++res;
-                break;
-            }
-            else if (board[rowOfR][idx] == 'B') {
-                break;
+        vector<vector<int>> directors {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        for (auto& d : directors) {
+            for (int x = rowOfR + d[0], y = colOfR + d[1]; 0 <= x && x < 8 && 0 <= y && y < 8; x += d[0], y += d[1]) {
+                if (board[x][y] == 'p') 
+                    ++res;
+                if (board[x][y] != '.')
+                    break;
             }
         }
 
