@@ -6,7 +6,35 @@ using namespace std;
 
 class Solution {
 public:
+    int helper(int x, vector<int>& A, vector<int>& B, int n) {
+        int rotationA = 0;
+        int rotationB = 0;
+        for (int i = 0; i < n; ++i) {
+            if (x != A[i] && x != B[i]) {
+                return -1;
+            }
+            else if (x != A[i]) {
+                ++rotationA;
+            }
+            else if (x != B[i]) {
+                ++rotationB;
+            }
+        }
+
+        return min(rotationA, rotationB);
+    }
+
     int minDominoRotations(vector<int>& A, vector<int>& B) {
+        int n = A.size();
+        int res = helper(A[0], A, B, n);
+        if (res != -1 || A[0] == B[0]) {
+            return res;
+        }
+
+        return helper(B[0], B, A, n);
+    }
+
+    int minDominoRotations1(vector<int>& A, vector<int>& B) {
         int n = A.size();
         unordered_map<int, int> m;
         for (int i = 0; i < n; ++i) {
