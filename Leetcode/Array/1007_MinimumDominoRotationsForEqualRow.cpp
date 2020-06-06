@@ -6,6 +6,27 @@ using namespace std;
 
 class Solution {
 public:
+    int minDominoRotations(vector<int>& A, vector<int>& B) {
+        int n = A.size();
+        vector<int> countA(7), countB(7), same(7);
+        for (int i = 0; i < n; ++i) {
+            countA[A[i]]++;
+            countB[B[i]]++;
+
+            if (A[i] == B[i]) {
+                same[A[i]]++;
+            }
+        }
+
+        for (int i = 1; i < 7; ++i) {
+            if (countA[i] + countB[i] - same[i] == n) {
+                return n - max(countA[i], countB[i]);
+            }
+        }
+
+        return -1;
+    }
+
     int helper(int x, vector<int>& A, vector<int>& B, int n) {
         int rotationA = 0;
         int rotationB = 0;
@@ -24,7 +45,7 @@ public:
         return min(rotationA, rotationB);
     }
 
-    int minDominoRotations(vector<int>& A, vector<int>& B) {
+    int minDominoRotations1(vector<int>& A, vector<int>& B) {
         int n = A.size();
         int res = helper(A[0], A, B, n);
         if (res != -1 || A[0] == B[0]) {
@@ -34,7 +55,7 @@ public:
         return helper(B[0], B, A, n);
     }
 
-    int minDominoRotations1(vector<int>& A, vector<int>& B) {
+    int minDominoRotations2(vector<int>& A, vector<int>& B) {
         int n = A.size();
         unordered_map<int, int> m;
         for (int i = 0; i < n; ++i) {
