@@ -6,6 +6,18 @@ using namespace std;
 class Solution {
 public:
     int numPairsDivisibleBy60(vector<int>& time) {
+        int res = 0;
+        vector<int> count(60);
+        for (const auto& x : time) {
+            int temp = x % 60;
+            res += temp ? count[60 -temp] : count[temp];
+            ++count[temp];
+        }
+
+        return res;
+    }
+
+    int numPairsDivisibleBy601(vector<int>& time) {
         int n = time.size();
         if (n < 2)
             return 0;
