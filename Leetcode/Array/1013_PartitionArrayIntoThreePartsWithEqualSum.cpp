@@ -1,29 +1,22 @@
 #include <iostream>
 #include <vector>
-
+#include <numeric>
 using namespace std;
 
 class Solution {
 public:
     bool canThreePartsEqualSum(vector<int>& A) {
-        int n = A.size();
-        int sum = 0;
-        for (int a : A) {
-            sum += a;
-        }
-
-        if (sum % 3) {
+        int total = accumulate(A.begin(), A.end(), 0);
+        if (total % 3) {
             return false;
         }
 
-        int val = 0;
+        int sum = 0;
         int times = 0;
-        for (int i = 0; i < n; ++i) {
-            val += A[i];
-            if (val == sum / 3) {
+        for (auto i = 0; i < A.size(); ++i) {
+            sum += A[i];
+            if (sum == (times + 1) * total / 3)
                 ++times;
-                val = 0;
-            }
         }
 
         return times >= 3;
