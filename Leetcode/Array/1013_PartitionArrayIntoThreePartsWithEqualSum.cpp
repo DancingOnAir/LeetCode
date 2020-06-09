@@ -7,6 +7,30 @@ class Solution {
 public:
     bool canThreePartsEqualSum(vector<int>& A) {
         int n = A.size();
+        int sum = 0;
+        for (int a : A) {
+            sum += a;
+        }
+
+        if (sum % 3) {
+            return false;
+        }
+
+        int val = 0;
+        int times = 0;
+        for (int i = 0; i < n; ++i) {
+            val += A[i];
+            if (val == sum / 3) {
+                ++times;
+                val = 0;
+            }
+        }
+
+        return times >= 3;
+    }
+
+    bool canThreePartsEqualSum1(vector<int>& A) {
+        int n = A.size();
         vector<int> presum {0};
         for (int a : A) {
             presum.emplace_back(presum.back() + a);
