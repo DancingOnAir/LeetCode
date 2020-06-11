@@ -5,8 +5,6 @@ using namespace std;
 
 class Solution {
 public:
-    // dp[i] = max(dp[i - 1], dp[i - 1])
-    // A[i] + A[j] + i - j, A[k]
     int maxScoreSightseeingPair(vector<int>& A) {
         auto n = A.size();
 
