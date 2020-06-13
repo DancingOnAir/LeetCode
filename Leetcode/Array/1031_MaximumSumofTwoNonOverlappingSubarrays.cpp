@@ -6,6 +6,24 @@ using namespace std;
 class Solution {
 public:
     int maxSumTwoNoOverlap(vector<int>& A, int L, int M) {
+
+        for (int i = 1; i < A.size(); ++i) {
+            A[i] += A[i - 1];
+        }
+
+        int maxL = A[L - 1], maxM = A[M - 1], res = A[L + M - 1];
+
+        for (int i = L + M; i < A.size(); ++i) {
+            maxL = max(maxL, A[i - M] - A[i - L - M]);
+            maxM = max(maxM, A[i - L] - A[i - L - M]);
+
+            res = max(res, max(maxL + A[i] - A[i - M], maxM + A[i] - A[i - L]));
+        }
+
+        return res;
+    }
+
+    int maxSumTwoNoOverlap1(vector<int>& A, int L, int M) {
         auto n = A.size();
 
         vector<int> presum{0};
