@@ -11,9 +11,9 @@ public:
             counts[c - 'a']++;
         }
 
-        vector<int> copy(counts);
         int res = 0;
         for (string& w : words) {
+            vector<int> copy(counts);
             bool flag = true;
             for (char c : w) {
                 if (copy[c - 'a']-- < 1) {
@@ -25,8 +25,6 @@ public:
             if (flag) {
                 res += w.size();
             }
-
-            copy = counts;
         }
 
         return res;
