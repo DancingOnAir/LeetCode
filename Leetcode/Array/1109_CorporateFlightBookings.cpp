@@ -3,16 +3,26 @@
 
 using namespace std;
 
+static const auto fast = [] () {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+};
+
 class Solution {
 public:
     vector<int> corpFlightBookings(vector<vector<int>>& bookings, int n) {
-        vector<int> res(n);
+        vector<int> res(n + 1);
         for (auto& booking : bookings) {
-            for (int i = booking[0] - 1; i < booking[1]; ++i) {
-                res[i] += booking[2];
-            }
+            res[booking[0] - 1] += booking[2];
+            res[booking[1]] -= booking[2];
+        }
+        
+        for (int i = 1; i < n; ++i) {
+            res[i] += res[i - 1];
         }
 
+        res.pop_back();
         return res;
     }
 };
