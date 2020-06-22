@@ -6,6 +6,17 @@ using namespace std;
 class Solution {
 public:
     int findSpecialInteger(vector<int>& arr) {
+        for (auto i = 0; i < arr.size() * 0.75; ++i) {
+            if (arr[i] == arr[i + arr.size() / 4]) {
+                return arr[i];
+            }
+        }
+
+        return arr[0];
+    }
+
+    // hash table
+    int findSpecialInteger1(vector<int>& arr) {
         auto n = arr.size();
 
         unordered_map<int, int> counts;
