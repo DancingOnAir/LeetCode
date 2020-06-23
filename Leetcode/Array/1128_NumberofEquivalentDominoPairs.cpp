@@ -1,11 +1,30 @@
 #include <iostream>
 #include <vector>
-
+#include <map>
 using namespace std;
 class Solution {
 public:
-    # brute force 
     int numEquivDominoPairs(vector<vector<int>>& dominoes) {
+        int res = 0;
+        map<vector<int>, int> counts;
+        for (int i = 0; i < dominoes.size(); ++i) {
+            if (dominoes[i][0] > dominoes[i][1]) {
+                swap(dominoes[i][0], dominoes[i][1]);
+            }
+
+            counts[dominoes[i]]++;
+        }
+
+        for (auto& count : counts) {
+            if (count.second > 1)
+                res += (count.second - 1) * count.second / 2;
+        }
+
+        return res;
+    }
+
+    // brute force 
+    int numEquivDominoPairs1(vector<vector<int>>& dominoes) {
         int res = 0;
         for (auto i = 0; i < dominoes.size() - 1; ++i) {
             for (auto j = i + 1; j < dominoes.size(); ++j) {
