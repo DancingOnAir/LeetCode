@@ -19,6 +19,7 @@
         "__tree": "cpp",
         "algorithm": "cpp",
         "ostream": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "__hash_table": "cpp"
     }
 }

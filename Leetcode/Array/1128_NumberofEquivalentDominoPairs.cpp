@@ -1,10 +1,24 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <unordered_map>
 using namespace std;
 class Solution {
 public:
     int numEquivDominoPairs(vector<vector<int>>& dominoes) {
+        int res = 0;
+
+        vector<int> counts(100);
+        for (auto& d: dominoes) {
+            int key = (d[0] < d[1])? d[0] * 10 + d[1] : d[1] * 10 + d[0];
+            res += counts[key];
+            counts[key]++;
+        }
+
+        return res;
+    }
+
+    int numEquivDominoPairs2(vector<vector<int>>& dominoes) {
         int res = 0;
         map<vector<int>, int> counts;
         for (int i = 0; i < dominoes.size(); ++i) {
