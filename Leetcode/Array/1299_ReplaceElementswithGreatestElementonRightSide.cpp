@@ -3,13 +3,20 @@
 
 using namespace std;
 
+static const auto fast = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+
+    return nullptr;
+};
+
 class Solution {
 public:
     vector<int> replaceElements(vector<int>& arr) {
-        auto n = arr.size();
-        vector<int> res(n, -1);
+        vector<int> res(arr.size(), -1);
 
-        for (int i = n - 2; i >= 0; --i) {
+        for (int i = arr.size() - 2; i >= 0; --i) {
             res[i] = max(res[i + 1], arr[i + 1]);
         }
 
