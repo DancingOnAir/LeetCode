@@ -1,22 +1,13 @@
 #include <iostream>
 #include <vector>
-
+#include <algorithm>
 using namespace std;
 
 class Solution {
 public:
-    int getSum(vector<int>& arr, int val) {
-        int sum = 0;
-        for (int a : arr) {
-            if (a < val) {
-                sum += a;
-            }
-            else {
-                sum += val;
-            }
-        }
-
-        return sum;
+    int getSum(vector<int>& arr, vector<int>& presum, int val) {
+        auto iter = lower_bound(arr.begin(), arr.end(), val);
+        return presum[iter - arr.begin()] + val * (arr.end() - iter);
     }
 
     int findBestValue(vector<int>& arr, int target) {
@@ -26,13 +17,18 @@ public:
         }
 
         sort(arr.begin(), arr.end());
+        vector<int> presum {0};
+        for (int a : arr) {
+            presum.emplace_back(presum.back() + a);
+        }
+
         int left = 1, right = arr[n - 1];
         while (left < right) {
             int mid = left + ((right - left) >> 1);
-            getSum(arr, mid) < target ? left = mid + 1 : right = mid;
+            getSum(arr, presum, mid) < target ? left = mid + 1 : right = mid;
         }
 
-        return abs(getSum(arr, left) - target) < abs(getSum(arr, left - 1) - target) ? left : left - 1;
+        return abs(getSum(arr, presum, left) - target) < abs(getSum(arr, presum, left - 1) - target) ? left : left - 1;
     }
 };
 
