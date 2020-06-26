@@ -5,12 +5,36 @@ using namespace std;
 
 class Solution {
 public:
+    int findBestValue(vector<int>& arr, int target) {
+        sort(arr.begin(), arr.end());
+
+        vector<int> presum {0};
+        for (int a : arr) {
+            presum.emplace_back(presum.back() + a);
+        }
+
+        int n = arr.size();
+        int right = arr[n - 1];
+        int res = 0;
+        int diff = target;
+        for (int i = 1; i <= right ; ++i) {
+            auto iter = lower_bound(arr.begin(), arr.end(), i);
+            int cur = presum[iter - arr.begin()] + i * (arr.end() - iter);
+            if (abs(cur - target) < diff) {
+                res = i;
+                diff = abs(cur - target);
+            }
+        }
+
+        return res;
+    }
+
     int getSum(vector<int>& arr, vector<int>& presum, int val) {
         auto iter = lower_bound(arr.begin(), arr.end(), val);
         return presum[iter - arr.begin()] + val * (arr.end() - iter);
     }
 
-    int findBestValue(vector<int>& arr, int target) {
+    int findBestValue1(vector<int>& arr, int target) {
         int n = arr.size();
         if (n < 2) {
             return arr[0] < target ? arr[0] : target;
