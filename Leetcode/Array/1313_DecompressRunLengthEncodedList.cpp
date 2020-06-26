@@ -6,6 +6,15 @@ class Solution {
 public:
     vector<int> decompressRLElist(vector<int>& nums) {
         vector<int> res;
+        for(int i= 0; i < nums.size() - 1; i += 2){
+            int freq = nums[i];
+            for(; freq > 0; --freq) res.emplace_back(nums[i + 1]);
+        }
+        return res;
+    }
+
+    vector<int> decompressRLElist1(vector<int>& nums) {
+        vector<int> res;
         for (int i = 0; i < nums.size(); i += 2) {
             vector<int> temp(nums[i], nums[i + 1]);
             res.insert(res.end(), temp.begin(), temp.end());
