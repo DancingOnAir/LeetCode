@@ -8,6 +8,23 @@ public:
         int n = nums.size();
         if (n < 2)
             return 0;
+
+        int left = 0, right = 0;
+        vector<int> res(2);
+        for (int i = 0; i < n; ++i) {
+            left = i > 0 ? nums[i - 1] : 1001;
+            right = i < n - 1 ? nums[i + 1] : 1001;
+            
+            res[i & 1] += max(0, nums[i] - min(left, right) + 1);
+        }
+
+        return min(res[0], res[1]);
+    }
+
+    int movesToMakeZigzag1(vector<int>& nums) {
+        int n = nums.size();
+        if (n < 2)
+            return 0;
         // for even
         int res1 = 0;
         // for odd
@@ -52,11 +69,11 @@ public:
 void testMovesToMakeZigzag() {
     Solution solution;
 
-    // vector<int> nums1 {1, 2, 3};
-    // cout << solution.movesToMakeZigzag(nums1) << endl;
+    vector<int> nums1 {1, 2, 3};
+    cout << solution.movesToMakeZigzag(nums1) << endl;
 
-    // vector<int> nums2 {9, 6, 1, 6, 2};
-    // cout << solution.movesToMakeZigzag(nums2) << endl;
+    vector<int> nums2 {9, 6, 1, 6, 2};
+    cout << solution.movesToMakeZigzag(nums2) << endl;
 
     vector<int> nums3 {2, 7, 10, 9, 8, 9};
     cout << solution.movesToMakeZigzag(nums3) << endl;
