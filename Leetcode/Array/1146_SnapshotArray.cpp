@@ -1,14 +1,40 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <map>
 using namespace std;
 
 class SnapshotArray {
 private:
     int curSnap;
+    unordered_map<int, map<int, int>> snapshots;
+public:
+    SnapshotArray(int length): curSnap(0) {
+        for (int i = 0; i < length; ++i) {
+            snapshots[i][curSnap] = 0;
+        }
+    }
+    
+    void set(int index, int val) {
+        snapshots[index][curSnap] = val;
+    }
+    
+    int snap() {
+        return curSnap++;
+    }
+    
+    int get(int index, int snap_id) {
+        auto iter = snapshots[index].upper_bound(snap_id);
+        return prev(iter)->second;
+    }
+};
+
+class SnapshotArray1 {
+private:
+    int curSnap;
     vector<vector<pair<int, int>>> snapshots;
 public:
-    SnapshotArray(int length): curSnap(0), snapshots(vector<vector<pair<int, int>>>(length, vector<pair<int, int>>(1, {0,0}))) {
+    SnapshotArray1(int length): curSnap(0), snapshots(vector<vector<pair<int, int>>>(length, vector<pair<int, int>>(1, {0,0}))) {
 
     }
     
