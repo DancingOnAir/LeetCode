@@ -7,9 +7,38 @@ using namespace std;
 class SnapshotArray {
 private:
     int curSnap;
+    unordered_map<int, unordered_map<int, int>> snapshots;
+public:
+    SnapshotArray(int length): curSnap(0), snapshots({}) {
+
+    }
+    
+    void set(int index, int val) {
+        snapshots[index][curSnap] = val;
+    }
+    
+    int snap() {
+        return curSnap++;
+    }
+    
+    int get(int index, int snap_id) {
+        while (snap_id >= -1) {
+            if (snapshots[index].count(snap_id))
+                return snapshots[index][snap_id];
+
+            --snap_id;
+        }
+
+        return 0;
+    }
+};
+
+class SnapshotArray2 {
+private:
+    int curSnap;
     unordered_map<int, map<int, int>> snapshots;
 public:
-    SnapshotArray(int length): curSnap(0) {
+    SnapshotArray2(int length): curSnap(0) {
         for (int i = 0; i < length; ++i) {
             snapshots[i][curSnap] = 0;
         }
