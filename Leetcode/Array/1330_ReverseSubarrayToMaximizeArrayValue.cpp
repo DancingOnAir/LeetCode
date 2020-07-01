@@ -20,13 +20,27 @@ public:
         if (n < 3)
             return res;
 
-        int diff = 0;
-        // for (int i = 0; i < n - 1; ++i) {
-        //     for (int j = i + 1; j < n; ++j) {
-        //         diff = max(diff, )
-        //     }
-        // }
-        return res;
+        int maxDiff = 0, curDiff = 0;
+        for (int i = 0; i < n - 1; ++i) {
+            for (int j = i + 1; j < n; ++j) {
+                if (0 == i && n - 1 == j) {
+                    continue;
+                }
+                else if (0 == i) {
+                    curDiff = abs(nums[j + 1] - nums[i]) - values[j];
+                }
+                else if (n - 1 == j) {
+                    curDiff = abs(nums[j] - nums[i - 1]) - values[i - 1];
+                }
+                else {
+                    curDiff = abs(nums[j] - nums[i - 1]) + abs(nums[j + 1] - nums[i]) - values[i - 1] - values[j];
+                }
+
+                maxDiff = max(maxDiff, curDiff);
+            }
+        }
+
+        return res + maxDiff;
     }
 };
 
