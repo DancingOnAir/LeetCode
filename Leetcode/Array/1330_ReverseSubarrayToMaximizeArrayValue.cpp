@@ -7,6 +7,24 @@ class Solution {
 public:
     int maxValueAfterReverse(vector<int>& nums) {
         int n = nums.size();
+        int res = 0, minInterval = INT_MAX, maxInterval = INT_MIN, total = 0;
+
+        for (int i = 0; i < n - 1; ++i) {
+            int l = nums[i], r = nums[i + 1];
+            total += abs(l - r);
+            
+            res = max(res, abs(nums[0] - r) - abs(l - r));
+            res = max(res, abs(nums[n - 1] - l) - abs(l - r));
+
+            minInterval = min(minInterval, max(l, r));
+            maxInterval = max(maxInterval, min(l, r));
+        }
+
+        return total + max(res, (maxInterval - minInterval) * 2);
+    }
+
+    int maxValueAfterReverse1(vector<int>& nums) {
+        int n = nums.size();
         if (n < 2)
             return 0;
 
