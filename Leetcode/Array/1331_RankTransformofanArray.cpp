@@ -6,6 +6,31 @@ using namespace std;
 class Solution {
 public:
     vector<int> arrayRankTransform(vector<int>& arr) {
+        if (arr.empty())
+            return vector<int>();
+            
+        int maxVal = *max_element(arr.begin(), arr.end());
+        int minVal = *min_element(arr.begin(), arr.end());
+
+        vector<int> count(maxVal - minVal + 1);
+        for (int a : arr) {
+            count[a - minVal] = 1;
+        }
+
+        vector<int> presum(count.size() + 1);
+        for (int i = 1; i < presum.size(); ++i) {
+            presum[i] = presum[i - 1] + count[i - 1];
+        }
+
+        vector<int> res(arr.size());
+        for (int i = 0; i < res.size(); ++i) {
+            res[i] = presum[arr[i] - minVal + 1];
+        }
+
+        return res;
+    }
+
+    vector<int> arrayRankTransform1(vector<int>& arr) {
         vector<int> res(arr);
         sort(res.begin(), res.end());
 
