@@ -3,12 +3,46 @@
 #include <string>
 #include <sstream>
 #include <unordered_map>
+#include <unordered_set>
 #include <map>
 using namespace std;
 
 class Solution {
 public:
     vector<string> invalidTransactions(vector<string>& transactions) {
+        if (transactions.empty())
+            return vector<string>();
+
+        unordered_map<string, vector<vector<string>>> m;
+        unordered_set<string> res;
+        for (auto& trans : transactions) {
+            istringstream iss(trans);
+            
+            vector<string> s(4);
+            int i = 0;
+            while (getline(iss, s[i++], ','))
+                ;
+            
+            if (stoi(s[2]) > 1000) {
+                res.emplace(trans);
+            }
+
+            for (auto& j : m[s[0]]) {
+                if ((j[3] != s[3]) && abs(stoi(j[1]) - stoi(s[1])) <= 60) {
+                    res.emplace(j[0] + "," + j[1] + "," + j[2] + "," + j[3]);
+                    if (!res.count(trans)) {
+                        res.emplace(trans);
+                    }
+                }
+            }
+
+            m[s[0]].push_back({s[0], s[1], s[2], s[3]});
+        }
+
+        return vector<string>(res.begin(), res.end());
+    }
+
+    vector<string> invalidTransactions1(vector<string>& transactions) {
         if (transactions.empty())
             return vector<string>();
 
@@ -43,7 +77,6 @@ public:
                             res.emplace_back(transactions[iter->second.second]);
                             invalid[iter->second.second] = true;
                         }
-
 
                         if (!invalid[i]) {
                             res.emplace_back(transactions[i]);
