@@ -5,16 +5,41 @@ using namespace std;
 class Solution {
 public:
     int calculateFrequency(string& word) {
-        if (word.size() < 2)
-            return word.size();
+        char min = 'z';
+        int res = 0;
 
-        sort(word.begin(), word.end());
+        for (char c : word) {
+            if (c < min) {
+                min = c;
+                res = 1;
+            }
+            else if (c == min) {
+                ++res;
+            }
+        }
 
-        auto iter = upper_bound(word.begin(), word.end(), word[0]);
-        return iter - word.begin();
+        return res;
     }
 
     vector<int> numSmallerByFrequency(vector<string>& queries, vector<string>& words) {
+        vector<int> counts(12);
+        for (auto& w : words) {
+            counts[calculateFrequency(w)]++;
+        }
+
+        for (int i = counts.size() - 2; i != 0; --i) {
+            counts[i] += counts[i + 1];
+        }
+
+        vector<int> res;
+        for (auto& q : queries) {
+            res.emplace_back(counts[calculateFrequency(q) + 1]);
+        }
+
+        return res;
+    }
+
+    vector<int> numSmallerByFrequency1(vector<string>& queries, vector<string>& words) {
         vector<int> freqs;
         for (auto& word : words) {
             freqs.emplace_back(calculateFrequency(word));
