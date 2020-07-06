@@ -18,7 +18,8 @@ public:
 
         vector<bool> res;
         for (auto& q : queries) {
-            int odds = __builtin_popcount(ps[q[1] + 1] ^ ps[q[0]]);
+            // int odds = __builtin_popcount(ps[q[1] + 1] ^ ps[q[0]]);
+            int odds = bitset<26>(ps[q[1] + 1] ^ ps[q[0]]).count();
             res.emplace_back(q[2] >= odds / 2);
         }
 
