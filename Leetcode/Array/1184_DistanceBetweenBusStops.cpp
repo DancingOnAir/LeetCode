@@ -10,6 +10,26 @@ public:
         if (start == destination)
             return 0;
         
+        if (start > destination)
+            swap(start, destination);
+        
+        int clockwiseSum = 0, countclockwiseSum = 0;
+        for (int i  = 0; i < distance.size(); ++i) {
+            if (i < start || i >= destination) {
+                countclockwiseSum += distance[i];
+            }
+            else {
+                clockwiseSum += distance[i];
+            }
+        }
+
+        return min(clockwiseSum, countclockwiseSum);
+    }
+
+    int distanceBetweenBusStops1(vector<int>& distance, int start, int destination) {
+        if (start == destination)
+            return 0;
+        
         int sum = accumulate(distance.begin(), distance.end(), 0);
         int clockwise = 0;
         for (int i = min(start, destination); i < max(start, destination); ++i) {
