@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Solution {
+public:
+    int distanceBetweenBusStops(vector<int>& distance, int start, int destination) {
+        if (start == destination)
+            return 0;
+
+        vector<int> clockwisePresum{0};
+        for (int i = 0; i < distance.size(); ++i) {
+            clockwisePresum.emplace_back(clockwisePresum.back() + distance[i]);
+        }
+
+        int clockwiseDis = abs(clockwisePresum[destination] - clockwisePresum[start]);
+        return min(clockwiseDis, clockwisePresum.back() - clockwiseDis);
+    }
+};
+
+void testDistanceBetweenBusStops() {
+    Solution solution;
+
+    vector<int> distance1 = {1, 2, 3, 4};
+    int start1 = 0, destination1 = 1;
+    cout << solution.distanceBetweenBusStops(distance1, start1, destination1) << endl;
+
+    vector<int> distance2 = {1, 2, 3, 4};
+    int start2 = 0, destination2 = 2;
+    cout << solution.distanceBetweenBusStops(distance2, start2, destination2) << endl;
+
+    vector<int> distance3 = {1, 2, 3, 4};
+    int start3 = 0, destination3 = 3;
+    cout << solution.distanceBetweenBusStops(distance3, start3, destination3) << endl;
+}
+
+int main() {
+    testDistanceBetweenBusStops();
+
+    return 0;
+}
