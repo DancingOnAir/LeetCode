@@ -5,12 +5,25 @@ using namespace std;
 
 class Solution {
 public:
+    // Kim larsen calculation formula
+    string dayOfTheWeek(int day, int month, int year) {
+        vector<string> dayOfWeek {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+        
+        if (month < 3) {
+            month += 12;
+            year--;
+        }
+        
+        int w = (day + month * 2 + (month + 1) * 3 / 5 + year + year / 4 - year / 100 + year / 400) % 7;
+        return dayOfWeek[w];
+    }
+
     int getNumOfLeapYear(int year) {
         return (year - 1968) / 4;
     }
 
     // calculate by the starting day 1970-1-1 which was Thursday
-    string dayOfTheWeek(int day, int month, int year) {
+    string dayOfTheWeek1(int day, int month, int year) {
         vector<string> dayOfWeek {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
         vector<int> dayOfMonth {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         vector<int> presum{0};
