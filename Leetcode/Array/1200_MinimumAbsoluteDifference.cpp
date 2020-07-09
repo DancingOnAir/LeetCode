@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 class Solution {
@@ -7,20 +8,16 @@ public:
     vector<vector<int>> minimumAbsDifference(vector<int>& arr) {
         sort(arr.begin(), arr.end());
         
+        unordered_map<int, vector<vector<int>>> m;
         int diff = INT_MAX;
         for (int i = 0; i < arr.size() - 1; ++i) {
-            if (diff > arr[i + 1] - arr[i])
+            if (diff >= arr[i + 1] - arr[i]) {
                 diff = arr[i + 1] - arr[i];
+                m[diff].push_back(vector<int>{arr[i], arr[i + 1]});
+            }         
         }
 
-        vector<vector<int>> res;
-        for (int i = 0; i < arr.size() - 1; ++i) {
-            if (arr[i + 1] - arr[i] == diff) {
-                res.emplace_back(vector<int>{arr[i], arr[i + 1]});
-            }
-        }
-
-        return res;
+        return m[diff];
     }
 };
 
