@@ -4,6 +4,7 @@
 using namespace std;
 
 class Solution {
+
 public:
     vector<vector<int>> minimumAbsDifference(vector<int>& arr) {
         sort(arr.begin(), arr.end());
