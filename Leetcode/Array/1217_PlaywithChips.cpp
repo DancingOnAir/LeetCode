@@ -7,6 +7,16 @@ using namespace std;
 class Solution {
 public:
     int minCostToMoveChips(vector<int>& chips) {
+        int odd = 0;
+        for (int chip : chips) {
+            if (chip & 1)
+                ++odd;
+        }
+
+        return min(odd, (int)chips.size() - odd);
+    }
+
+    int minCostToMoveChips1(vector<int>& chips) {
         map<int, int> m;
 
         for (int chip : chips) {
