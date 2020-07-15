@@ -6,7 +6,25 @@ using namespace std;
 class Solution {
 public:
     int oddCells(int n, int m, vector<vector<int>>& indices) {
+        vector<bool> rows(n, false), cols(m, false);
+        for (auto& i : indices) {
+            rows[i[0]] = !rows[i[0]];
+            cols[i[1]] = !cols[i[1]];
+        }
 
+        int res = 0;
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) {
+                if (rows[i] ^ cols[j]) {
+                    ++res;
+                }
+            }
+        }
+
+        return res;
+    }
+
+    int oddCells1(int n, int m, vector<vector<int>>& indices) {
         vector<int> countRow(n), countCol(m);
         for (auto& i : indices) {
             ++countRow[i[0]];
