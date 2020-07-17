@@ -10,6 +10,33 @@ public:
         int m = grid.size();
         int n = grid[0].size();
 
+        vector<int> rows(m);
+        vector<int> cols(n);
+
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (grid[i][j]) {
+                    ++rows[i];
+                    ++cols[j];
+                }
+            }
+        }
+
+        int res = 0;
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (grid[i][j] && (rows[i] > 1 || cols[j] > 1)) {
+                    ++res;
+                }
+            }
+        }
+        return res;
+    }
+
+    int countServers1(vector<vector<int>>& grid) {
+        int m = grid.size();
+        int n = grid[0].size();
+
         unordered_map<int, vector<int>> counts;
         int res = 0;
         for (int i = 0; i < m; ++i) {
