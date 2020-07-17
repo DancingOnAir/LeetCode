@@ -21,6 +21,7 @@
         "ostream": "cpp",
         "ios": "cpp",
         "__hash_table": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "numeric": "cpp"
     }
 }
