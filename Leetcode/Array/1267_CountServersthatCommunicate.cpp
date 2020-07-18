@@ -4,9 +4,80 @@
 #include <unordered_map>
 using namespace std;
 
+class DisjointSet {
+private:
+    vector<int> parents;
+public:
+    DisjointSet(int n) {
+        for (int i = 0; i < n; ++i) {
+            parents.emplace_back(i);
+        }
+    }
+
+    int find(int x) {
+        if (parents[x] != x) {
+            return parents[x] = find(parents[x]);
+        }
+
+        return x;
+    }
+
+    void merge(int x, int y) {
+        parents[find(y)] = find(x);
+    }
+};
+
 class Solution {
 public:
     int countServers(vector<vector<int>>& grid) {
+        int m = grid.size();
+        int n = grid[0].size();
+
+        DisjointSet ds(m * n);
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            while (j < n && grid[i][j] == 0) {
+                ++j;
+            }
+
+            for (int k = j + 1; k < n; ++k) {
+                if (grid[i][k]) {
+                    ds.merge(i * n + j, i * n + k);
+                }
+            }
+        }
+
+        for (int j = 0; j < n; ++j) {
+            int i = 0;
+            while (i < m && grid[i][j] == 0) {
+                ++i;
+            }
+
+            for (int k = i + 1; k < m; ++k) {
+                if (grid[k][j]) {
+                    ds.merge(i * n + j, k * n + j);
+                }
+            }
+        }
+
+        unordered_map<int, int> count;
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (grid[i][j] && ds.find(i * n + j) != i * n + j) {
+                    count[ds.find(i * n + j)]++;
+                }
+            }
+        }
+
+        int res = 0;
+        for (auto& iter : count) {
+            res += iter.second + 1;
+        }
+
+        return res;
+    }
+
+    int countServers1(vector<vector<int>>& grid) {
         int m = grid.size();
         int n = grid[0].size();
 
@@ -33,7 +104,7 @@ public:
         return res;
     }
 
-    int countServers1(vector<vector<int>>& grid) {
+    int countServers2(vector<vector<int>>& grid) {
         int m = grid.size();
         int n = grid[0].size();
 
