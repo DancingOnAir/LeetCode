@@ -6,6 +6,31 @@ using namespace std;
 class Solution {
 public:
     string tictactoe(vector<vector<int>>& moves) {
+        vector<int> A(8), B(8);
+        
+        for (int i = 0; i < moves.size(); ++i) {
+            int r = moves[i][0], c = moves[i][1];
+            vector<int>& player = (i & 1) ? B : A;
+
+            player[r]++;
+            player[c + 3]++;
+            if (r == c)
+                player[6]++;
+            if (r == 2 - c)
+                player[7]++;
+        }
+
+        for (int i = 0; i < 8; ++i) {
+            if (A[i] == 3)
+                return "A";
+            if (B[i] == 3)
+                return "B";
+        }
+
+        return moves.size() == 9 ? "Draw" : "Pending";
+    }
+
+    string tictactoe1(vector<vector<int>>& moves) {
         vector<string> res {"A", "B", "Draw", "Pending"};
         vector<string> rows(3, string(3, ' '));
         vector<string> cols(3, string(3, ' '));
