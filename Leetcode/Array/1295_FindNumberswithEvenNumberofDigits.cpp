@@ -1,10 +1,22 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <numeric>
 using namespace std;
 class Solution {
 public:
+
     int findNumbers(vector<int>& nums) {
+        int res = 0;
+        for (int num : nums) {
+            if ((static_cast<int>(log10(num) + 1) & 1) == 0)
+                ++res;
+        }
+
+        return res;
+    }
+
+    int findNumbers1(vector<int>& nums) {
         int res = 0;
         for (int num : nums) {
             if ((to_string(num).size() & 1) == 0)
