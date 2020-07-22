@@ -1,9 +1,19 @@
 #include <iostream>
 #include <vector>
-
+#include <string>
 using namespace std;
 class Solution {
 public:
+    int findNumbers(vector<int>& nums) {
+        int res = 0;
+        for (int num : nums) {
+            if ((to_string(num).size() & 1) == 0)
+                ++res;
+        }
+
+        return res;
+    }
+
     int getDigit(int num) {
         int res = 0;
         while (num) {
@@ -14,7 +24,7 @@ public:
         return res;
     }
 
-    int findNumbers(vector<int>& nums) {
+    int findNumbers2(vector<int>& nums) {
         int res = 0;
         for (int num : nums) {
             if ((getDigit(num) & 1) == 0)
