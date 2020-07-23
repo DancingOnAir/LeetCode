@@ -1,0 +1,60 @@
+#include <iostream>
+#include <vector>
+#include <list>
+#include <map>
+using namespace std;
+
+class Solution {
+public:
+    bool isPossibleDivide(vector<int>& nums, int k) {
+        int n = nums.size();
+        if (n % k != 0) {
+            return false;
+        }
+
+        map<int, int> counts;
+        for (int num : nums) {
+            counts[num]++;
+        }
+
+        while (!counts.empty()) {
+            auto num = counts.begin()->first;
+            for (int i = num; i < num + k; ++i) {
+                if (!counts.count(i))
+                    return false;
+                
+                counts[i]--;
+                if (counts[i] == 0)
+                    counts.erase(i);
+            }
+        }
+
+        return true;
+    }
+};
+
+void testIsPossibleDivide() {
+    Solution solution;
+
+    vector<int> nums1 {1, 2, 3, 3, 4, 4, 5, 6};
+    int k1 = 4;
+    cout << (solution.isPossibleDivide(nums1, k1) ? "True" : "False") << endl;
+
+    vector<int> nums2 {3, 2, 1, 2, 3, 4, 3, 4, 5, 9, 10, 11};
+    int k2 = 3;
+    cout << (solution.isPossibleDivide(nums2, k2) ? "True" : "False") << endl;
+
+    vector<int> nums3 {3, 3, 2, 2, 1, 1};
+    int k3 = 3;
+    cout << (solution.isPossibleDivide(nums3, k3) ? "True" : "False") << endl;
+
+    vector<int> nums4 {1, 2, 3, 4};
+    int k4 = 3;
+    cout << (solution.isPossibleDivide(nums4, k4) ? "True" : "False") << endl;
+}
+
+int main() {
+    testIsPossibleDivide();
+
+    return 0;
+}
