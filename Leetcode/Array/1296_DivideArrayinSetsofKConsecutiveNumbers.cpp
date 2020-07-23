@@ -2,11 +2,40 @@
 #include <vector>
 #include <list>
 #include <map>
+#include <unordered_map>
 using namespace std;
 
 class Solution {
 public:
     bool isPossibleDivide(vector<int>& nums, int k) {
+        unordered_map<int, int> m;
+        for (int num : nums) {
+            m[num]++;
+        }
+
+        for (int num : nums) {
+            int start = num;
+            while (m[start - 1])
+                --start;
+            
+            for (; start <= num; ++start) {
+                int times = m[start];
+                if (times) {
+                    for (int i = start; i < start + k; ++i) {
+                        if (m[i] < times) {
+                            return false;
+                        }
+
+                        m[i] -= times;
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    bool isPossibleDivide1(vector<int>& nums, int k) {
         int n = nums.size();
         if (n % k != 0) {
             return false;
