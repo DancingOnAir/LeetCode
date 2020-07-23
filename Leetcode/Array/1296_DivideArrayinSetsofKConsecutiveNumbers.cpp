@@ -46,15 +46,12 @@ public:
             counts[num]++;
         }
 
-        while (!counts.empty()) {
-            auto num = counts.begin()->first;
-            for (int i = num; i < num + k; ++i) {
-                if (!counts.count(i))
-                    return false;
-                
-                counts[i]--;
-                if (counts[i] == 0)
-                    counts.erase(i);
+        for (auto& iter : counts) {
+            if (counts[iter.first] > 0) {
+                for (int i = k - 1; i >= 0; --i) {
+                    if ((counts[iter.first + i] -= counts[iter.first]) < 0)
+                        return false;
+                }
             }
         }
 
