@@ -6,23 +6,21 @@ using namespace std;
 class Solution {
 public:
     int numOfSubarrays(vector<int>& arr, int k, int threshold) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
+        
         int n = arr.size();
         if (n < k)
             return 0;
 
-        int res = 0;
-        int sum = 0;
-        for (int i = 0; i < k - 1; ++i) {
+        int res = 0, sum = 0, target = threshold * k;
+        for (int i = 0; i < n; ++i) {
             sum += arr[i];
-        }
 
-        for (int i = k - 1; i < n; ++i) {
-            if (i == k - 1)
-                sum += arr[i];
-            else
-                sum += arr[i] - arr[i - k];
-
-            if (sum >= threshold * k)
+            if (i >= k)
+                sum -= arr[i - k];
+            if (i >= k - 1 && sum >= target)
                 ++res;
         }
 
