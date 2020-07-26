@@ -1,11 +1,34 @@
 #include <iostream>
 #include <vector>
-
+#include <queue>
 using namespace std;
 
 class Solution {
 public:
+
     vector<int> filterRestaurants(vector<vector<int>>& restaurants, int veganFriendly, int maxPrice, int maxDistance) {
+        auto comp = [](const pair<int, int>& lhs, const pair<int, int>& rhs) {
+            return (lhs.second < rhs.second) || (lhs.second == rhs.second && lhs.first < rhs.first);
+        };
+
+        priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(comp)> pq(comp);
+
+        for (auto& r : restaurants) {
+            if (r[2] >= veganFriendly && r[3] <= maxPrice && r[4] <= maxDistance) {
+                pq.emplace(make_pair(r[0], r[1]));
+            }
+        }
+
+        vector<int> res;
+        while (!pq.empty()) {
+            res.emplace_back(pq.top().first);
+            pq.pop();
+        }
+
+        return res;
+    }
+
+    vector<int> filterRestaurants1(vector<vector<int>>& restaurants, int veganFriendly, int maxPrice, int maxDistance) {
         vector<vector<int>> filtered;
 
         for (auto& r : restaurants) {
