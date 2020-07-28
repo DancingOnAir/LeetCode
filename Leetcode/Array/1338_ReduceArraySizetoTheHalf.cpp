@@ -2,11 +2,32 @@
 #include <vector>
 #include <unordered_map>
 #include <queue>
+#include <set>
 using namespace std;
 
 class Solution {
 public:
     int minSetSize(vector<int>& arr) {
+        unordered_map<int, int> m;
+        for (int a : arr) {
+            m[a]++;
+        }
+
+        multiset<int, greater<int>> s;
+        for (auto& iter : m) {
+            s.emplace(iter.second);
+        }
+
+        int res = 0, cnt = 0;
+        for (auto iter = begin(s); cnt * 2 < arr.size(); ++iter) {
+            ++res;
+            cnt += *iter;
+        }
+
+        return res;
+    }
+
+    int minSetSize1(vector<int>& arr) {
         int n = arr.size();
         if (n < 3)
             return 1;
