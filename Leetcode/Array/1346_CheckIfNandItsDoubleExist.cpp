@@ -8,12 +8,9 @@ public:
     bool checkIfExist(vector<int>& arr) {
         unordered_set<int> s;
         for (int a : arr) {
-            if ((a & 1) == 0 && s.count(a / 2)) {
+            if (((a & 1) == 0 && s.count(a / 2)) || s.count(a * 2)) {
                 return true;
             }
-
-            if (s.count(a * 2))
-                return true;
 
             s.emplace(a);
         }
