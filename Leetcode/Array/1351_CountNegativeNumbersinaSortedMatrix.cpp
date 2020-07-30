@@ -8,6 +8,15 @@ public:
     int countNegatives(vector<vector<int>>& grid) {
         int res = 0;
         for (auto& r : grid) {
+            res += upper_bound(r.rbegin(), r.rend(), -1) - r.rbegin();
+        }
+
+        return res;
+    }
+
+    int countNegatives1(vector<vector<int>>& grid) {
+        int res = 0;
+        for (auto& r : grid) {
             for (auto& c : r) {
                 if (c < 0)
                     ++res;
@@ -36,6 +45,6 @@ void testCountNegatives() {
 
 int main() {
     testCountNegatives();
-    
+
     return 0;
 }
