@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-    int countNegatives(vector<vector<int>>& grid) {
+    int countNegatives1(vector<vector<int>>& grid) {
         int res = 0;
         for (auto& r : grid) {
             res += upper_bound(r.rbegin(), r.rend(), -1) - r.rbegin();
@@ -14,12 +14,11 @@ public:
         return res;
     }
 
-    int countNegatives1(vector<vector<int>>& grid) {
+    int countNegatives(vector<vector<int>>& grid) {
         int res = 0;
-        for (auto& r : grid) {
-            for (auto& c : r) {
-                if (c < 0)
-                    ++res;
+        for (int i = grid.size() - 1; i >= 0 && grid[i].back() < 0; --i) {
+            for (int j = grid[0].size() - 1; j >= 0 && grid[i][j] < 0; --j) {
+                ++res;
             }
         }
 
