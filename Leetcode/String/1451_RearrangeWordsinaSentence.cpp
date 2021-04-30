@@ -42,6 +42,7 @@ void testArrangeWords() {
     assert(solution.arrangeWords("Leetcode is cool") == "Is cool leetcode");
     assert(solution.arrangeWords("Keep calm and code on") == "On and keep calm code");
     assert(solution.arrangeWords("To be or not to be") == "To be or to be not");
+    cout << "Pass Testing" << endl;
 }
 
 
