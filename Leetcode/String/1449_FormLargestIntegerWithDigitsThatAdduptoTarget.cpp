@@ -12,6 +12,22 @@ public:
     }
 
     string largestNumber(vector<int>& cost, int target) {
+        vector<string> dp(target + 1, "#");
+        dp[0] = "";
+
+        for (int i = 1; i < cost.size() + 1; ++i) {
+            for (int j = 0; j < target + 1; ++j) {
+                if (j - cost[i - 1] >= 0 && dp[j - cost[i - 1]] != "#") {
+                    dp[j] = getBiggerStr(dp[j], to_string(i) + dp[j - cost[i - 1]]);
+                }
+            }
+        }
+
+        return dp[target] == "#"? "0" : dp[target];
+    }
+
+    // unbound knapsack 2d solution 
+    string largestNumber1(vector<int>& cost, int target) {
         int n = cost.size();
         vector<vector<string>> dp(n + 1, vector<string>(target + 1, ""));
         for (int j = 1; j < target + 1; ++j) {
