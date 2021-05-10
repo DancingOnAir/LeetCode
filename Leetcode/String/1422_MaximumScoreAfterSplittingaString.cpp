@@ -6,19 +6,19 @@ public:
     int maxScore(string s) {
         int ones = 0;
         int zeros = 0;
-        int maxDiff = 0;
+        int maxDiff = 0xc0c0c0c0;
 
-        for (int i = 1; i < s.size() - 1; ++i) {
+        for (int i = 0; i < s.size() - 1; ++i) {
             if (s[i] == '0') {
-                zeros += 1;
+                ++zeros;
             }
             else {
-                ones += 1;
+                ++ones;
             }
 
             maxDiff = max(maxDiff, zeros - ones);
         }
-        return maxDiff + ones + (s[0] == '0') + (s[s.size() - 1] == '1');
+        return maxDiff + ones + (s[s.size() - 1] == '1');
     }
 };
 
