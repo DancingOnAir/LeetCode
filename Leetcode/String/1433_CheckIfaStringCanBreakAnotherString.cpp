@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-    // use vector to count characters
+    // use vector to count characters: O(n)
     bool checkIfCanBreak(string s1, string s2) {
         vector<int> v(26);
         for (int i = 0; i < s1.size(); ++i) {
