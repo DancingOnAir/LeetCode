@@ -1,14 +1,37 @@
 #include <string>
 #include <map>
+#include <sstream>
 
 using namespace std;
 
 class Solution {
 public:
     string sortSentence(string s) {
+        stringstream words(s);
+        string word;
+        vector<pair<int, string>> memo;
+
+        while (words >> word) {
+            auto n = word.size();
+            memo.push_back(make_pair((word[n - 1] - '0'), word.substr(0, n - 1)));
+        }
+
+        sort(memo.begin(), memo.end());
+
+        string res;
+        for (int i = 0; i < memo.size(); ++i) {
+            res += memo[i].second;
+            if (i != memo.size() - 1) {
+                res += " ";
+            }
+        }
+        return res;
+    }
+
+    string sortSentence1(string s) {
         map<int, string> m;
         string cur;
-        
+
         for (char c : s) {
             if (isdigit(c)) {
                 m[c - '0'] = cur;
