@@ -1,4 +1,6 @@
 #include <string>
+#include <regex>
+#include <iostream>
 
 using namespace std;
 class Solution {
@@ -13,6 +15,10 @@ private:
 
 public:
     string defangIPaddr(string address) {
+        return regex_replace(address, regex("[.]"), "[.]");
+    }
+
+    string defangIPaddr1(string address) {
         replaceString(".", "[.]", address);
         return address;
     }
