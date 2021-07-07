@@ -19,25 +19,40 @@ private:
     }
 
 public:
+    // https://leetcode.com/problems/minimum-speed-to-arrive-on-time/discuss/1226468/c-binary-answer-cheat-sheet
     int maximumRemovals(string s, string p, vector<int>& removable) {
-        
         for (int i = 0; i < removable.size(); ++i) {
             mp[removable[i]] = i;
         }
 
-        int lo = -1;
+        int lo = 0;
         int hi = removable.size();
-        while (lo < hi) {
-            int mid = (lo + hi + 1) / 2;
+        while (lo <= hi) {
+            // int mid = (lo + hi + 1) / 2;
+            int mid = lo + (hi - lo) / 2;
             if (isSubsequence(s, p, mid)) {
-                lo = mid;
+                lo = mid + 1;
             }
             else {
                 hi = mid - 1;
             }
         }
 
-        return lo;
+        return hi;
+
+        // int lo = -1;
+        // int hi = removable.size() + 1;
+        // while (lo < hi) {
+        //     int mid = (lo + hi + 1) / 2;
+        //     if (isSubsequence(s, p, mid)) {
+        //         lo = mid;
+        //     }
+        //     else {
+        //         hi = mid - 1;
+        //     }
+        // }
+
+        // return lo;
     }
 };
 
