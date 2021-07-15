@@ -6,7 +6,6 @@ public:
     int minOperations(string s) {
         unsigned long diff = 0;
         for (auto i = 0; i < s.size(); ++i) {
-            printf("%d", (i & 1));
             if ((s[i] - '0') != (i & 1))
                 ++diff;
         }
