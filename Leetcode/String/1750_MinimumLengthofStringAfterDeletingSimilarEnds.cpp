@@ -3,6 +3,7 @@
 using namespace std;
 class Solution {
 public:
+    // two pointers solution
     int minimumLength(string s) {
         int lo = 0, hi = s.size() - 1;
         while (lo < hi && s[lo] == s[hi]) {
