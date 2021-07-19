@@ -13,8 +13,8 @@ void testMinPartitions() {
     Solution solution;
 
     assert(solution.minPartitions("32") == 3);
-    assert(solution.minPartitions("32") == 3);
-    assert(solution.minPartitions("32") == 3);
+    assert(solution.minPartitions("82734") == 8);
+    assert(solution.minPartitions("27346209830709182346") == 9);
 }
 
 int main() {
