@@ -6,16 +6,16 @@
 using namespace std;
 class Solution {
 public:
-    // bool areOccurrencesEqual(string s) {
-    //     unordered_map<char, int> m;
-    //     for (auto c : s) {
-    //         ++m[c];
-    //     }
-    //     int average = s.size() / m.size();
-    //     return all_of(m.begin(), m.end(), [&average](auto t) { return t->second == average; });
-    // }
-
     bool areOccurrencesEqual(string s) {
+        unordered_map<char, int> m;
+        for (auto c : s) {
+            ++m[c];
+        }
+        int average = s.size() / m.size();
+        return all_of(m.begin(), m.end(), [&](const auto& p) { return p.second == average; });
+    }
+
+    bool areOccurrencesEqual1(string s) {
         vector<int> cnt(26);
         int mx = 0;
         for (auto c : s) {
