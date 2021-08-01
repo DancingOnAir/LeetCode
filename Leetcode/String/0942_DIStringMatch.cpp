@@ -1,10 +1,22 @@
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 class Solution {
 public:
     vector<int> diStringMatch(string s) {
+        int left = count(s.begin(), s.end(), 'D');
+        int right = left;
+        vector<int> res {left};
+        for (char& c : s) {
+            res.push_back(c == 'I'? ++right: --left);
+        }
+
+        return res;
+    }
+
+    vector<int> diStringMatch1(string s) {
         vector<int> res;
         for (int lo = 0, hi = s.size(), i = 0; i <= s.size(); ++i) {
             res.push_back(i == s.size() || s[i] == 'I' ? lo++ : hi--);
