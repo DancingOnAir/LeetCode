@@ -5,10 +5,34 @@
 using namespace std;
 class Solution {
 public:
+    // bottom-up 1d dp
     int numWays(vector<string>& words, string target) {
         int mod = 1e9 + 7;
+        int l1 = words[0].size(), l2 = target.size();
+        if (l1 < l2)
+            return 0;
+
+        vector<long long> dp(l2 + 1);
+        dp[0] = 1;
+        for (int i = 0; i < l1; ++i) {
+            vector<long long> cnt(26);
+            for (string& w : words) {
+                ++cnt[w[i] - 'a'];
+            }
+
+            for (int j = min(i, l2 - 1); j >= 0; --j) {
+                dp[j + 1] += dp[j] * cnt[target[j] - 'a'] % mod;
+            }
+        }
+
+        return dp[l2] % mod;
+    }
+
+    // bottom up 2d dp
+    int numWays1(vector<string>& words, string target) {
+        int mod = 1e9 + 7;
         int n = words.size(), l1 = words[0].size(), l2 = target.size();
-        vector<vector<long>> cnt(l1, vector<long>(26));
+        vector<vector<long long>> cnt(l1, vector<long long>(26));
 
         for (int i = 0; i < l1; ++i) {
             for (int j = 0; j < n; ++j) {
@@ -16,7 +40,7 @@ public:
             }
         }
 
-        vector<vector<long>> dp(l1 + 1, vector<long>(l2 + 1));
+        vector<vector<long long>> dp(l1 + 1, vector<long long>(l2 + 1));
         for (int i = 0; i < l1; ++i) {
             dp[i][0] = 1;
             for (int j = 0; j < i + 1 && j < l2; ++j) {
