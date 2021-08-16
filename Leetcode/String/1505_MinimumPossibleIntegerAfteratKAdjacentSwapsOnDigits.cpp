@@ -14,11 +14,16 @@ public:
             return num;
         }
 
+        auto sortedNum = num;
+        sort(sortedNum.begin(), sortedNum.end());
+        if (sortedNum == num)
+            return num;
+            
         for(int i = 0; i < 10; ++i){
-			int idx = num.find(to_string(i));
-			if(idx >= 0 && idx <= k)
-				return num[idx] + minInteger(num.substr(0, idx) + num.substr(idx + 1), k - idx);
-		}
+            int idx = num.find(to_string(i));
+            if(idx >= 0 && idx <= k)
+                return num[idx] + minInteger(num.substr(0, idx) + num.substr(idx + 1), k - idx);
+        }
 
         return num;
     }
