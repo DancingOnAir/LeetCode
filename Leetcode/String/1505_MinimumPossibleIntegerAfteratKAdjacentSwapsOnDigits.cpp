@@ -17,7 +17,7 @@ public:
     static int lowbit(int x) {
         return x & (-x);
     }
-
+    // mark currrent minimum digit as used, 1: used, 0: un-used
     void update(int x) {
         while (x <= n) {
             ++tree[x];
