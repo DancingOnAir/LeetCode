@@ -9,7 +9,7 @@ public:
         int m = stoi(date.substr(5, 2));
         int d = stoi(date.substr(8));
 
-        if (m > 2 && (y % 400 == 0 or (y % 4 == 0 && y % 100 != 0)))
+        if (m > 2 && (y % 400 == 0 || (y % 4 == 0 && y % 100 != 0)))
             ++d;
         while (--m > 0) {
             d += days[m - 1];
