@@ -5,6 +5,13 @@ using namespace std;
 class Solution {
 public:
     string kthLargestNumber(vector<string>& nums, int k) {
+        nth_element(begin(nums), begin(nums) + k - 1, end(nums), [](const auto &a, const auto &b){
+            return a.size() > b.size() ? true : a.size() < b.size() ? false : a > b;
+        });
+        return nums[k - 1];
+    }
+
+    string kthLargestNumber1(vector<string>& nums, int k) {
         sort(nums.begin(), nums.end(), [](string& a, string& b) { 
             if (a.size() == b.size()) 
                 return a < b;
