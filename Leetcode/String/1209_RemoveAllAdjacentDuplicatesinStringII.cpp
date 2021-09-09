@@ -5,8 +5,28 @@
 using namespace std;
 class Solution {
 public:
-    // two pointers
+    // stack
     string removeDuplicates(string s, int k) {
+        vector<pair<char, int>> stk{{'#', 0}};
+
+        for (char c : s) {
+            if (stk.back().first != c) {
+                stk.push_back(make_pair(c, 1));
+            }
+            else if (++stk.back().second == k) {
+                stk.pop_back();
+            }
+        }
+
+        string res;
+        for (auto& p : stk) {
+            res += string(p.second, p.first);
+        }
+        return res;
+    }
+
+    // two pointers
+    string removeDuplicates1(string s, int k) {
         int i = 0;
         int n = s.size();
         vector<int> cnt(n);
