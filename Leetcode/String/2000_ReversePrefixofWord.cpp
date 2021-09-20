@@ -4,6 +4,11 @@ using namespace std;
 class Solution {
 public:
     string reversePrefix(string word, char ch) {
+        reverse(word.begin(), word.begin() + word.find(ch) + 1);
+        return word;
+    }
+
+    string reversePrefix1(string word, char ch) {
         auto idx = word.find(ch);
         if (idx != string::npos)
             reverse(word.begin(), word.begin() + idx + 1);
