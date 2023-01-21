@@ -7,6 +7,14 @@ using namespace std;
 class Solution {
 public:
     bool divideArray(vector<int>& nums) {
+        vector<int> cnt(501);
+        for (int x: nums) {
+            ++cnt[x];
+        }
+        return all_of(cnt.begin(), cnt.end(), [](int v) { return v % 2 == 0; });
+    }
+
+    bool divideArray1(vector<int>& nums) {
         unordered_map<int, int> m;
         for (auto& x : nums) {
             m[x] += 1;
