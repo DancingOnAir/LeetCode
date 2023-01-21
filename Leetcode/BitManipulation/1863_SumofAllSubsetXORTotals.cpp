@@ -1,11 +1,18 @@
 #include <iostream>
 #include <vector>
-
+#include <numeric>
+#include <functional>
 
 using namespace std;
 class Solution {
 public:
+    // https://leetcode.com/problems/sum-of-all-subset-xor-totals/solutions/1211213/python-bitwise-or-with-explanation-o-n/
+    // https://math.stackexchange.com/questions/248245/exactly-half-of-the-elements-of-mathcalpa-are-odd-sized
     int subsetXORSum(vector<int>& nums) {
+        return accumulate(nums.begin(), nums.end(), 0, bit_or<int>()) << (nums.size() - 1);
+    }
+
+    int subsetXORSum1(vector<int>& nums) {
         int res = 0;
         for (auto i = 1; i < (1 << nums.size()); ++i) {
             int total = 0;
