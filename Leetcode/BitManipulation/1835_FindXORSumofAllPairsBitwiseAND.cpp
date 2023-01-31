@@ -4,6 +4,7 @@
 using namespace std;
 class Solution {
 public:
+    // https://leetcode.com/problems/find-xor-sum-of-all-pairs-bitwise-and/solutions/1163992/java-c-python-easy-and-concise-o-1-space/
     // https://blog.csdn.net/qq_45475271/article/details/107675845
     int getXORSum(vector<int>& arr1, vector<int>& arr2) {
         ios_base::sync_with_stdio(false);
