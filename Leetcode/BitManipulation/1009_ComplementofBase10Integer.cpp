@@ -4,10 +4,18 @@
 class Solution {
 public:
     int bitwiseComplement(int n) {
+        int x = 1;
+        while (n > x) {
+            x = x * 2 + 1;
+        }
+        return x - n;
+    }
+
+    int bitwiseComplement1(int n) {
         if (!n) {
             return 1;
         }
-        
+
         int sz = 0;
         int m = n;
         while (m) {
