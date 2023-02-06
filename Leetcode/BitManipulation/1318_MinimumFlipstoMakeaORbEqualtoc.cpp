@@ -4,6 +4,9 @@ using namespace std;
 class Solution {
 public:
     int minFlips(int a, int b, int c) {
+        return __builtin_popcount((a | b) ^ c) + __builtin_popcount(a & b & ((a | b) ^ c));
+    }
+    int minFlips1(int a, int b, int c) {
         int equal = (a | b) ^ c;
         int res = 0;
         for (int i = 0; i < 31; ++i) {
