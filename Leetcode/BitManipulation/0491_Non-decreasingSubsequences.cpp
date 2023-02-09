@@ -32,7 +32,15 @@ public:
             }
         }
 
-        return vector(res.begin(), res.end());
+        // set转换成vector 3种方式
+        // 1.Range Constructor
+        // return vector(res.begin(), res.end());
+        // vector<vector<int>> ans(res.begin(), res.end());
+        // return ans;
+        // 2.Assign
+        vector<vector<int>> ans;
+        ans.assign(res.begin(), res.end());
+        return ans;
     }
 };
 
