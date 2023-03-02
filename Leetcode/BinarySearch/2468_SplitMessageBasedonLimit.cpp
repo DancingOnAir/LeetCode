@@ -28,7 +28,6 @@ public:
     }
 };
 
-
 void printVector(vector<string>& res) {
     if (res.empty())
         return;
