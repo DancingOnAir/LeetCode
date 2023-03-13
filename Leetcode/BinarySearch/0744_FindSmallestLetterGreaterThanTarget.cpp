@@ -1,10 +1,16 @@
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 class Solution {
 public:
     char nextGreatestLetter(vector<char>& letters, char target) {
+        auto iter = upper_bound(letters.begin(), letters.end(), target);
+        return iter == letters.end() ? letters[0] : *iter;
+    }
+
+    char nextGreatestLetter1(vector<char>& letters, char target) {
         int left = 0, right = letters.size() - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
