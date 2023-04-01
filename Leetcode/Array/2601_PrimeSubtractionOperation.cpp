@@ -11,7 +11,7 @@ public:
         for (int i = 2; i < 1000; ++i) {
             if (!isPrime[i]) {
                 primes.push_back(i);
-                for (int j = i; j < 1000 / i; j += i) {
+                for (int j = i; j < 1000 / i; ++j) {
                     isPrime[i * j] = true;
                 }
             }
