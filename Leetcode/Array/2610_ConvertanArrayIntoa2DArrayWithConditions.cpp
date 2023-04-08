@@ -9,7 +9,7 @@ public:
         vector<int> count(n + 10);
         vector<vector<int>> res;
         for (int x : nums) {
-            if (res.size() < count[x]) {
+            if (res.size() <= count[x]) {
                 res.push_back({});
             }
             res[count[x]++].push_back(x);
